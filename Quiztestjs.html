@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+            var frage = 1;            
+
+            function frageadd(){
+                frage ++;
+            }
+
+
+            function A() {
+                if (frage == 1){
+                    document.getElementById("A").style = "background-color: red";
+                }
+                if (frage == 2){
+                    document.getElementById("A").style = "background-color: red";
+                }
+                if (frage == 3){
+                    document.getElementById("frage").innerHTML = "Geschaft!!";
+                    document.getElementById("A").style = "background-color: white";
+                    document.getElementById("B").style = "background-color: white";
+                    document.getElementById("C").style = "background-color: white";
+                    document.getElementById("A").innerHTML = "Geschaft!!";
+                    document.getElementById("B").innerHTML = "Geschaft!!";
+                    document.getElementById("C").innerHTML = "Geschaft!!";
+                    setTimeout(frageadd, 50);
+                    alert("geschaft!!");
+                }
+            }
+            function B() {
+                if (frage == 1){
+                    document.getElementById("frage").innerHTML = "Weiß Luis wie man Iserv schreibt?";
+                    document.getElementById("B").style = "background-color: white";
+                    document.getElementById("C").style = "background-color: white";
+                    document.getElementById("A").style = "background-color: white";
+                    document.getElementById("A").innerHTML = "Ja";
+                    document.getElementById("B").innerHTML = "Nein";
+                    document.getElementById("C").innerHTML = "Wer ist Luis?";  
+                    setTimeout(frageadd, 50);
+                }
+                if (frage == 2){
+                    document.getElementById("B").style = "background-color: red";
+                }
+                if (frage == 3){
+                    document.getElementById("B").style = "background-color: red";
+                } 
+            }
+            function C() {
+                if (frage == 1){
+                    document.getElementById("C").style = "background-color: red";
+                }
+                if (frage == 2){
+                    document.getElementById("frage").innerHTML = "In welchen land befinden wir uns?";
+                    document.getElementById("C").style = "background-color: white";
+                    document.getElementById("A").style = "background-color: white";
+                    document.getElementById("B").style = "background-color: white";
+                    document.getElementById("A").innerHTML = "Deutschland";
+                    document.getElementById("B").innerHTML = "Italien";
+                    document.getElementById("C").innerHTML = "Canada";
+                    setTimeout(frageadd, 50);
+                }
+                if (frage == 3){
+                    document.getElementById("C").style = "background-color: red";
+                }
+
+            }
+            
+            
+            
+            
+        </script>
+        <style>
+            .quiz {
+                display: flex;
+                justify-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="quiz">
+            <div>
+                <h1 id="frage">Ist Java schneller als Javascript?</h1>
+                <button type="button" onclick="A()" id="A"> Nein </button>
+                <button type="button" onclick="B()" id="B"> Ja </button>
+                <button type="button" onclick="C()" id="C"> Javascript auf die 1 </button>
+            </div>
+        </div>
+    </body>
+</html>
