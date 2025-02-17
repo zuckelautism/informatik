@@ -3,73 +3,41 @@
     <head>
         <script>
 
-            var frage = 1;            
+            var frage = 1;  
+            var a;
+            var b;      
+            var sum;   
+            var display 
+
+            function Start(){
+                a = Math.floor((Math.random() * 100) + 1);
+                b = Math.floor((Math.random() * 100) + 1);
+                display = a + " + " + b + " =";
+                sum = a + b;
+                document.getElementById("frage").innerHTML = display;
+            }
 
             function frageadd(){
                 frage ++;
+                a = Math.floor((Math.random() * 100) + 1);
+                b = Math.floor((Math.random() * 100) + 1);
+                display = a + " + " + b + " =";
+                sum = a + b;
+                document.getElementById("frage").innerHTML = display;
             }
 
 
-            function A() {
-                if (frage == 1){
-                    document.getElementById("A").style = "background-color: red";
-                }
-                if (frage == 2){
-                    document.getElementById("A").style = "background-color: red";
-                }
-                if (frage == 3){
-                    document.getElementById("frage").innerHTML = "Geschaft!!";
-                    document.getElementById("A").style = "background-color: white";
-                    document.getElementById("B").style = "background-color: white";
-                    document.getElementById("C").style = "background-color: white";
-                    document.getElementById("A").innerHTML = "Geschaft!!";
-                    document.getElementById("B").innerHTML = "Geschaft!!";
-                    document.getElementById("C").innerHTML = "Geschaft!!";
-                    setTimeout(frageadd, 50);
-                    alert("geschaft!!");
+            function rechnung() {
+                if (sum == document.getElementById("Antwort").value){
+                        document.getElementById("frage").innerHTML = "richtig";
+                        setTimeout(frageadd, 50);
+                    
+                    }else{
+                        document.getElementById("frage").innerHTML = "falsch"; 
+                        setTimeout(frageadd, 50);                  
                 }
             }
-            function B() {
-                if (frage == 1){
-                    document.getElementById("frage").innerHTML = "Weiß Luis wie man Iserv schreibt?";
-                    document.getElementById("B").style = "background-color: white";
-                    document.getElementById("C").style = "background-color: white";
-                    document.getElementById("A").style = "background-color: white";
-                    document.getElementById("A").innerHTML = "Ja";
-                    document.getElementById("B").innerHTML = "Nein";
-                    document.getElementById("C").innerHTML = "Wer ist Luis?";  
-                    setTimeout(frageadd, 50);
-                }
-                if (frage == 2){
-                    document.getElementById("B").style = "background-color: red";
-                }
-                if (frage == 3){
-                    document.getElementById("B").style = "background-color: red";
-                } 
-            }
-            function C() {
-                if (frage == 1){
-                    document.getElementById("C").style = "background-color: red";
-                }
-                if (frage == 2){
-                    document.getElementById("frage").innerHTML = "In welchen land befinden wir uns?";
-                    document.getElementById("C").style = "background-color: white";
-                    document.getElementById("A").style = "background-color: white";
-                    document.getElementById("B").style = "background-color: white";
-                    document.getElementById("A").innerHTML = "Deutschland";
-                    document.getElementById("B").innerHTML = "Italien";
-                    document.getElementById("C").innerHTML = "Canada";
-                    setTimeout(frageadd, 50);
-                }
-                if (frage == 3){
-                    document.getElementById("C").style = "background-color: red";
-                }
-
-            }
-            
-            
-            
-            
+              
         </script>
         <style>
             .quiz {
@@ -78,13 +46,15 @@
             }
         </style>
     </head>
-    <body>
+    <body onload="Start()">
         <div class="quiz">
             <div>
-                <h1 id="frage">Ist Java schneller als Javascript?</h1>
-                <button type="button" onclick="A()" id="A"> Nein </button>
-                <button type="button" onclick="B()" id="B"> Ja </button>
-                <button type="button" onclick="C()" id="C"> Javascript auf die 1 </button>
+                <form action="	">
+                    <h1 id="frage">Ist Java schneller als Javascript?</h1>
+                    <input type="number" id="Antwort" name="Antwort"><br><br>
+                    <input type="submit" value="Submit" onclick="rechnung()" >
+                </form>
+                
             </div>
         </div>
     </body>
