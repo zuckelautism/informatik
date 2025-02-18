@@ -26,16 +26,19 @@
                 document.getElementById("frage").innerHTML = display;
             }
 
+            function uebereck(){
+                setTimeout(frageadd, 5000);
+            }
 
             function rechnung() {
                 if (sum == document.getElementById("Antwort").value){
                         document.getElementById("frage").innerHTML = "richtig";
-                        setTimeout(frageadd, 50);
-                    
+                        setTimeout(Start, 5000);
                     }else{
-                        document.getElementById("frage").innerHTML = "falsch"; 
-                        setTimeout(frageadd, 50);                  
+                        document.getElementById("frage").innerHTML = "falsch";
+                        setTimeout(Start, 5000);               
                 }
+                
             }
               
         </script>
@@ -46,11 +49,11 @@
             }
         </style>
     </head>
-    <body onload="Start()">
+    <body>
         <div class="quiz">
             <div>
                 <form action="	">
-                    <h1 id="frage">Ist Java schneller als Javascript?</h1>
+                    <h1 id="frage">Platzhalter</h1>
                     <input type="number" id="Antwort" name="Antwort"><br><br>
                     <input type="submit" value="Submit" onclick="rechnung()" >
                 </form>
