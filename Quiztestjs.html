@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
         <script>
 
             var frage = 1;  
             var a;
             var b;      
             var sum;   
-            var display 
+            var display; 
+
 
             function Start(){
                 a = Math.floor((Math.random() * 100) + 1);
                 b = Math.floor((Math.random() * 100) + 1);
-                display = a + " + " + b + " =";
+                display = a + " + " + b;
                 sum = a + b;
                 document.getElementById("frage").innerHTML = display;
             }
@@ -21,22 +27,24 @@
                 frage ++;
                 a = Math.floor((Math.random() * 100) + 1);
                 b = Math.floor((Math.random() * 100) + 1);
-                display = a + " + " + b + " =";
+                display = a + " + " + b;
                 sum = a + b;
                 document.getElementById("frage").innerHTML = display;
             }
 
             function uebereck(){
-                setTimeout(frageadd, 5000);
+                setTimeout(frageadd(), 5000);
             }
 
             function rechnung() {
                 if (sum == document.getElementById("Antwort").value){
                         document.getElementById("frage").innerHTML = "richtig";
-                        setTimeout(Start, 5000);
+                        document.getElementById("row").innerHTML = " richtig";
+                        setTimeout(uebereck(), 200);
                     }else{
                         document.getElementById("frage").innerHTML = "falsch";
-                        setTimeout(Start, 5000);               
+                        document.getElementById("row").innerHTML = " falsch";
+                        setTimeout(uebereck(), 200);            
                 }
                 
             }
@@ -47,17 +55,35 @@
                 display: flex;
                 justify-content: center;
             }
+
+            .row {
+                display: flex;
+                justify-content: baseline;
+            }
+            .frage{
+                background-color: beige;
+                border: 5px;
+                border-style: double;
+                border-color: black;
+                text-align: center;
+            }
+            .body{
+                font-family: Georgia;
+                background-color: bisque;
+            }
+
         </style>
     </head>
-    <body>
+    <body onload="Start()" class="body">
         <div class="quiz">
             <div>
-                <form action="	">
-                    <h1 id="frage">Platzhalter</h1>
-                    <input type="number" id="Antwort" name="Antwort"><br><br>
-                    <input type="submit" value="Submit" onclick="rechnung()" >
-                </form>
-                
+                    <h1 id="frage" class="frage"></h1>
+                    <input type="number" id="Antwort" name="Antwort" style="background-color: beige;"><br><br>
+                    <button type="button" onclick="rechnung()" style="background-color: beige;">submit</button>
+                <div class="row">
+                    <p>Letzte Antwort: </p> 
+                    <p id="row">  </p>
+                </div>
             </div>
         </div>
     </body>
