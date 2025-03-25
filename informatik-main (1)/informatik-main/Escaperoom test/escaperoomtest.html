@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <script>
+
+              var Raum = 1;
+              var Items = 1;
+              var x = 0;
+              var y = 0;
+              var deathx = Math.floor((Math.random() * 5) - 2);
+              var deathy = Math.floor((Math.random() * 5) - 2);
+              var keyx = Math.floor((Math.random() * 5) - 2);
+              var keyy = Math.floor((Math.random() * 5) - 2);
+              var exitx = Math.floor((Math.random() * 5) - 2);
+              var exity = Math.floor((Math.random() * 5) - 2);
+              var randomtext = Math.floor((Math.random() * 10) + 1)
+              var randomtext2 = Math.floor((Math.random() * 5) + 1)
+              var keycollected = false;
+              var specialroom = false;
+              var lasttext
+              var lastroomx = 0;
+              var lastroomy = 0;
+              var failsafe = 0;
+              
+
+              function start(){
+                document.getElementById("Raum").innerHTML = "x: " + x + " y: " + y;
+                document.getElementById("Items").innerHTML = "Items: none";
+              }
+
+              function roomcheck(){
+
+                if (lasttext == randomtext){
+                    failsafe = 1;  
+                }
+
+                if (x == lastroomx && y == lastroomy){
+                    randomtext = lasttext;
+                }
+            
+                if (x == exitx && y == exity){
+                    document.getElementById("ereignistext").innerHTML = "Als du den Raum betrittst, fällt dir sofort eine seltsame Vertiefung im Boden auf. Du gehst näher heran und erkennst eine schwere Metallklappe, fest verschlossen. Kein Griff, nur ein altes Schloss, das stumm auf einen passenden Schlüssel wartet. Was sich wohl darunter verbirgt?" ;
+                    specialroom = true;
+                }
+
+                if (x == exitx && y == exity && keycollected == true){
+                    document.getElementById("ereignistext").innerHTML = "Mit zitternden Fingern führst du den gefundenen Schlüssel in das Schloss der Klappe ein. Ein leises Klicken, dann gibt sie nach. Ein dunkler Schacht öffnet sich vor dir – schmal, aber gerade groß genug, um hindurchzupassen. Ohne zu zögern steigst du hinab und verschwindest in der Dunkelheit, fort von diesem unheilvollen Ort." ;
+                    specialroom = true;
+                    death();
+                }
+
+                if (x == keyx && y == keyy && keycollected == true){
+                    document.getElementById("ereignistext").innerHTML = "Du stehst wieder in dem Raum, in dem du den Schlüssel gefunden hast. Der Staub liegt immer noch schwer in der Luft, und die Stelle, an der er lag, ist jetzt leer. Doch die Frage bleibt: Was wirst du mit ihm öffnen?" ;
+                    specialroom = true;
+                }
+
+                if (x == keyx && y == keyy && keycollected == false){
+                    document.getElementById("ereignistext").innerHTML = "Du betrittst den Raum und lässt deinen Blick schweifen. Zwischen Staub und Schatten funkelt etwas auf dem Boden. Als du näher trittst, erkennst du einen alten, leicht rostigen Schlüssel. Wofür er wohl gedacht ist?" ;
+                    keycollected = true;
+                    specialroom = true;
+                    document.getElementById("Items").innerHTML = "Items: Schlüssel";
+                }
+
+                if (x == deathx && y == deathy){
+                    if(randomtext2 == 1){
+                        document.getElementById("ereignistext").innerHTML = "Du betrittst den Raum, und sofort wird die Luft schwer. Die Wände scheinen sich langsam auf dich zuzubewegen, während ein unsichtbarer Druck deine Brust zusammendrückt. Du versuchst zu atmen, aber es geht nicht. Dein Blick wird schwarz." ;
+                    }
+
+                    if(randomtext2 == 2){
+                        document.getElementById("ereignistext").innerHTML = "Als du eintrittst, siehst du dich selbst in unzähligen Spiegeln, die den gesamten Raum bedecken. Doch etwas stimmt nicht – dein Spiegelbild bewegt sich anders als du. Plötzlich lächelt es. Du nicht. Ein kalter Schauer läuft dir über den Rücken, bevor alles um dich herum in Dunkelheit versinkt." ;
+                    }
+
+                    if(randomtext2 == 3){
+                        document.getElementById("ereignistext").innerHTML = "Du betrittst den Raum und bemerkst, dass alles hier still ist – zu still. Eine riesige Standuhr in der Mitte schlägt plötzlich Mitternacht. Dein Körper erstarrt, deine Gedanken verblassen, und dann… nichts mehr. Nur Leere." ;
+                    }
+
+                    if(randomtext2 == 4){
+                        document.getElementById("ereignistext").innerHTML = "Die Tür hinter dir schnappt zu, als du den Raum betrittst. Vor dir steht ein Stuhl mit einem einzelnen Zettel darauf: „Du hättest nicht herkommen sollen.“ Bevor du reagieren kannst, flackert das Licht. Etwas ist hier. Du hast keine Zeit mehr." ;
+                    }
+
+                    if(randomtext2 == 5){
+                        document.getElementById("ereignistext").innerHTML = "Du setzt einen Fuß in den Raum, und der Boden unter dir gibt nach. Ein Moment der Schwerelosigkeit, ein stiller Schrei – dann stürzt du in die Tiefe. Es gibt keinen Aufprall. Nur das endlose Fallen." ;
+                    }
+
+                    death();
+                }else if (specialroom == false){
+
+                    if(randomtext == 1 + failsafe){
+                        document.getElementById("ereignistext").innerHTML = "Du gehst in den Raum und siehst strahlend weiße Wände. Das Echo deiner Schritte hallt seltsam nach, als würde der Raum selbst zuhören. In der Ecke liegt ein einzelner, roter Luftballon." ;
+                    }
+
+                    if(randomtext == 2 + failsafe){
+                        document.getElementById("ereignistext").innerHTML = "Du öffnest die Tür und betrittst einen staubigen Raum. Sonnenstrahlen brechen durch ein kleines Fenster, während ein umgekippter Stuhl in der Mitte steht – als wäre jemand hastig aufgestanden und nie zurückgekehrt." ;
+                    }
+
+                    if(randomtext == 3 + failsafe){
+                        document.getElementById("ereignistext").innerHTML = "Du trittst über die Schwelle und spürst den kalten Betonboden unter dir. Die Wände sind kahl, und in einer Ecke liegt ein zerknittertes Blatt Papier, drauf Steht „flucht...“ und die zahlen " + exitx + " und " + exity + "." ;
+                    }
+
+                    if(randomtext == 4 + failsafe){
+                        document.getElementById("ereignistext").innerHTML = "Du betrittst den Raum, und das einzige Licht kommt von einer flackernden Glühbirne an der Decke. Auf einem alten Radio in der Ecke rauscht es leise, als würde jemand flüstern." ;
+                    }
+
+                    if(randomtext == 5 + failsafe){
+                        document.getElementById("ereignistext").innerHTML = "Die Tür öffnet sich knarrend, und du siehst einen leeren Raum mit alten Holzdielen. In der Mitte liegt ein einzelner Würfel, als hätte jemand mitten im Spiel alles stehen und liegen gelassen." ;
+                    }
+
+                    if(randomtext == 6 + failsafe){
+                        document.getElementById("ereignistext").innerHTML = "Du trittst ein und erkennst, dass die Wände mit unverständlichen Kritzeleien bedeckt sind. In der Ecke lehnt ein alter Spiegel, doch sein Glas ist gesprungen." ;
+                    }
+
+                    if(randomtext == 7 + failsafe){
+                        document.getElementById("ereignistext").innerHTML = "Als du den Raum betrittst, steigt dir ein modriger Geruch in die Nase. In der Ecke steht eine verrostete Laterne mit gesprungenem Glas, als hätte sie ein Geheimnis zu bewahren." ;
+                    }
+
+                    if(randomtext == 8 + failsafe){
+                        document.getElementById("ereignistext").innerHTML = "Du öffnest die Tür und entdeckst eine einsame Staffelei in der Mitte des Raumes. Auf der Leinwand ist nur ein einziger schwarzer Strich – ein Kunstwerk, das nie vollendet wurde." ;
+                    }
+
+                    if(randomtext == 9 + failsafe){
+                        document.getElementById("ereignistext").innerHTML = "Du setzt einen Fuß in den Raum und bemerkst, dass der Boden mit feinem Sand bedeckt ist. An der Wand hängt eine schief hängende Uhr, doch ihre Zeiger stehen still – als hätte die Zeit hier aufgehört." ;
+                    }
+
+                    if(randomtext == 10 - failsafe){
+                        document.getElementById("ereignistext").innerHTML = "Du gehst hinein, und dein Blick fällt auf ein umgedrehtes Notizbuch auf dem Boden. Eine einzige Seite ragt heraus – das Wort „Tot....“ und die Zahlen " + deathx + " und " + deathy + " sind hastig darauf gekritzelt." ;
+                    }
+                }
+                
+                failsafe = 0;
+                lasttext = randomtext;
+                randomtext = Math.floor((Math.random() * 10) + 1)
+                specialroom = false;
+                lastroomx = x;
+                lastroomy = y;
+
+              }
+
+              function antwort1(){
+                if(x < 2){
+                    x++
+                    check();
+                } 
+              }
+
+              function antwort2(){
+                if(x > -2){
+                    x--
+                    check();
+                } 
+              }
+
+              function antwort3(){
+                if(y < 2){
+                    y++
+                    check();
+                } 
+                
+              }
+
+              function antwort4(){
+                if(y > -2){
+                    y--
+                    check();
+                } 
+              }
+
+              function check(){
+                document.getElementById("Raum").innerHTML = "x: " + x + " y: " + y;
+                document.getElementById("map").src = y + " " + x + ".png";
+                roomcheck();
+              }
+
+              function death(){
+                document.getElementById("antwort1").style = "display: none;" ;
+                document.getElementById("antwort2").style = "display: none;" ;
+                document.getElementById("antwort3").style = "display: none;" ;
+                document.getElementById("antwort4").style = "display: none;" ;
+                document.getElementById("reload").style = "display: block;" ;
+              }
+
+              function reload(){
+                location.reload();
+              }
+
+              function Debug(){
+                document.getElementById("Debug").style = "display: block;";
+                document.getElementById("Debug").innerHTML = "Deathroom x: " + deathx + " y: " + deathy + " keyroom x: " + keyx + " y: " + keyy + " exitroom x: " + exitx + " y: " + exity;
+              }
+
+
+        </script>
+
+        <style>
+            .infobox{
+                background-color: #3b3b3b;
+                display: flex;
+                justify-content: space-around;
+                border-radius: 5;
+                background-color: #3b3b3b;
+                border-style: double;
+            }
+            .ereignisbox{
+                background-color: #3b3b3b;
+                display: flex;
+                justify-content: space-around;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                border-radius: 5;
+                background-color: #3b3b3b;
+                border-style: double;
+                padding-top: 100px;
+                padding-bottom: 100px;
+                
+            }
+            .entscheidungsbox{
+                background-color: #3b3b3b;
+                display: flex;
+                justify-content: space-around;
+                border-radius: 5;
+                background-color: #3b3b3b;
+                border-style: double;
+            }
+            .durchfall{
+                background-color: #141414;
+                color: white;
+            }
+            .button{
+                border: #141414;
+                border-radius: 10px;
+                border-style: double;
+                border-width: 5px;
+                background-color: #141414;
+            }
+            .ereignistext{
+                width: 500px;
+                word-wrap: break-word;
+            }
+
+        </style>
+
+    </head>
+    <body class="durchfall" onload="start()">
+
+        <div id="infobox" class="infobox">
+            <p id="Raum" class="button"> Platzhalter</p>
+            <p id="Items" class="button"> Platzhalter</p>
+            <p id="Debug" class="button" style="display: none;"> Debug</p>
+        </div>
+
+        <div id="ereignisbox" class="ereignisbox">
+            <div class="ereignistext" id="ereignistext"> Entkomme aus dem sich immer veränderndem Labyrinth. Nutze die Pfeile unten um zu navigieren. ↓↓↓↓
+            </div>
+            <img src="0 0.png" id="map" onclick="Debug()">
+        </div>
+
+        <div id="entscheidungsbox" class="entscheidungsbox">
+            <p id="antwort1" class="button" onclick="antwort1()" style="width: 40px; text-align: center;">→</p>
+            <p id="antwort2" class="button" onclick="antwort2()" style="width: 40px; text-align: center;">←</p>
+            <p id="antwort3" class="button" onclick="antwort3()" style="width: 40px; text-align: center;">↑</p>
+            <p id="antwort4" class="button" onclick="antwort4()" style="width: 40px; text-align: center;">↓</p>
+            <p id="reload" class="button" onclick="reload()" style="display: none;">Neustart</p>
+        </div>
+
+    </body>
+</html>

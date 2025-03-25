@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <script>
+
+              var Raum = 1;
+              var Items = 0;
+              var event = 0;
+              var a = 0;
+              var b = 0;
+              var c = 0;
+
+              function start(){
+                document.getElementById("Raum").innerHTML = "Raum: " + Raum;
+                document.getElementById("Items").innerHTML = "Items: " + Items;
+              }
+
+              function event(event){
+                if (event == 1){
+
+                }
+                if (event == 2){
+                    
+                }
+                if (event == 3){
+                    
+                }
+                if (event == 4){
+                    
+                }
+                if (event == 5){
+                    
+                }
+                if (event == 6){
+                    
+                }
+              }
+
+              function antwort1(){
+                if(a){
+
+                }
+              }
+
+              function antwort2(){
+                if(b){
+
+                }
+              }
+
+              function antwort3(){
+                if(c){
+
+                }
+              }
+
+        </script>
+
+        <style>
+            .infobox{
+                background-color: #3b3b3b;
+                display: flex;
+                justify-content: space-around;
+                border-radius: 5;
+                background-color: #3b3b3b;
+                border-style: double;
+            }
+            .ereignisbox{
+                background-color: #3b3b3b;
+                display: flex;
+                justify-content: space-around;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                border-radius: 5;
+                background-color: #3b3b3b;
+                border-style: double;
+                padding-top: 100px;
+                padding-bottom: 100px;
+                
+            }
+            .entscheidungsbox{
+                background-color: #3b3b3b;
+                display: flex;
+                justify-content: space-around;
+                border-radius: 5;
+                background-color: #3b3b3b;
+                border-style: double;
+            }
+            .durchfall{
+                background-color: #141414;
+                color: white;
+            }
+            .button{
+                border: #141414;
+                border-radius: 10px;
+                border-style: double;
+                border-width: 5px;
+                background-color: #141414;
+            }
+        </style>
+
+    </head>
+    <body class="durchfall" onload="start()">
+
+        <div id="infobox" class="infobox">
+            <p id="Raum" class="button"> Platzhalter</p>
+            <p id="Items" class="button"> Platzhalter</p>
+        </div>
+
+        <div id="ereignisbox" class="ereignisbox">
+            <p id="ereignistext">Platzhalter</p>
+        </div>
+
+        <div id="entscheidungsbox" class="entscheidungsbox">
+            <p id="antwort1" class="button" onclick="antwort1">Platzhalter</p>
+            <p id="antwort2" class="button" onclick="antwort2">Platzhalter</p>
+            <p id="antwort3" class="button" onclick="antwort3">Platzhalter</p>
+        </div>
+
+    </body>
+</html>
