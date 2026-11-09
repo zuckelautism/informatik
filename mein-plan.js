@@ -4,6 +4,8 @@
   const result = document.getElementById("planResult");
   const timeline = document.getElementById("planTimeline");
   const nextAction = document.getElementById("planNextAction");
+  const nextDetail = document.getElementById("planNextDetail");
+  const nextLink = document.getElementById("planNextLink");
   const indicator = document.getElementById("planProgress");
   const previous = document.getElementById("planBack");
   const forward = document.getElementById("planForward");
@@ -16,7 +18,7 @@
   const school = "studienplaetze.html#orientierung";
   const interestOptions = {
     offen: ["deine Interessen", "studienplaetze.html#orientierung", "Teste mit Check-U, welche Aufgaben zu dir passen.", advice],
-    texte: ["Sprache, Kultur und Menschen", "studienplaetze.html?bereich=geisteswissenschaften#orientierung", "Lies einen kurzen Text und erkläre einer Person, was du daran spannend findest.", school],
+    texte: ["Sprache, Kultur und Menschen", "studienplaetze.html?bereich=geisteswissenschaften#orientierung", "Lies einen kurzen Text und erkläre einer Person, was du daran spannend findest.", "studienplaetze.html?bereich=geisteswissenschaften#orientierung"],
     technik: ["Technik und Informatik", "studienplaetze.html?bereich=technik#orientierung", "Probiere ein kleines Programmier-, Reparatur- oder Bauprojekt aus.", school],
     menschen: ["Gesundheit und Soziales", "studienplaetze.html?bereich=gesellschaft#orientierung", "Frag bei einer sozialen Einrichtung nach einem Einblick oder Praktikum.", training],
     natur: ["Natur und Umwelt", "studienplaetze.html?bereich=natur#orientierung", "Vergleiche zwei Aufgaben, etwa Laborarbeit und Arbeit im Freien.", school],
@@ -53,12 +55,19 @@
     const area = selectedCity?.value ? "stadt-" + selectedCity.value + ".html" : "staedte.html";
     return [
       ["Heute", "Mach einen kleinen Test", trial + " Plane dafür 20 Minuten ein.", trialLink],
-      ["In den nächsten Tagen", compare, compareText + " Schwerpunkt: " + focus + ".", state.route === "studium" ? focusLink : compareLink],
+      ["In den nächsten Tagen", compare, compareText + " Schwerpunkt: " + focus + ".", state.route === "studium" || (state.route === "offen" && state.interest !== "offen") ? focusLink : compareLink],
       ["Vor deiner Entscheidung", "Erlebe den Alltag einmal vor Ort", "Frag nach einem Praktikum, einer Hospitation oder einer Schnupperveranstaltung. Notiere, was dir gefallen hat und was offen ist.", state.route === "ausbildung" ? training : school],
       ["Vor der ersten Frist", "Bereite deine Bewerbung vor", apply + " Trage die tatsächlichen Fristen in deinen Kalender ein.", state.route === "ausbildung" ? training : compareLink],
       ["Wenn ein Angebot infrage kommt", "Rechne Alltag und Anfahrt durch", "Prüfe in " + city + " die Strecke, Wohnmöglichkeiten und monatliche Kosten. Vergleiche sie mit deinem Budget, bevor du zusagst.", area],
       ["Bei Zusage oder Absage", "Klär den Start und halte Plan B bereit", "Bei Zusage: bestätige den Termin, prüfe Unterlagen und plane die erste Woche. " + backup, backupLink]
     ];
+  }
+  function renderNext(items) {
+    const next = items.find((_, index) => !state.done.includes(index));
+    nextAction.textContent = next ? "Dein nächster Schritt: " + next[1] : "Alles abgehakt. Prüfe jetzt deinen Starttermin.";
+    nextDetail.textContent = next?.[2] ?? "";
+    nextLink.hidden = !next;
+    if (next) nextLink.href = next[3];
   }
   function renderPlan() {
     form.hidden = true;
@@ -70,8 +79,7 @@
     const items = milestones();
     const windows = state.horizon === "bald" ? [0,2,7,14,21,30] : [0,7,21,45,75,120];
     const base = new Date(state.createdAt);
-    const remaining = items.findIndex((_, index) => !state.done.includes(index));
-    nextAction.textContent = remaining === -1 ? "Alles abgehakt. Prüfe jetzt deinen Starttermin." : "Dein nächster Schritt: " + items[remaining][1];
+    renderNext(items);
     timeline.replaceChildren(...items.map(([label,title,description,url],index) => {
       const li = document.createElement("li");
       const checkbox = document.createElement("input");
@@ -93,10 +101,15 @@
       checkbox.addEventListener("change", () => {
         state.done = checkbox.checked ? [...state.done,index] : state.done.filter(i => i !== index);
         store();
-        const next = items.findIndex((_, i) => !state.done.includes(i));
-        nextAction.textContent = next === -1 ? "Alles abgehakt. Prüfe jetzt deinen Starttermin." : "Dein nächster Schritt: " + items[next][1];
+        renderNext(items);
       });
       li.append(dateText,checkbox,heading,copy,link);
+      if (index === 1 && state.route === "offen" && link.href !== training) {
+        const alt = document.createElement("a");
+        alt.href = training;
+        alt.textContent = "Ausbildungen ansehen";
+        li.append(" · ", alt);
+      }
       return li;
     }));
   }

@@ -8,7 +8,8 @@
  
  
 <script src="firebase-config.js?v=google1" defer></script>
- <script src="mein-plan.js?v=plan1" defer></script>
+ <script src="campus-basis.js?v=review1" defer></script>
+<script src="mein-plan.js?v=plan2" defer></script>
 <script src="campus-shell.js?v=review1" defer></script>
 </head><body class="campus-locked">
  <section class="campus-login" aria-labelledby="campusLoginTitle">
@@ -77,7 +78,7 @@
   <div class="tools"><button type="button" id="planBack" class="btn ghost" hidden>Zurück</button><button type="submit" id="planForward" class="btn">Weiter</button></div>
  </form>
  <section class="finder plan-result" id="planResult" aria-labelledby="planSummary" hidden>
-  <h3 id="planSummary" tabindex="-1"></h3><p class="plan-next" id="planNextAction" role="status"></p>
+  <h3 id="planSummary" tabindex="-1"></h3><div class="plan-next"><p id="planNextAction" role="status"></p><p id="planNextDetail"></p><a id="planNextLink" class="btn" href="#">Diesen Schritt starten</a></div>
   <p id="planHorizonText"></p><p class="muted">Die Zieltermine sind deine Planungshilfe. Offizielle Bewerbungsfristen haben Vorrang.</p>
   <ol id="planTimeline" class="plan-timeline"></ol>
   <div class="tools"><button type="button" class="btn ghost" id="planEdit">Antworten ändern</button><button type="button" class="btn ghost" id="planPrint">Plan drucken</button><button type="button" class="btn ghost" id="planReset">Plan löschen</button></div>
