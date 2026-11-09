@@ -384,3 +384,60 @@ input, select, .site-menu summary, .btn.ghost { border-color: var(--control-line
 #campusMailMessages li { padding: 8px 10px; border-radius: 6px; background: var(--bg); }
 #campusMailMessages li p { margin: 4px 0; white-space: pre-wrap; overflow-wrap: anywhere; }
 #campusMailMessages time { margin-left: 8px; color: var(--muted); font-size: 12px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --motion-quick: 150ms;
+    --motion-panel: 230ms;
+    --motion-ease: cubic-bezier(.22, .75, .25, 1);
+  }
+
+  .campus-login:not([hidden]) .campus-login-card,
+  body:not(.campus-locked) > main,
+  .site-menu details[open] > .site-menu-grid,
+  dialog[open] {
+    animation: campus-rise var(--motion-panel) var(--motion-ease);
+  }
+
+  .site-menu-grid details[open] > ul,
+  .discovery-preferences[open] > :not(summary),
+  .catalog-extra[open] > :not(summary),
+  .catalog-grid > :nth-child(-n+6),
+  #results > :nth-child(-n+6),
+  .discovery-results > :nth-child(-n+6) {
+    animation: campus-fade var(--motion-quick) ease-out;
+  }
+
+  .btn, .site-menu summary, .site-menu-group a,
+  input, select, .campus-mail textarea, .close {
+    transition: background-color var(--motion-quick) ease,
+      border-color var(--motion-quick) ease, color var(--motion-quick) ease;
+  }
+
+  .site-menu summary::after {
+    transition: transform var(--motion-quick) var(--motion-ease);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .card, .catalog-card, .discovery-results > li {
+      transition: transform var(--motion-panel) var(--motion-ease),
+        box-shadow var(--motion-panel) var(--motion-ease),
+        border-color var(--motion-quick) ease;
+    }
+
+    .card:hover, .catalog-card:hover, .discovery-results > li:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 19px rgb(20 24 40 / 12%);
+    }
+  }
+
+  @keyframes campus-rise {
+    from { opacity: .65; transform: translateY(7px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes campus-fade {
+    from { opacity: .72; }
+    to { opacity: 1; }
+  }
+}
