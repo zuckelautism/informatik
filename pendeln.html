@@ -6,13 +6,25 @@
  <title>ÖPNV &amp; Pendeln · Campus-Kompass</title>
  <meta name="description" content="Fahrpläne, Bahnhöfe und Tickets für deine Wege zum Studium und zur Praxisstelle.">
  <script src="theme.js?v=coastal1"></script>
- <link rel="stylesheet" href="kompass.css?v=menu1">
+ <link rel="stylesheet" href="kompass.css?v=login1">
  <script src="pruefstand.js" defer></script>
  <script src="campus-basis.js?v=qa1" defer></script>
  <script src="neue-eintraege.js?v=coastal1" defer></script>
  <script src="katalog.js?v=coastal1" defer></script>
+<script src="firebase-config.js?v=google1" defer></script>
+ <script src="campus-shell.js?v=login1" defer></script>
 </head>
-<body>
+<body class="campus-locked">
+ <section class="campus-login" aria-labelledby="campusLoginTitle">
+  <div class="campus-login-card">
+    <p class="campus-login-brand">Campus-Kompass</p>
+    <h1 id="campusLoginTitle">Willkommen</h1>
+    <p>Entdecke Städte, finde Angebote für deinen Alltag und speichere dein persönliches Profil.</p>
+    <button class="btn" id="campusLoginButton" type="button" disabled>Mit Google anmelden</button>
+    <p id="campusLoginStatus" role="status">Anmeldung wird vorbereitet …</p>
+    <noscript>Aktiviere JavaScript, um dich anzumelden.</noscript>
+  </div>
+ </section>
 <header class="wrap site-header"><div class="app-header-inner">
   <div><h1><a href="index.html">Campus-Kompass</a></h1><p>Orientierung für Studium, Ausbildung und Alltag.</p></div>
   <nav id="kompass" class="site-menu" aria-label="Hauptnavigation">
