@@ -10,6 +10,8 @@ function campusSymbol(category) {
   Studienstart:'<path d="M20 10C14 6 8 6 4 8v23c5-2 10-1 16 2 6-3 11-4 16-2V8c-4-2-10-2-16 2zm0 0v23"/>',
   Vorteile:'<path d="M4 20 20 4h15v15L19 35z"/><circle cx="28" cy="11" r="2"/>',
   Aktivitäten:'<path d="m4 32 10-14 6 7 6-11 10 18z"/><circle cx="12" cy="10" r="4"/>',
+  Reiseideen:'<path d="m5 29 11-10-5-11 4-3 9 10 9-6 3 3-8 9 6 9-3 3-10-6-11 7z"/>',
+  Unterkünfte:'<path d="M6 31V12m0 15h29v4m-26-9h6v-6H9zm6 0h17a3 3 0 0 1 3 3v2"/>',
   "ÖPNV & Pendeln":'<rect x="8" y="5" width="24" height="26" rx="4"/><path d="M8 21h24M20 5v16m-5 10-4 5m14-5 4 5M13 26h1m12 0h1"/>'
  };
  return '<svg viewBox="0 0 40 40" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">'+(paths[category]||paths.Studienstart)+'</svg>';

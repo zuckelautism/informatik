@@ -122,3 +122,10 @@ dialog::backdrop { background: #000b; }
 .device { display: block; }
 .device .photo-fallback { min-height: 48px; }
 .device:has(.product-photo[hidden]) { height: auto; }
+
+#tripBudget { margin: 16px 0; }
+#tripBudget h3 { margin: 0 0 6px; }
+.trip-plan { margin-bottom: 10px; font-size: 13px; }
+.trip-plan ol { padding-left: 20px; color: var(--muted); }
+.trip-plan li + li { margin-top: 5px; }
+.trip-links { margin: 10px 0 0; }

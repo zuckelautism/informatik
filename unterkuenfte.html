@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Unterkünfte · Campus-Kompass</title>
+ <meta name="description" content="Kurzzeit-Unterkünfte in und nahe Neckarsulm, Heilbronn, München und Ingolstadt. Gesamtpreise, Saison und freie Plätze prüfst du beim Anbieter.">
+ <link rel="stylesheet" href="kompass.css">
+ <script src="pruefstand.js" defer></script>
+ <script src="campus-basis.js" defer></script>
+ <script src="neue-eintraege.js" defer></script>
+ <script src="katalog.js" defer></script>
+</head>
+<body>
+<header class="wrap site-header"><h1><a href="index.html">Campus-Kompass</a></h1><p>Dein Katalog für Technik, Wohnen und Alltag im Studium.</p></header>
+<main class="wrap">
+<nav id="kompass" aria-label="Katalogbereiche" class="tools section-nav">
+  <a href="index.html">Laptops</a>
+  <a href="handys.html">Handys</a>
+  <a href="tablets.html">Tablets</a>
+  <a href="smart-gadgets.html">Smart-Gadgets</a>
+  <a href="wohnen.html">Wohnen</a>
+  <a href="autos.html">Autos</a>
+  <a href="fahrschulen.html">Fahrschulen</a>
+  <a href="studienstart.html">Studienstart</a>
+  <a href="vorteile.html">Vorteile</a>
+  <a href="aktivitaeten.html">Aktivitäten</a>
+  <a href="pendeln.html">ÖPNV &amp; Pendeln</a>
+  <a href="reiseideen.html">Reiseideen</a>
+  <a href="unterkuenfte.html" aria-current="page">Unterkünfte</a>
+  <a href="merkliste.html">Merkliste</a>
+</nav>
+<section id="catalog" data-category="Unterkünfte" aria-labelledby="catalogTitle">
+<h2 id="catalogTitle">Unterkünfte</h2>
+<p class="check-note" id="campusUpdate"></p>
+<p>Kurzzeit-Unterkünfte in und nahe Neckarsulm, Heilbronn, München und Ingolstadt. Gesamtpreise, Saison und freie Plätze prüfst du beim Anbieter.</p>
+<div class="fields"><label>Suche<input id="catalogQuery" type="search" placeholder="Katalog durchsuchen …"></label><label>Stadt<select id="catalogCity"><option value="all">Alle Städte</option><option>Neckarsulm</option><option>Heilbronn</option><option>München</option><option>Ingolstadt</option><option>Überregional</option></select></label><label>Unterkunftsart<select id="lodgingType"><option value="all">Alle Arten</option><option>Hotel</option><option>Apartment / Ferienwohnung</option><option>Jugendherberge / Hostel</option><option>Camping</option></select></label></div>
+
+<p class="chartnote"><a href="reiseideen.html#tripBudget">Unterkunft ins Reisebudget einrechnen</a></p>
+<div class="tools"><button type="button" id="catalogSaved" class="btn ghost" aria-pressed="false">Nur Merkliste</button><span id="catalogCount" class="muted" role="status"></span></div>
+<div id="catalogGrid" class="catalog-grid"></div>
+<button id="moreCatalog" type="button" class="btn ghost" hidden>Mehr Einträge anzeigen</button>
+
+<details class="catalog-extra">
+    <summary>Eigenen Eintrag hinzufügen</summary>
+    <form id="catalogForm">
+      <div class="fields">
+        <label>Titel<input name="title" required maxlength="90" placeholder="Titel deines Eintrags"></label>
+        <label>Stadt<select name="city"><option>Neckarsulm</option><option>Heilbronn</option><option>München</option><option>Ingolstadt</option><option>Überregional</option></select></label>
+        <label>Link (https)<input name="link" type="url" required pattern="https://.+" maxlength="1000"></label>
+        <label>Notiz, Preis oder Frist<input name="note" maxlength="240" placeholder="z. B. Preis, Frist oder Ort"></label>
+      </div>
+      <button class="btn" type="submit">Lokal speichern</button>
+      
+    </form>
+  </details>
+
+<p id="catalogStatus" class="muted" role="status" hidden></p>
+</section>
+</main>
+<footer class="wrap">Campus-Kompass</footer>
+</body>
+</html>

@@ -1,6 +1,731 @@
 // Nach Kategorien gruppierte Ergänzungen. Vorhandene IDs für Merklisten beibehalten.
 const campusErgaenzungen=[
   {
+    "id": "reise-ausbau|Handys|iPhone 14",
+    "category": "Handys",
+    "city": "Überregional",
+    "title": "iPhone 14",
+    "note": "Gebrauchtoption. Akku, Anschluss und Update-Unterstützung prüfen.",
+    "link": "https://www.apple.com/de/iphone/compare/",
+    "ecosystems": [
+      "apple"
+    ],
+    "deviceType": "Smartphone"
+  },
+  {
+    "id": "reise-ausbau|Handys|iPhone 14 Plus",
+    "category": "Handys",
+    "city": "Überregional",
+    "title": "iPhone 14 Plus",
+    "note": "Größere 14er-Variante. Gewicht und Akkuzustand vergleichen.",
+    "link": "https://www.apple.com/de/iphone/compare/",
+    "ecosystems": [
+      "apple"
+    ],
+    "deviceType": "Smartphone"
+  },
+  {
+    "id": "reise-ausbau|Handys|iPhone 14 Pro",
+    "category": "Handys",
+    "city": "Überregional",
+    "title": "iPhone 14 Pro",
+    "note": "Pro-Vorgänger für die Gebraucht- und Refurbished-Suche.",
+    "link": "https://www.apple.com/de/iphone/compare/",
+    "ecosystems": [
+      "apple"
+    ],
+    "deviceType": "Smartphone"
+  },
+  {
+    "id": "reise-ausbau|Handys|iPhone 14 Pro Max",
+    "category": "Handys",
+    "city": "Überregional",
+    "title": "iPhone 14 Pro Max",
+    "note": "Großes älteres Pro-Modell. Zustand und Reparaturhistorie prüfen.",
+    "link": "https://www.apple.com/de/iphone/compare/",
+    "ecosystems": [
+      "apple"
+    ],
+    "deviceType": "Smartphone"
+  },
+  {
+    "id": "reise-ausbau|Handys|iPhone 13",
+    "category": "Handys",
+    "city": "Überregional",
+    "title": "iPhone 13",
+    "note": "Älteres Standardmodell. Verbleibende Softwareunterstützung und Akku abgleichen.",
+    "link": "https://www.apple.com/de/iphone/compare/",
+    "ecosystems": [
+      "apple"
+    ],
+    "deviceType": "Smartphone"
+  },
+  {
+    "id": "reise-ausbau|Tablets|Galaxy Tab A9",
+    "category": "Tablets",
+    "city": "Überregional",
+    "title": "Galaxy Tab A9",
+    "note": "Kompakt für Lesen und Videos. Zubehör separat prüfen.",
+    "link": "https://www.samsung.com/us/tablets/compare/",
+    "ecosystems": [
+      "galaxy",
+      "android"
+    ],
+    "deviceType": "Tablet"
+  },
+  {
+    "id": "reise-ausbau|Tablets|Galaxy Tab A9+",
+    "category": "Tablets",
+    "city": "Überregional",
+    "title": "Galaxy Tab A9+",
+    "note": "Größere A9-Variante für Medien und geteilte Ansichten.",
+    "link": "https://www.samsung.com/us/tablets/compare/",
+    "ecosystems": [
+      "galaxy",
+      "android"
+    ],
+    "deviceType": "Tablet"
+  },
+  {
+    "id": "reise-ausbau|Tablets|Galaxy Tab S9",
+    "category": "Tablets",
+    "city": "Überregional",
+    "title": "Galaxy Tab S9",
+    "note": "S-Reihe als Vergleich zu deinem Tab S9 FE. Display und Stift prüfen.",
+    "link": "https://www.samsung.com/us/tablets/compare/",
+    "ecosystems": [
+      "galaxy",
+      "android"
+    ],
+    "deviceType": "Tablet"
+  },
+  {
+    "id": "reise-ausbau|Tablets|Galaxy Tab S9+",
+    "category": "Tablets",
+    "city": "Überregional",
+    "title": "Galaxy Tab S9+",
+    "note": "Größere S9-Variante. Maße und Hülle abgleichen.",
+    "link": "https://www.samsung.com/us/tablets/compare/",
+    "ecosystems": [
+      "galaxy",
+      "android"
+    ],
+    "deviceType": "Tablet"
+  },
+  {
+    "id": "reise-ausbau|Tablets|Galaxy Tab S9 Ultra",
+    "category": "Tablets",
+    "city": "Überregional",
+    "title": "Galaxy Tab S9 Ultra",
+    "note": "Großformat der S9-Reihe. Gewicht mit Tastatur beachten.",
+    "link": "https://www.samsung.com/us/tablets/compare/",
+    "ecosystems": [
+      "galaxy",
+      "android"
+    ],
+    "deviceType": "Tablet"
+  },
+  {
+    "id": "reise-ausbau|Smart-Gadgets|Apple Watch Series 8",
+    "category": "Smart-Gadgets",
+    "city": "Überregional",
+    "title": "Apple Watch Series 8",
+    "note": "Ältere Apple Watch für kompatible iPhones. Akku und Unterstützung prüfen.",
+    "link": "https://support.apple.com/de-de/guide/watch/apd2054d0d5b/watchos",
+    "deviceType": "Smartwatch",
+    "ecosystems": [
+      "apple"
+    ]
+  },
+  {
+    "id": "reise-ausbau|Smart-Gadgets|AirPods (3. Generation)",
+    "category": "Smart-Gadgets",
+    "city": "Überregional",
+    "title": "AirPods (3. Generation)",
+    "note": "Ältere AirPods. Auf Android ist Bluetooth-Audio mit weniger Extras möglich.",
+    "link": "https://support.apple.com/de-de/109525",
+    "deviceType": "Audio",
+    "ecosystems": [
+      "apple",
+      "galaxy",
+      "pixel",
+      "android"
+    ]
+  },
+  {
+    "id": "reise-ausbau|Smart-Gadgets|Apple TV 4K",
+    "category": "Smart-Gadgets",
+    "city": "Überregional",
+    "title": "Apple TV 4K",
+    "note": "Für HDMI-Fernseher. Apple-Konto und gewünschte Apps prüfen.",
+    "link": "https://www.apple.com/de/apple-tv-4k/",
+    "deviceType": "Streaming",
+    "ecosystems": [
+      "apple"
+    ]
+  },
+  {
+    "id": "reise-ausbau|Smart-Gadgets|HomePod",
+    "category": "Smart-Gadgets",
+    "city": "Überregional",
+    "title": "HomePod",
+    "note": "Größerer Apple-Lautsprecher. Voraussetzungen für die Einrichtung beim Hersteller prüfen.",
+    "link": "https://www.apple.com/de/homepod/",
+    "deviceType": "Smart Home",
+    "ecosystems": [
+      "apple"
+    ]
+  },
+  {
+    "id": "reise-ausbau|Smart-Gadgets|Garmin Forerunner 165",
+    "category": "Smart-Gadgets",
+    "city": "Überregional",
+    "title": "Garmin Forerunner 165",
+    "note": "Laufuhr für Garmin Connect. App- und Telefonkompatibilität prüfen.",
+    "link": "https://www.garmin.com/de-DE/p/1055469/",
+    "deviceType": "Sportuhr",
+    "ecosystems": [
+      "apple",
+      "galaxy",
+      "pixel",
+      "android"
+    ]
+  },
+  {
+    "id": "reise-ausbau|Wohnen|meinestadt.de · Studentisches Wohnen",
+    "category": "Wohnen",
+    "city": "Neckarsulm",
+    "title": "meinestadt.de · Studentisches Wohnen",
+    "note": "Wohnungs- und WG-Suche für Studierende in Neckarsulm.",
+    "link": "https://www.meinestadt.de/neckarsulm/immobilien/wohnen-studium"
+  },
+  {
+    "id": "reise-ausbau|Wohnen|Welcome Center · Wohnen in der Region",
+    "category": "Wohnen",
+    "city": "Heilbronn",
+    "title": "Welcome Center · Wohnen in der Region",
+    "note": "Orientierung zum Mietmarkt und zu Wohnungsunterlagen.",
+    "link": "https://www.welcomecenter-heilbronn-franken.eu/en/internationals/living.html"
+  },
+  {
+    "id": "reise-ausbau|Wohnen|München Modell · Mietwohnungen",
+    "category": "Wohnen",
+    "city": "München",
+    "title": "München Modell · Mietwohnungen",
+    "note": "Zugang und Einkommensvoraussetzungen der Stadt prüfen.",
+    "link": "https://stadt.muenchen.de/infos/muenchen-modell-miete.html"
+  },
+  {
+    "id": "reise-ausbau|Wohnen|ImmoScout24 · WG-Zimmer Ingolstadt",
+    "category": "Wohnen",
+    "city": "Ingolstadt",
+    "title": "ImmoScout24 · WG-Zimmer Ingolstadt",
+    "note": "WG-Zimmer, Lage und Einzugsdatum vergleichen.",
+    "link": "https://www.immobilienscout24.de/Suche/de/bayern/ingolstadt/wg-zimmer"
+  },
+  {
+    "id": "reise-ausbau|Wohnen|TUM · Wohnen für Studierende",
+    "category": "Wohnen",
+    "city": "München",
+    "title": "TUM · Wohnen für Studierende",
+    "note": "Hochschulübersicht zu Suchwegen und Unterstützung.",
+    "link": "https://www.tum.de/studium/im-studium/wohnen-und-arbeiten/wohnen"
+  },
+  {
+    "id": "reise-ausbau|Autos|Audi Q5 Sportback",
+    "category": "Autos",
+    "city": "Überregional",
+    "title": "Audi Q5 Sportback",
+    "note": "Coupé-SUV. Ladefläche und Mitarbeiter-Endpreis mit dem Q5 vergleichen.",
+    "link": "https://www.audi.de/de/neuwagen/",
+    "staff": true,
+    "usedOnly": false,
+    "segment": "Neu und gebraucht",
+    "used": "https://www.audi.de/de/gebrauchtwagenboerse/"
+  },
+  {
+    "id": "reise-ausbau|Autos|Audi Q3 Sportback",
+    "category": "Autos",
+    "city": "Überregional",
+    "title": "Audi Q3 Sportback",
+    "note": "Sportback-Variante. Sitzposition und Kofferraum abgleichen.",
+    "link": "https://www.audi.de/de/neuwagen/",
+    "staff": true,
+    "usedOnly": false,
+    "segment": "Neu und gebraucht",
+    "used": "https://www.audi.de/de/gebrauchtwagenboerse/"
+  },
+  {
+    "id": "reise-ausbau|Autos|Audi A6 Avant e-tron",
+    "category": "Autos",
+    "city": "Überregional",
+    "title": "Audi A6 Avant e-tron",
+    "note": "Elektrischer Kombi. Lademöglichkeit und Ausstattung prüfen.",
+    "link": "https://www.audi.de/de/neuwagen/",
+    "staff": true,
+    "usedOnly": false,
+    "segment": "Neu und gebraucht",
+    "used": "https://www.audi.de/de/gebrauchtwagenboerse/"
+  },
+  {
+    "id": "reise-ausbau|Autos|VW ID. Buzz",
+    "category": "Autos",
+    "city": "Überregional",
+    "title": "VW ID. Buzz",
+    "note": "Elektrischer Bus. Ladebedarf und Stauraum vergleichen.",
+    "link": "https://www.volkswagen-nutzfahrzeuge.de/de/modelle.html",
+    "staff": true,
+    "usedOnly": false,
+    "segment": "Neu und gebraucht",
+    "used": "https://www.volkswagen.de/de/modelle/verfuegbare-fahrzeuge.html"
+  },
+  {
+    "id": "reise-ausbau|Autos|VW California",
+    "category": "Autos",
+    "city": "Überregional",
+    "title": "VW California",
+    "note": "Campingfahrzeug für Reisen. Alltagstauglichkeit und Gesamtkosten prüfen.",
+    "link": "https://www.volkswagen-nutzfahrzeuge.de/de/modelle.html",
+    "staff": true,
+    "usedOnly": false,
+    "segment": "Neu und gebraucht",
+    "used": "https://www.volkswagen.de/de/modelle/verfuegbare-fahrzeuge.html"
+  },
+  {
+    "id": "reise-ausbau|Fahrschulen|Rausch · Intensivkurs",
+    "category": "Fahrschulen",
+    "city": "München",
+    "title": "Rausch · Intensivkurs",
+    "note": "Kursformat, Plätze und Voraussetzungen auf der Anbieterseite prüfen.",
+    "link": "https://www.fahrschule-rausch.de/"
+  },
+  {
+    "id": "reise-ausbau|Fahrschulen|S.O.S. · Fahrschulwechsel",
+    "category": "Fahrschulen",
+    "city": "Ingolstadt",
+    "title": "S.O.S. · Fahrschulwechsel",
+    "note": "Infos zum Wechsel bei bereits begonnener Ausbildung.",
+    "link": "https://sos-fahrschule.de/"
+  },
+  {
+    "id": "reise-ausbau|Fahrschulen|Dexheimer · Filialen und Kursplanung",
+    "category": "Fahrschulen",
+    "city": "Heilbronn",
+    "title": "Dexheimer · Filialen und Kursplanung",
+    "note": "Anbieterübersicht für Standorte und Theoriezeiten im Umkreis.",
+    "link": "https://www.fahrschule-dexheimer.de/fahrschule/filialen"
+  },
+  {
+    "id": "reise-ausbau|Fahrschulen|Fahrwerkk · Klassenübersicht",
+    "category": "Fahrschulen",
+    "city": "Neckarsulm",
+    "title": "Fahrwerkk · Klassenübersicht",
+    "note": "Vor der Anmeldung passende Klasse und Standort prüfen.",
+    "link": "https://www.fahrwerkk-nsu.de/"
+  },
+  {
+    "id": "reise-ausbau|Fahrschulen|Peters · Kontakt und Anfahrt",
+    "category": "Fahrschulen",
+    "city": "München",
+    "title": "Peters · Kontakt und Anfahrt",
+    "note": "Unterrichtsort, Beratung und Erreichbarkeit beim Anbieter abgleichen.",
+    "link": "https://petersfahrschule.de/kontakt/"
+  },
+  {
+    "id": "reise-ausbau|Studienstart|OpenHPI · Kurse",
+    "category": "Studienstart",
+    "city": "Überregional",
+    "title": "OpenHPI · Kurse",
+    "note": "Online-Kurse zu Informatik, Daten und digitalen Grundlagen recherchieren.",
+    "link": "https://open.hpi.de/courses"
+  },
+  {
+    "id": "reise-ausbau|Studienstart|Python · Virtuelle Umgebungen",
+    "category": "Studienstart",
+    "city": "Überregional",
+    "title": "Python · Virtuelle Umgebungen",
+    "note": "Projektabhängigkeiten in getrennten Umgebungen verwalten.",
+    "link": "https://docs.python.org/3/tutorial/venv.html"
+  },
+  {
+    "id": "reise-ausbau|Studienstart|Apache Arrow · Python",
+    "category": "Studienstart",
+    "city": "Überregional",
+    "title": "Apache Arrow · Python",
+    "note": "Spaltenformate und Parquet für Datenprojekte kennenlernen.",
+    "link": "https://arrow.apache.org/docs/python/"
+  },
+  {
+    "id": "reise-ausbau|Studienstart|dbt · Dokumentation",
+    "category": "Studienstart",
+    "city": "Überregional",
+    "title": "dbt · Dokumentation",
+    "note": "SQL-Transformationen dokumentieren und testen.",
+    "link": "https://docs.getdbt.com/docs/introduction"
+  },
+  {
+    "id": "reise-ausbau|Studienstart|GitHub Docs · Markdown",
+    "category": "Studienstart",
+    "city": "Überregional",
+    "title": "GitHub Docs · Markdown",
+    "note": "Projektberichte und README-Dateien strukturieren.",
+    "link": "https://docs.github.com/de/get-started/writing-on-github"
+  },
+  {
+    "id": "reise-ausbau|Vorteile|Deutsches Museum · Eintritt und Ermäßigung",
+    "category": "Vorteile",
+    "city": "Überregional",
+    "title": "Deutsches Museum · Eintritt und Ermäßigung",
+    "note": "Ermäßigungsnachweis und Preis für deinen Besuch direkt prüfen.",
+    "link": "https://www.deutsches-museum.de/museumsinsel/besuch",
+    "topic": "Freizeit",
+    "kind": "Ermäßigung prüfen"
+  },
+  {
+    "id": "reise-ausbau|Vorteile|Lenbachhaus · Besuch und Tickets",
+    "category": "Vorteile",
+    "city": "Überregional",
+    "title": "Lenbachhaus · Besuch und Tickets",
+    "note": "Ticketarten und mögliche Ermäßigungen beim Museum vergleichen.",
+    "link": "https://www.lenbachhaus.de/besuch",
+    "topic": "Freizeit",
+    "kind": "Ermäßigung prüfen"
+  },
+  {
+    "id": "reise-ausbau|Vorteile|DB · D-Ticket für Ausbildung und Studium",
+    "category": "Vorteile",
+    "city": "Überregional",
+    "title": "DB · D-Ticket für Ausbildung und Studium",
+    "note": "Regionale Angebote und Bedingungen nachlesen.",
+    "link": "https://www.bahn.de/faq/deutschland-ticket-schueler-azubis",
+    "topic": "Mobilität",
+    "kind": "Bedingungen prüfen"
+  },
+  {
+    "id": "reise-ausbau|Vorteile|Apple · Bildungsangebote im Überblick",
+    "category": "Vorteile",
+    "city": "Überregional",
+    "title": "Apple · Bildungsangebote im Überblick",
+    "note": "Bildungspreise und Berechtigungsnachweise für Geräte und Dienste prüfen.",
+    "link": "https://www.apple.com/de/education/college-students/",
+    "topic": "Technik",
+    "kind": "Bedingungen prüfen"
+  },
+  {
+    "id": "reise-ausbau|Vorteile|Cisco Networking Academy",
+    "category": "Vorteile",
+    "city": "Überregional",
+    "title": "Cisco Networking Academy",
+    "note": "Kurskatalog für Netzwerk- und IT-Grundlagen. Gebühren je Kurs prüfen.",
+    "link": "https://www.netacad.com/",
+    "topic": "Studium & Software",
+    "kind": "Bedingungen prüfen"
+  },
+  {
+    "id": "reise-ausbau|Aktivitäten|Neckarsulm · Städtische Freizeittipps",
+    "category": "Aktivitäten",
+    "city": "Neckarsulm",
+    "title": "Neckarsulm · Städtische Freizeittipps",
+    "note": "Lokale Freizeitorte und Ausflugsideen bei der Stadt entdecken.",
+    "link": "https://www.neckarsulm.de/startseite/willkommen/freizeittipps.html",
+    "activity": "Kultur"
+  },
+  {
+    "id": "reise-ausbau|Aktivitäten|Heilbronn · Städtische Museen",
+    "category": "Aktivitäten",
+    "city": "Heilbronn",
+    "title": "Heilbronn · Städtische Museen",
+    "note": "Ausstellungen und Programme der städtischen Museen vergleichen.",
+    "link": "https://museen.heilbronn.de/",
+    "activity": "Kultur"
+  },
+  {
+    "id": "reise-ausbau|Aktivitäten|München · Spaziergänge",
+    "category": "Aktivitäten",
+    "city": "München",
+    "title": "München · Spaziergänge",
+    "note": "Städtische Routen für einen unkomplizierten Ausflug aussuchen.",
+    "link": "https://www.muenchen.de/freizeit/tipps-fuer-spaziergaenge",
+    "activity": "Draußen"
+  },
+  {
+    "id": "reise-ausbau|Aktivitäten|Audi Forum · Sonderausstellungen",
+    "category": "Aktivitäten",
+    "city": "Ingolstadt",
+    "title": "Audi Forum · Sonderausstellungen",
+    "note": "Aktuelle Sonderausstellungen und Termine beim Audi Forum nachsehen.",
+    "link": "https://www.audi.de/audi-forum-ingolstadt/de/ausstellungen/",
+    "activity": "Technik"
+  },
+  {
+    "id": "reise-ausbau|Aktivitäten|Ingolstädter Bläser · Konzerte",
+    "category": "Aktivitäten",
+    "city": "Ingolstadt",
+    "title": "Ingolstädter Bläser · Konzerte",
+    "note": "Programm und Termine auf der städtischen Veranstaltungsseite prüfen.",
+    "link": "https://www.ingolstadt.de/Kultur/Veranstaltungen/Musik-Konzerte/Ingolst%C3%A4dter-Bl%C3%A4ser/",
+    "activity": "Kultur"
+  },
+  {
+    "id": "reise-ausbau|ÖPNV & Pendeln|Zartmann · Fahrpreise und Linien",
+    "category": "ÖPNV & Pendeln",
+    "city": "Neckarsulm",
+    "title": "Zartmann · Fahrpreise und Linien",
+    "note": "Infos des regionalen Busunternehmens zur konkreten Fahrt prüfen.",
+    "link": "https://buszartmann.de/fahrpreise"
+  },
+  {
+    "id": "reise-ausbau|ÖPNV & Pendeln|Heilbronn · HNV-Fahrpreise 2026",
+    "category": "ÖPNV & Pendeln",
+    "city": "Heilbronn",
+    "title": "Heilbronn · HNV-Fahrpreise 2026",
+    "note": "Dokumentierten Preisstand und Gültigkeit für die geplante Fahrt prüfen.",
+    "link": "https://www.h3nv.de/fileadmin/pdf/fahrplanwechsel/fahrplan2026/fahrpreise_01-2026_vorabinfo.pdf"
+  },
+  {
+    "id": "reise-ausbau|ÖPNV & Pendeln|MVV-App",
+    "category": "ÖPNV & Pendeln",
+    "city": "München",
+    "title": "MVV-App",
+    "note": "Verbindungen und Tickets in der App des Verbunds planen.",
+    "link": "https://www.mvv-muenchen.de/fahrt-planen/mvv-app"
+  },
+  {
+    "id": "reise-ausbau|ÖPNV & Pendeln|Studierendenwerk · Verkehr in München",
+    "category": "ÖPNV & Pendeln",
+    "city": "München",
+    "title": "Studierendenwerk · Verkehr in München",
+    "note": "Hinweise zu ÖPNV-Angeboten für Studierende und zum Bestellweg.",
+    "link": "https://www.studierendenwerk-muenchen-oberbayern.de/ueber-uns/semesterticketmuenchen/"
+  },
+  {
+    "id": "reise-ausbau|ÖPNV & Pendeln|DB Regio · München–Nürnberg-Express",
+    "category": "ÖPNV & Pendeln",
+    "city": "Ingolstadt",
+    "title": "DB Regio · München–Nürnberg-Express",
+    "note": "Regionalverkehr auf der Strecke recherchieren. Zeiten separat in der Fahrtauskunft prüfen.",
+    "link": "https://regional.bahn.de/regionen/bayern/ueber-uns/wir-und-unsere-partner/ring_west_teilnetz"
+  },
+  {
+    "id": "reiseideen|Bad Wimpfen · Altstadt und Neckar",
+    "category": "Reiseideen",
+    "city": "Neckarsulm",
+    "title": "Bad Wimpfen · Altstadt und Neckar",
+    "note": "Ein Tagesausflug mit Altstadt, Aussicht und Spaziergang am Fluss.",
+    "link": "https://www.badwimpfen.de/gaeste-bereich/freizeit-geniessen/wandern/spaziergang-am-neckar",
+    "plan": [
+      "Vormittags mit dem Nahverkehr nach Bad Wimpfen und durch die Fachwerk-Altstadt laufen.",
+      "Mittags mit mitgebrachtem Proviant Pause machen.",
+      "Nachmittags die Neckarrunde gehen und vor der Rückfahrt den Fahrplan prüfen."
+    ],
+    "tripCap": 25,
+    "segment": "Tagesausflug"
+  },
+  {
+    "id": "reiseideen|Heidelberg · Altstadt und Alte Brücke",
+    "category": "Reiseideen",
+    "city": "Heilbronn",
+    "title": "Heidelberg · Altstadt und Alte Brücke",
+    "note": "Ein Tag am Neckar. Die Route bleibt auch ohne Schlossticket abwechslungsreich.",
+    "link": "https://www.heidelberg-marketing.de/entdecken",
+    "plan": [
+      "Vormittags die Regionalverbindung prüfen und in der Altstadt starten.",
+      "Mittags an der Alten Brücke oder am Neckar eine Proviantpause einlegen.",
+      "Nachmittags am Fluss spazieren. Schlossbesuch nur ergänzen, wenn der Eintritt ins Budget passt."
+    ],
+    "tripCap": 35,
+    "segment": "Tagesausflug"
+  },
+  {
+    "id": "reiseideen|Augsburg · Altstadt zu Fuß",
+    "category": "Reiseideen",
+    "city": "München",
+    "title": "Augsburg · Altstadt zu Fuß",
+    "note": "Regionalzug und ein selbst geführter Stadtspaziergang mit optionalem Fuggerei-Besuch.",
+    "link": "https://www.augsburg-tourismus.de/de/aktivitaeten/stadtspaziergaenge",
+    "plan": [
+      "Vormittags zum Rathausplatz und in die Altstadt gehen.",
+      "Mittags eine Pause mit Proviant oder einem einfachen Imbiss einplanen.",
+      "Nachmittags die Altstadtrunde fortsetzen oder bei Budgetspielraum die Fuggerei besuchen. Rückfahrt prüfen."
+    ],
+    "tripCap": 35,
+    "segment": "Tagesausflug"
+  },
+  {
+    "id": "reiseideen|Regensburg · Steinerne Brücke und Donau",
+    "category": "Reiseideen",
+    "city": "Ingolstadt",
+    "title": "Regensburg · Steinerne Brücke und Donau",
+    "note": "Ein Tagesausflug mit Uferwegen und Altstadt, den du zu Fuß planen kannst.",
+    "link": "https://tourismus.regensburg.de/erleben-entdecken/sehenswuerdigkeiten-unesco-welterbe/steinerne-bruecke",
+    "plan": [
+      "Vormittags eine passende Regionalverbindung nach Regensburg suchen.",
+      "Von der Altstadt zur Steinernen Brücke gehen und am Wasser Pause machen.",
+      "Nachmittags die andere Donauseite erkunden und zum Bahnhof zurücklaufen."
+    ],
+    "tripCap": 35,
+    "segment": "Tagesausflug"
+  },
+  {
+    "id": "reiseideen|Nürnberg · Altstadt und Burgviertel",
+    "category": "Reiseideen",
+    "city": "Ingolstadt",
+    "title": "Nürnberg · Altstadt und Burgviertel",
+    "note": "Stadtrundgang auf eigene Faust. Kostenpflichtige Burgbereiche sind optional.",
+    "link": "https://tourismus.nuernberg.de/stadtfuehrung/rundgang-auf-eigene-faust-spaziergang-durch-die-altstadt/",
+    "plan": [
+      "Vormittags die Fahrt nach Nürnberg prüfen und am Hauptbahnhof in die Altstadt starten.",
+      "Mittags an der Pegnitz Pause machen. Proviant hält den Essensposten planbar.",
+      "Nachmittags Richtung Kaiserburg laufen. Innenbesichtigung und Rückfahrt nach Zeit und Budget wählen."
+    ],
+    "tripCap": 40,
+    "segment": "Tagesausflug"
+  },
+  {
+    "id": "unterkunft|Neckarsulm|Welcome Hotel Neckarsulm",
+    "category": "Unterkünfte",
+    "city": "Neckarsulm",
+    "title": "Welcome Hotel Neckarsulm",
+    "note": "Hotel im Stadtgebiet. Gesamtpreis für deinen Termin und Anfahrt zur Praxisstelle prüfen.",
+    "link": "https://www.welcome-hotels.com/hotels/neckarsulm/",
+    "segment": "Hotel"
+  },
+  {
+    "id": "unterkunft|Neckarsulm|Hotel An der Linde",
+    "category": "Unterkünfte",
+    "city": "Neckarsulm",
+    "title": "Hotel An der Linde",
+    "note": "Hotel in Neckarsulm. Zimmer, Verpflegung und Anreise beim Anbieter prüfen.",
+    "link": "https://an-der-linde.de/Hotel/",
+    "segment": "Hotel"
+  },
+  {
+    "id": "unterkunft|Neckarsulm|Stadthaus Neckarsulm",
+    "category": "Unterkünfte",
+    "city": "Neckarsulm",
+    "title": "Stadthaus Neckarsulm",
+    "note": "Möblierte Serviced Apartments. Mindestaufenthalt und Ausstattung erfragen.",
+    "link": "https://www.stadthaus-neckarsulm.de/",
+    "segment": "Apartment / Ferienwohnung"
+  },
+  {
+    "id": "unterkunft|Neckarsulm|Sperrfechter Freizeitpark · Oedheim",
+    "category": "Unterkünfte",
+    "city": "Neckarsulm",
+    "title": "Sperrfechter Freizeitpark · Oedheim",
+    "note": "Camping im Umkreis. Saison, Zeltplatz und Fahrt nach Neckarsulm vorab prüfen.",
+    "link": "https://www.sperrfechter-freizeit.de/home.html",
+    "segment": "Camping"
+  },
+  {
+    "id": "unterkunft|Heilbronn|DJH Jugendherberge Heilbronn",
+    "category": "Unterkünfte",
+    "city": "Heilbronn",
+    "title": "DJH Jugendherberge Heilbronn",
+    "note": "Zimmerart, Mitgliedschaft und enthaltene Mahlzeiten für deinen Termin prüfen.",
+    "link": "https://www.jugendherberge.de/jugendherbergen/heilbronn/",
+    "segment": "Jugendherberge / Hostel"
+  },
+  {
+    "id": "unterkunft|Heilbronn|Boardinghouse Heilbronn",
+    "category": "Unterkünfte",
+    "city": "Heilbronn",
+    "title": "Boardinghouse Heilbronn",
+    "note": "Apartment-Unterkunft im Stadtgebiet. Ausstattung und Mindestdauer direkt klären.",
+    "link": "https://boardinghouse-heilbronn.de/index.html",
+    "segment": "Apartment / Ferienwohnung"
+  },
+  {
+    "id": "unterkunft|Heilbronn|Winzercafé Neipperg · Ferienwohnungen",
+    "category": "Unterkünfte",
+    "city": "Heilbronn",
+    "title": "Winzercafé Neipperg · Ferienwohnungen",
+    "note": "Ferienwohnung im Umland. Für einen kurzen Aufenthalt Erreichbarkeit und Mindestdauer prüfen.",
+    "link": "https://www.heilbronnerland.de/poi/ferienwohnungen-winzercafe-neipperg",
+    "segment": "Apartment / Ferienwohnung"
+  },
+  {
+    "id": "unterkunft|Heilbronn|Campingpark Breitenauer See · Umland",
+    "category": "Unterkünfte",
+    "city": "Heilbronn",
+    "title": "Campingpark Breitenauer See · Umland",
+    "note": "Camping außerhalb der Stadt. Saison, Stellplatz und Nahverkehr vorab prüfen.",
+    "link": "https://www.heilbronnerland.de/poi/5-sterne-campingpark-breitenauer-see",
+    "segment": "Camping"
+  },
+  {
+    "id": "unterkunft|München|DJH Jugendherberge München City",
+    "category": "Unterkünfte",
+    "city": "München",
+    "title": "DJH Jugendherberge München City",
+    "note": "Stadtunterkunft. Zimmeraufteilung, Mitgliedschaft und verfügbare Termine prüfen.",
+    "link": "https://www.jugendherberge.de/jugendherbergen/muenchen-city/",
+    "segment": "Jugendherberge / Hostel"
+  },
+  {
+    "id": "unterkunft|München|THE TENT München",
+    "category": "Unterkünfte",
+    "city": "München",
+    "title": "THE TENT München",
+    "note": "Saisonales Angebot mit unterschiedlichen Schlafmöglichkeiten. Öffnung und Buchungsbedingungen prüfen.",
+    "link": "https://www.the-tent.com/",
+    "segment": "Jugendherberge / Hostel"
+  },
+  {
+    "id": "unterkunft|München|Campingplatz München-Thalkirchen",
+    "category": "Unterkünfte",
+    "city": "München",
+    "title": "Campingplatz München-Thalkirchen",
+    "note": "Stadtcamping. Öffnungszeiten, Stellplätze und Anbindung vorab nachsehen.",
+    "link": "https://campingplatz-thalkirchen.de/?lang=en",
+    "segment": "Camping"
+  },
+  {
+    "id": "unterkunft|München|AINO Aparthotel München",
+    "category": "Unterkünfte",
+    "city": "München",
+    "title": "AINO Aparthotel München",
+    "note": "Aparthotel in Neuhausen-Nymphenburg. Zimmerausstattung und Preis zum Termin prüfen.",
+    "link": "https://www.aino-aparthotel.de/",
+    "segment": "Apartment / Ferienwohnung"
+  },
+  {
+    "id": "unterkunft|Ingolstadt|DJH Jugendherberge Ingolstadt",
+    "category": "Unterkünfte",
+    "city": "Ingolstadt",
+    "title": "DJH Jugendherberge Ingolstadt",
+    "note": "Zimmer und Verpflegung beim Betreiber prüfen. Mitgliedschaft bei der Kalkulation beachten.",
+    "link": "https://www.jugendherberge.de/jugendherbergen/ingolstadt/",
+    "segment": "Jugendherberge / Hostel"
+  },
+  {
+    "id": "unterkunft|Ingolstadt|B&B HOTEL Ingolstadt-Hbf",
+    "category": "Unterkünfte",
+    "city": "Ingolstadt",
+    "title": "B&B HOTEL Ingolstadt-Hbf",
+    "note": "Hotel am Hauptbahnhof. Gesamtpreis für Datum und Zimmerbelegung prüfen.",
+    "link": "https://www.hotel-bb.com/de/hotel/ingolstadt-hbf",
+    "segment": "Hotel"
+  },
+  {
+    "id": "unterkunft|Ingolstadt|INhouse Boardinghouse",
+    "category": "Unterkünfte",
+    "city": "Ingolstadt",
+    "title": "INhouse Boardinghouse",
+    "note": "Apartment-Unterkunft auf Zeit. Aufenthaltsdauer und Ausstattung anfragen.",
+    "link": "https://www.inhouse-boardinghouse.de/",
+    "segment": "Apartment / Ferienwohnung"
+  },
+  {
+    "id": "unterkunft|Ingolstadt|AZUR Camp Auwaldsee",
+    "category": "Unterkünfte",
+    "city": "Ingolstadt",
+    "title": "AZUR Camp Auwaldsee",
+    "note": "Camping am Auwaldsee. Saison, Platzart und Zuschläge beim Betreiber prüfen.",
+    "link": "https://www.azur-camping.com/de/camp/Camp-Auwaldsee",
+    "segment": "Camping"
+  },
+  {
     "id": "2026-11|Handys|iPhone 16",
     "category": "Handys",
     "city": "Überregional",
@@ -2153,5 +2878,59 @@ const campusNeueFotos={
     "source": "https://gadgetmtech.com/wp-content/uploads/2025/08/Google-Pixel-Watch-4-and-Pixel-Buds-2a.jpg",
     "credit": "Pixel Watch 4 mit Buds · GadgetMTech",
     "place": false
+  },
+  "Bad Wimpfen · Altstadt und Neckar": {
+    "url": "https://gruppenreisen.tourismus-bw.de/wp-content/uploads/sites/2/job-manager-uploads/featured_image/2023/02/2022_Bad-Wimpfen-Panorama_Be_Ausschnitt.jpg",
+    "source": "https://gruppenreisen.tourismus-bw.de/wp-content/uploads/sites/2/job-manager-uploads/featured_image/2023/02/2022_Bad-Wimpfen-Panorama_Be_Ausschnitt.jpg",
+    "credit": "Tourismus Baden-Württemberg",
+    "place": true
+  },
+  "Heidelberg · Altstadt und Alte Brücke": {
+    "url": "https://www.jobcenter-hd.de/fileadmin/_processed_/1/0/csm_header-heidelberg_123cee1253.jpg",
+    "source": "https://www.jobcenter-hd.de/fileadmin/_processed_/1/0/csm_header-heidelberg_123cee1253.jpg",
+    "credit": "Jobcenter Heidelberg · Stadtansicht",
+    "place": true
+  },
+  "Augsburg · Altstadt zu Fuß": {
+    "url": "https://www.radio-augsburg.de/storage/thumbs/1275x/nqp4ws3xbriwm.webp",
+    "source": "https://www.radio-augsburg.de/storage/thumbs/1275x/nqp4ws3xbriwm.webp",
+    "credit": "Radio Augsburg · Rathaus und Perlachturm",
+    "place": true
+  },
+  "Regensburg · Steinerne Brücke und Donau": {
+    "url": "https://www.denkmalschutz.de/fileadmin/media/Bilder/Objekte/BY/id6517_regensburg_bruecke3_rossner.jpg",
+    "source": "https://www.denkmalschutz.de/fileadmin/media/Bilder/Objekte/BY/id6517_regensburg_bruecke3_rossner.jpg",
+    "credit": "Deutsche Stiftung Denkmalschutz · Foto Rössner",
+    "place": true
+  },
+  "Nürnberg · Altstadt und Burgviertel": {
+    "url": "https://www.hotelvictoria.de/fileadmin/_processed_/6/b/csm_altstadtpanorama-nuernberg-mit-kaiserburg_uwe-niklas_000341_1400x560_36de7fd1f5.jpg",
+    "source": "https://www.hotelvictoria.de/fileadmin/_processed_/6/b/csm_altstadtpanorama-nuernberg-mit-kaiserburg_uwe-niklas_000341_1400x560_36de7fd1f5.jpg",
+    "credit": "Uwe Niklas · Hotel Victoria",
+    "place": true
+  },
+  "Welcome Hotel Neckarsulm": {
+    "url": "https://www.welcome-hotels.com/site/assets/files/20472/welcome_hotel_neckarsulm_classic_4k.2560x988.jpg",
+    "source": "https://www.welcome-hotels.com/hotels/neckarsulm/",
+    "credit": "Welcome Hotels · Zimmerbeispiel",
+    "place": true
+  },
+  "Stadthaus Neckarsulm": {
+    "url": "https://static.wixstatic.com/media/fcda6c_b72b83d3c0b948a995a0c70960e234d1~mv2.jpg/v1/fill/w_492%2Ch_369%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/fcda6c_b72b83d3c0b948a995a0c70960e234d1~mv2.jpg",
+    "source": "https://www.stadthaus-neckarsulm.de/",
+    "credit": "Stadthaus Neckarsulm · Apartmentbeispiel",
+    "place": true
+  },
+  "DJH Jugendherberge Heilbronn": {
+    "url": "https://photos.bringfido.com/lodging/9/4/7/1722749/1722749_54614707.jpg?density=2x&size=full",
+    "source": "https://photos.bringfido.com/lodging/9/4/7/1722749/1722749_54614707.jpg?density=2x&size=full",
+    "credit": "BringFido · Außenansicht",
+    "place": true
+  },
+  "DJH Jugendherberge München City": {
+    "url": "https://www.tz.de/bilder/2023/03/03/92121376/31142823-die-2022-neu-eroeffnete-jugendherberge-am-winthirplatz-in-muenchen-3T7a.jpg",
+    "source": "https://www.tz.de/bilder/2023/03/03/92121376/31142823-die-2022-neu-eroeffnete-jugendherberge-am-winthirplatz-in-muenchen-3T7a.jpg",
+    "credit": "tz · Außenansicht",
+    "place": true
   }
 };

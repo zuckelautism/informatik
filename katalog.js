@@ -79,6 +79,7 @@
  }
  function drawCompass(){
   const city=get("catalogCity")?.value??"all";
+  const lodging=get("lodgingType")?.value??"all";
   const query=normalized(get("catalogQuery").value.trim());
   const date=today(), benefits=type==="Vorteile";
   const topic=get("benefitTopic")?.value??"all", showExpired=get("benefitStatus")?.value==="all";
@@ -89,6 +90,7 @@
    &&(item.category!=="Vorteile"||((!benefits||topic==="all"||topic===item.topic)&&((benefits&&showExpired)||(markedOnly&&marked.has(item.id))||!expired(item,date))))
    &&(!devices||ecosystem==="all"||item.ecosystems?.includes(ecosystem))
    &&(!activities||activity==="all"||item.activity===activity)
+   &&(lodging==="all"||item.segment===lodging)
    &&normalized([item.title,item.note,item.city,item.category,item.topic,item.kind,item.segment,item.deviceType,item.activity,...(item.ecosystems??[]).map(tag=>ecosystemLabels[tag])].join(" ")).includes(query));
   get("catalogCount").textContent=shown.length+" Einträge · "+marked.size+" gemerkt";
   get("moreCatalog").hidden=shown.length<=visibleCount;
@@ -96,19 +98,23 @@
    ${cardPhoto(item)}
    <div class="eyebrow">${esc(item.category)} · ${esc(item.topic||item.segment||item.deviceType||item.city)}${item.activity?" · "+esc(item.activity):""}</div>
    <h3>${esc(item.title)}</h3><p>${esc(item.note)}</p>
+   ${item.plan&&item.tripCap!=null?`<p class="benefit-meta">Ab ${esc(item.city)} · Zielbudget ${euro(item.tripCap)} pro Person</p>
+   <details class="trip-plan"><summary>Tagesplan</summary><ol>${item.plan.map(step=>`<li>${esc(step)}</li>`).join("")}</ol></details>`:""}
+   ${item.category==="Unterkünfte"?`<p class="benefit-meta">${esc(item.city)} · ${esc(item.segment??"Eigener Eintrag")}</p>`:""}
    ${item.kind?benefitMeta(item,date):""}
    ${item.ecosystems?`<p class="benefit-meta">${esc(item.ecosystems.map(tag=>ecosystemLabels[tag]).join(" · "))}</p>`:""}
    ${item.compatibility?`<p><a class="secondary" href="${esc(item.compatibility)}" target="_blank" rel="noopener noreferrer">Kompatibilität beim Hersteller ↗</a></p>`:""}
    ${item.staff&&!item.usedOnly?`<p><a class="secondary" href="${esc(item.used)}" target="_blank" rel="noopener noreferrer">Gebrauchtwagensuche ↗</a></p>`:""}
    <div class="tools">
-    <a class="btn" href="${esc(safeLink(item.link))}" target="_blank" rel="noopener noreferrer">${item.personal?"Inserat öffnen":item.staff?(item.usedOnly?"Gebrauchtwagensuche":"Modellübersicht"):item.ecosystems?"Herstellerinfo":item.activity?"Besuch planen":"Quelle öffnen"} ↗</a>
+    <a class="btn" href="${esc(safeLink(item.link))}" target="_blank" rel="noopener noreferrer">${item.personal?"Inserat öffnen":item.staff?(item.usedOnly?"Gebrauchtwagensuche":"Modellübersicht"):item.ecosystems?"Herstellerinfo":item.activity?"Besuch planen":item.plan?"Infos zum Ziel":item.category==="Unterkünfte"?"Beim Anbieter prüfen":"Quelle öffnen"} ↗</a>
+    ${item.tripCap!=null&&type==="Reiseideen"?`<button type="button" class="btn ghost" data-trip-cap="${esc(item.tripCap)}">Budget übernehmen</button>`:""}
     ${item.staff&&type==="Autos"?`<button type="button" class="btn ghost" data-item="${esc(item.id)}" data-do="staff">Mitarbeiterpreis vergleichen</button>`:""}
     <button type="button" class="btn ghost" data-item="${esc(item.id)}" data-do="mark" aria-pressed="${marked.has(item.id)}">Merken</button>
     ${item.personal?`<button type="button" class="btn ghost" data-item="${esc(item.id)}" data-do="remove">Entfernen</button>`:""}
    </div></article>`).join("")||'<p class="muted">Keine Einträge für diese Auswahl.</p>';
  }
  function resetCatalogView(){visibleCount=12;drawCompass();}
- for(const id of ["catalogCity","catalogQuery","benefitTopic","benefitStatus","ecosystem","activityType"])get(id)?.addEventListener("input",resetCatalogView);
+ for(const id of ["catalogCity","catalogQuery","benefitTopic","benefitStatus","ecosystem","activityType","lodgingType"])get(id)?.addEventListener("input",resetCatalogView);
  get("moreCatalog").addEventListener("click",()=>{visibleCount+=12;drawCompass();});
  get("catalogSaved")?.addEventListener("click",()=>{
   markedOnly=!markedOnly;
@@ -160,7 +166,7 @@
   form.reset();
   if(get("catalogCity"))get("catalogCity").value="all";
   get("catalogQuery").value="";
-  for(const id of ["ecosystem","activityType"]){const field=get(id);if(field)field.value="all";}
+  for(const id of ["ecosystem","activityType","lodgingType"]){const field=get(id);if(field)field.value="all";}
   resetCatalogView();
  });
  function drawMonthly(){
