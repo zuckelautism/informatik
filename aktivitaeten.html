@@ -6,6 +6,9 @@
  <title>Aktivitäten · Campus-Kompass</title>
  <meta name="description" content="Ausflüge in Neckarsulm, Heilbronn, München und Ingolstadt nach Stadt und Art entdecken.">
  <link rel="stylesheet" href="kompass.css">
+ <script src="pruefstand.js" defer></script>
+ <script src="campus-basis.js" defer></script>
+ <script src="neue-eintraege.js" defer></script>
  <script src="katalog.js" defer></script>
 </head>
 <body>
@@ -22,10 +25,12 @@
   <a href="studienstart.html">Studienstart</a>
   <a href="vorteile.html">Vorteile</a>
   <a href="aktivitaeten.html" aria-current="page">Aktivitäten</a>
+  <a href="pendeln.html">ÖPNV &amp; Pendeln</a>
   <a href="merkliste.html">Merkliste</a>
 </nav>
 <section id="catalog" data-category="Aktivitäten" aria-labelledby="catalogTitle">
 <h2 id="catalogTitle">Aktivitäten</h2>
+<p class="check-note" id="campusUpdate"></p>
 <p>Ausflüge in Neckarsulm, Heilbronn, München und Ingolstadt nach Stadt und Art entdecken.</p>
 <div class="fields"><label>Suche<input id="catalogQuery" type="search" placeholder="Katalog durchsuchen …"></label><label>Stadt<select id="catalogCity"><option value="all">Alle Städte</option><option>Neckarsulm</option><option>Heilbronn</option><option>München</option><option>Ingolstadt</option><option>Überregional</option></select></label></div>
 <div id="activityFilters" class="fields">

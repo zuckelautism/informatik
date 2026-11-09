@@ -6,6 +6,9 @@
  <title>Autos · Campus-Kompass</title>
  <meta name="description" content="Neu- und Gebrauchtwagen suchen und Audi- oder VW-Mitarbeiterpreise vergleichen.">
  <link rel="stylesheet" href="kompass.css">
+ <script src="pruefstand.js" defer></script>
+ <script src="campus-basis.js" defer></script>
+ <script src="neue-eintraege.js" defer></script>
  <script src="katalog.js" defer></script>
 </head>
 <body>
@@ -22,10 +25,12 @@
   <a href="studienstart.html">Studienstart</a>
   <a href="vorteile.html">Vorteile</a>
   <a href="aktivitaeten.html">Aktivitäten</a>
+  <a href="pendeln.html">ÖPNV &amp; Pendeln</a>
   <a href="merkliste.html">Merkliste</a>
 </nav>
 <section id="catalog" data-category="Autos" aria-labelledby="catalogTitle">
 <h2 id="catalogTitle">Autos</h2>
+<p class="check-note" id="campusUpdate"></p>
 <p>Neu- und Gebrauchtwagen suchen und Audi- oder VW-Mitarbeiterpreise vergleichen.</p>
 <div class="fields"><label>Suche<input id="catalogQuery" type="search" placeholder="Katalog durchsuchen …"></label></div>
 

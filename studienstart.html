@@ -6,6 +6,9 @@
  <title>Studienstart · Campus-Kompass</title>
  <meta name="description" content="Lernressourcen und Anlaufstellen für dein duales Studium.">
  <link rel="stylesheet" href="kompass.css">
+ <script src="pruefstand.js" defer></script>
+ <script src="campus-basis.js" defer></script>
+ <script src="neue-eintraege.js" defer></script>
  <script src="katalog.js" defer></script>
 </head>
 <body>
@@ -22,10 +25,12 @@
   <a href="studienstart.html" aria-current="page">Studienstart</a>
   <a href="vorteile.html">Vorteile</a>
   <a href="aktivitaeten.html">Aktivitäten</a>
+  <a href="pendeln.html">ÖPNV &amp; Pendeln</a>
   <a href="merkliste.html">Merkliste</a>
 </nav>
 <section id="catalog" data-category="Studienstart" aria-labelledby="catalogTitle">
 <h2 id="catalogTitle">Studienstart</h2>
+<p class="check-note" id="campusUpdate"></p>
 <p>Lernressourcen und Anlaufstellen für dein duales Studium.</p>
 <div class="fields"><label>Suche<input id="catalogQuery" type="search" placeholder="Katalog durchsuchen …"></label><label>Stadt<select id="catalogCity"><option value="all">Alle Städte</option><option>Neckarsulm</option><option>Heilbronn</option><option>München</option><option>Ingolstadt</option><option>Überregional</option></select></label></div>
 
