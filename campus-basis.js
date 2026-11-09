@@ -44,7 +44,7 @@ function showCampusUpdate(category) {
  }).format(new Date(value));
  const report=campusPruefstand.kategorien[category];
  const last=campusPruefstand.letzterLauf;
- const interval="Prüfintervall: 3 Stunden";
+ const interval="Geplante Katalogprüfung: täglich um 07:00 Uhr";
  const status=last?"Letzter planmäßiger Lauf: "+format(last)+" (Berlin)":"Erster planmäßiger Lauf steht aus";
  const result=report?" · "+report:"";
  el.textContent=interval+" · "+status+result;

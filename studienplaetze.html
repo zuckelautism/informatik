@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de"><head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Studienplätze · Campus-Kompass</title>
+ <script src="theme.js?v=coastal1"></script>
+ <link rel="stylesheet" href="kompass.css?v=discovery1">
+ 
+ 
+<script src="firebase-config.js?v=google1" defer></script>
+ <script src="campus-shell.js?v=discovery1" defer></script>
+</head><body class="campus-locked">
+ <section class="campus-login" aria-labelledby="campusLoginTitle">
+  <div class="campus-login-card">
+    <p class="campus-login-brand">Campus-Kompass</p>
+    <h1 id="campusLoginTitle">Willkommen</h1>
+    <p>Entdecke Städte, finde Angebote für deinen Alltag und speichere dein persönliches Profil.</p>
+    <button class="btn" id="campusLoginButton" type="button" disabled>Mit Google anmelden</button>
+    <p id="campusLoginStatus" role="status">Anmeldung wird vorbereitet …</p>
+    <noscript>Aktiviere JavaScript, um dich anzumelden.</noscript>
+  </div>
+ </section>
+<header class="wrap site-header"><div class="app-header-inner">
+  <div><h1><a href="index.html">Campus-Kompass</a></h1><p>Orientierung für Studium, Ausbildung und Alltag.</p></div>
+  <nav id="kompass" class="site-menu" aria-label="Hauptnavigation">
+  <details><summary>Menü</summary><div class="site-menu-grid">
+   <details class="site-menu-group"><summary>Städte</summary>
+    <ul><li><a href="staedte.html">Alle Städte</a></li></ul>
+    <details class="site-menu-region"><summary>Baden-Württemberg</summary><ul><li><a href="stadt-heidelberg.html">Heidelberg</a></li><li><a href="stadt-heilbronn.html">Heilbronn</a></li><li><a href="stadt-neckarsulm.html">Neckarsulm</a></li><li><a href="stadt-tuebingen.html">Tübingen</a></li></ul></details>
+<details class="site-menu-region"><summary>Bayern</summary><ul><li><a href="stadt-ingolstadt.html">Ingolstadt</a></li><li><a href="stadt-muenchen.html">München</a></li></ul></details>
+<details class="site-menu-region"><summary>Berlin</summary><ul><li><a href="stadt-berlin.html">Berlin</a></li></ul></details>
+<details class="site-menu-region"><summary>Hamburg</summary><ul><li><a href="stadt-hamburg.html">Hamburg</a></li></ul></details>
+<details class="site-menu-region"><summary>Hessen</summary><ul><li><a href="stadt-frankfurt-am-main.html">Frankfurt am Main</a></li><li><a href="stadt-giessen.html">Gießen</a></li><li><a href="stadt-marburg.html">Marburg</a></li></ul></details>
+<details class="site-menu-region"><summary>Niedersachsen</summary><ul><li><a href="stadt-goettingen.html">Göttingen</a></li></ul></details>
+<details class="site-menu-region"><summary>Nordrhein-Westfalen</summary><ul><li><a href="stadt-aachen.html">Aachen</a></li><li><a href="stadt-koeln.html">Köln</a></li></ul></details>
+<details class="site-menu-region"><summary>Sachsen</summary><ul><li><a href="stadt-leipzig.html">Leipzig</a></li><li><a href="stadt-mittweida.html">Mittweida</a></li></ul></details>
+<details class="site-menu-region"><summary>Thüringen</summary><ul><li><a href="stadt-jena.html">Jena</a></li></ul></details>
+   </details>
+   <details class="site-menu-group" open><summary>Studium</summary><ul><li><a href="studienplaetze.html" aria-current="page">Studienplätze &amp; Studienwahl</a></li><li><a href="studienstart.html">Studienstart</a></li></ul></details>
+   <details class="site-menu-group"><summary>Technik</summary><ul><li><a href="index.html">Start · Laptops</a></li><li><a href="handys.html">Handys</a></li><li><a href="tablets.html">Tablets</a></li><li><a href="smart-gadgets.html">Smart-Gadgets</a></li></ul></details>
+   <details class="site-menu-group"><summary>Alltag &amp; Planung</summary><ul><li><a href="vorteile.html">Vorteile</a></li><li><a href="autos.html">Autos</a></li><li><a href="reiseideen.html">Reiseideen</a></li></ul></details>
+   <details class="site-menu-group"><summary>Ortsübergreifend</summary><ul><li><a href="wohnen.html">Wohnen</a></li><li><a href="fahrschulen.html">Fahrschulen</a></li><li><a href="aktivitaeten.html">Aktivitäten</a></li><li><a href="pendeln.html">ÖPNV &amp; Pendeln</a></li><li><a href="unterkuenfte.html">Unterkünfte</a></li></ul></details>
+   <details class="site-menu-group"><summary>Persönlich</summary><ul><li><a href="profil.html">Mein Profil</a></li><li><a href="merkliste.html">Merkliste</a></li></ul></details>
+  </div></details>
+ </nav>
+ </div></header>
+<main class="wrap">
+<section class="city-intro" aria-labelledby="studyTitle">
+ <div class="eyebrow">Studienwahl</div><h2 id="studyTitle">Studienplätze und Studiengänge</h2>
+ <p>Vergleiche Studieninhalte, mögliche Berufswege und Hochschulen. Die verlinkten Angebote zeigen, wo du das Fach studieren kannst. Bewerbungsfristen und freie Plätze prüfst du direkt bei der Hochschule.</p>
+ <a class="btn" href="https://studienwahl.de/studienfelder">Alle Studienfelder bei Studienwahl.de</a>
+ </section>
+ <article class="finder study-profile">
+ <h3>Informatik</h3><p><strong>Im Studium</strong> · Programmierung, Algorithmen, Mathematik und Computersysteme bilden die Basis. Je nach Hochschule kommen Wahlbereiche wie KI, Sicherheit oder Visualisierung hinzu.</p><p><strong>Danach</strong> · Softwareentwicklung, IT-Sicherheit, Systementwicklung oder ein vertiefender Master.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.tu.berlin/studieren/studienangebot/gesamtes-studienangebot/studiengang/informatik-b-sc">TU Berlin · Informatik (B.Sc.)</a> <span class="muted">(Berlin)</span></li><li><a href="https://www.inf.uni-hamburg.de/studies/prospective-students/bachelor-application.html">Universität Hamburg · Informatik (B.Sc.)</a> <span class="muted">(Hamburg)</span></li><li><a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/studium/studierende/lehre-studienorganisation/studiengaenge/informatik/bachelor/">Universität Tübingen · Informatik (B.Sc.)</a> <span class="muted">(Tübingen)</span></li><li><a href="https://uni-goettingen.de/de/640717.html">Universität Göttingen · Angewandte Informatik (B.Sc.)</a> <span class="muted">(Göttingen)</span></li><li><a href="https://www.uni-marburg.de/de/studium/vor-dem-studium/studienangebot/bachelor/informatikbsc">Philipps-Universität Marburg · Informatik (B.Sc.)</a> <span class="muted">(Marburg)</span></li><li><a href="https://www.uni-heidelberg.de/de/studium/alle-studienfaecher/informatik/informatik-bachelor-100">Universität Heidelberg · Informatik (B.Sc.)</a> <span class="muted">(Heidelberg)</span></li><li><a href="https://www.mathcs.uni-leipzig.de/studium/studienangebot/informatik-b-sc">Universität Leipzig · Informatik (B.Sc.)</a> <span class="muted">(Leipzig)</span></li><li><a href="https://www.uni-jena.de/7240/b-sc-informatik">Friedrich-Schiller-Universität Jena · Informatik (B.Sc.)</a> <span class="muted">(Jena)</span></li><li><a href="https://sc.informatik.rwth-aachen.de/de/studium/bachelor/informatik/">RWTH Aachen · Informatik (B.Sc.)</a> <span class="muted">(Aachen)</span></li><li><a href="https://www.uni-giessen.de/de/studium/studienangebot/bachelor/angewandte-informatik">Justus-Liebig-Universität Gießen · Angewandte Informatik (B.Sc.)</a> <span class="muted">(Gießen)</span></li><li><a href="https://www.hs-mittweida.de/studieren/studienangebote/angewandte-informatik-bachelor/">Hochschule Mittweida · Angewandte Informatik (B.Sc.)</a> <span class="muted">(Mittweida)</span></li></ul>
+ </article>
+<article class="finder study-profile">
+ <h3>Wirtschaftsinformatik</h3><p><strong>Im Studium</strong> · Verbindet Programmierung und Informationssysteme mit Betriebswirtschaft. Typische Aufgaben sind Daten auswerten und Unternehmensprozesse verbessern.</p><p><strong>Danach</strong> · IT-Beratung, Business Analysis, Produktmanagement oder Entwicklung von Unternehmenssoftware.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://studieninteressierte.uni-koeln.de/studienangebot/index_ger.html?app=true&amp;id=155">Universität zu Köln · Wirtschaftsinformatik (B.Sc.)</a> <span class="muted">(Köln)</span></li><li><a href="https://www.frankfurt-university.de/de/studium/bachelor-studiengange/wirtschaftsinformatik-bsc/fuer-studieninteressierte/">Frankfurt University of Applied Sciences · Wirtschaftsinformatik (B.Sc.)</a> <span class="muted">(Frankfurt am Main)</span></li><li><a href="https://www.cit.tum.de/cit/studium/studiengaenge/bachelor-wirtschaftsinformatik/">Technische Universität München · Wirtschaftsinformatik (B.Sc.)</a> <span class="muted">(München)</span></li><li><a href="https://www.thi.de/studium/studienangebote/details/wirtschaftsinformatik-bsc/">Technische Hochschule Ingolstadt · Wirtschaftsinformatik (B.Sc.)</a> <span class="muted">(Ingolstadt)</span></li></ul>
+ </article>
+<article class="finder study-profile">
+ <h3>Data Science</h3><p><strong>Im Studium</strong> · Statistik, Programmierung und maschinelles Lernen helfen dir, Daten aufzubereiten, auszuwerten und Modelle zu überprüfen.</p><p><strong>Danach</strong> · Datenanalyse, Business Intelligence, Data Engineering oder eine weitere Spezialisierung in Machine Learning.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.uni-marburg.de/de/studium/vor-dem-studium/studienangebot/bachelor/datasciencebsc">Philipps-Universität Marburg · Data Science (B.Sc.)</a> <span class="muted">(Marburg)</span></li><li><a href="https://www.heilbronn.dhbw.de/studium/bachelor-angebote/wirtschaftsinformatik-data-science/duale-partner-und-studienplaetze/">DHBW Heilbronn · Wirtschaftsinformatik – Data Science (dual)</a> <span class="muted">(Heilbronn)</span></li></ul>
+ </article>
+<article class="finder study-profile">
+ <h3>Betriebswirtschaftslehre</h3><p><strong>Im Studium</strong> · Du beschäftigst dich mit Finanzierung, Rechnungswesen, Marketing und Organisation. Später kannst du je nach Hochschule Schwerpunkte setzen.</p><p><strong>Danach</strong> · Controlling, Marketing, Personal, Beratung oder Unternehmensgründung.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://wiso.uni-koeln.de/de/studium/bachelor/bachelor-bwl">Universität zu Köln · BWL (B.Sc.)</a> <span class="muted">(Köln)</span></li></ul>
+ </article>
+<article class="finder study-profile">
+ <h3>Psychologie</h3><p><strong>Im Studium</strong> · Du lernst menschliches Verhalten wissenschaftlich zu untersuchen. Statistik, Forschungsmethoden sowie Entwicklungs- und Sozialpsychologie gehören dazu.</p><p><strong>Danach</strong> · Forschung, Personalentwicklung oder Markt- und Nutzerforschung. Für Psychotherapie gelten eigene Studien- und Weiterbildungsanforderungen.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.uni-heidelberg.de/de/studium/alle-studienfaecher/psychologie/psychologie-bachelor-100">Universität Heidelberg · Psychologie (B.Sc.)</a> <span class="muted">(Heidelberg)</span></li></ul>
+ </article>
+<article class="finder study-profile">
+ <h3>Maschinenbau</h3><p><strong>Im Studium</strong> · Mathematik, Mechanik, Werkstoffe und Konstruktion bilden die Basis. In Projekten setzt du Modelle in technische Lösungen um.</p><p><strong>Danach</strong> · Produktentwicklung, Produktion, Energietechnik oder Fahrzeugtechnik.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.ika.rwth-aachen.de/de/studium/studieng%C3%A4nge/maschinenbau-bsc.html">RWTH Aachen · Maschinenbau (B.Sc.)</a> <span class="muted">(Aachen)</span></li></ul>
+ </article>
+<article class="finder study-profile">
+ <h3>Humanmedizin</h3><p><strong>Im Studium</strong> · Du verbindest naturwissenschaftliche Grundlagen mit klinischem Lernen und praktischen Ausbildungsabschnitten.</p><p><strong>Danach</strong> · Ärztliche Tätigkeit nach Abschluss und Approbation. Darauf kann eine fachärztliche Weiterbildung folgen.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.uni-jena.de/4580/staatsexamen-medizin">Friedrich-Schiller-Universität Jena · Medizin (Staatsexamen)</a> <span class="muted">(Jena)</span></li></ul>
+ </article>
+</main>
+<footer class="wrap">Campus-Kompass</footer>
+</body></html>

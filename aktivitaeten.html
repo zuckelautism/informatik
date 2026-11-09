@@ -6,13 +6,13 @@
  <title>Aktivitäten · Campus-Kompass</title>
  <meta name="description" content="Ausflüge in Neckarsulm, Heilbronn, München und Ingolstadt nach Stadt und Art entdecken.">
  <script src="theme.js?v=coastal1"></script>
- <link rel="stylesheet" href="kompass.css?v=login1">
+ <link rel="stylesheet" href="kompass.css?v=discovery1">
  <script src="pruefstand.js" defer></script>
- <script src="campus-basis.js?v=qa1" defer></script>
- <script src="neue-eintraege.js?v=coastal1" defer></script>
+ <script src="campus-basis.js?v=discovery1" defer></script>
+ <script src="neue-eintraege.js?v=discovery1" defer></script>
  <script src="katalog.js?v=coastal1" defer></script>
 <script src="firebase-config.js?v=google1" defer></script>
- <script src="campus-shell.js?v=login1" defer></script>
+ <script src="campus-shell.js?v=discovery1" defer></script>
 </head>
 <body class="campus-locked">
  <section class="campus-login" aria-labelledby="campusLoginTitle">
@@ -28,41 +28,25 @@
 <header class="wrap site-header"><div class="app-header-inner">
   <div><h1><a href="index.html">Campus-Kompass</a></h1><p>Orientierung für Studium, Ausbildung und Alltag.</p></div>
   <nav id="kompass" class="site-menu" aria-label="Hauptnavigation">
-  <details>
-   <summary>Menü</summary>
-   <div class="site-menu-grid">
-    <section class="site-menu-group"><h2>Städte</h2><ul>
-      <li><a href="staedte.html">Alle Städte</a></li>
-      <li><a href="stadt-neckarsulm.html">Neckarsulm</a></li>
-      <li><a href="stadt-heilbronn.html">Heilbronn</a></li>
-      <li><a href="stadt-muenchen.html">München</a></li>
-      <li><a href="stadt-ingolstadt.html">Ingolstadt</a></li>
-    </ul></section>
-    <section class="site-menu-group"><h2>Technik</h2><ul>
-      <li><a href="index.html">Start · Laptops</a></li>
-      <li><a href="handys.html">Handys</a></li>
-      <li><a href="tablets.html">Tablets</a></li>
-      <li><a href="smart-gadgets.html">Smart-Gadgets</a></li>
-    </ul></section>
-    <section class="site-menu-group"><h2>Alltag &amp; Planung</h2><ul>
-      <li><a href="studienstart.html">Studienstart</a></li>
-      <li><a href="vorteile.html">Vorteile</a></li>
-      <li><a href="autos.html">Autos</a></li>
-      <li><a href="reiseideen.html">Reiseideen</a></li>
-    </ul></section>
-    <section class="site-menu-group"><h2>Ortsübergreifend</h2><ul>
-      <li><a href="wohnen.html">Wohnen</a></li>
-      <li><a href="fahrschulen.html">Fahrschulen</a></li>
-      <li><a href="aktivitaeten.html" aria-current="page">Aktivitäten</a></li>
-      <li><a href="pendeln.html">ÖPNV &amp; Pendeln</a></li>
-      <li><a href="unterkuenfte.html">Unterkünfte</a></li>
-    </ul></section>
-    <section class="site-menu-group"><h2>Persönlich</h2><ul>
-      <li><a href="profil.html">Mein Profil</a></li>
-      <li><a href="merkliste.html">Merkliste</a></li>
-    </ul></section>
-   </div>
-  </details>
+  <details><summary>Menü</summary><div class="site-menu-grid">
+   <details class="site-menu-group"><summary>Städte</summary>
+    <ul><li><a href="staedte.html">Alle Städte</a></li></ul>
+    <details class="site-menu-region"><summary>Baden-Württemberg</summary><ul><li><a href="stadt-heidelberg.html">Heidelberg</a></li><li><a href="stadt-heilbronn.html">Heilbronn</a></li><li><a href="stadt-neckarsulm.html">Neckarsulm</a></li><li><a href="stadt-tuebingen.html">Tübingen</a></li></ul></details>
+<details class="site-menu-region"><summary>Bayern</summary><ul><li><a href="stadt-ingolstadt.html">Ingolstadt</a></li><li><a href="stadt-muenchen.html">München</a></li></ul></details>
+<details class="site-menu-region"><summary>Berlin</summary><ul><li><a href="stadt-berlin.html">Berlin</a></li></ul></details>
+<details class="site-menu-region"><summary>Hamburg</summary><ul><li><a href="stadt-hamburg.html">Hamburg</a></li></ul></details>
+<details class="site-menu-region"><summary>Hessen</summary><ul><li><a href="stadt-frankfurt-am-main.html">Frankfurt am Main</a></li><li><a href="stadt-giessen.html">Gießen</a></li><li><a href="stadt-marburg.html">Marburg</a></li></ul></details>
+<details class="site-menu-region"><summary>Niedersachsen</summary><ul><li><a href="stadt-goettingen.html">Göttingen</a></li></ul></details>
+<details class="site-menu-region"><summary>Nordrhein-Westfalen</summary><ul><li><a href="stadt-aachen.html">Aachen</a></li><li><a href="stadt-koeln.html">Köln</a></li></ul></details>
+<details class="site-menu-region"><summary>Sachsen</summary><ul><li><a href="stadt-leipzig.html">Leipzig</a></li><li><a href="stadt-mittweida.html">Mittweida</a></li></ul></details>
+<details class="site-menu-region"><summary>Thüringen</summary><ul><li><a href="stadt-jena.html">Jena</a></li></ul></details>
+   </details>
+   <details class="site-menu-group"><summary>Studium</summary><ul><li><a href="studienplaetze.html">Studienplätze &amp; Studienwahl</a></li><li><a href="studienstart.html">Studienstart</a></li></ul></details>
+   <details class="site-menu-group"><summary>Technik</summary><ul><li><a href="index.html">Start · Laptops</a></li><li><a href="handys.html">Handys</a></li><li><a href="tablets.html">Tablets</a></li><li><a href="smart-gadgets.html">Smart-Gadgets</a></li></ul></details>
+   <details class="site-menu-group"><summary>Alltag &amp; Planung</summary><ul><li><a href="vorteile.html">Vorteile</a></li><li><a href="autos.html">Autos</a></li><li><a href="reiseideen.html">Reiseideen</a></li></ul></details>
+   <details class="site-menu-group" open><summary>Ortsübergreifend</summary><ul><li><a href="wohnen.html">Wohnen</a></li><li><a href="fahrschulen.html">Fahrschulen</a></li><li><a href="aktivitaeten.html" aria-current="page">Aktivitäten</a></li><li><a href="pendeln.html">ÖPNV &amp; Pendeln</a></li><li><a href="unterkuenfte.html">Unterkünfte</a></li></ul></details>
+   <details class="site-menu-group"><summary>Persönlich</summary><ul><li><a href="profil.html">Mein Profil</a></li><li><a href="merkliste.html">Merkliste</a></li></ul></details>
+  </div></details>
  </nav>
  </div></header>
 <main class="wrap">
@@ -70,7 +54,7 @@
 <h2 id="catalogTitle">Aktivitäten</h2>
 <p class="check-note" id="campusUpdate"></p>
 <p>Ausflüge in Neckarsulm, Heilbronn, München und Ingolstadt nach Stadt und Art entdecken.</p>
-<div class="fields"><label>Suche<input id="catalogQuery" type="search" placeholder="Katalog durchsuchen …"></label><label>Stadt<select id="catalogCity"><option value="all">Alle Städte</option><option>Neckarsulm</option><option>Heilbronn</option><option>München</option><option>Ingolstadt</option><option>Überregional</option></select></label></div>
+<div class="fields"><label>Suche<input id="catalogQuery" type="search" placeholder="Katalog durchsuchen …"></label><label>Stadt<select id="catalogCity"><option value="all">Alle Städte</option><option>Neckarsulm</option><option>Heilbronn</option><option>München</option><option>Ingolstadt</option><option>Überregional</option><option value="Heidelberg">Heidelberg</option><option value="Tübingen">Tübingen</option><option value="Berlin">Berlin</option><option value="Hamburg">Hamburg</option><option value="Frankfurt am Main">Frankfurt am Main</option><option value="Gießen">Gießen</option><option value="Marburg">Marburg</option><option value="Göttingen">Göttingen</option><option value="Aachen">Aachen</option><option value="Köln">Köln</option><option value="Leipzig">Leipzig</option><option value="Mittweida">Mittweida</option><option value="Jena">Jena</option></select></label></div>
 <div id="activityFilters" class="fields">
  <label>Art der Aktivität<select id="activityType"><option value="all">Alle Aktivitäten</option><option>Draußen</option><option>Kultur</option><option>Sport</option><option>Technik</option></select></label>
 </div>

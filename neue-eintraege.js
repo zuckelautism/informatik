@@ -1,5 +1,272 @@
 // Nach Kategorien gruppierte Ergänzungen. Vorhandene IDs für Merklisten beibehalten.
 const campusErgaenzungen=[
+{
+    "id": "bildung|Berlin|Informatik (B.Sc.)",
+    "city": "Berlin",
+    "category": "Studium",
+    "title": "Informatik (B.Sc.) · TU Berlin",
+    "topic": "Informatik",
+    "note": "Programmierung, Algorithmen, Mathematik und Computersysteme bilden die Basis. Je nach Hochschule kommen Wahlbereiche wie KI, Sicherheit oder Visualisierung hinzu. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://www.tu.berlin/studieren/studienangebot/gesamtes-studienangebot/studiengang/informatik-b-sc"
+  },
+  {
+    "id": "bildung|Hamburg|Informatik (B.Sc.)",
+    "city": "Hamburg",
+    "category": "Studium",
+    "title": "Informatik (B.Sc.) · Universität Hamburg",
+    "topic": "Informatik",
+    "note": "Programmierung, Algorithmen, Mathematik und Computersysteme bilden die Basis. Je nach Hochschule kommen Wahlbereiche wie KI, Sicherheit oder Visualisierung hinzu. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://www.inf.uni-hamburg.de/studies/prospective-students/bachelor-application.html"
+  },
+  {
+    "id": "bildung|Köln|Wirtschaftsinformatik (B.Sc.)",
+    "city": "Köln",
+    "category": "Studium",
+    "title": "Wirtschaftsinformatik (B.Sc.) · Universität zu Köln",
+    "topic": "Wirtschaftsinformatik",
+    "note": "Verbindet Programmierung und Informationssysteme mit Betriebswirtschaft. Typische Aufgaben sind Daten auswerten und Unternehmensprozesse verbessern. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://studieninteressierte.uni-koeln.de/studienangebot/index_ger.html?app=true&id=155"
+  },
+  {
+    "id": "bildung|Frankfurt am Main|Wirtschaftsinformatik (B.Sc.)",
+    "city": "Frankfurt am Main",
+    "category": "Studium",
+    "title": "Wirtschaftsinformatik (B.Sc.) · Frankfurt University of Applied Sciences",
+    "topic": "Wirtschaftsinformatik",
+    "note": "Verbindet Programmierung und Informationssysteme mit Betriebswirtschaft. Typische Aufgaben sind Daten auswerten und Unternehmensprozesse verbessern. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://www.frankfurt-university.de/de/studium/bachelor-studiengange/wirtschaftsinformatik-bsc/fuer-studieninteressierte/"
+  },
+  {
+    "id": "bildung|Tübingen|Informatik (B.Sc.)",
+    "city": "Tübingen",
+    "category": "Studium",
+    "title": "Informatik (B.Sc.) · Universität Tübingen",
+    "topic": "Informatik",
+    "note": "Programmierung, Algorithmen, Mathematik und Computersysteme bilden die Basis. Je nach Hochschule kommen Wahlbereiche wie KI, Sicherheit oder Visualisierung hinzu. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/studium/studierende/lehre-studienorganisation/studiengaenge/informatik/bachelor/"
+  },
+  {
+    "id": "bildung|Göttingen|Angewandte Informatik (B.Sc.)",
+    "city": "Göttingen",
+    "category": "Studium",
+    "title": "Angewandte Informatik (B.Sc.) · Universität Göttingen",
+    "topic": "Informatik",
+    "note": "Programmierung, Algorithmen, Mathematik und Computersysteme bilden die Basis. Je nach Hochschule kommen Wahlbereiche wie KI, Sicherheit oder Visualisierung hinzu. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://uni-goettingen.de/de/640717.html"
+  },
+  {
+    "id": "bildung|Marburg|Informatik (B.Sc.)",
+    "city": "Marburg",
+    "category": "Studium",
+    "title": "Informatik (B.Sc.) · Philipps-Universität Marburg",
+    "topic": "Informatik",
+    "note": "Programmierung, Algorithmen, Mathematik und Computersysteme bilden die Basis. Je nach Hochschule kommen Wahlbereiche wie KI, Sicherheit oder Visualisierung hinzu. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://www.uni-marburg.de/de/studium/vor-dem-studium/studienangebot/bachelor/informatikbsc"
+  },
+  {
+    "id": "bildung|Marburg|Data Science (B.Sc.)",
+    "city": "Marburg",
+    "category": "Studium",
+    "title": "Data Science (B.Sc.) · Philipps-Universität Marburg",
+    "topic": "Data Science",
+    "note": "Statistik, Programmierung und maschinelles Lernen helfen dir, Daten aufzubereiten, auszuwerten und Modelle zu überprüfen. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://www.uni-marburg.de/de/studium/vor-dem-studium/studienangebot/bachelor/datasciencebsc"
+  },
+  {
+    "id": "bildung|Heidelberg|Informatik (B.Sc.)",
+    "city": "Heidelberg",
+    "category": "Studium",
+    "title": "Informatik (B.Sc.) · Universität Heidelberg",
+    "topic": "Informatik",
+    "note": "Programmierung, Algorithmen, Mathematik und Computersysteme bilden die Basis. Je nach Hochschule kommen Wahlbereiche wie KI, Sicherheit oder Visualisierung hinzu. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://www.uni-heidelberg.de/de/studium/alle-studienfaecher/informatik/informatik-bachelor-100"
+  },
+  {
+    "id": "bildung|Leipzig|Informatik (B.Sc.)",
+    "city": "Leipzig",
+    "category": "Studium",
+    "title": "Informatik (B.Sc.) · Universität Leipzig",
+    "topic": "Informatik",
+    "note": "Programmierung, Algorithmen, Mathematik und Computersysteme bilden die Basis. Je nach Hochschule kommen Wahlbereiche wie KI, Sicherheit oder Visualisierung hinzu. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://www.mathcs.uni-leipzig.de/studium/studienangebot/informatik-b-sc"
+  },
+  {
+    "id": "bildung|Jena|Informatik (B.Sc.)",
+    "city": "Jena",
+    "category": "Studium",
+    "title": "Informatik (B.Sc.) · Friedrich-Schiller-Universität Jena",
+    "topic": "Informatik",
+    "note": "Programmierung, Algorithmen, Mathematik und Computersysteme bilden die Basis. Je nach Hochschule kommen Wahlbereiche wie KI, Sicherheit oder Visualisierung hinzu. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://www.uni-jena.de/7240/b-sc-informatik"
+  },
+  {
+    "id": "bildung|Aachen|Informatik (B.Sc.)",
+    "city": "Aachen",
+    "category": "Studium",
+    "title": "Informatik (B.Sc.) · RWTH Aachen",
+    "topic": "Informatik",
+    "note": "Programmierung, Algorithmen, Mathematik und Computersysteme bilden die Basis. Je nach Hochschule kommen Wahlbereiche wie KI, Sicherheit oder Visualisierung hinzu. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://sc.informatik.rwth-aachen.de/de/studium/bachelor/informatik/"
+  },
+  {
+    "id": "bildung|Gießen|Angewandte Informatik (B.Sc.)",
+    "city": "Gießen",
+    "category": "Studium",
+    "title": "Angewandte Informatik (B.Sc.) · Justus-Liebig-Universität Gießen",
+    "topic": "Informatik",
+    "note": "Programmierung, Algorithmen, Mathematik und Computersysteme bilden die Basis. Je nach Hochschule kommen Wahlbereiche wie KI, Sicherheit oder Visualisierung hinzu. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://www.uni-giessen.de/de/studium/studienangebot/bachelor/angewandte-informatik"
+  },
+  {
+    "id": "bildung|Mittweida|Angewandte Informatik (B.Sc.)",
+    "city": "Mittweida",
+    "category": "Studium",
+    "title": "Angewandte Informatik (B.Sc.) · Hochschule Mittweida",
+    "topic": "Informatik",
+    "note": "Programmierung, Algorithmen, Mathematik und Computersysteme bilden die Basis. Je nach Hochschule kommen Wahlbereiche wie KI, Sicherheit oder Visualisierung hinzu. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://www.hs-mittweida.de/studieren/studienangebote/angewandte-informatik-bachelor/"
+  },
+  {
+    "id": "bildung|Köln|BWL (B.Sc.)",
+    "city": "Köln",
+    "category": "Studium",
+    "title": "BWL (B.Sc.) · Universität zu Köln",
+    "topic": "Betriebswirtschaftslehre",
+    "note": "Du beschäftigst dich mit Finanzierung, Rechnungswesen, Marketing und Organisation. Später kannst du je nach Hochschule Schwerpunkte setzen. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://wiso.uni-koeln.de/de/studium/bachelor/bachelor-bwl"
+  },
+  {
+    "id": "bildung|Heidelberg|Psychologie (B.Sc.)",
+    "city": "Heidelberg",
+    "category": "Studium",
+    "title": "Psychologie (B.Sc.) · Universität Heidelberg",
+    "topic": "Psychologie",
+    "note": "Du lernst menschliches Verhalten wissenschaftlich zu untersuchen. Statistik, Forschungsmethoden sowie Entwicklungs- und Sozialpsychologie gehören dazu. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://www.uni-heidelberg.de/de/studium/alle-studienfaecher/psychologie/psychologie-bachelor-100"
+  },
+  {
+    "id": "bildung|Aachen|Maschinenbau (B.Sc.)",
+    "city": "Aachen",
+    "category": "Studium",
+    "title": "Maschinenbau (B.Sc.) · RWTH Aachen",
+    "topic": "Maschinenbau",
+    "note": "Mathematik, Mechanik, Werkstoffe und Konstruktion bilden die Basis. In Projekten setzt du Modelle in technische Lösungen um. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://www.ika.rwth-aachen.de/de/studium/studieng%C3%A4nge/maschinenbau-bsc.html"
+  },
+  {
+    "id": "bildung|Jena|Medizin (Staatsexamen)",
+    "city": "Jena",
+    "category": "Studium",
+    "title": "Medizin (Staatsexamen) · Friedrich-Schiller-Universität Jena",
+    "topic": "Humanmedizin",
+    "note": "Du verbindest naturwissenschaftliche Grundlagen mit klinischem Lernen und praktischen Ausbildungsabschnitten. Zulassung und Fristen auf der Hochschulseite prüfen.",
+    "link": "https://www.uni-jena.de/4580/staatsexamen-medizin"
+  },
+  {
+    "id": "wohnen|Heidelberg|studierendenwerk",
+    "category": "Wohnen",
+    "city": "Heidelberg",
+    "title": "Studierendenwohnen in Heidelberg",
+    "note": "Übersicht des zuständigen Studierendenwerks. Bewerbung, Standorte und Verfügbarkeit direkt beim Betreiber prüfen.",
+    "link": "https://www.stw.uni-heidelberg.de/wohnen/wohnheime/"
+  },
+  {
+    "id": "wohnen|Tübingen|studierendenwerk",
+    "category": "Wohnen",
+    "city": "Tübingen",
+    "title": "Studierendenwohnen in Tübingen",
+    "note": "Übersicht des zuständigen Studierendenwerks. Bewerbung, Standorte und Verfügbarkeit direkt beim Betreiber prüfen.",
+    "link": "https://www.my-stuwe.de/wohnen/wohnheime-tuebingen/"
+  },
+  {
+    "id": "wohnen|Berlin|studierendenwerk",
+    "category": "Wohnen",
+    "city": "Berlin",
+    "title": "Studierendenwohnen in Berlin",
+    "note": "Übersicht des zuständigen Studierendenwerks. Bewerbung, Standorte und Verfügbarkeit direkt beim Betreiber prüfen.",
+    "link": "https://www.stw.berlin/wohnen/wohnheime/"
+  },
+  {
+    "id": "wohnen|Hamburg|studierendenwerk",
+    "category": "Wohnen",
+    "city": "Hamburg",
+    "title": "Studierendenwohnen in Hamburg",
+    "note": "Übersicht des zuständigen Studierendenwerks. Bewerbung, Standorte und Verfügbarkeit direkt beim Betreiber prüfen.",
+    "link": "https://www.stwhh.de/wohnen-fuer-studierende-und-auszubildende"
+  },
+  {
+    "id": "wohnen|Frankfurt am Main|studierendenwerk",
+    "category": "Wohnen",
+    "city": "Frankfurt am Main",
+    "title": "Studierendenwohnen in Frankfurt am Main",
+    "note": "Übersicht des zuständigen Studierendenwerks. Bewerbung, Standorte und Verfügbarkeit direkt beim Betreiber prüfen.",
+    "link": "https://www.swffm.de/wohnen/uebersicht"
+  },
+  {
+    "id": "wohnen|Gießen|studierendenwerk",
+    "category": "Wohnen",
+    "city": "Gießen",
+    "title": "Studierendenwohnen in Gießen",
+    "note": "Übersicht des zuständigen Studierendenwerks. Bewerbung, Standorte und Verfügbarkeit direkt beim Betreiber prüfen.",
+    "link": "https://www.stwgi.de/wohnen/"
+  },
+  {
+    "id": "wohnen|Marburg|studierendenwerk",
+    "category": "Wohnen",
+    "city": "Marburg",
+    "title": "Studierendenwohnen in Marburg",
+    "note": "Übersicht des zuständigen Studierendenwerks. Bewerbung, Standorte und Verfügbarkeit direkt beim Betreiber prüfen.",
+    "link": "https://studierendenwerk-marburg.de/wohnen/"
+  },
+  {
+    "id": "wohnen|Göttingen|studierendenwerk",
+    "category": "Wohnen",
+    "city": "Göttingen",
+    "title": "Studierendenwohnen in Göttingen",
+    "note": "Übersicht des zuständigen Studierendenwerks. Bewerbung, Standorte und Verfügbarkeit direkt beim Betreiber prüfen.",
+    "link": "https://www.studierendenwerk-goettingen.de/studentisches-wohnen"
+  },
+  {
+    "id": "wohnen|Aachen|studierendenwerk",
+    "category": "Wohnen",
+    "city": "Aachen",
+    "title": "Studierendenwohnen in Aachen",
+    "note": "Übersicht des zuständigen Studierendenwerks. Bewerbung, Standorte und Verfügbarkeit direkt beim Betreiber prüfen.",
+    "link": "https://www.studierendenwerk-aachen.de/de/wohnen.html"
+  },
+  {
+    "id": "wohnen|Köln|studierendenwerk",
+    "category": "Wohnen",
+    "city": "Köln",
+    "title": "Studierendenwohnen in Köln",
+    "note": "Übersicht des zuständigen Studierendenwerks. Bewerbung, Standorte und Verfügbarkeit direkt beim Betreiber prüfen.",
+    "link": "https://www.kstw.de/wohnen/auf-wohnungssuche/"
+  },
+  {
+    "id": "wohnen|Leipzig|studierendenwerk",
+    "category": "Wohnen",
+    "city": "Leipzig",
+    "title": "Studierendenwohnen in Leipzig",
+    "note": "Übersicht des zuständigen Studierendenwerks. Bewerbung, Standorte und Verfügbarkeit direkt beim Betreiber prüfen.",
+    "link": "https://www.studentenwerk-leipzig.de/wohnen/"
+  },
+  {
+    "id": "wohnen|Mittweida|studierendenwerk",
+    "category": "Wohnen",
+    "city": "Mittweida",
+    "title": "Studierendenwohnen in Mittweida",
+    "note": "Übersicht des zuständigen Studierendenwerks. Bewerbung, Standorte und Verfügbarkeit direkt beim Betreiber prüfen.",
+    "link": "https://www.studentenwerk-freiberg.de/wohnen/in-mittweida-wohnen/wohnanlagen-mw/"
+  },
+  {
+    "id": "wohnen|Jena|studierendenwerk",
+    "category": "Wohnen",
+    "city": "Jena",
+    "title": "Studierendenwohnen in Jena",
+    "note": "Übersicht des zuständigen Studierendenwerks. Bewerbung, Standorte und Verfügbarkeit direkt beim Betreiber prüfen.",
+    "link": "https://www.stw-thueringen.de/wohnen/wohnheime.html"
+  },
+
 
   {
     "id": "bildung|Neckarsulm|1",

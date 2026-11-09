@@ -310,3 +310,26 @@ button:disabled { cursor: default; opacity: .65; }
 #campusLoginButton { margin-top: 12px; min-height: 44px; }
 #campusLoginStatus { margin: 12px 0 0; color: var(--muted); }
 #campusLoginStatus:empty { margin: 0; }
+
+.site-menu summary { min-height: 36px; }
+.site-menu details[open] > summary::after { transform: translateY(2px) rotate(225deg); }
+.site-menu details:not([open]) > summary::after { transform: translateY(-2px) rotate(45deg); }
+.site-menu-grid { align-items: start; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); }
+.site-menu-grid summary { width: 100%; justify-content: space-between; border-radius: 7px; padding: 6px 8px; }
+.site-menu-group { min-width: 0; }
+.site-menu-group > summary { font-size: 13px; }
+.site-menu-region { margin: 2px 0; }
+.site-menu-region > summary { font-size: 12px; border-color: transparent; }
+.site-menu-region li { padding-left: 5px; }
+.city-region { margin: 20px 0; }
+.study-profile { margin-bottom: 14px; }
+.study-profile p { margin: 6px 0; }
+.study-profile ul { padding-inline-start: 22px; }
+.discovery-panel { margin: 14px 0 24px; }
+.discovery-panel h2, .discovery-panel h3 { margin: 0 0 8px; }
+.discovery-search { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; margin-top: 4px; }
+.discovery-note { margin: 7px 0; font-size: 13px; }
+.discovery-results { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(185px, 100%), 1fr)); gap: 8px; margin: 8px 0 16px; padding: 0; list-style: none; }
+.discovery-results:empty, #campusDiscoveryStatus:empty { display: none; }
+.discovery-results li { padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; }
+.discovery-results li span { display: block; color: var(--muted); font-size: 12px; }

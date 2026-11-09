@@ -4,11 +4,11 @@
  <meta name="viewport" content="width=device-width,initial-scale=1">
  <title>Städte · Campus-Kompass</title>
  <script src="theme.js?v=coastal1"></script>
- <link rel="stylesheet" href="kompass.css?v=login1">
+ <link rel="stylesheet" href="kompass.css?v=discovery1">
  
  
 <script src="firebase-config.js?v=google1" defer></script>
- <script src="campus-shell.js?v=login1" defer></script>
+ <script src="campus-shell.js?v=discovery1" defer></script>
 </head><body class="campus-locked">
  <section class="campus-login" aria-labelledby="campusLoginTitle">
   <div class="campus-login-card">
@@ -23,50 +23,41 @@
 <header class="wrap site-header"><div class="app-header-inner">
   <div><h1><a href="index.html">Campus-Kompass</a></h1><p>Orientierung für Studium, Ausbildung und Alltag.</p></div>
   <nav id="kompass" class="site-menu" aria-label="Hauptnavigation">
-  <details>
-   <summary>Menü</summary>
-   <div class="site-menu-grid">
-    <section class="site-menu-group"><h2>Städte</h2><ul>
-      <li><a href="staedte.html" aria-current="page">Alle Städte</a></li>
-      <li><a href="stadt-neckarsulm.html">Neckarsulm</a></li>
-      <li><a href="stadt-heilbronn.html">Heilbronn</a></li>
-      <li><a href="stadt-muenchen.html">München</a></li>
-      <li><a href="stadt-ingolstadt.html">Ingolstadt</a></li>
-    </ul></section>
-    <section class="site-menu-group"><h2>Technik</h2><ul>
-      <li><a href="index.html">Start · Laptops</a></li>
-      <li><a href="handys.html">Handys</a></li>
-      <li><a href="tablets.html">Tablets</a></li>
-      <li><a href="smart-gadgets.html">Smart-Gadgets</a></li>
-    </ul></section>
-    <section class="site-menu-group"><h2>Alltag &amp; Planung</h2><ul>
-      <li><a href="studienstart.html">Studienstart</a></li>
-      <li><a href="vorteile.html">Vorteile</a></li>
-      <li><a href="autos.html">Autos</a></li>
-      <li><a href="reiseideen.html">Reiseideen</a></li>
-    </ul></section>
-    <section class="site-menu-group"><h2>Ortsübergreifend</h2><ul>
-      <li><a href="wohnen.html">Wohnen</a></li>
-      <li><a href="fahrschulen.html">Fahrschulen</a></li>
-      <li><a href="aktivitaeten.html">Aktivitäten</a></li>
-      <li><a href="pendeln.html">ÖPNV &amp; Pendeln</a></li>
-      <li><a href="unterkuenfte.html">Unterkünfte</a></li>
-    </ul></section>
-    <section class="site-menu-group"><h2>Persönlich</h2><ul>
-      <li><a href="profil.html">Mein Profil</a></li>
-      <li><a href="merkliste.html">Merkliste</a></li>
-    </ul></section>
-   </div>
-  </details>
+  <details><summary>Menü</summary><div class="site-menu-grid">
+   <details class="site-menu-group" open><summary>Städte</summary>
+    <ul><li><a href="staedte.html" aria-current="page">Alle Städte</a></li></ul>
+    <details class="site-menu-region"><summary>Baden-Württemberg</summary><ul><li><a href="stadt-heidelberg.html">Heidelberg</a></li><li><a href="stadt-heilbronn.html">Heilbronn</a></li><li><a href="stadt-neckarsulm.html">Neckarsulm</a></li><li><a href="stadt-tuebingen.html">Tübingen</a></li></ul></details>
+<details class="site-menu-region"><summary>Bayern</summary><ul><li><a href="stadt-ingolstadt.html">Ingolstadt</a></li><li><a href="stadt-muenchen.html">München</a></li></ul></details>
+<details class="site-menu-region"><summary>Berlin</summary><ul><li><a href="stadt-berlin.html">Berlin</a></li></ul></details>
+<details class="site-menu-region"><summary>Hamburg</summary><ul><li><a href="stadt-hamburg.html">Hamburg</a></li></ul></details>
+<details class="site-menu-region"><summary>Hessen</summary><ul><li><a href="stadt-frankfurt-am-main.html">Frankfurt am Main</a></li><li><a href="stadt-giessen.html">Gießen</a></li><li><a href="stadt-marburg.html">Marburg</a></li></ul></details>
+<details class="site-menu-region"><summary>Niedersachsen</summary><ul><li><a href="stadt-goettingen.html">Göttingen</a></li></ul></details>
+<details class="site-menu-region"><summary>Nordrhein-Westfalen</summary><ul><li><a href="stadt-aachen.html">Aachen</a></li><li><a href="stadt-koeln.html">Köln</a></li></ul></details>
+<details class="site-menu-region"><summary>Sachsen</summary><ul><li><a href="stadt-leipzig.html">Leipzig</a></li><li><a href="stadt-mittweida.html">Mittweida</a></li></ul></details>
+<details class="site-menu-region"><summary>Thüringen</summary><ul><li><a href="stadt-jena.html">Jena</a></li></ul></details>
+   </details>
+   <details class="site-menu-group"><summary>Studium</summary><ul><li><a href="studienplaetze.html">Studienplätze &amp; Studienwahl</a></li><li><a href="studienstart.html">Studienstart</a></li></ul></details>
+   <details class="site-menu-group"><summary>Technik</summary><ul><li><a href="index.html">Start · Laptops</a></li><li><a href="handys.html">Handys</a></li><li><a href="tablets.html">Tablets</a></li><li><a href="smart-gadgets.html">Smart-Gadgets</a></li></ul></details>
+   <details class="site-menu-group"><summary>Alltag &amp; Planung</summary><ul><li><a href="vorteile.html">Vorteile</a></li><li><a href="autos.html">Autos</a></li><li><a href="reiseideen.html">Reiseideen</a></li></ul></details>
+   <details class="site-menu-group"><summary>Ortsübergreifend</summary><ul><li><a href="wohnen.html">Wohnen</a></li><li><a href="fahrschulen.html">Fahrschulen</a></li><li><a href="aktivitaeten.html">Aktivitäten</a></li><li><a href="pendeln.html">ÖPNV &amp; Pendeln</a></li><li><a href="unterkuenfte.html">Unterkünfte</a></li></ul></details>
+   <details class="site-menu-group"><summary>Persönlich</summary><ul><li><a href="profil.html">Mein Profil</a></li><li><a href="merkliste.html">Merkliste</a></li></ul></details>
+  </div></details>
  </nav>
  </div></header>
 <main class="wrap">
 <section class="city-intro" aria-labelledby="citiesTitle">
-<div class="eyebrow">Vier mögliche Studienorte</div>
-<h2 id="citiesTitle">Welche Stadt passt zu dir?</h2>
-<p>Studium, duales Studium und Ausbildung findest du auf der Stadtseite. Dazu kommen Wohnungen, Fahrschulen, Freizeit, Verkehr und Unterkünfte vor Ort.</p>
-<div class="catalog-grid city-grid"><article class="catalog-card"><h3>Neckarsulm</h3><p>Audi, duale Angebote und der Alltag rund um Neckarsulm.</p><a class="btn" href="stadt-neckarsulm.html">Neckarsulm entdecken</a></article><article class="catalog-card"><h3>Heilbronn</h3><p>Hochschulen, duales Studium und Angebote rund um den Bildungscampus.</p><a class="btn" href="stadt-heilbronn.html">Heilbronn entdecken</a></article><article class="catalog-card"><h3>München</h3><p>Studiengänge, Ausbildungsstandorte und Alltag in München.</p><a class="btn" href="stadt-muenchen.html">München entdecken</a></article><article class="catalog-card"><h3>Ingolstadt</h3><p>THI, Audi, Nahverkehr und Anlaufstellen rund um Ingolstadt.</p><a class="btn" href="stadt-ingolstadt.html">Ingolstadt entdecken</a></article></div>
-</section>
+ <div class="eyebrow">17 Städte in 9 Bundesländern</div><h2 id="citiesTitle">Welche Stadt passt zu dir?</h2>
+ <p>Wähle einen Ort für Studiengänge und lokale Angebote. Die Städte sind nach Bundesländern sortiert.</p>
+ <section class="city-region"><h3>Baden-Württemberg</h3><div class="catalog-grid city-grid"><article class="catalog-card"><h4>Heidelberg</h4><a class="btn" href="stadt-heidelberg.html">Heidelberg entdecken</a></article><article class="catalog-card"><h4>Heilbronn</h4><a class="btn" href="stadt-heilbronn.html">Heilbronn entdecken</a></article><article class="catalog-card"><h4>Neckarsulm</h4><a class="btn" href="stadt-neckarsulm.html">Neckarsulm entdecken</a></article><article class="catalog-card"><h4>Tübingen</h4><a class="btn" href="stadt-tuebingen.html">Tübingen entdecken</a></article></div></section>
+<section class="city-region"><h3>Bayern</h3><div class="catalog-grid city-grid"><article class="catalog-card"><h4>Ingolstadt</h4><a class="btn" href="stadt-ingolstadt.html">Ingolstadt entdecken</a></article><article class="catalog-card"><h4>München</h4><a class="btn" href="stadt-muenchen.html">München entdecken</a></article></div></section>
+<section class="city-region"><h3>Berlin</h3><div class="catalog-grid city-grid"><article class="catalog-card"><h4>Berlin</h4><a class="btn" href="stadt-berlin.html">Berlin entdecken</a></article></div></section>
+<section class="city-region"><h3>Hamburg</h3><div class="catalog-grid city-grid"><article class="catalog-card"><h4>Hamburg</h4><a class="btn" href="stadt-hamburg.html">Hamburg entdecken</a></article></div></section>
+<section class="city-region"><h3>Hessen</h3><div class="catalog-grid city-grid"><article class="catalog-card"><h4>Frankfurt am Main</h4><a class="btn" href="stadt-frankfurt-am-main.html">Frankfurt am Main entdecken</a></article><article class="catalog-card"><h4>Gießen</h4><a class="btn" href="stadt-giessen.html">Gießen entdecken</a></article><article class="catalog-card"><h4>Marburg</h4><a class="btn" href="stadt-marburg.html">Marburg entdecken</a></article></div></section>
+<section class="city-region"><h3>Niedersachsen</h3><div class="catalog-grid city-grid"><article class="catalog-card"><h4>Göttingen</h4><a class="btn" href="stadt-goettingen.html">Göttingen entdecken</a></article></div></section>
+<section class="city-region"><h3>Nordrhein-Westfalen</h3><div class="catalog-grid city-grid"><article class="catalog-card"><h4>Aachen</h4><a class="btn" href="stadt-aachen.html">Aachen entdecken</a></article><article class="catalog-card"><h4>Köln</h4><a class="btn" href="stadt-koeln.html">Köln entdecken</a></article></div></section>
+<section class="city-region"><h3>Sachsen</h3><div class="catalog-grid city-grid"><article class="catalog-card"><h4>Leipzig</h4><a class="btn" href="stadt-leipzig.html">Leipzig entdecken</a></article><article class="catalog-card"><h4>Mittweida</h4><a class="btn" href="stadt-mittweida.html">Mittweida entdecken</a></article></div></section>
+<section class="city-region"><h3>Thüringen</h3><div class="catalog-grid city-grid"><article class="catalog-card"><h4>Jena</h4><a class="btn" href="stadt-jena.html">Jena entdecken</a></article></div></section>
+ </section>
 </main>
 <footer class="wrap">Campus-Kompass</footer>
 </body></html>

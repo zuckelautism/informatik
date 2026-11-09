@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="de"><head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Marburg · Campus-Kompass</title>
+ <script src="theme.js?v=coastal1"></script>
+ <link rel="stylesheet" href="kompass.css?v=discovery1">
+ <script src="pruefstand.js" defer></script>
+ <script src="campus-basis.js?v=discovery1" defer></script>
+ <script src="neue-eintraege.js?v=discovery1" defer></script>
+ <script src="katalog.js?v=coastal1" defer></script>
+ 
+<script src="firebase-config.js?v=google1" defer></script>
+ <script src="campus-shell.js?v=discovery1" defer></script>
+</head><body class="campus-locked">
+ <section class="campus-login" aria-labelledby="campusLoginTitle">
+  <div class="campus-login-card">
+    <p class="campus-login-brand">Campus-Kompass</p>
+    <h1 id="campusLoginTitle">Willkommen</h1>
+    <p>Entdecke Städte, finde Angebote für deinen Alltag und speichere dein persönliches Profil.</p>
+    <button class="btn" id="campusLoginButton" type="button" disabled>Mit Google anmelden</button>
+    <p id="campusLoginStatus" role="status">Anmeldung wird vorbereitet …</p>
+    <noscript>Aktiviere JavaScript, um dich anzumelden.</noscript>
+  </div>
+ </section>
+<header class="wrap site-header"><div class="app-header-inner">
+  <div><h1><a href="index.html">Campus-Kompass</a></h1><p>Orientierung für Studium, Ausbildung und Alltag.</p></div>
+  <nav id="kompass" class="site-menu" aria-label="Hauptnavigation">
+  <details><summary>Menü</summary><div class="site-menu-grid">
+   <details class="site-menu-group" open><summary>Städte</summary>
+    <ul><li><a href="staedte.html">Alle Städte</a></li></ul>
+    <details class="site-menu-region"><summary>Baden-Württemberg</summary><ul><li><a href="stadt-heidelberg.html">Heidelberg</a></li><li><a href="stadt-heilbronn.html">Heilbronn</a></li><li><a href="stadt-neckarsulm.html">Neckarsulm</a></li><li><a href="stadt-tuebingen.html">Tübingen</a></li></ul></details>
+<details class="site-menu-region"><summary>Bayern</summary><ul><li><a href="stadt-ingolstadt.html">Ingolstadt</a></li><li><a href="stadt-muenchen.html">München</a></li></ul></details>
+<details class="site-menu-region"><summary>Berlin</summary><ul><li><a href="stadt-berlin.html">Berlin</a></li></ul></details>
+<details class="site-menu-region"><summary>Hamburg</summary><ul><li><a href="stadt-hamburg.html">Hamburg</a></li></ul></details>
+<details class="site-menu-region" open><summary>Hessen</summary><ul><li><a href="stadt-frankfurt-am-main.html">Frankfurt am Main</a></li><li><a href="stadt-giessen.html">Gießen</a></li><li><a href="stadt-marburg.html" aria-current="page">Marburg</a></li></ul></details>
+<details class="site-menu-region"><summary>Niedersachsen</summary><ul><li><a href="stadt-goettingen.html">Göttingen</a></li></ul></details>
+<details class="site-menu-region"><summary>Nordrhein-Westfalen</summary><ul><li><a href="stadt-aachen.html">Aachen</a></li><li><a href="stadt-koeln.html">Köln</a></li></ul></details>
+<details class="site-menu-region"><summary>Sachsen</summary><ul><li><a href="stadt-leipzig.html">Leipzig</a></li><li><a href="stadt-mittweida.html">Mittweida</a></li></ul></details>
+<details class="site-menu-region"><summary>Thüringen</summary><ul><li><a href="stadt-jena.html">Jena</a></li></ul></details>
+   </details>
+   <details class="site-menu-group"><summary>Studium</summary><ul><li><a href="studienplaetze.html">Studienplätze &amp; Studienwahl</a></li><li><a href="studienstart.html">Studienstart</a></li></ul></details>
+   <details class="site-menu-group"><summary>Technik</summary><ul><li><a href="index.html">Start · Laptops</a></li><li><a href="handys.html">Handys</a></li><li><a href="tablets.html">Tablets</a></li><li><a href="smart-gadgets.html">Smart-Gadgets</a></li></ul></details>
+   <details class="site-menu-group"><summary>Alltag &amp; Planung</summary><ul><li><a href="vorteile.html">Vorteile</a></li><li><a href="autos.html">Autos</a></li><li><a href="reiseideen.html">Reiseideen</a></li></ul></details>
+   <details class="site-menu-group"><summary>Ortsübergreifend</summary><ul><li><a href="wohnen.html">Wohnen</a></li><li><a href="fahrschulen.html">Fahrschulen</a></li><li><a href="aktivitaeten.html">Aktivitäten</a></li><li><a href="pendeln.html">ÖPNV &amp; Pendeln</a></li><li><a href="unterkuenfte.html">Unterkünfte</a></li></ul></details>
+   <details class="site-menu-group"><summary>Persönlich</summary><ul><li><a href="profil.html">Mein Profil</a></li><li><a href="merkliste.html">Merkliste</a></li></ul></details>
+  </div></details>
+ </nav>
+ </div></header>
+<main class="wrap">
+<section id="catalog" data-category="Stadt" data-city="Marburg" aria-labelledby="cityTitle">
+ <div class="city-intro"><div class="eyebrow">Hessen</div><h2 id="cityTitle">Marburg</h2><p>Studienangebote und lokale Anlaufstellen rund um Marburg.</p></div>
+ <div class="fields">
+  <label>Bereich<select id="cityCategory"><option value="all">Alle Bereiche</option><option>Studium</option><option>Duales Studium</option><option>Ausbildung</option><option>Wohnen</option><option>Fahrschulen</option><option>Aktivitäten</option><option>ÖPNV &amp; Pendeln</option><option>Unterkünfte</option><option>Reiseideen</option><option>Studienstart</option></select></label>
+  <label>Suche<input id="catalogQuery" type="search" placeholder="Studiengang, Betrieb, Wohnung …"></label>
+ </div>
+ <div class="tools"><button type="button" id="catalogSaved" class="btn ghost" aria-pressed="false">Nur Merkliste</button><span id="catalogCount" class="muted" role="status"></span></div>
+ <div id="catalogGrid" class="catalog-grid"></div>
+ <button id="moreCatalog" type="button" class="btn ghost" hidden>Mehr Einträge anzeigen</button>
+ <p id="catalogStatus" class="muted" role="status" hidden></p>
+</section>
+</main>
+<footer class="wrap">Campus-Kompass</footer>
+</body></html>

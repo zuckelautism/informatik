@@ -46,6 +46,7 @@
       authModule.onAuthStateChanged(auth, user => {
         document.body.classList.toggle("campus-locked", !user);
         screen.hidden = Boolean(user);
+        window.dispatchEvent(new CustomEvent("campus-account", { detail: user ? { uid: user.uid, app: auth.app } : null }));
         button.disabled = false;
         status.textContent = "";
       });
