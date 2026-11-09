@@ -5,11 +5,11 @@
  <meta name="viewport" content="width=device-width,initial-scale=1">
  <title>Aktivitäten · Campus-Kompass</title>
  <meta name="description" content="Ausflüge in Neckarsulm, Heilbronn, München und Ingolstadt nach Stadt und Art entdecken.">
- <link rel="stylesheet" href="kompass.css">
+ <link rel="stylesheet" href="kompass.css?v=qa1">
  <script src="pruefstand.js" defer></script>
- <script src="campus-basis.js" defer></script>
+ <script src="campus-basis.js?v=qa1" defer></script>
  <script src="neue-eintraege.js" defer></script>
- <script src="katalog.js" defer></script>
+ <script src="katalog.js?v=qa1" defer></script>
 </head>
 <body>
 <header class="wrap site-header"><h1><a href="index.html">Campus-Kompass</a></h1><p>Dein Katalog für Technik, Wohnen und Alltag im Studium.</p></header>
@@ -48,6 +48,7 @@
       <div class="fields">
         <label>Titel<input name="title" required maxlength="90" placeholder="Titel deines Eintrags"></label>
         <label>Stadt<select name="city"><option>Neckarsulm</option><option>Heilbronn</option><option>München</option><option>Ingolstadt</option><option>Überregional</option></select></label>
+        <label>Art der Aktivität<select name="activityKind"><option value="">Offen</option><option>Draußen</option><option>Kultur</option><option>Sport</option><option>Technik</option></select></label>
         <label>Link (https)<input name="link" type="url" required pattern="https://.+" maxlength="1000"></label>
         <label>Notiz, Preis oder Frist<input name="note" maxlength="240" placeholder="z. B. Preis, Frist oder Ort"></label>
       </div>

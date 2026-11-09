@@ -1,3 +1,22 @@
+function safeCampusLink(value) {
+ try {
+  const url=new URL(value);
+  return url.protocol==="https:"&&url.hostname&&!url.username&&!url.password?url.href:"#";
+ } catch {return "#";}
+}
+
+function readCampusStorage(key) {
+ try {
+  const value=JSON.parse(localStorage.getItem(key));
+  return value&&typeof value==="object"&&!Array.isArray(value)?value:{};
+ } catch {return null;}
+}
+
+function watchCampusStorage(key, refresh) {
+ globalThis.addEventListener?.("storage",event=>{if(event.key===key||event.key===null)refresh();});
+ globalThis.addEventListener?.("pageshow",event=>{if(event.persisted)refresh();});
+}
+
 function campusSymbol(category) {
  const paths={
   Laptops:'<rect x="7" y="8" width="26" height="17" rx="2"/><path d="M3 30h34l-3-5H6z"/>',

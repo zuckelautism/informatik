@@ -1,7 +1,7 @@
 (()=>{
  const euro=n=>new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(n);
  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
- const safeLink=u=>/^https:\/\/[a-z0-9.-]+\//i.test(u||"")?u:"#";
+ const safeLink=safeCampusLink;
  const get=id=>document.getElementById(id);
  const dateLabel=date=>date.slice(0,10).split("-").reverse().join(".");
  const adac="https://www.adac.de/rund-ums-fahrzeug/auto-kaufen-verkaufen/autokosten/uebersicht-gebrauchtwagen-mit-niedrigsten-unterhaltskosten/";
@@ -35,22 +35,27 @@
  entries.unshift(...campusErgaenzungen);
  for(const [title,photo] of Object.entries(campusNeueFotos))catalogPhotos.set(title,photo);
  const compassKey="campus-compass-v1";
- let compass={};
- try {compass=JSON.parse(localStorage.getItem(compassKey))||{};} catch {}
- let own=Array.isArray(compass.own)?compass.own:[];
- const marked=new Set(Array.isArray(compass.marked)?compass.marked:[]);
+ let compass={}, own=[], marked=new Set(), storageWritable=true;
  const monthlyIds=get("monthlyFields")?["income","rent","mobility","fixed"]:[];
- for(const id of monthlyIds)get(id).value=compass.monthly?.[id]??"";
- const saveCompass=()=>{
+ const readCompass=()=>storageWritable?(readCampusStorage(compassKey)??compass):compass;
+ function applyCompass(value,restoreBudget=false){
+  compass=value;
+  own=Array.isArray(value.own)?value.own.filter(item=>item&&typeof item.id==="string"&&typeof item.title==="string"):[];
+  marked=new Set(Array.isArray(value.marked)?value.marked:[]);
+  if(restoreBudget)for(const id of monthlyIds)get(id).value=value.monthly?.[id]??"";
+ }
+ applyCompass(readCompass(),true);
+ function saveCompass(changes){
+  applyCompass({...readCompass(),...changes});
   try {
-   const monthly=monthlyIds.length?Object.fromEntries(monthlyIds.map(id=>[id,get(id).value])):compass.monthly;
-   localStorage.setItem(compassKey,JSON.stringify({own,marked:[...marked],monthly}));
+   localStorage.setItem(compassKey,JSON.stringify(compass));
    return true;
   } catch {
+   storageWritable=false;
    showStatus("Browserspeicher nicht verfügbar. Änderungen gelten nur für diese Sitzung.");
    return false;
   }
- };
+ }
  const deviceCategories=new Set(["Handys","Tablets","Smart-Gadgets"]);
  const ecosystemLabels={galaxy:"Galaxy / SmartThings",apple:"Apple",pixel:"Pixel / Google",android:"Android",matter:"Matter"};
  const type=get("catalog").dataset.category;
@@ -92,15 +97,17 @@
    &&(!activities||activity==="all"||item.activity===activity)
    &&(lodging==="all"||item.segment===lodging)
    &&normalized([item.title,item.note,item.city,item.category,item.topic,item.kind,item.segment,item.deviceType,item.activity,...(item.ecosystems??[]).map(tag=>ecosystemLabels[tag])].join(" ")).includes(query));
-  get("catalogCount").textContent=shown.length+" Einträge · "+marked.size+" gemerkt";
+  const grid=get("catalogGrid");
+  const openPlans=new Set([...grid.querySelectorAll("details.trip-plan[open]")].map(plan=>plan.dataset.tripId));
+  get("catalogCount").textContent=shown.length+(shown.length===1?" Eintrag":" Einträge")+" · "+marked.size+" gemerkt";
   get("moreCatalog").hidden=shown.length<=visibleCount;
-  get("catalogGrid").innerHTML=shown.slice(0,visibleCount).map(item=>`<article class="catalog-card">
+  grid.innerHTML=shown.slice(0,visibleCount).map(item=>`<article class="catalog-card">
    ${cardPhoto(item)}
    <div class="eyebrow">${esc(item.category)} · ${esc(item.topic||item.segment||item.deviceType||item.city)}${item.activity?" · "+esc(item.activity):""}</div>
    <h3>${esc(item.title)}</h3><p>${esc(item.note)}</p>
    ${item.plan&&item.tripCap!=null?`<p class="benefit-meta">Ab ${esc(item.city)} · Zielbudget ${euro(item.tripCap)} pro Person</p>
-   <details class="trip-plan"><summary>Tagesplan</summary><ol>${item.plan.map(step=>`<li>${esc(step)}</li>`).join("")}</ol></details>`:""}
-   ${item.category==="Unterkünfte"?`<p class="benefit-meta">${esc(item.city)} · ${esc(item.segment??"Eigener Eintrag")}</p>`:""}
+   <details class="trip-plan" data-trip-id="${esc(item.id)}"${openPlans.has(item.id)?" open":""}><summary>Tagesplan</summary><ol>${item.plan.map(step=>`<li>${esc(step)}</li>`).join("")}</ol></details>`:""}
+   ${item.category==="Unterkünfte"?`<p class="benefit-meta">${esc(item.city)} · ${esc(item.segment||"Eigener Eintrag")}</p>`:""}
    ${item.kind?benefitMeta(item,date):""}
    ${item.ecosystems?`<p class="benefit-meta">${esc(item.ecosystems.map(tag=>ecosystemLabels[tag]).join(" · "))}</p>`:""}
    ${item.compatibility?`<p><a class="secondary" href="${esc(item.compatibility)}" target="_blank" rel="noopener noreferrer">Kompatibilität beim Hersteller ↗</a></p>`:""}
@@ -115,7 +122,12 @@
  }
  function resetCatalogView(){visibleCount=12;drawCompass();}
  for(const id of ["catalogCity","catalogQuery","benefitTopic","benefitStatus","ecosystem","activityType","lodgingType"])get(id)?.addEventListener("input",resetCatalogView);
- get("moreCatalog").addEventListener("click",()=>{visibleCount+=12;drawCompass();});
+ get("moreCatalog").addEventListener("click",()=>{
+  const firstNew=visibleCount;
+  visibleCount+=12;
+  drawCompass();
+  get("catalogGrid").querySelectorAll(".catalog-card")[firstNew]?.querySelector(".btn")?.focus();
+ });
  get("catalogSaved")?.addEventListener("click",()=>{
   markedOnly=!markedOnly;
   get("catalogSaved").setAttribute("aria-pressed",markedOnly);
@@ -143,10 +155,11 @@
    get("publicPrice").focus();
    return;
   }
+  applyCompass(readCompass());
   if(button.dataset.do==="remove"){own=own.filter(item=>item.id!==id);marked.delete(id);}
   else if(marked.has(id))marked.delete(id);
   else marked.add(id);
-  saveCompass();
+  saveCompass({own,marked:[...marked]});
   drawCompass();
   const replacement=[...get("catalogGrid").querySelectorAll('[data-do="mark"]')].find(item=>item.dataset.item===id);
   (replacement||get("catalogSaved")||get("catalogQuery")).focus();
@@ -159,10 +172,11 @@
    showStatus("Bitte einen Titel und einen gültigen HTTPS-Link eingeben.");
    return;
   }
+  applyCompass(readCompass());
   const id="eigen:"+Date.now()+":"+Math.random().toString(36).slice(2);
-  own.unshift({id,title,link,category:type,city:fields.get("city")??"Überregional",note:fields.get("note").trim(),personal:true});
+  own.unshift({id,title,link,category:type,city:fields.get("city")??"Überregional",note:fields.get("note").trim(),segment:fields.get("lodgingKind")??undefined,activity:fields.get("activityKind")??undefined,personal:true});
   marked.add(id);
-  if(saveCompass())showStatus("Eintrag gespeichert und gemerkt.");
+  if(saveCompass({own,marked:[...marked]}))showStatus("Eintrag gespeichert und gemerkt.");
   form.reset();
   if(get("catalogCity"))get("catalogCity").value="all";
   get("catalogQuery").value="";
@@ -180,7 +194,13 @@
   const costs=rent+mobility+fixed;
   output.textContent="Erfasste Fixkosten: "+euro(costs/100)+" · Übrig: "+euro((income-costs)/100)+" pro Monat";
  }
- get("monthlyFields")?.addEventListener("input",()=>{drawMonthly();saveCompass();});
+ get("monthlyFields")?.addEventListener("input",event=>{
+  const id=event.target.id;
+  if(!monthlyIds.includes(id))return;
+  const monthly={...readCompass().monthly,[id]:get(id).value};
+  saveCompass({monthly});
+  drawMonthly();
+ });
  function drawEmployee(){
   const regular=get("publicPrice"), staff=get("staffPrice");
   const output=get("employeeResult");
@@ -201,5 +221,10 @@
 
  drawCompass();
  showCampusUpdate(type);
+ watchCampusStorage(compassKey,()=>{
+  applyCompass(readCompass(),true);
+  drawCompass();
+  if(monthlyIds.length)drawMonthly();
+ });
  if(monthlyIds.length)drawMonthly();
 })();

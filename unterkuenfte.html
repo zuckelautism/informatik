@@ -5,11 +5,11 @@
  <meta name="viewport" content="width=device-width,initial-scale=1">
  <title>Unterkünfte · Campus-Kompass</title>
  <meta name="description" content="Kurzzeit-Unterkünfte in und nahe Neckarsulm, Heilbronn, München und Ingolstadt. Gesamtpreise, Saison und freie Plätze prüfst du beim Anbieter.">
- <link rel="stylesheet" href="kompass.css">
+ <link rel="stylesheet" href="kompass.css?v=qa1">
  <script src="pruefstand.js" defer></script>
- <script src="campus-basis.js" defer></script>
+ <script src="campus-basis.js?v=qa1" defer></script>
  <script src="neue-eintraege.js" defer></script>
- <script src="katalog.js" defer></script>
+ <script src="katalog.js?v=qa1" defer></script>
 </head>
 <body>
 <header class="wrap site-header"><h1><a href="index.html">Campus-Kompass</a></h1><p>Dein Katalog für Technik, Wohnen und Alltag im Studium.</p></header>
@@ -47,6 +47,7 @@
       <div class="fields">
         <label>Titel<input name="title" required maxlength="90" placeholder="Titel deines Eintrags"></label>
         <label>Stadt<select name="city"><option>Neckarsulm</option><option>Heilbronn</option><option>München</option><option>Ingolstadt</option><option>Überregional</option></select></label>
+        <label>Unterkunftsart<select name="lodgingKind"><option value="">Offen</option><option>Hotel</option><option>Apartment / Ferienwohnung</option><option>Jugendherberge / Hostel</option><option>Camping</option></select></label>
         <label>Link (https)<input name="link" type="url" required pattern="https://.+" maxlength="1000"></label>
         <label>Notiz, Preis oder Frist<input name="note" maxlength="240" placeholder="z. B. Preis, Frist oder Ort"></label>
       </div>

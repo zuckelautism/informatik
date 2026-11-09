@@ -1,6 +1,6 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Campus-Kompass · Technik, Wohnen &amp; Mobilität</title><meta name="description" content="Preisradar für 32-GB-Laptops im Wirtschaftsinformatik-Studium: Lenovo ThinkPad, Samsung Galaxy Book und mehr."><link rel="stylesheet" href="kompass.css">
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Campus-Kompass · Technik, Wohnen &amp; Mobilität</title><meta name="description" content="Preisradar für 32-GB-Laptops im Wirtschaftsinformatik-Studium: Lenovo ThinkPad, Samsung Galaxy Book und mehr."><link rel="stylesheet" href="kompass.css?v=qa1">
  <script src="pruefstand.js"></script>
- <script src="campus-basis.js"></script></head><body>
+ <script src="campus-basis.js?v=qa1"></script></head><body>
 <header class="wrap site-header"><h1>Campus-Kompass</h1><p>Dein Katalog für Technik, Wohnen und Alltag im Studium.</p></header>
 <main class="wrap">
 <nav id="kompass" aria-label="Katalogbereiche" class="tools section-nav">
@@ -54,7 +54,6 @@
   <div class="tools">
     
     <button type="button" class="btn ghost" id="resetFinder">Filter zurücksetzen</button>
-    <span id="finderStatus" class="muted" role="status"></span>
   </div>
 </details>
 <section class="finder" id="comparison" aria-labelledby="comparisonTitle" hidden>
@@ -65,6 +64,7 @@
  <p id="counter" class="counter" aria-live="polite"></p>
  <div class="tools"><button type="button" class="btn ghost" id="wishlist" aria-pressed="false">Wunschliste</button></div>
 </div>
+<p id="finderStatus" class="muted finder-status" role="status"></p>
 <div id="results" class="grid"></div>
 <button type="button" id="moreLaptops" class="btn ghost" hidden>Mehr Laptops anzeigen</button>
 </section>
@@ -112,7 +112,7 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
  }
  const snapshotAge=d=>{const m=String(d.checked).match(/^(\d{2})\.(\d{2})\.(\d{4})/);if(!m)return null;return Math.max(0,Math.floor((Date.now()-Date.UTC(+m[3],+m[2]-1,+m[1]))/86400000));};
  const shipping=d=>d.shipping==null?"Versand unbekannt":d.shipping===0?"inkl. Versand":`zzgl. ${euro(d.shipping)} Versand`;
- const safeLink=u=>/^https:\/\/[a-z0-9.-]+\//i.test(u||"")?u:"#";
+ const safeLink=safeCampusLink;
  const results=document.getElementById("results"),counter=document.getElementById("counter"),dialog=document.getElementById("detail");
 
  const get=id=>document.getElementById(id);
@@ -127,21 +127,26 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
  const filterIds=["profile","budget","budgetMode","size","upgrade","ram","capacity","preferredSize"];
  const defaults=Object.fromEntries(filterIds.map(id=>[id,get(id).value]));
  const storageKey="campus-deals-finder-v1";
- let saved={};
- try {saved=JSON.parse(localStorage.getItem(storageKey))||{};} catch {}
+ let saved={}, favorites, compared, targets, storageWritable=true;
  const validIds=new Set(deals.map(d=>d.id));
  const savedIds=items=>new Set(Array.isArray(items)?items.filter(id=>validIds.has(id)):[]);
- const favorites=savedIds(saved.favorites);
- const compared=savedIds(saved.compared);
- const targets=new Map(deals.flatMap(d=>Number.isFinite(saved.targets?.[d.id])&&saved.targets[d.id]>0?[[d.id,saved.targets[d.id]]]:[]));
- for(const id of filterIds){
-  const field=get(id), value=saved.filters?.[id];
-  if(typeof value!=="string")continue;
-  field.value=value;
-  if(!field.checkValidity()||(field.tagName==="SELECT"&&!field.value))field.value=defaults[id];
+ const readFinder=()=>storageWritable?(readCampusStorage(storageKey)??saved):saved;
+ function applyFinder(value,restoreFilters=false){
+  saved=value;
+  favorites=savedIds(value.favorites);
+  compared=new Set([...savedIds(value.compared)].slice(0,3));
+  targets=new Map(deals.flatMap(d=>Number.isFinite(value.targets?.[d.id])&&value.targets[d.id]>0?[[d.id,value.targets[d.id]]]:[]));
+  if(!restoreFilters)return;
+  for(const id of filterIds){
+   const field=get(id), stored=value.filters?.[id];
+   field.value=typeof stored==="string"?stored:defaults[id];
+   if(!field.checkValidity()||(field.tagName==="SELECT"&&!field.value))field.value=defaults[id];
+  }
  }
+ applyFinder(readFinder(),true);
  let onlyFavorites=false, laptopLimit=9;
  const budget=()=>get("budget").checkValidity()?get("budget").valueAsNumber:NaN;
+ const withinBudget=d=>Number.isFinite(budget())&&total(d)!=null&&Math.round(total(d)*100)<=Math.round(budget()*100);
  const fitsSize=(d,size)=>size==="any"||(size==="compact"?d.size<=14:d.size>14);
  function fit(d){
   const criteria=[d.ram>=Number(get("ram").value),d.cap>=Number(get("capacity").value)];
@@ -152,12 +157,18 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
  const scoreLabel=d=>dealScore(d)==null?"Offen":dealScore(d)+" / 100";
  const ramLabel=d=>d.upgrade?"Bis "+d.cap+" GB aufrüstbar":"Fest verbaut";
  const dateLabel=date=>date.slice(0,10).split("-").reverse().join(".");
- function save(status=""){
-  try {
-   localStorage.setItem(storageKey,JSON.stringify({filters:Object.fromEntries(filterIds.map(id=>[id,get(id).value])),favorites:[...favorites],compared:[...compared],targets:Object.fromEntries(targets)}));
-  } catch {status+=" Browserspeicher nicht verfügbar. Änderungen gelten für diese Sitzung.";}
+ function save(changes){
+  applyFinder({...readFinder(),...changes});
+  let status="";
+  try {localStorage.setItem(storageKey,JSON.stringify(saved));}
+  catch {
+   storageWritable=false;
+   status="Browserspeicher nicht verfügbar. Änderungen gelten für diese Sitzung.";
+  }
   get("finderStatus").textContent=status;
+  return !status;
  }
+ const saveFilters=()=>save({filters:Object.fromEntries(filterIds.map(id=>[id,get(id).value]))});
  function alarm(d){
   const target=targets.get(d.id);
   if(target==null)return "Kein Zielpreis gesetzt";
@@ -174,7 +185,7 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
    ["RAM / Aufrüstung",d=>esc(d.ram)+" GB · "+esc(ramLabel(d))],["SSD",d=>esc(d.storage)],
    ["Profil-Fit",d=>fit(d)+" %"],["Deal-Score (Snapshot)",scoreLabel],
    ["Dokumentierter Endpreis",d=>d.price==null?"Kein Preis erfasst":total(d)==null?"Versand offen":euro(total(d))],
-   ["Preisstand / Quelle",d=>`<a href="${safeLink(d.source)}" target="_blank" rel="noopener noreferrer">${esc(d.checked)} · ${esc(d.shop)}</a>`],
+   ["Preisstand / Quelle",d=>`<a href="${esc(safeLink(d.source))}" target="_blank" rel="noopener noreferrer">${esc(d.checked)} · ${esc(d.shop)}</a>`],
    ["Preisalarm",d=>esc(alarm(d))]
   ];
   get("comparison").querySelector(".compare-scroll").innerHTML=items.length?`<table>
@@ -200,7 +211,7 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
 
   data=data.filter(d=>fitsSize(d,get("size").value)
    &&(get("upgrade").value==="any"||d.upgrade===(get("upgrade").value==="yes"))
-   &&(get("budgetMode").value==="any"||(Number.isFinite(budget())&&total(d)!=null&&Math.round(total(d)*100)<=Math.round(budget()*100)))
+   &&(get("budgetMode").value==="any"||withinBudget(d))
    &&(!onlyFavorites||favorites.has(d.id)));
   get("profileNote").textContent=profiles[get("profile").value][3];
   get("wishlist").textContent="Wunschliste ("+favorites.size+")";
@@ -211,7 +222,7 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
   if(sort==="small")data.sort((a,b)=>a.size-b.size||byPrice(a,b));
   if(sort==="big")data.sort((a,b)=>b.size-a.size||byPrice(a,b));
   if(sort==="fresh")data.sort((a,b)=>{const parse=d=>{const m=String(d.checked).match(/^(\d{2})\.(\d{2})\.(\d{4})(?:,?\s*(\d{2}):(\d{2}))?/);return m?Date.UTC(+m[3],+m[2]-1,+m[1],+(m[4]||0),+(m[5]||0)):0};return parse(b)-parse(a)||byPrice(a,b)});
-  if(sort==="budget")data.sort((a,b)=>(total(a)==null||total(a)>budget())-(total(b)==null||total(b)>budget())||byPrice(a,b));
+  if(sort==="budget")data.sort((a,b)=>Number(withinBudget(b))-Number(withinBudget(a))||byPrice(a,b));
   counter.textContent=`${data.length} von ${deals.length} Konfigurationen${data.length>laptopLimit?` · ${laptopLimit} angezeigt`:""}`;
   const more=get("moreLaptops");
   more.hidden=data.length<=laptopLimit;
@@ -249,7 +260,7 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
   document.getElementById("modalTitle").textContent=d.name;
   document.getElementById("modalModel").textContent=d.model+" · "+d.cpu;
   let hs=(d.history||[]).filter(h=>safeLink(h.source)!=="#").sort((a,b)=>a.date.localeCompare(b.date)),offers=d.price==null?[]:d.offers?.length?d.offers:[{shop:d.shop,price:d.price,shipping:d.shipping,date:d.checked,url:d.source}];
-  const sourceDates=hs.length?`<p class="chartnote">Preisbelege (ohne Versand): ${hs.map(h=>`<a href="${safeLink(h.source)}" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">${esc(dateLabel(h.date))} · ${euro(h.price)} ↗</a>`).join(" · ")}</p>`:"";
+  const sourceDates=hs.length?`<p class="chartnote">Preisbelege (ohne Versand): ${hs.map(h=>`<a href="${esc(safeLink(h.source))}" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">${esc(dateLabel(h.date))} · ${euro(h.price)} ↗</a>`).join(" · ")}</p>`:"";
   document.getElementById("modalBody").innerHTML=`
   <div class="pillrow"><span class="pill">${esc(d.display)}</span><span class="pill">${esc(d.ram)} GB RAM</span><span class="pill">${esc(d.storage)} SSD</span><span class="pill">${d.upgrade?`bis ${esc(d.cap)} GB aufrüstbar`:"RAM nicht erweiterbar"}</span></div>
   <div class="modStats"><div class="modStat"><small>Dokumentierter Preis (Versand ggf. offen)</small><b>${priceLabel(d)}</b></div><div class="modStat"><small>Händler</small><b style="font-size:14px">${esc(d.shop)}</b></div><div class="modStat"><small>Preisstand / Quelle</small><b>${esc(d.checked)}</b></div></div>
@@ -267,16 +278,17 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
   <h3>Preisentwicklung</h3>${plot(hs)}${sourceDates}
   <h3>Dokumentierte Händlerangebote</h3><p class="chartnote">Die Händlerstände können abgelaufen sein. Die Sortierung „Jüngster Preisstand“ verwendet das Datum des Angebots, nicht das Abrufdatum. Gesamtpreise gelten nur für die dokumentierte Versandart; bei unbekanntem Versand ist kein Gesamtpreis berechenbar.</p>
   ${offers.length?"":`<p class="chartnote">Für diese Konfiguration ist kein Händlerangebot hinterlegt.</p>`}
-  ${offers.map(o=>`<div class="offerrow"><div><strong>${esc(o.shop)}</strong><small>Stand: ${esc(o.date)} · ${o.availability?esc(o.availability)+" · ":"Verfügbarkeit zum heutigen Zeitpunkt unbekannt · "}${o.shipping==null?"Versand offen":o.shipping===0?"inkl. Versand":"zzgl. "+euro(o.shipping)+" Versand"}</small></div><div style="display:flex;align-items:center;gap:12px"><b>${euro(o.price)}${o.shipping==null?"":`<small style="display:block;font-weight:400;color:#bcd2d0">Gesamt ${euro(o.price+o.shipping)}</small>`}</b><a href="${safeLink(o.url)}" target="_blank" rel="noopener noreferrer">Ansehen ↗</a></div></div>`).join("")}
-  <div class="modalActions"><a class="btn" href="${safeLink(d.source)}" target="_blank" rel="noopener noreferrer">${d.price==null?"Technische Daten":"Angebote prüfen"} ↗</a>${d.geizhals?`<a class="btn ghost" href="${safeLink(d.geizhals)}" target="_blank" rel="noopener noreferrer">Geizhals-Preisverlauf ↗</a>`:""}</div>
+  ${offers.map(o=>`<div class="offerrow"><div><strong>${esc(o.shop)}</strong><small>Stand: ${esc(o.date)} · ${o.availability?esc(o.availability)+" · ":"Verfügbarkeit zum heutigen Zeitpunkt unbekannt · "}${o.shipping==null?"Versand offen":o.shipping===0?"inkl. Versand":"zzgl. "+euro(o.shipping)+" Versand"}</small></div><div style="display:flex;align-items:center;gap:12px"><b>${euro(o.price)}${o.shipping==null?"":`<small style="display:block;font-weight:400;color:#bcd2d0">Gesamt ${euro(o.price+o.shipping)}</small>`}</b><a href="${esc(safeLink(o.url))}" target="_blank" rel="noopener noreferrer">Ansehen ↗</a></div></div>`).join("")}
+  <div class="modalActions"><a class="btn" href="${esc(safeLink(d.source))}" target="_blank" rel="noopener noreferrer">${d.price==null?"Technische Daten":"Angebote prüfen"} ↗</a>${d.geizhals?`<a class="btn ghost" href="${esc(safeLink(d.geizhals))}" target="_blank" rel="noopener noreferrer">Geizhals-Preisverlauf ↗</a>`:""}</div>
   <p class="chartnote">Historische Händlerangebote und Preisvergleichs-Einstiege sind nicht gleichwertig. Bei neu ergänzten Modellen kann der Angebotszeitpunkt unbekannt sein. Preis, Lieferbarkeit und Versand vor Kauf direkt beim Händler prüfen.</p>`;
 
   const form=dialog.querySelector(".target");
   function updateTarget(value){
+   applyFinder(readFinder());
    if(Number.isFinite(value)&&value>0)targets.set(d.id,value);
    else targets.delete(d.id);
-   get("alarmState").textContent=alarm(d);
-   save();
+   const stored=save({targets:Object.fromEntries(targets)});
+   get("alarmState").textContent=alarm(d)+(stored?"":" · Nur für diese Sitzung gespeichert");
   }
   form.addEventListener("submit",e=>{e.preventDefault();updateTarget(form.elements.target.valueAsNumber);});
   get("removeTarget").addEventListener("click",()=>{form.reset();form.elements.target.value="";updateTarget(NaN);});
@@ -289,13 +301,14 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
   if(!card)return;
   const id=card.dataset.id, action=e.target.closest("[data-action]")?.dataset.action;
   if(action==="favorite"||action==="compare"){
+   applyFinder(readFinder());
    const selection=action==="favorite"?favorites:compared;
    if(selection.has(id))selection.delete(id);
    else if(action==="compare"&&selection.size===3){
     get("finderStatus").textContent="Der Vergleich hat drei Plätze. Entferne zuerst ein Modell.";
     return;
    }else selection.add(id);
-   save();
+   save(action==="favorite"?{favorites:[...favorites]}:{compared:[...compared]});
    draw();
    (results.querySelector(`[data-id="${CSS.escape(id)}"] [data-action="${action}"]`)||get("wishlist")).focus();
    return;
@@ -313,7 +326,7 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
    get("ram").value=ram; get("capacity").value=capacity; get("preferredSize").value=size;
   }
   if(["ram","capacity","preferredSize"].includes(id))get("profile").value="custom";
-  save();
+  saveFilters();
   resetLaptopView();
  });
  get("wishlist").addEventListener("click",()=>{
@@ -321,7 +334,7 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
   get("wishlist").setAttribute("aria-pressed",onlyFavorites);
   resetLaptopView();
  });
- get("clearCompare").addEventListener("click",()=>{compared.clear();save();draw();get("wishlist").focus();});
+ get("clearCompare").addEventListener("click",()=>{save({compared:[]});draw();get("wishlist").focus();});
  get("resetFinder").addEventListener("click",()=>{
   for(const id of filterIds)get(id).value=defaults[id];
   get("query").value="";
@@ -329,7 +342,7 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
   get("brandFilter").value="Alle";
   onlyFavorites=false;
   get("wishlist").setAttribute("aria-pressed","false");
-  save();
+  saveFilters();
   resetLaptopView();
  });
  document.getElementById("closeModal").addEventListener("click",()=>dialog.close());
@@ -346,5 +359,6 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
   results.querySelectorAll('[data-action="detail"]')[previous]?.focus();
  });
 
+ watchCampusStorage(storageKey,()=>{applyFinder(readFinder(),true);draw();});
  draw();showCampusUpdate("Laptops");
 })(deals);</script></body></html>
