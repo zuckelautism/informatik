@@ -4,13 +4,13 @@
  <meta name="viewport" content="width=device-width,initial-scale=1">
  <title>Mein Profil · Campus-Kompass</title>
  <script src="theme.js?v=coastal1"></script>
- <link rel="stylesheet" href="kompass.css?v=discovery1">
+ <link rel="stylesheet" href="kompass.css?v=review1">
  <script src="pruefstand.js" defer></script>
- <script src="campus-basis.js?v=discovery1" defer></script>
- <script src="neue-eintraege.js?v=discovery1" defer></script>
- <script src="katalog.js?v=coastal1" defer></script>
+ <script src="campus-basis.js?v=review1" defer></script>
+ <script src="neue-eintraege.js?v=review1" defer></script>
+ <script src="katalog.js?v=review1" defer></script>
  <script src="firebase-config.js?v=google1" defer></script>
- <script src="campus-shell.js?v=discovery1" defer></script>
+ <script src="campus-shell.js?v=review1" defer></script>
  <script src="profil.js?v=coastal1" defer></script>
 </head><body class="campus-locked">
  <section class="campus-login" aria-labelledby="campusLoginTitle">
@@ -20,6 +20,7 @@
     <p>Entdecke Städte, finde Angebote für deinen Alltag und speichere dein persönliches Profil.</p>
     <button class="btn" id="campusLoginButton" type="button" disabled>Mit Google anmelden</button>
     <p id="campusLoginStatus" role="status">Anmeldung wird vorbereitet …</p>
+    <p class="campus-login-note">Google-Anmeldung öffnet die Oberfläche. Katalogdateien sind auf GitHub Pages öffentlich. Dein Firebase-Profil ist nur für dein Konto bestimmt.</p>
     <noscript>Aktiviere JavaScript, um dich anzumelden.</noscript>
   </div>
  </section>
@@ -66,7 +67,9 @@
   <div class="fields">
    <label>Vorname<input id="firstName" name="firstName" autocomplete="given-name" maxlength="40" required></label>
    <label>Mein Weg<select id="profilePath" name="path"><option value="offen">Noch keinen Plan</option><option value="studium">Studium</option><option value="ausbildung">Ausbildung</option></select></label>
+    <p class="muted"><a href="studienplaetze.html#orientierung">Noch keinen Plan? Zur Studienorientierung</a></p>
    <label>Meine Stadt<select id="profileCity" name="city"><option value="">Noch offen</option><option>Neckarsulm</option><option>Heilbronn</option><option>München</option><option>Ingolstadt</option></select></label>
+    <p class="muted">Hier stehen die ursprünglich synchronisierten Städte. Für Empfehlungen zu allen 17 Städten nutze <a href="index.html#discoveryTitle">die Einstellungen auf der Startseite</a>.</p>
    <label>Farbschema<select id="profileTheme" name="theme"><option value="coastal">Coastal · Platin &amp; Rot</option><option value="slate">Slate · Stahlblau</option><option value="rose">Rose · Warmes Rot</option><option value="dark">Dunkel</option></select></label>
   </div>
   <div class="avatar-editor">

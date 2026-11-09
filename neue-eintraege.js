@@ -1,6 +1,167 @@
 // Nach Kategorien gruppierte Ergänzungen. Vorhandene IDs für Merklisten beibehalten.
 const campusErgaenzungen=[
 {
+    "id": "bildung|Heidelberg|geschichte|Universität Heidelberg · Geschichte (B.A., 75 %)",
+    "city": "Heidelberg",
+    "category": "Studium",
+    "title": "Universität Heidelberg · Geschichte (B.A., 75 %)",
+    "topic": "Geschichte",
+    "field": "geisteswissenschaften",
+    "note": "Historische Quellen auswerten, Epochen vergleichen und begründet über gesellschaftliche Veränderungen schreiben.",
+    "link": "https://www.hist.uni-heidelberg.de/de/studium/studiengaenge-ba-ma-m-ed/ba-geschichte-75"
+  },
+  {
+    "id": "bildung|Hamburg|geschichte|Universität Hamburg · Geschichte (B.A., Hauptfach)",
+    "city": "Hamburg",
+    "category": "Studium",
+    "title": "Universität Hamburg · Geschichte (B.A., Hauptfach)",
+    "topic": "Geschichte",
+    "field": "geisteswissenschaften",
+    "note": "Historische Quellen auswerten, Epochen vergleichen und begründet über gesellschaftliche Veränderungen schreiben.",
+    "link": "https://www.geschichte.uni-hamburg.de/studium/studiengaenge/ba-geschichte-hauptfach.html"
+  },
+  {
+    "id": "bildung|Jena|geschichte|Universität Jena · Geschichte (B.A., Kernfach)",
+    "city": "Jena",
+    "category": "Studium",
+    "title": "Universität Jena · Geschichte (B.A., Kernfach)",
+    "topic": "Geschichte",
+    "field": "geisteswissenschaften",
+    "note": "Historische Quellen auswerten, Epochen vergleichen und begründet über gesellschaftliche Veränderungen schreiben.",
+    "link": "https://www.uni-jena.de/6570/b-a-kf-geschichte"
+  },
+  {
+    "id": "bildung|Berlin|germanistik|Freie Universität Berlin · Deutsche Philologie (Kombi-B.A.)",
+    "city": "Berlin",
+    "category": "Studium",
+    "title": "Freie Universität Berlin · Deutsche Philologie (Kombi-B.A.)",
+    "topic": "Germanistik und Literatur",
+    "field": "geisteswissenschaften",
+    "note": "Literatur interpretieren, Sprachwandel untersuchen und Texte in ihren historischen und gesellschaftlichen Zusammenhang einordnen.",
+    "link": "https://www.fu-berlin.de/studium/studienangebot/grundstaendige/deutsche_philologie_kombi/index.html"
+  },
+  {
+    "id": "bildung|Heidelberg|germanistik|Universität Heidelberg · Germanistik",
+    "city": "Heidelberg",
+    "category": "Studium",
+    "title": "Universität Heidelberg · Germanistik",
+    "topic": "Germanistik und Literatur",
+    "field": "geisteswissenschaften",
+    "note": "Literatur interpretieren, Sprachwandel untersuchen und Texte in ihren historischen und gesellschaftlichen Zusammenhang einordnen.",
+    "link": "https://www.gs.uni-heidelberg.de/de/studium/studiengaenge/studiengaenge/studiengaenge/germanistik"
+  },
+  {
+    "id": "bildung|Heidelberg|philosophie|Universität Heidelberg · Philosophie (B.A.)",
+    "city": "Heidelberg",
+    "category": "Studium",
+    "title": "Universität Heidelberg · Philosophie (B.A.)",
+    "topic": "Philosophie",
+    "field": "geisteswissenschaften",
+    "note": "Du rekonstruierst Argumente und arbeitest an Fragen zu Wissen, Ethik, Sprache und Gesellschaft.",
+    "link": "https://www.uni-heidelberg.de/fakultaeten/philosophie/philsem/studienberatung/bachelor.html"
+  },
+  {
+    "id": "bildung|Jena|philosophie|Universität Jena · Philosophie (B.A., Kernfach)",
+    "city": "Jena",
+    "category": "Studium",
+    "title": "Universität Jena · Philosophie (B.A., Kernfach)",
+    "topic": "Philosophie",
+    "field": "geisteswissenschaften",
+    "note": "Du rekonstruierst Argumente und arbeitest an Fragen zu Wissen, Ethik, Sprache und Gesellschaft.",
+    "link": "https://www.uni-jena.de/6970/b-a-kf-philosophie"
+  },
+  {
+    "id": "bildung|Berlin|kulturwissenschaft|Freie Universität Berlin · Sozial- und Kulturanthropologie (Kombi-B.A.)",
+    "city": "Berlin",
+    "category": "Studium",
+    "title": "Freie Universität Berlin · Sozial- und Kulturanthropologie (Kombi-B.A.)",
+    "topic": "Kulturwissenschaft und Anthropologie",
+    "field": "geisteswissenschaften",
+    "note": "Du vergleichst Alltagspraktiken und kulturelle Deutungen und lernst Methoden wie Interviews und teilnehmende Beobachtung kennen.",
+    "link": "https://www.fu-berlin.de/studium/studienangebot/grundstaendige/sozial_kulturanthro_kombi/index.html"
+  },
+  {
+    "id": "bildung|Göttingen|kulturwissenschaft|Universität Göttingen · Kulturanthropologie / Europäische Ethnologie (Zwei-Fächer-B.A.)",
+    "city": "Göttingen",
+    "category": "Studium",
+    "title": "Universität Göttingen · Kulturanthropologie / Europäische Ethnologie (Zwei-Fächer-B.A.)",
+    "topic": "Kulturwissenschaft und Anthropologie",
+    "field": "geisteswissenschaften",
+    "note": "Du vergleichst Alltagspraktiken und kulturelle Deutungen und lernst Methoden wie Interviews und teilnehmende Beobachtung kennen.",
+    "link": "https://www.uni-goettingen.de/de/636657.html"
+  },
+  {
+    "id": "bildung|Köln|medien|Universität zu Köln · Medienkulturwissenschaft (B.A.)",
+    "city": "Köln",
+    "category": "Studium",
+    "title": "Universität zu Köln · Medienkulturwissenschaft (B.A.)",
+    "topic": "Medienkulturwissenschaft",
+    "field": "geisteswissenschaften",
+    "note": "Du analysierst Filme, digitale Medien und öffentliche Kommunikation und untersuchst, wie Medien Kultur prägen.",
+    "link": "https://mekuwi.phil-fak.uni-koeln.de/studieninteressierte/bachelor"
+  },
+  {
+    "id": "bildung|Tübingen|sprachwissenschaft|Universität Tübingen · Allgemeine Sprachwissenschaft (B.A., Hauptfach)",
+    "city": "Tübingen",
+    "category": "Studium",
+    "title": "Universität Tübingen · Allgemeine Sprachwissenschaft (B.A., Hauptfach)",
+    "topic": "Sprachwissenschaft",
+    "field": "geisteswissenschaften",
+    "note": "Du untersuchst Lautsysteme, Grammatik und Bedeutung. Je nach Schwerpunkt arbeitest du mit Sprachdaten oder vergleichst Sprachen.",
+    "link": "https://uni-tuebingen.de/studium/studienangebot/verzeichnis-der-studiengaenge/detail/course/allgemeine-sprachwissenschaft-bachelor-hauptfach/"
+  },
+  {
+    "id": "bildung|Heidelberg|kunstgeschichte|Universität Heidelberg · Europäische Kunstgeschichte (B.A.)",
+    "city": "Heidelberg",
+    "category": "Studium",
+    "title": "Universität Heidelberg · Europäische Kunstgeschichte (B.A.)",
+    "topic": "Kunstgeschichte",
+    "field": "geisteswissenschaften",
+    "note": "Du analysierst Bilder, Architektur und Objekte, vergleichst ihre Entstehungsbedingungen und arbeitest mit visuellen Quellen.",
+    "link": "https://www.kunst.uni-heidelberg.de/de/ba-europaeische-kunstgeschichte"
+  },
+  {
+    "id": "bildung|Marburg|kunstgeschichte|Philipps-Universität Marburg · Kunstgeschichte (B.A., Hauptfach)",
+    "city": "Marburg",
+    "category": "Studium",
+    "title": "Philipps-Universität Marburg · Kunstgeschichte (B.A., Hauptfach)",
+    "topic": "Kunstgeschichte",
+    "field": "geisteswissenschaften",
+    "note": "Du analysierst Bilder, Architektur und Objekte, vergleichst ihre Entstehungsbedingungen und arbeitest mit visuellen Quellen.",
+    "link": "https://www.uni-marburg.de/de/studium/vor-dem-studium/studienangebot/bachelor/hauptfach/kunstgeschichte"
+  },
+  {
+    "id": "bildung|Berlin|politik|Freie Universität Berlin · Politikwissenschaft (B.A.)",
+    "city": "Berlin",
+    "category": "Studium",
+    "title": "Freie Universität Berlin · Politikwissenschaft (B.A.)",
+    "topic": "Politikwissenschaft",
+    "field": "gesellschaft",
+    "note": "Du untersuchst politische Institutionen, Konflikte und Entscheidungen. Methoden und politische Theorie helfen dir, Zusammenhänge zu erklären.",
+    "link": "https://www.fu-berlin.de/studium/studienangebot/grundstaendige/politik/index.html"
+  },
+  {
+    "id": "bildung|Hamburg|politik|Universität Hamburg · Politikwissenschaft (B.A., Hauptfach)",
+    "city": "Hamburg",
+    "category": "Studium",
+    "title": "Universität Hamburg · Politikwissenschaft (B.A., Hauptfach)",
+    "topic": "Politikwissenschaft",
+    "field": "gesellschaft",
+    "note": "Du untersuchst politische Institutionen, Konflikte und Entscheidungen. Methoden und politische Theorie helfen dir, Zusammenhänge zu erklären.",
+    "link": "https://www.wiso.uni-hamburg.de/studienbuero-sozialwissenschaften/studiengaenge/ba-politikwissenschaft-hauptfach.html"
+  },
+  {
+    "id": "bildung|Frankfurt am Main|soziologie|Goethe-Universität Frankfurt · Soziologie (B.A., Hauptfach)",
+    "city": "Frankfurt am Main",
+    "category": "Studium",
+    "title": "Goethe-Universität Frankfurt · Soziologie (B.A., Hauptfach)",
+    "topic": "Soziologie",
+    "field": "gesellschaft",
+    "note": "Du erforschst soziale Ungleichheit, Organisationen und gesellschaftlichen Wandel mit quantitativen und qualitativen Methoden.",
+    "link": "https://www.uni-frankfurt.de/de/studium/studiengaenge/soziologie-bachelor-hauptfach"
+  },
+
+{
     "id": "bildung|Berlin|Informatik (B.Sc.)",
     "city": "Berlin",
     "category": "Studium",

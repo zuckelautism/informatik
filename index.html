@@ -1,11 +1,11 @@
 <!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Campus-Kompass · Technik, Wohnen &amp; Mobilität</title><meta name="description" content="Preisradar für 32-GB-Laptops im Wirtschaftsinformatik-Studium: Lenovo ThinkPad, Samsung Galaxy Book und mehr."><script src="theme.js?v=coastal1"></script>
- <link rel="stylesheet" href="kompass.css?v=discovery1">
+ <link rel="stylesheet" href="kompass.css?v=review1">
  <script src="pruefstand.js"></script>
- <script src="campus-basis.js?v=discovery1"></script><script src="firebase-config.js?v=google1" defer></script>
- <script src="neue-eintraege.js?v=discovery1" defer></script>
-<script src="katalog.js?v=coastal1" defer></script>
-<script src="entdecken.js?v=discovery1" defer></script>
-<script src="campus-shell.js?v=discovery1" defer></script>
+ <script src="campus-basis.js?v=review1"></script><script src="firebase-config.js?v=google1" defer></script>
+ <script src="neue-eintraege.js?v=review1" defer></script>
+<script src="katalog.js?v=review1" defer></script>
+<script src="entdecken.js?v=review1" defer></script>
+<script src="campus-shell.js?v=review1" defer></script>
 </head><body class="campus-locked">
  <section class="campus-login" aria-labelledby="campusLoginTitle">
   <div class="campus-login-card">
@@ -14,6 +14,7 @@
     <p>Entdecke Städte, finde Angebote für deinen Alltag und speichere dein persönliches Profil.</p>
     <button class="btn" id="campusLoginButton" type="button" disabled>Mit Google anmelden</button>
     <p id="campusLoginStatus" role="status">Anmeldung wird vorbereitet …</p>
+    <p class="campus-login-note">Google-Anmeldung öffnet die Oberfläche. Katalogdateien sind auf GitHub Pages öffentlich. Dein Firebase-Profil ist nur für dein Konto bestimmt.</p>
     <noscript>Aktiviere JavaScript, um dich anzumelden.</noscript>
   </div>
  </section>
@@ -48,7 +49,14 @@
   <label for="campusSearchInput">Gesamten Katalog durchsuchen</label>
   <div class="discovery-search"><input id="campusSearchInput" type="search" maxlength="100" required placeholder="z. B. Wohnheim in Berlin oder Data Science"><button class="btn" type="submit">Suchen</button></div>
  </form>
- <p class="muted discovery-note">Deine letzten 12 Suchanfragen bleiben in diesem Browser und werden deinem Konto zugeordnet.</p>
+ <p class="muted discovery-note">Die letzten zwölf Suchen bleiben in diesem Browser. <a href="studienplaetze.html#orientierung">Noch unsicher bei der Studienwahl?</a></p>
+ <details class="discovery-preferences">
+ <summary>Empfehlungen und Suchverlauf einstellen</summary>
+ <p class="muted discovery-note">Diese Einstellungen gelten nur für dein Konto in diesem Browser. Sie ändern dein synchronisiertes Profil nicht.</p>
+ <label><input type="checkbox" id="campusTrackSearches" checked> Suchverlauf speichern und für Empfehlungen nutzen</label>
+ <label for="campusPreferredCity">Stadt für Empfehlungen</label><select id="campusPreferredCity"><option value="">Stadt aus meinem Profil verwenden</option><optgroup label="Baden-Württemberg"><option>Heidelberg</option><option>Heilbronn</option><option>Neckarsulm</option><option>Tübingen</option></optgroup><optgroup label="Bayern"><option>Ingolstadt</option><option>München</option></optgroup><optgroup label="Berlin"><option>Berlin</option></optgroup><optgroup label="Hamburg"><option>Hamburg</option></optgroup><optgroup label="Hessen"><option>Frankfurt am Main</option><option>Gießen</option><option>Marburg</option></optgroup><optgroup label="Niedersachsen"><option>Göttingen</option></optgroup><optgroup label="Nordrhein-Westfalen"><option>Aachen</option><option>Köln</option></optgroup><optgroup label="Sachsen"><option>Leipzig</option><option>Mittweida</option></optgroup><optgroup label="Thüringen"><option>Jena</option></optgroup></select>
+ <label for="campusPreferredField">Studienfeld für Empfehlungen</label><select id="campusPreferredField"><option value="">Kein bevorzugtes Feld</option><option value="geisteswissenschaften">Geistes- und Kulturwissenschaften</option><option value="gesellschaft">Gesellschaft und Wirtschaft</option><option value="technik">Informatik und Technik</option><option value="gesundheit">Psychologie und Gesundheit</option></select>
+ </details>
  <div class="tools"><div id="campusRecentSearches" class="tools"></div><button id="campusClearSearches" class="btn ghost" type="button" hidden>Suchverlauf löschen</button></div>
  <p id="campusDiscoveryStatus" role="status"></p>
  <ul id="campusSearchResults" class="discovery-results"></ul>
@@ -165,11 +173,12 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
  };
  const filterIds=["profile","budget","budgetMode","size","upgrade","ram","capacity","preferredSize"];
  const defaults=Object.fromEntries(filterIds.map(id=>[id,get(id).value]));
- const storageKey="campus-deals-finder-v1";
+ let finderUid="";
+ const storageKey=()=>campusAccountStorageKey("campus-deals-finder-v1",finderUid);
  let saved={}, favorites, compared, targets, storageWritable=true;
  const validIds=new Set(deals.map(d=>d.id));
  const savedIds=items=>new Set(Array.isArray(items)?items.filter(id=>validIds.has(id)):[]);
- const readFinder=()=>storageWritable?(readCampusStorage(storageKey)??saved):saved;
+ const readFinder=()=>finderUid&&storageWritable?(readCampusStorage(storageKey())??saved):saved;
  function applyFinder(value,restoreFilters=false){
   saved=value;
   favorites=savedIds(value.favorites);
@@ -199,7 +208,7 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
  function save(changes){
   applyFinder({...readFinder(),...changes});
   let status="";
-  try {localStorage.setItem(storageKey,JSON.stringify(saved));}
+  try {if(finderUid)localStorage.setItem(storageKey(),JSON.stringify(saved));}
   catch {
    storageWritable=false;
    status="Browserspeicher nicht verfügbar. Änderungen gelten für diese Sitzung.";
@@ -398,6 +407,13 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
   results.querySelectorAll('[data-action="detail"]')[previous]?.focus();
  });
 
- watchCampusStorage(storageKey,()=>{applyFinder(readFinder(),true);draw();});
+ const refreshFinder=()=>{applyFinder(readFinder(),true);draw();};
+ watchCampusStorage(storageKey,refreshFinder);
+ window.addEventListener("campus-account",event=>{
+  finderUid=event.detail?.uid??"";
+  saved={};storageWritable=true;onlyFavorites=false;laptopLimit=9;
+  get("wishlist").checked=false;
+  refreshFinder();
+ });
  draw();showCampusUpdate("Laptops");
 })(deals);</script></body></html>

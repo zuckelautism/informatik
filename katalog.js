@@ -38,10 +38,11 @@ const campusEntries=(()=>{
  const entries=campusEntries;
  const catalogPhotos=new Map(Object.entries({"iPhone 18 Pro":{"url":"https://www.apple.com/v/iphone-18-pro/a/images/overview/media-hero/hero_startframe__ck15fj8f67hy_large.jpg","credit":"Modellreihe · Apple","source":"https://www.apple.com/de/iphone-18-pro/","place":false},"iPhone 18 Pro Max":{"url":"https://www.apple.com/v/iphone-18-pro/a/images/overview/media-hero/hero_startframe__ck15fj8f67hy_large.jpg","credit":"Modellreihe · Apple","source":"https://www.apple.com/de/iphone-18-pro/","place":false},"iPhone 17":{"url":"https://www.apple.com/v/iphone-17/j/images/overview/welcome/hero_startframe__e9e7pcnguyqi_xlarge.jpg","credit":"Apple","source":"https://www.apple.com/de/iphone-17/","place":false},"iPhone 17e":{"url":"https://www.apple.com/euro/iphone-17e/a/screens_alt/images/overview/welcome/hero_endframe__eafizd06t6qa_large.jpg","credit":"Apple","source":"https://www.apple.com/de/iphone-17e/","place":false},"iPhone Air":{"url":"https://www.apple.com/v/iphone-air/j/images/overview/welcome/hero__c8vidxwr9imq_xlarge.jpg","credit":"Apple","source":"https://www.apple.com/de/iphone-air/","place":false},"iPad Pro 11 (M5)":{"url":"https://www.apple.com/v/ipad-pro/aw/images/overview/hero/hero_endframe__du5kcy4qnxkm_large.jpg","credit":"Modellreihe · Apple","source":"https://www.apple.com/de/ipad-pro/","place":false},"iPad Pro 13 (M5)":{"url":"https://www.apple.com/v/ipad-pro/aw/images/overview/hero/hero_endframe__du5kcy4qnxkm_large.jpg","credit":"Modellreihe · Apple","source":"https://www.apple.com/de/ipad-pro/","place":false},"iPad Air 11 (M4)":{"url":"https://www.apple.com/v/ipad-air/ah/images/overview/hero/hero_endframe__6gl84bccyaqi_large.png","credit":"Modellreihe · Apple","source":"https://www.apple.com/de/ipad-air/","place":false},"iPad Air 13 (M4)":{"url":"https://www.apple.com/v/ipad-air/ah/images/overview/hero/hero_endframe__6gl84bccyaqi_large.png","credit":"Modellreihe · Apple","source":"https://www.apple.com/de/ipad-air/","place":false},"iPad mini (A20 Pro)":{"url":"https://www.apple.com/v/ipad-mini/a/images/overview/highlights/chip__btt9ql0unn7m_large.jpg","credit":"Apple","source":"https://www.apple.com/de/ipad-mini/","place":false},"AirPods Pro 3":{"url":"https://www.apple.com/v/airpods-pro/t/images/overview/welcome/hero__b0eal3mn03ua_large.jpg","credit":"Apple","source":"https://www.apple.com/de/airpods-pro/","place":false},"Galaxy S26 Ultra":{"url":"https://images.samsung.com/de/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-kv.jpg?imbypass=true","credit":"Samsung","source":"https://www.samsung.com/de/smartphones/galaxy-s26-ultra/","place":false},"Galaxy Z Flip8":{"url":"https://images.samsung.com/de/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-kv.jpg?imbypass=true","credit":"Samsung","source":"https://www.samsung.com/de/smartphones/galaxy-z-flip8/","place":false},"Galaxy Tab S11 Ultra":{"url":"https://shop.samsung.com/ie/images/products/30340/36863/2000x2000/SM-X936BZAPEUB.webp","credit":"Modellreihe · Samsung","source":"https://shop.samsung.com/ie/images/products/30340/36863/2000x2000/SM-X936BZAPEUB.webp","place":false},"Galaxy SmartTag2":{"url":"https://images.samsung.com/is/image/samsung/p6pim/de/ei-t5600bbegeu/gallery/de-galaxy-smarttag2-ei-t5600-ei-t5600bbegeu-538414432","credit":"Samsung","source":"https://www.samsung.com/de/mobile-accessories/galaxy-smarttag2-black-ei-t5600bbegeu/","place":false},"Pixel 11 Pro":{"url":"https://www.trippodo.com/1509389-large_default/google-pixel-11-pro-512gb-fog.jpg","credit":"Modellreihe · Trippodo","source":"https://www.trippodo.com/1509389-large_default/google-pixel-11-pro-512gb-fog.jpg","place":false},"Deutsches Museum · Museumsinsel":{"url":"https://www.deutsches-museum.de/assets/_processed_/9/1/csm_CD_L_7790_163_e1bcbeb8f7.jpg","credit":"Deutsches Museum","source":"https://www.deutsches-museum.de/museumsinsel/besuch","place":true},"Aussichtspunkt Scheuerberg":{"url":"https://mein.toubiz.de/api/v1/media/85625466-8a6f-4b61-b317-186545b6b690/view?format=image%2Fwebp&quality=86&width=720","credit":"Tourismusfoto","source":"https://www.heilbronnerland.de/poi/aussichtspunkt-am-scheuerberg","place":true},"Deutsches Motorradmuseum":{"url":"https://c02.purpledshub.com/uploads/sites/66/2026/02/Deutsches-Zweirad-und-NSU-Museum-Neckarsulm-Aussenansicht.jpg","credit":"Außenansicht · Bildquelle","source":"https://c02.purpledshub.com/uploads/sites/66/2026/02/Deutsches-Zweirad-und-NSU-Museum-Neckarsulm-Aussenansicht.jpg","place":true},"experimenta":{"url":"https://www.heilbronn.de/fileadmin/daten/stadtheilbronn/bilder/bildung/Experimenta-im-Blumenmeer-c-Roland-Schweizer.jpg","credit":"Roland Schweizer · Stadt Heilbronn","source":"https://www.heilbronn.de/leben/heilbronn-entdecken/sehenswuerdigkeiten/experimenta.html","place":true},"Audi museum mobile":{"url":"https://image.wmsm.co/67c8650daf6e2/audi-museum-mobile-ingolstadt-3.webp?quality=80&width=1280","credit":"Außenansicht · Bildquelle","source":"https://image.wmsm.co/67c8650daf6e2/audi-museum-mobile-ingolstadt-3.webp?quality=80&width=1280","place":true},"Klenzepark":{"url":"https://www.filmlocations-bayern.de/media/Image/17516/LocationFullsizeImage/Klenze_Brunnen_ERchr16_0899.jpg","credit":"Film Locations Bayern","source":"https://www.filmlocations-bayern.de/media/Image/17516/LocationFullsizeImage/Klenze_Brunnen_ERchr16_0899.jpg","place":true},"Audi A3 Sportback":{"url":"https://pro.bbcdn.io/be/be636f98-1aad-4e00-a126-ce544201a737?rule=news-large","credit":"Modellreihe · Bildquelle","source":"https://pro.bbcdn.io/be/be636f98-1aad-4e00-a126-ce544201a737?rule=news-large","place":false},"VW Polo":{"url":"https://www.evanshalshaw.com/-/media/evanshalshaw/blog/vw-golf-vs-vw-polo/vw-polo-trio-1280x720px.ashx?h=720&hash=FE63FBBBB9D9275B7557F00FE2BB34EF&w=1280","credit":"Modellreihe · Evans Halshaw","source":"https://www.evanshalshaw.com/-/media/evanshalshaw/blog/vw-golf-vs-vw-polo/vw-polo-trio-1280x720px.ashx?h=720&hash=FE63FBBBB9D9275B7557F00FE2BB34EF&w=1280","place":false}}));
  for(const [title,photo] of Object.entries(campusNeueFotos))catalogPhotos.set(title,photo);
- const compassKey="campus-compass-v1";
+ let uid="";
+ const compassKey=()=>campusAccountStorageKey("campus-compass-v1",uid);
  let compass={}, own=[], marked=new Set(), storageWritable=true;
  const monthlyIds=get("monthlyFields")?["income","rent","mobility","fixed"]:[];
- const readCompass=()=>storageWritable?(readCampusStorage(compassKey)??compass):compass;
+ const readCompass=()=>uid&&storageWritable?(readCampusStorage(compassKey())??compass):compass;
  function applyCompass(value,restoreBudget=false){
   compass=value;
   own=Array.isArray(value.own)?value.own.filter(item=>item&&typeof item.id==="string"&&typeof item.title==="string"):[];
@@ -52,7 +53,7 @@ const campusEntries=(()=>{
  function saveCompass(changes){
   applyCompass({...readCompass(),...changes});
   try {
-   localStorage.setItem(compassKey,JSON.stringify(compass));
+   if(uid)localStorage.setItem(compassKey(),JSON.stringify(compass));
    return true;
   } catch {
    storageWritable=false;
@@ -71,8 +72,8 @@ const campusEntries=(()=>{
   status.textContent=message;
   status.hidden=false;
  }
- const today=()=>new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Berlin",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
- const expired=(item,date)=>item.until&&item.until<date;
+ const today=campusBerlinDate;
+ const expired=campusOfferExpired;
  function benefitMeta(item,date){
   const expiry=item.until?(expired(item,date)?" · Abgelaufen am ":" · Laut Anbieter bis ")+dateLabel(item.until):" · Bedingungen beim Anbieter";
   return `<p class="benefit-meta">${esc(item.kind+expiry)}</p>`;
@@ -227,10 +228,16 @@ const campusEntries=(()=>{
 
  drawCompass();
  showCampusUpdate(type);
- watchCampusStorage(compassKey,()=>{
+ const refreshCompass=()=>{
   applyCompass(readCompass(),true);
   drawCompass();
   if(monthlyIds.length)drawMonthly();
+ };
+ watchCampusStorage(compassKey,refreshCompass);
+ window.addEventListener("campus-account",event=>{
+  uid=event.detail?.uid??"";
+  compass={};storageWritable=true;
+  refreshCompass();
  });
  if(monthlyIds.length)drawMonthly();
 })();

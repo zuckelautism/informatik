@@ -13,7 +13,7 @@ function readCampusStorage(key) {
 }
 
 function watchCampusStorage(key, refresh) {
- globalThis.addEventListener?.("storage",event=>{if(event.key===key||event.key===null)refresh();});
+ globalThis.addEventListener?.("storage",event=>{if(event.key===(typeof key==="function"?key():key)||event.key===null)refresh();});
  globalThis.addEventListener?.("pageshow",event=>{if(event.persisted)refresh();});
 }
 
@@ -48,4 +48,14 @@ function showCampusUpdate(category) {
  const status=last?"Letzter planmäßiger Lauf: "+format(last)+" (Berlin)":"Erster planmäßiger Lauf steht aus";
  const result=report?" · "+report:"";
  el.textContent=interval+" · "+status+result;
+}
+
+function campusBerlinDate() {
+ return new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Berlin",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+}
+function campusOfferExpired(item, date=campusBerlinDate()) {
+ return item.category==="Vorteile" && Boolean(item.until && item.until<date);
+}
+function campusAccountStorageKey(base, uid) {
+ return uid ? base+":"+uid : "";
 }

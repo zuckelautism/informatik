@@ -4,11 +4,12 @@
  <meta name="viewport" content="width=device-width,initial-scale=1">
  <title>Studienplätze · Campus-Kompass</title>
  <script src="theme.js?v=coastal1"></script>
- <link rel="stylesheet" href="kompass.css?v=discovery1">
+ <link rel="stylesheet" href="kompass.css?v=review1">
  
  
 <script src="firebase-config.js?v=google1" defer></script>
- <script src="campus-shell.js?v=discovery1" defer></script>
+ <script src="campus-shell.js?v=review1" defer></script>
+<script src="studienwahl.js?v=review1" defer></script>
 </head><body class="campus-locked">
  <section class="campus-login" aria-labelledby="campusLoginTitle">
   <div class="campus-login-card">
@@ -17,6 +18,7 @@
     <p>Entdecke Städte, finde Angebote für deinen Alltag und speichere dein persönliches Profil.</p>
     <button class="btn" id="campusLoginButton" type="button" disabled>Mit Google anmelden</button>
     <p id="campusLoginStatus" role="status">Anmeldung wird vorbereitet …</p>
+    <p class="campus-login-note">Google-Anmeldung öffnet die Oberfläche. Katalogdateien sind auf GitHub Pages öffentlich. Dein Firebase-Profil ist nur für dein Konto bestimmt.</p>
     <noscript>Aktiviere JavaScript, um dich anzumelden.</noscript>
   </div>
  </section>
@@ -50,32 +52,83 @@
  <p>Vergleiche Studieninhalte, mögliche Berufswege und Hochschulen. Die verlinkten Angebote zeigen, wo du das Fach studieren kannst. Bewerbungsfristen und freie Plätze prüfst du direkt bei der Hochschule.</p>
  <a class="btn" href="https://studienwahl.de/studienfelder">Alle Studienfelder bei Studienwahl.de</a>
  </section>
- <article class="finder study-profile">
- <h3>Informatik</h3><p><strong>Im Studium</strong> · Programmierung, Algorithmen, Mathematik und Computersysteme bilden die Basis. Je nach Hochschule kommen Wahlbereiche wie KI, Sicherheit oder Visualisierung hinzu.</p><p><strong>Danach</strong> · Softwareentwicklung, IT-Sicherheit, Systementwicklung oder ein vertiefender Master.</p>
+ <section class="finder study-orientation" id="orientierung" aria-labelledby="orientationTitle">
+ <h3 id="orientationTitle">Noch unsicher, was du studieren willst?</h3>
+ <p>Wähle eine Tätigkeit, die dich interessiert. Du bekommst passende Fächer zum Erkunden.</p>
+ <label for="studyQuestion">Was würdest du gern öfter tun?</label>
+ <select id="studyQuestion"><option value="">Alle Interessen</option><option value="geschichte">Vergangenheit, Kunst und Quellen verstehen</option><option value="texte">Texte lesen und Sprache untersuchen</option><option value="argumente">Über Ethik, Wissen und Argumente nachdenken</option><option value="kultur">Kultur, Medien und Alltag beobachten</option><option value="gesellschaft">Politik und gesellschaftlichen Wandel verstehen</option><option value="technik">Programmieren, Daten auswerten oder konstruieren</option><option value="gesundheit">Verhalten, Gesundheit oder Medizin verstehen</option></select>
+ <p id="studyFocus" hidden>Sieh dir zwei der angezeigten Fächer an. Unter „Zum Ausprobieren“ steht je ein kleiner Test für deinen Alltag.</p>
+ <ol><li>Vergleiche zwei Modulhandbücher und die nötigen Kombinationsfächer.</li><li>Probiere eine Schnuppervorlesung oder sprich mit der Studienberatung.</li><li>Prüfe anschließend Voraussetzungen und Bewerbungsfristen direkt bei der Hochschule.</li></ol>
+ <label for="studyField">Oder nach Studienfeld filtern</label>
+ <select id="studyField"><option value="all">Alle Studienfelder</option><option value="geisteswissenschaften">Geistes- und Kulturwissenschaften</option><option value="gesellschaft">Gesellschaft und Wirtschaft</option><option value="technik">Informatik und Technik</option><option value="gesundheit">Psychologie und Gesundheit</option></select>
+ <button class="btn ghost" id="studyReset" type="button">Auswahl zurücksetzen</button>
+ <p id="studyResultCount" role="status"></p>
+ <a href="https://studienwahl.de/studienfelder/sprach-und-kulturwissenschaften">Sprach- und Kulturwissenschaften bei Studienwahl.de</a>
+ </section>
+<article id="geschichte" class="finder study-profile" data-field="geisteswissenschaften" data-interest="geschichte">
+ <h3>Geschichte</h3><p><strong>Im Studium</strong> · Historische Quellen auswerten, Epochen vergleichen und begründet über gesellschaftliche Veränderungen schreiben.</p><p><strong>Danach</strong> · Archive, Museen, Gedenkstätten, Kulturvermittlung oder Redaktion.</p>
+ <p><strong>Zum Ausprobieren</strong> · Vergleiche Epochen, Fremdsprachen und mögliche Kombinationsfächer.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.hist.uni-heidelberg.de/de/studium/studiengaenge-ba-ma-m-ed/ba-geschichte-75">Universität Heidelberg · Geschichte (B.A., 75 %)</a> <span class="muted">(Heidelberg)</span></li><li><a href="https://www.geschichte.uni-hamburg.de/studium/studiengaenge/ba-geschichte-hauptfach.html">Universität Hamburg · Geschichte (B.A., Hauptfach)</a> <span class="muted">(Hamburg)</span></li><li><a href="https://www.uni-jena.de/6570/b-a-kf-geschichte">Universität Jena · Geschichte (B.A., Kernfach)</a> <span class="muted">(Jena)</span></li></ul>
+ </article>
+<article id="germanistik" class="finder study-profile" data-field="geisteswissenschaften" data-interest="texte">
+ <h3>Germanistik und Literatur</h3><p><strong>Im Studium</strong> · Literatur interpretieren, Sprachwandel untersuchen und Texte in ihren historischen und gesellschaftlichen Zusammenhang einordnen.</p><p><strong>Danach</strong> · Lektorat, Redaktion, Kulturarbeit oder Kommunikation. Der Lehramtsweg hat eigene Studiengänge.</p>
+ <p><strong>Zum Ausprobieren</strong> · Lies ein Modul zur Literatur und eines zur Sprachwissenschaft. Prüfe Haupt- und Nebenfach.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.fu-berlin.de/studium/studienangebot/grundstaendige/deutsche_philologie_kombi/index.html">Freie Universität Berlin · Deutsche Philologie (Kombi-B.A.)</a> <span class="muted">(Berlin)</span></li><li><a href="https://www.gs.uni-heidelberg.de/de/studium/studiengaenge/studiengaenge/studiengaenge/germanistik">Universität Heidelberg · Germanistik</a> <span class="muted">(Heidelberg)</span></li></ul>
+ </article>
+<article id="philosophie" class="finder study-profile" data-field="geisteswissenschaften" data-interest="argumente">
+ <h3>Philosophie</h3><p><strong>Im Studium</strong> · Du rekonstruierst Argumente und arbeitest an Fragen zu Wissen, Ethik, Sprache und Gesellschaft.</p><p><strong>Danach</strong> · Bildungsarbeit, Redaktion, Kommunikation, Ethikberatung oder Forschung mit weiterer Qualifikation.</p>
+ <p><strong>Zum Ausprobieren</strong> · Lies einen kurzen philosophischen Text und formuliere einen Einwand. Vergleiche dann die Module zu Logik und Ethik.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.uni-heidelberg.de/fakultaeten/philosophie/philsem/studienberatung/bachelor.html">Universität Heidelberg · Philosophie (B.A.)</a> <span class="muted">(Heidelberg)</span></li><li><a href="https://www.uni-jena.de/6970/b-a-kf-philosophie">Universität Jena · Philosophie (B.A., Kernfach)</a> <span class="muted">(Jena)</span></li></ul>
+ </article>
+<article id="kulturwissenschaft" class="finder study-profile" data-field="geisteswissenschaften" data-interest="kultur">
+ <h3>Kulturwissenschaft und Anthropologie</h3><p><strong>Im Studium</strong> · Du vergleichst Alltagspraktiken und kulturelle Deutungen und lernst Methoden wie Interviews und teilnehmende Beobachtung kennen.</p><p><strong>Danach</strong> · Kulturvermittlung, Museen, Bildung, Projektarbeit oder qualitative Forschung.</p>
+ <p><strong>Zum Ausprobieren</strong> · Vergleiche, wie viel Feldforschung, Kulturtheorie und Projektarbeit im Studienplan stehen.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.fu-berlin.de/studium/studienangebot/grundstaendige/sozial_kulturanthro_kombi/index.html">Freie Universität Berlin · Sozial- und Kulturanthropologie (Kombi-B.A.)</a> <span class="muted">(Berlin)</span></li><li><a href="https://www.uni-goettingen.de/de/636657.html">Universität Göttingen · Kulturanthropologie / Europäische Ethnologie (Zwei-Fächer-B.A.)</a> <span class="muted">(Göttingen)</span></li></ul>
+ </article>
+<article id="medien" class="finder study-profile" data-field="geisteswissenschaften" data-interest="kultur">
+ <h3>Medienkulturwissenschaft</h3><p><strong>Im Studium</strong> · Du analysierst Filme, digitale Medien und öffentliche Kommunikation und untersuchst, wie Medien Kultur prägen.</p><p><strong>Danach</strong> · Kulturredaktion, Medienanalyse, Öffentlichkeitsarbeit oder Festivalorganisation.</p>
+ <p><strong>Zum Ausprobieren</strong> · Vergleiche Theorie- und Praxisanteile im Modulhandbuch. Frage bei der Studienberatung nach Praxisprojekten.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://mekuwi.phil-fak.uni-koeln.de/studieninteressierte/bachelor">Universität zu Köln · Medienkulturwissenschaft (B.A.)</a> <span class="muted">(Köln)</span></li></ul>
+ </article>
+<article id="sprachwissenschaft" class="finder study-profile" data-field="geisteswissenschaften" data-interest="texte">
+ <h3>Sprachwissenschaft</h3><p><strong>Im Studium</strong> · Du untersuchst Lautsysteme, Grammatik und Bedeutung. Je nach Schwerpunkt arbeitest du mit Sprachdaten oder vergleichst Sprachen.</p><p><strong>Danach</strong> · Sprachdatenanalyse, Redaktion, Forschung oder Sprachtechnologie mit entsprechender Vertiefung.</p>
+ <p><strong>Zum Ausprobieren</strong> · Vergleiche Module zu Grammatik und Sprachdaten und prüfe, welche Sprachen oder Nebenfächer du kombinieren kannst.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://uni-tuebingen.de/studium/studienangebot/verzeichnis-der-studiengaenge/detail/course/allgemeine-sprachwissenschaft-bachelor-hauptfach/">Universität Tübingen · Allgemeine Sprachwissenschaft (B.A., Hauptfach)</a> <span class="muted">(Tübingen)</span></li></ul>
+ </article>
+<article id="kunstgeschichte" class="finder study-profile" data-field="geisteswissenschaften" data-interest="geschichte">
+ <h3>Kunstgeschichte</h3><p><strong>Im Studium</strong> · Du analysierst Bilder, Architektur und Objekte, vergleichst ihre Entstehungsbedingungen und arbeitest mit visuellen Quellen.</p><p><strong>Danach</strong> · Museen, Denkmalpflege, Ausstellungsorganisation, Kulturvermittlung oder Forschung.</p>
+ <p><strong>Zum Ausprobieren</strong> · Vergleiche Epochen, Sprachanforderungen und Museumspraktika. Probiere eine Bildanalyse aus.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.kunst.uni-heidelberg.de/de/ba-europaeische-kunstgeschichte">Universität Heidelberg · Europäische Kunstgeschichte (B.A.)</a> <span class="muted">(Heidelberg)</span></li><li><a href="https://www.uni-marburg.de/de/studium/vor-dem-studium/studienangebot/bachelor/hauptfach/kunstgeschichte">Philipps-Universität Marburg · Kunstgeschichte (B.A., Hauptfach)</a> <span class="muted">(Marburg)</span></li></ul>
+ </article>
+<article id="politik" class="finder study-profile" data-field="gesellschaft" data-interest="gesellschaft">
+ <h3>Politikwissenschaft</h3><p><strong>Im Studium</strong> · Du untersuchst politische Institutionen, Konflikte und Entscheidungen. Methoden und politische Theorie helfen dir, Zusammenhänge zu erklären.</p><p><strong>Danach</strong> · Politische Bildung, öffentliche Verwaltung, Verbände, Medien oder Forschung.</p>
+ <p><strong>Zum Ausprobieren</strong> · Vergleiche politische Theorie, internationale Beziehungen und Methoden. Prüfe Angebote für ein Praktikum.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.fu-berlin.de/studium/studienangebot/grundstaendige/politik/index.html">Freie Universität Berlin · Politikwissenschaft (B.A.)</a> <span class="muted">(Berlin)</span></li><li><a href="https://www.wiso.uni-hamburg.de/studienbuero-sozialwissenschaften/studiengaenge/ba-politikwissenschaft-hauptfach.html">Universität Hamburg · Politikwissenschaft (B.A., Hauptfach)</a> <span class="muted">(Hamburg)</span></li></ul>
+ </article>
+<article id="soziologie" class="finder study-profile" data-field="gesellschaft" data-interest="gesellschaft">
+ <h3>Soziologie</h3><p><strong>Im Studium</strong> · Du erforschst soziale Ungleichheit, Organisationen und gesellschaftlichen Wandel mit quantitativen und qualitativen Methoden.</p><p><strong>Danach</strong> · Sozialforschung, Marktforschung, Evaluation, öffentliche Einrichtungen oder Personalentwicklung.</p>
+ <p><strong>Zum Ausprobieren</strong> · Vergleiche Statistik, qualitative Methoden und mögliche Praxisprojekte.</p>
+ <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.uni-frankfurt.de/de/studium/studiengaenge/soziologie-bachelor-hauptfach">Goethe-Universität Frankfurt · Soziologie (B.A., Hauptfach)</a> <span class="muted">(Frankfurt am Main)</span></li></ul>
+ </article>
+<article class="finder study-profile" data-field="technik" data-interest="technik"><h3>Informatik</h3><p><strong>Im Studium</strong> · Programmierung, Algorithmen, Mathematik und Computersysteme bilden die Basis. Je nach Hochschule kommen Wahlbereiche wie KI, Sicherheit oder Visualisierung hinzu.</p><p><strong>Danach</strong> · Softwareentwicklung, IT-Sicherheit, Systementwicklung oder ein vertiefender Master.</p>
  <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.tu.berlin/studieren/studienangebot/gesamtes-studienangebot/studiengang/informatik-b-sc">TU Berlin · Informatik (B.Sc.)</a> <span class="muted">(Berlin)</span></li><li><a href="https://www.inf.uni-hamburg.de/studies/prospective-students/bachelor-application.html">Universität Hamburg · Informatik (B.Sc.)</a> <span class="muted">(Hamburg)</span></li><li><a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/studium/studierende/lehre-studienorganisation/studiengaenge/informatik/bachelor/">Universität Tübingen · Informatik (B.Sc.)</a> <span class="muted">(Tübingen)</span></li><li><a href="https://uni-goettingen.de/de/640717.html">Universität Göttingen · Angewandte Informatik (B.Sc.)</a> <span class="muted">(Göttingen)</span></li><li><a href="https://www.uni-marburg.de/de/studium/vor-dem-studium/studienangebot/bachelor/informatikbsc">Philipps-Universität Marburg · Informatik (B.Sc.)</a> <span class="muted">(Marburg)</span></li><li><a href="https://www.uni-heidelberg.de/de/studium/alle-studienfaecher/informatik/informatik-bachelor-100">Universität Heidelberg · Informatik (B.Sc.)</a> <span class="muted">(Heidelberg)</span></li><li><a href="https://www.mathcs.uni-leipzig.de/studium/studienangebot/informatik-b-sc">Universität Leipzig · Informatik (B.Sc.)</a> <span class="muted">(Leipzig)</span></li><li><a href="https://www.uni-jena.de/7240/b-sc-informatik">Friedrich-Schiller-Universität Jena · Informatik (B.Sc.)</a> <span class="muted">(Jena)</span></li><li><a href="https://sc.informatik.rwth-aachen.de/de/studium/bachelor/informatik/">RWTH Aachen · Informatik (B.Sc.)</a> <span class="muted">(Aachen)</span></li><li><a href="https://www.uni-giessen.de/de/studium/studienangebot/bachelor/angewandte-informatik">Justus-Liebig-Universität Gießen · Angewandte Informatik (B.Sc.)</a> <span class="muted">(Gießen)</span></li><li><a href="https://www.hs-mittweida.de/studieren/studienangebote/angewandte-informatik-bachelor/">Hochschule Mittweida · Angewandte Informatik (B.Sc.)</a> <span class="muted">(Mittweida)</span></li></ul>
  </article>
-<article class="finder study-profile">
- <h3>Wirtschaftsinformatik</h3><p><strong>Im Studium</strong> · Verbindet Programmierung und Informationssysteme mit Betriebswirtschaft. Typische Aufgaben sind Daten auswerten und Unternehmensprozesse verbessern.</p><p><strong>Danach</strong> · IT-Beratung, Business Analysis, Produktmanagement oder Entwicklung von Unternehmenssoftware.</p>
+<article class="finder study-profile" data-field="technik" data-interest="technik"><h3>Wirtschaftsinformatik</h3><p><strong>Im Studium</strong> · Verbindet Programmierung und Informationssysteme mit Betriebswirtschaft. Typische Aufgaben sind Daten auswerten und Unternehmensprozesse verbessern.</p><p><strong>Danach</strong> · IT-Beratung, Business Analysis, Produktmanagement oder Entwicklung von Unternehmenssoftware.</p>
  <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://studieninteressierte.uni-koeln.de/studienangebot/index_ger.html?app=true&amp;id=155">Universität zu Köln · Wirtschaftsinformatik (B.Sc.)</a> <span class="muted">(Köln)</span></li><li><a href="https://www.frankfurt-university.de/de/studium/bachelor-studiengange/wirtschaftsinformatik-bsc/fuer-studieninteressierte/">Frankfurt University of Applied Sciences · Wirtschaftsinformatik (B.Sc.)</a> <span class="muted">(Frankfurt am Main)</span></li><li><a href="https://www.cit.tum.de/cit/studium/studiengaenge/bachelor-wirtschaftsinformatik/">Technische Universität München · Wirtschaftsinformatik (B.Sc.)</a> <span class="muted">(München)</span></li><li><a href="https://www.thi.de/studium/studienangebote/details/wirtschaftsinformatik-bsc/">Technische Hochschule Ingolstadt · Wirtschaftsinformatik (B.Sc.)</a> <span class="muted">(Ingolstadt)</span></li></ul>
  </article>
-<article class="finder study-profile">
- <h3>Data Science</h3><p><strong>Im Studium</strong> · Statistik, Programmierung und maschinelles Lernen helfen dir, Daten aufzubereiten, auszuwerten und Modelle zu überprüfen.</p><p><strong>Danach</strong> · Datenanalyse, Business Intelligence, Data Engineering oder eine weitere Spezialisierung in Machine Learning.</p>
+<article class="finder study-profile" data-field="technik" data-interest="technik"><h3>Data Science</h3><p><strong>Im Studium</strong> · Statistik, Programmierung und maschinelles Lernen helfen dir, Daten aufzubereiten, auszuwerten und Modelle zu überprüfen.</p><p><strong>Danach</strong> · Datenanalyse, Business Intelligence, Data Engineering oder eine weitere Spezialisierung in Machine Learning.</p>
  <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.uni-marburg.de/de/studium/vor-dem-studium/studienangebot/bachelor/datasciencebsc">Philipps-Universität Marburg · Data Science (B.Sc.)</a> <span class="muted">(Marburg)</span></li><li><a href="https://www.heilbronn.dhbw.de/studium/bachelor-angebote/wirtschaftsinformatik-data-science/duale-partner-und-studienplaetze/">DHBW Heilbronn · Wirtschaftsinformatik – Data Science (dual)</a> <span class="muted">(Heilbronn)</span></li></ul>
  </article>
-<article class="finder study-profile">
- <h3>Betriebswirtschaftslehre</h3><p><strong>Im Studium</strong> · Du beschäftigst dich mit Finanzierung, Rechnungswesen, Marketing und Organisation. Später kannst du je nach Hochschule Schwerpunkte setzen.</p><p><strong>Danach</strong> · Controlling, Marketing, Personal, Beratung oder Unternehmensgründung.</p>
+<article class="finder study-profile" data-field="gesellschaft" data-interest="gesellschaft"><h3>Betriebswirtschaftslehre</h3><p><strong>Im Studium</strong> · Du beschäftigst dich mit Finanzierung, Rechnungswesen, Marketing und Organisation. Später kannst du je nach Hochschule Schwerpunkte setzen.</p><p><strong>Danach</strong> · Controlling, Marketing, Personal, Beratung oder Unternehmensgründung.</p>
  <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://wiso.uni-koeln.de/de/studium/bachelor/bachelor-bwl">Universität zu Köln · BWL (B.Sc.)</a> <span class="muted">(Köln)</span></li></ul>
  </article>
-<article class="finder study-profile">
- <h3>Psychologie</h3><p><strong>Im Studium</strong> · Du lernst menschliches Verhalten wissenschaftlich zu untersuchen. Statistik, Forschungsmethoden sowie Entwicklungs- und Sozialpsychologie gehören dazu.</p><p><strong>Danach</strong> · Forschung, Personalentwicklung oder Markt- und Nutzerforschung. Für Psychotherapie gelten eigene Studien- und Weiterbildungsanforderungen.</p>
+<article class="finder study-profile" data-field="gesundheit" data-interest="gesundheit"><h3>Psychologie</h3><p><strong>Im Studium</strong> · Du lernst menschliches Verhalten wissenschaftlich zu untersuchen. Statistik, Forschungsmethoden sowie Entwicklungs- und Sozialpsychologie gehören dazu.</p><p><strong>Danach</strong> · Forschung, Personalentwicklung oder Markt- und Nutzerforschung. Für Psychotherapie gelten eigene Studien- und Weiterbildungsanforderungen.</p>
  <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.uni-heidelberg.de/de/studium/alle-studienfaecher/psychologie/psychologie-bachelor-100">Universität Heidelberg · Psychologie (B.Sc.)</a> <span class="muted">(Heidelberg)</span></li></ul>
  </article>
-<article class="finder study-profile">
- <h3>Maschinenbau</h3><p><strong>Im Studium</strong> · Mathematik, Mechanik, Werkstoffe und Konstruktion bilden die Basis. In Projekten setzt du Modelle in technische Lösungen um.</p><p><strong>Danach</strong> · Produktentwicklung, Produktion, Energietechnik oder Fahrzeugtechnik.</p>
+<article class="finder study-profile" data-field="technik" data-interest="technik"><h3>Maschinenbau</h3><p><strong>Im Studium</strong> · Mathematik, Mechanik, Werkstoffe und Konstruktion bilden die Basis. In Projekten setzt du Modelle in technische Lösungen um.</p><p><strong>Danach</strong> · Produktentwicklung, Produktion, Energietechnik oder Fahrzeugtechnik.</p>
  <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.ika.rwth-aachen.de/de/studium/studieng%C3%A4nge/maschinenbau-bsc.html">RWTH Aachen · Maschinenbau (B.Sc.)</a> <span class="muted">(Aachen)</span></li></ul>
  </article>
-<article class="finder study-profile">
- <h3>Humanmedizin</h3><p><strong>Im Studium</strong> · Du verbindest naturwissenschaftliche Grundlagen mit klinischem Lernen und praktischen Ausbildungsabschnitten.</p><p><strong>Danach</strong> · Ärztliche Tätigkeit nach Abschluss und Approbation. Darauf kann eine fachärztliche Weiterbildung folgen.</p>
+<article class="finder study-profile" data-field="gesundheit" data-interest="gesundheit"><h3>Humanmedizin</h3><p><strong>Im Studium</strong> · Du verbindest naturwissenschaftliche Grundlagen mit klinischem Lernen und praktischen Ausbildungsabschnitten.</p><p><strong>Danach</strong> · Ärztliche Tätigkeit nach Abschluss und Approbation. Darauf kann eine fachärztliche Weiterbildung folgen.</p>
  <h4>Hochschulen und Bewerbungsinfos</h4><ul><li><a href="https://www.uni-jena.de/4580/staatsexamen-medizin">Friedrich-Schiller-Universität Jena · Medizin (Staatsexamen)</a> <span class="muted">(Jena)</span></li></ul>
  </article>
 </main>
