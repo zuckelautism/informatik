@@ -1,5 +1,150 @@
 // Nach Kategorien gruppierte Ergänzungen. Vorhandene IDs für Merklisten beibehalten.
 const campusErgaenzungen=[
+
+  {
+    "id": "bildung|Neckarsulm|1",
+    "city": "Neckarsulm",
+    "category": "Ausbildung",
+    "title": "Audi Neckarsulm · Ausbildungsberufe",
+    "segment": "Audi · Standort Neckarsulm",
+    "note": "Ausbildungsberufe und Bewerbungsfristen beim Standort prüfen. Die Übersicht zeigt auch, welche Stellen für deinen Jahrgang ausgeschrieben sind.",
+    "link": "https://www.audi.com/de/deine-ausbildung-in-neckarsulm-17491"
+  },
+  {
+    "id": "bildung|Neckarsulm|2",
+    "city": "Neckarsulm",
+    "category": "Duales Studium",
+    "title": "Audi · Duales Studium",
+    "segment": "Audi · Standortwahl",
+    "note": "Bachelorangebote, Praxisphasen und teilnehmende Standorte auf der Karriereseite vergleichen.",
+    "link": "https://www.audi.com/de/duales-studium-17504"
+  },
+  {
+    "id": "bildung|Neckarsulm|3",
+    "city": "Neckarsulm",
+    "category": "Duales Studium",
+    "title": "Schwarz Gruppe · Wirtschaftsinformatik",
+    "segment": "Schwarz Gruppe · Neckarsulm",
+    "note": "Anbieterquelle für das duale Studium in Neckarsulm. Jahrgang, Bewerbungsfrist und Verfügbarkeit direkt prüfen.",
+    "link": "https://jobs.schwarz/jobsearch/hr/duales-studium-wirtschaftsinformatik-2027-neckarsulm-m-w-d-GT5120"
+  },
+  {
+    "id": "bildung|Neckarsulm|4",
+    "city": "Neckarsulm",
+    "category": "Studium",
+    "title": "Wirtschaftsinformatik · Hochschule Heilbronn",
+    "segment": "HHN · in der Region, Studienort prüfen",
+    "note": "Hochschuloption im Raum Heilbronn. Studienort, Module und Zugangsvoraussetzungen vor der Bewerbung prüfen.",
+    "link": "https://www.hs-heilbronn.de/de/wirtschaftsinformatik"
+  },
+  {
+    "id": "bildung|Heilbronn|5",
+    "city": "Heilbronn",
+    "category": "Studium",
+    "title": "Wirtschaftsinformatik · Hochschule Heilbronn",
+    "segment": "Hochschule Heilbronn",
+    "note": "Verknüpft Wirtschaft und Informatik. Studienort und Zugangsvoraussetzungen beim Studiengang prüfen.",
+    "link": "https://www.hs-heilbronn.de/de/wirtschaftsinformatik"
+  },
+  {
+    "id": "bildung|Heilbronn|6",
+    "city": "Heilbronn",
+    "category": "Studium",
+    "title": "Information Engineering (B.Sc.) · TUM",
+    "segment": "TUM Campus Heilbronn",
+    "note": "Studiengang am Campus Heilbronn. Unterrichtssprache und Bewerbungsbedingungen nachlesen.",
+    "link": "https://chn.tum.de/de/studiengaenge/bachelor-in-information-engineering"
+  },
+  {
+    "id": "bildung|Heilbronn|7",
+    "city": "Heilbronn",
+    "category": "Duales Studium",
+    "title": "Wirtschaftsinformatik · Data Science",
+    "segment": "DHBW Heilbronn",
+    "note": "Studieninhalte und Liste dualer Partner für Wirtschaftsinformatik und Datenanalyse prüfen.",
+    "link": "https://www.heilbronn.dhbw.de/studium/bachelor-angebote/wirtschaftsinformatik-data-science/duale-partner-und-studienplaetze/"
+  },
+  {
+    "id": "bildung|Heilbronn|8",
+    "city": "Heilbronn",
+    "category": "Ausbildung",
+    "title": "Stadt Heilbronn · offene Ausbildungsstellen",
+    "segment": "Stadt Heilbronn",
+    "note": "Städtisches Bewerbungsportal mit veröffentlichten Ausschreibungen. Fachrichtung und Frist je Eintrag prüfen.",
+    "link": "https://www.heilbronn.de/rathaus/karriere/ausbildungsangebote-1/offene-ausbildungsstellen.html"
+  },
+  {
+    "id": "bildung|München|9",
+    "city": "München",
+    "category": "Studium",
+    "title": "Wirtschaftsinformatik (B.Sc.) · TUM",
+    "segment": "Technische Universität München",
+    "note": "Bachelor-Infos zu Informatik, Wirtschaft und Bewerbungsverfahren.",
+    "link": "https://www.cit.tum.de/cit/studium/studiengaenge/bachelor-wirtschaftsinformatik/"
+  },
+  {
+    "id": "bildung|München|10",
+    "city": "München",
+    "category": "Studium",
+    "title": "Informatik · LMU München",
+    "segment": "Ludwig-Maximilians-Universität München",
+    "note": "Studiengänge und Kombinationsmöglichkeiten beim Institut vergleichen.",
+    "link": "https://www.ifi.lmu.de/studium/studiengaenge/"
+  },
+  {
+    "id": "bildung|München|11",
+    "city": "München",
+    "category": "Duales Studium",
+    "title": "Verbundstudium und vertiefte Praxis",
+    "segment": "Hochschule München",
+    "note": "Duale Modelle und Studienangebote vergleichen. Praxispartner und jeweilige Anforderungen prüfen.",
+    "link": "https://hm.edu/studium_1/studienangebote_1/dual_1/Angebot_Verbundstudium_SmvP.de.html"
+  },
+  {
+    "id": "bildung|München|12",
+    "city": "München",
+    "category": "Ausbildung",
+    "title": "BMW Group · Ausbildungsstandort München",
+    "segment": "BMW Group Werk München",
+    "note": "Ausbildungsangebote für den Standort beim Arbeitgeber prüfen. Ausschreibungen sind jahrgangsabhängig.",
+    "link": "https://www.bmwgroup.jobs/de/de/pupils/apprenticeship-locations/headquarters-plant-munich.html"
+  },
+  {
+    "id": "bildung|Ingolstadt|13",
+    "city": "Ingolstadt",
+    "category": "Studium",
+    "title": "Wirtschaftsinformatik (B.Sc.) · THI",
+    "segment": "Technische Hochschule Ingolstadt",
+    "note": "Module, Studienablauf und Bewerbung auf der offiziellen Studiengangsseite nachlesen.",
+    "link": "https://www.thi.de/studium/studienangebote/details/wirtschaftsinformatik-bsc/"
+  },
+  {
+    "id": "bildung|Ingolstadt|14",
+    "city": "Ingolstadt",
+    "category": "Studium",
+    "title": "Digital Business (B.Sc.) · THI",
+    "segment": "Technische Hochschule Ingolstadt",
+    "note": "Alternative mit Schwerpunkt auf digitalen Geschäftsmodellen. Inhalte und Zugang prüfen.",
+    "link": "https://www.thi.de/studium/studienangebote/details/digital-business-bsc/"
+  },
+  {
+    "id": "bildung|Ingolstadt|15",
+    "city": "Ingolstadt",
+    "category": "Duales Studium",
+    "title": "Duales Studium an der Fakultät Informatik",
+    "segment": "Technische Hochschule Ingolstadt",
+    "note": "Modelle und Praxispartner im Bereich Informatik kennenlernen.",
+    "link": "https://www.thi.de/fakultaet-informatik/duales-studium-an-der-fakultaet-informatik/"
+  },
+  {
+    "id": "bildung|Ingolstadt|16",
+    "city": "Ingolstadt",
+    "category": "Ausbildung",
+    "title": "Audi Ingolstadt · Ausbildungsberufe",
+    "segment": "Audi · Standort Ingolstadt",
+    "note": "Berufe und Bewerbungsablauf am Standort prüfen. Verfügbarkeit je Ausbildungsjahr abgleichen.",
+    "link": "https://www.audi.com/de/deine-ausbildung-in-ingolstadt-17490"
+  },
   {
     "id": "reise-ausbau|Handys|iPhone 14",
     "category": "Handys",

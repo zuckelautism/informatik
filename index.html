@@ -1,7 +1,11 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Campus-Kompass · Technik, Wohnen &amp; Mobilität</title><meta name="description" content="Preisradar für 32-GB-Laptops im Wirtschaftsinformatik-Studium: Lenovo ThinkPad, Samsung Galaxy Book und mehr."><link rel="stylesheet" href="kompass.css?v=qa1">
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Campus-Kompass · Technik, Wohnen &amp; Mobilität</title><meta name="description" content="Preisradar für 32-GB-Laptops im Wirtschaftsinformatik-Studium: Lenovo ThinkPad, Samsung Galaxy Book und mehr."><script src="theme.js?v=coastal1"></script>
+ <link rel="stylesheet" href="kompass.css?v=coastal1">
  <script src="pruefstand.js"></script>
  <script src="campus-basis.js?v=qa1"></script></head><body>
-<header class="wrap site-header"><h1>Campus-Kompass</h1><p>Dein Katalog für Technik, Wohnen und Alltag im Studium.</p></header>
+<header class="wrap site-header"><div class="app-header-inner">
+  <div><h1><a href="index.html">Campus-Kompass</a></h1><p>Orientierung für Studium, Ausbildung und Alltag.</p></div>
+  <nav class="app-links" aria-label="Hauptbereiche"><a href="index.html" aria-current="page">Start</a><a href="staedte.html">Städte</a><a class="profile-link" href="profil.html">Mein Profil</a></nav>
+ </div></header>
 <main class="wrap">
 <nav id="kompass" aria-label="Katalogbereiche" class="tools section-nav">
   <a href="index.html" aria-current="page">Laptops</a>
@@ -249,8 +253,8 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
   const x=i=>left+(w-left-right)*(span?(Date.parse(history[i].date)-first)/span:i/(history.length-1));
   const y=v=>top+(h-top-bottom)*(high-v)/(high-low);
   const ticks=[0,1,2,3,4];
-  const grids=ticks.map(i=>{let val=low+(high-low)*i/4,yy=y(val);return `<line x1="${left}" x2="${w-right}" y1="${yy}" y2="${yy}" stroke="#28414b" stroke-width="1"/><text x="${left-10}" y="${yy+4}" text-anchor="end" fill="#9ab0b9" font-size="12">${Math.round(val)} €</text>`}).join("");
-  const dots=history.map((a,i)=>`<circle cx="${x(i)}" cy="${y(a.price)}" r="6" fill="#a5f1bf" stroke="#0b1b23" stroke-width="3"><title>${esc(a.date)}: ${euro(a.price)}</title></circle><text x="${x(i)}" y="${h-15}" text-anchor="middle" fill="#c4d8d7" font-size="11">${esc(a.date.slice(8,10)+"."+a.date.slice(5,7)+"."+a.date.slice(2,4))}</text>`).join("");
+  const grids=ticks.map(i=>{let val=low+(high-low)*i/4,yy=y(val);return `<line x1="${left}" x2="${w-right}" y1="${yy}" y2="${yy}" stroke="var(--line)" stroke-width="1"/><text x="${left-10}" y="${yy+4}" text-anchor="end" fill="var(--muted)" font-size="12">${Math.round(val)} €</text>`}).join("");
+  const dots=history.map((a,i)=>`<circle cx="${x(i)}" cy="${y(a.price)}" r="6" fill="#a5f1bf" stroke="#0b1b23" stroke-width="3"><title>${esc(a.date)}: ${euro(a.price)}</title></circle><text x="${x(i)}" y="${h-15}" text-anchor="middle" fill="var(--muted)" font-size="11">${esc(a.date.slice(8,10)+"."+a.date.slice(5,7)+"."+a.date.slice(2,4))}</text>`).join("");
   return `<div class="chartbox"><svg role="img" aria-label="Preisbeobachtungen mit ${history.length} belegten Zeitpunkten" viewBox="0 0 ${w} ${h}">${grids}${dots}</svg><p class="chartnote">Dokumentierte Gerätepreise ohne Versand. Händlerzuordnungen sind nicht für jeden Punkt einzeln belegt. Die Punkte zeigen einzelne Beobachtungen; daraus lässt sich kein gesicherter Rabatt ableiten.</p></div>`;
  }
  let lastTrigger=null;
@@ -264,7 +268,7 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
   document.getElementById("modalBody").innerHTML=`
   <div class="pillrow"><span class="pill">${esc(d.display)}</span><span class="pill">${esc(d.ram)} GB RAM</span><span class="pill">${esc(d.storage)} SSD</span><span class="pill">${d.upgrade?`bis ${esc(d.cap)} GB aufrüstbar`:"RAM nicht erweiterbar"}</span></div>
   <div class="modStats"><div class="modStat"><small>Dokumentierter Preis (Versand ggf. offen)</small><b>${priceLabel(d)}</b></div><div class="modStat"><small>Händler</small><b style="font-size:14px">${esc(d.shop)}</b></div><div class="modStat"><small>Preisstand / Quelle</small><b>${esc(d.checked)}</b></div></div>
-  <p style="color:#b7d0d2;font-size:13px">${esc(d.detail)}</p>
+  <p style="color:var(--muted);font-size:13px">${esc(d.detail)}</p>
   ${photos[d.id]?`<a class="image-source" href="${esc(photos[d.id][1])}" target="_blank" rel="noopener noreferrer">Bild: ${esc(photos[d.id][2])} ↗</a>`:""}
 
   <h3>Preisalarm im Browser</h3>
@@ -278,7 +282,7 @@ const photos={"apple-air-13-24":["https://www.apple.com/newsroom/images/2026/03/
   <h3>Preisentwicklung</h3>${plot(hs)}${sourceDates}
   <h3>Dokumentierte Händlerangebote</h3><p class="chartnote">Die Händlerstände können abgelaufen sein. Die Sortierung „Jüngster Preisstand“ verwendet das Datum des Angebots, nicht das Abrufdatum. Gesamtpreise gelten nur für die dokumentierte Versandart; bei unbekanntem Versand ist kein Gesamtpreis berechenbar.</p>
   ${offers.length?"":`<p class="chartnote">Für diese Konfiguration ist kein Händlerangebot hinterlegt.</p>`}
-  ${offers.map(o=>`<div class="offerrow"><div><strong>${esc(o.shop)}</strong><small>Stand: ${esc(o.date)} · ${o.availability?esc(o.availability)+" · ":"Verfügbarkeit zum heutigen Zeitpunkt unbekannt · "}${o.shipping==null?"Versand offen":o.shipping===0?"inkl. Versand":"zzgl. "+euro(o.shipping)+" Versand"}</small></div><div style="display:flex;align-items:center;gap:12px"><b>${euro(o.price)}${o.shipping==null?"":`<small style="display:block;font-weight:400;color:#bcd2d0">Gesamt ${euro(o.price+o.shipping)}</small>`}</b><a href="${esc(safeLink(o.url))}" target="_blank" rel="noopener noreferrer">Ansehen ↗</a></div></div>`).join("")}
+  ${offers.map(o=>`<div class="offerrow"><div><strong>${esc(o.shop)}</strong><small>Stand: ${esc(o.date)} · ${o.availability?esc(o.availability)+" · ":"Verfügbarkeit zum heutigen Zeitpunkt unbekannt · "}${o.shipping==null?"Versand offen":o.shipping===0?"inkl. Versand":"zzgl. "+euro(o.shipping)+" Versand"}</small></div><div style="display:flex;align-items:center;gap:12px"><b>${euro(o.price)}${o.shipping==null?"":`<small style="display:block;font-weight:400;color:var(--muted)">Gesamt ${euro(o.price+o.shipping)}</small>`}</b><a href="${esc(safeLink(o.url))}" target="_blank" rel="noopener noreferrer">Ansehen ↗</a></div></div>`).join("")}
   <div class="modalActions"><a class="btn" href="${esc(safeLink(d.source))}" target="_blank" rel="noopener noreferrer">${d.price==null?"Technische Daten":"Angebote prüfen"} ↗</a>${d.geizhals?`<a class="btn ghost" href="${esc(safeLink(d.geizhals))}" target="_blank" rel="noopener noreferrer">Geizhals-Preisverlauf ↗</a>`:""}</div>
   <p class="chartnote">Historische Händlerangebote und Preisvergleichs-Einstiege sind nicht gleichwertig. Bei neu ergänzten Modellen kann der Angebotszeitpunkt unbekannt sein. Preis, Lieferbarkeit und Versand vor Kauf direkt beim Händler prüfen.</p>`;
 

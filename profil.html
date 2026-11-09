@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de"><head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Mein Profil · Campus-Kompass</title>
+ <script src="theme.js?v=coastal1"></script>
+ <link rel="stylesheet" href="kompass.css?v=coastal1">
+ <script src="pruefstand.js" defer></script>
+ <script src="campus-basis.js?v=qa1" defer></script>
+ <script src="neue-eintraege.js?v=coastal1" defer></script>
+ <script src="katalog.js?v=coastal1" defer></script>
+ <script src="firebase-config.js?v=coastal1" defer></script>
+ <script src="profil.js?v=coastal1" defer></script>
+</head><body>
+<header class="wrap site-header"><div class="app-header-inner">
+  <div><h1><a href="index.html">Campus-Kompass</a></h1><p>Orientierung für Studium, Ausbildung und Alltag.</p></div>
+  <nav class="app-links" aria-label="Hauptbereiche"><a href="index.html">Start</a><a href="staedte.html">Städte</a><a class="profile-link" href="profil.html" aria-current="page">Mein Profil</a></nav>
+ </div></header>
+<main class="wrap">
+<nav id="kompass" aria-label="Katalogbereiche" class="tools section-nav">
+  <a href="index.html">Laptops</a>
+  <a href="handys.html">Handys</a>
+  <a href="tablets.html">Tablets</a>
+  <a href="smart-gadgets.html">Smart-Gadgets</a>
+  <a href="wohnen.html">Wohnen</a>
+  <a href="autos.html">Autos</a>
+  <a href="fahrschulen.html">Fahrschulen</a>
+  <a href="studienstart.html">Studienstart</a>
+  <a href="vorteile.html">Vorteile</a>
+  <a href="aktivitaeten.html">Aktivitäten</a>
+  <a href="pendeln.html">ÖPNV &amp; Pendeln</a>
+  <a href="reiseideen.html">Reiseideen</a>
+  <a href="unterkuenfte.html">Unterkünfte</a>
+  <a href="merkliste.html">Merkliste</a>
+</nav>
+<section class="profile-intro" aria-labelledby="profileTitle">
+ <div class="eyebrow">Dein Campus-Kompass</div>
+ <h2 id="profileTitle">Dein Weg, deine Vorschläge</h2>
+ <p>Wähle Studium, Ausbildung oder Orientierung. Dein Profil passt die Empfehlungen an deine Stadt und Interessen an.</p>
+</section>
+<section class="finder account-panel" aria-labelledby="accountTitle">
+ <div><h3 id="accountTitle">Anmeldung</h3><p id="authStatus" class="muted" role="status">Anmeldung wird geprüft …</p></div>
+ <div class="tools">
+  <button class="btn" id="googleSignIn" type="button" disabled>Mit Google anmelden</button>
+  <button class="btn ghost" id="signOut" type="button" hidden>Abmelden</button>
+ </div>
+</section>
+<form id="profileForm">
+ <section class="finder profile-panel" aria-labelledby="setupTitle">
+  <h3 id="setupTitle">1. Dein Profil</h3>
+  <div class="fields">
+   <label>Vorname<input id="firstName" name="firstName" autocomplete="given-name" maxlength="40" required></label>
+   <label>Mein Weg<select id="profilePath" name="path"><option value="offen">Noch keinen Plan</option><option value="studium">Studium</option><option value="ausbildung">Ausbildung</option></select></label>
+   <label>Meine Stadt<select id="profileCity" name="city"><option value="">Noch offen</option><option>Neckarsulm</option><option>Heilbronn</option><option>München</option><option>Ingolstadt</option></select></label>
+   <label>Farbschema<select id="profileTheme" name="theme"><option value="coastal">Coastal · Platin &amp; Rot</option><option value="slate">Slate · Stahlblau</option><option value="rose">Rose · Warmes Rot</option><option value="dark">Dunkel</option></select></label>
+  </div>
+  <div class="avatar-editor">
+   <div class="avatar" id="profileAvatar" aria-hidden="true">?</div>
+   <label>Profilbild<input id="photoFile" type="file" accept="image/jpeg,image/png,image/webp"></label>
+   <button class="btn ghost" id="removePhoto" type="button">Bild entfernen</button>
+  </div>
+  <p class="chartnote">Profilbild und Kontaktdaten gehören zu deinem privaten Profil. Social-Profile kannst du als Links oder Nutzernamen hinterlegen.</p>
+ </section>
+ <section class="finder profile-panel" aria-labelledby="interestsTitle">
+  <h3 id="interestsTitle">2. Deine Interessen</h3>
+  <div class="interest-list" id="interestOptions"></div>
+ </section>
+ <details class="finder profile-panel">
+  <summary>3. Kontaktdaten und Social-Profile (optional)</summary>
+  <div class="fields">
+   <label>Discord<input id="profileDiscord" name="discord" maxlength="120" placeholder="Benutzername"></label>
+   <label>Instagram<input id="profileInstagram" name="instagram" maxlength="180" placeholder="@name oder Profil-Link"></label>
+   <label>LinkedIn<input id="profileLinkedin" name="linkedin" maxlength="180" placeholder="https://www.linkedin.com/in/…"></label>
+   <label>E-Mail<input id="profileEmail" name="email" type="email" maxlength="180" autocomplete="email"></label>
+  </div>
+  <div id="profileLinks" class="tools" aria-label="Hinterlegte Profile"></div>
+ </details>
+ <div class="tools">
+  <button class="btn" id="saveProfile" type="submit">Profil speichern</button>
+  <span id="profileStatus" class="muted" role="status"></span>
+ </div>
+</form>
+<section class="profile-recommendations" aria-labelledby="recommendTitle">
+ <h3 id="recommendTitle">Für dich ausgewählt</h3>
+ <p id="recommendContext" class="muted"></p>
+ <div class="catalog-grid" id="recommendCards"></div>
+</section>
+
+</main>
+<footer class="wrap">Campus-Kompass</footer>
+</body></html>

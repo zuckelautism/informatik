@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function owner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+    function validProfile(p) {
+      return p.keys().hasAll(['firstName','path','city','theme','interests','socials','photo','updatedAt'])
+        && p.keys().hasOnly(['firstName','path','city','theme','interests','socials','photo','updatedAt'])
+        && p.firstName is string && p.firstName.size() > 0 && p.firstName.size() <= 40
+        && p.path in ['offen','studium','ausbildung']
+        && p.city in ['', 'Neckarsulm', 'Heilbronn', 'München', 'Ingolstadt']
+        && p.theme in ['coastal','slate','rose','dark']
+        && p.interests is list && p.interests.size() <= 8
+        && p.interests.hasOnly(['informatik','daten-ki','wirtschaft','technik','wohnen','mobilitaet','freizeit','sparen'])
+        && p.socials is map
+        && p.socials.keys().hasAll(['discord','instagram','linkedin','email'])
+        && p.socials.keys().hasOnly(['discord','instagram','linkedin','email'])
+        && p.socials.discord is string && p.socials.discord.size() <= 120
+        && p.socials.instagram is string && p.socials.instagram.size() <= 180
+        && p.socials.linkedin is string && p.socials.linkedin.size() <= 180
+        && p.socials.email is string && p.socials.email.size() <= 180
+        && p.photo is string && p.photo.size() <= 120000
+        && (p.photo == '' || p.photo.matches('^data:image/jpeg;base64,[A-Za-z0-9+/=]+$'))
+        && p.updatedAt == request.time;
+    }
+    match /profiles/{uid} {
+      allow get, delete: if owner(uid);
+      allow create, update: if owner(uid) && validProfile(request.resource.data);
+    }
+  }
+}
