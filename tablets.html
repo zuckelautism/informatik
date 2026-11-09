@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Tablets · Campus-Kompass</title>
+ <meta name="description" content="Tablets für Mitschriften, PDFs und unterwegs finden.">
+ <link rel="stylesheet" href="kompass.css">
+ <script src="katalog.js" defer></script>
+</head>
+<body>
+<header class="wrap site-header"><h1><a href="index.html">Campus-Kompass</a></h1><p>Dein Katalog für Technik, Wohnen und Alltag im Studium.</p></header>
+<main class="wrap">
+<nav id="kompass" aria-label="Katalogbereiche" class="tools section-nav">
+  <a href="index.html">Laptops</a>
+  <a href="handys.html">Handys</a>
+  <a href="tablets.html" aria-current="page">Tablets</a>
+  <a href="smart-gadgets.html">Smart-Gadgets</a>
+  <a href="wohnen.html">Wohnen</a>
+  <a href="autos.html">Autos</a>
+  <a href="fahrschulen.html">Fahrschulen</a>
+  <a href="studienstart.html">Studienstart</a>
+  <a href="vorteile.html">Vorteile</a>
+  <a href="aktivitaeten.html">Aktivitäten</a>
+  <a href="merkliste.html">Merkliste</a>
+</nav>
+<section id="catalog" data-category="Tablets" aria-labelledby="catalogTitle">
+<h2 id="catalogTitle">Tablets</h2>
+<p>Tablets für Mitschriften, PDFs und unterwegs finden.</p>
+<div class="fields"><label>Suche<input id="catalogQuery" type="search" placeholder="Katalog durchsuchen …"></label></div>
+<div id="deviceFilters" class="catalog-extra">
+ <div class="fields">
+  <label>Ökosystem<select id="ecosystem">
+    <option value="all">Alle Ökosysteme</option>
+    <option value="galaxy">Samsung Galaxy / SmartThings</option>
+    <option value="apple">Apple / iPhone / Apple Home</option>
+    <option value="pixel">Google Pixel / Google Home</option>
+    <option value="android">Android (inkl. Galaxy und Pixel)</option>
+    <option value="matter">Matter / Smart Home</option>
+  </select></label>
+ </div>
+ <p class="chartnote">Bei Handys und Tablets filterst du nach Plattform. Bei Gadgets zählt auch eine kompatible Basisfunktion wie Bluetooth-Audio. Hinweise auf jeder Karte zeigen, welche App, welches Handy oder welcher Hub zusätzlich nötig sein kann.</p>
+</div>
+<div class="tools"><button type="button" id="catalogSaved" class="btn ghost" aria-pressed="false">Nur Merkliste</button><span id="catalogCount" class="muted" role="status"></span></div>
+<div id="catalogGrid" class="catalog-grid"></div>
+<button id="moreCatalog" type="button" class="btn ghost" hidden>Mehr Einträge anzeigen</button>
+
+<details class="catalog-extra">
+    <summary>Eigenen Eintrag hinzufügen</summary>
+    <form id="catalogForm">
+      <div class="fields">
+        <label>Titel<input name="title" required maxlength="90" placeholder="Titel deines Eintrags"></label>
+        <label>Link (https)<input name="link" type="url" required pattern="https://.+" maxlength="1000"></label>
+        <label>Notiz, Preis oder Frist<input name="note" maxlength="240" placeholder="z. B. Preis, Frist oder Ort"></label>
+      </div>
+      <button class="btn" type="submit">Lokal speichern</button>
+      
+    </form>
+  </details>
+
+<p id="catalogStatus" class="muted" role="status" hidden></p>
+</section>
+</main>
+<footer class="wrap">Campus-Kompass</footer>
+</body>
+</html>

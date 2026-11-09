@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="de">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Autos · Campus-Kompass</title>
+ <meta name="description" content="Neu- und Gebrauchtwagen suchen und Audi- oder VW-Mitarbeiterpreise vergleichen.">
+ <link rel="stylesheet" href="kompass.css">
+ <script src="katalog.js" defer></script>
+</head>
+<body>
+<header class="wrap site-header"><h1><a href="index.html">Campus-Kompass</a></h1><p>Dein Katalog für Technik, Wohnen und Alltag im Studium.</p></header>
+<main class="wrap">
+<nav id="kompass" aria-label="Katalogbereiche" class="tools section-nav">
+  <a href="index.html">Laptops</a>
+  <a href="handys.html">Handys</a>
+  <a href="tablets.html">Tablets</a>
+  <a href="smart-gadgets.html">Smart-Gadgets</a>
+  <a href="wohnen.html">Wohnen</a>
+  <a href="autos.html" aria-current="page">Autos</a>
+  <a href="fahrschulen.html">Fahrschulen</a>
+  <a href="studienstart.html">Studienstart</a>
+  <a href="vorteile.html">Vorteile</a>
+  <a href="aktivitaeten.html">Aktivitäten</a>
+  <a href="merkliste.html">Merkliste</a>
+</nav>
+<section id="catalog" data-category="Autos" aria-labelledby="catalogTitle">
+<h2 id="catalogTitle">Autos</h2>
+<p>Neu- und Gebrauchtwagen suchen und Audi- oder VW-Mitarbeiterpreise vergleichen.</p>
+<div class="fields"><label>Suche<input id="catalogQuery" type="search" placeholder="Katalog durchsuchen …"></label></div>
+
+<div class="tools"><button type="button" id="catalogSaved" class="btn ghost" aria-pressed="false">Nur Merkliste</button><span id="catalogCount" class="muted" role="status"></span></div>
+<div id="catalogGrid" class="catalog-grid"></div>
+<button id="moreCatalog" type="button" class="btn ghost" hidden>Mehr Einträge anzeigen</button>
+<details id="employee" class="catalog-extra">
+ <summary>Audi &amp; VW · Mitarbeiterpreis vergleichen</summary>
+ <p class="chartnote">Vergleiche zwei schriftliche Endpreise für dieselbe Konfiguration oder vergleichbare Gebrauchte. Berücksichtige Zustand, Kilometer, Garantie sowie Überführung und Zulassung. Die Berechnung vergleicht Kaufpreise und addiert keine Aktionen. Berechtigung und Kombinierbarkeit beim internen Angebot prüfen. Eingaben bleiben auf dieser Seite und werden nicht gespeichert.</p>
+ <div class="fields" id="employeeFields">
+  <label>Fahrzeug<input id="employeeModel" placeholder="z. B. Audi A3 Sportback"></label>
+  <label>Fahrzeugart<select id="employeeCondition"><option>Neuwagen</option><option>Gebrauchtwagen</option></select></label>
+  <label>Öffentlicher Endpreis (€)<input id="publicPrice" type="number" min="0.01" step="0.01" inputmode="decimal"></label>
+  <label>Mitarbeiter-Endpreis (€)<input id="staffPrice" type="number" min="0.01" step="0.01" inputmode="decimal"></label>
+ </div>
+ <output id="employeeResult" class="muted" aria-live="polite"></output>
+</details>
+<details class="catalog-extra">
+    <summary>Eigenen Eintrag hinzufügen</summary>
+    <form id="catalogForm">
+      <div class="fields">
+        <label>Titel<input name="title" required maxlength="90" placeholder="Titel deines Eintrags"></label>
+        <label>Link (https)<input name="link" type="url" required pattern="https://.+" maxlength="1000"></label>
+        <label>Notiz, Preis oder Frist<input name="note" maxlength="240" placeholder="z. B. Preis, Frist oder Ort"></label>
+      </div>
+      <button class="btn" type="submit">Lokal speichern</button>
+      
+    </form>
+  </details>
+<details class="catalog-extra">
+    <summary>Monatsbudget für Umzug und Pendeln</summary>
+    <p class="chartnote">Trage deine eigenen Beträge ein. Zu den Mobilitätskosten zählen zum Beispiel Sprit, Versicherung, Rücklagen oder ein ÖPNV-Ticket. Einmalige Anschaffungen und Kaution separat einplanen.</p>
+    <div class="fields" id="monthlyFields">
+      <label>Nettoeinnahmen (€)<input id="income" type="number" min="0" step="0.01"></label>
+      <label>Warmmiete (€)<input id="rent" type="number" min="0" step="0.01"></label>
+      <label>Mobilität (€)<input id="mobility" type="number" min="0" step="0.01"></label>
+      <label>Weitere Fixkosten (€)<input id="fixed" type="number" min="0" step="0.01"></label>
+    </div>
+    <output id="monthlyResult" class="muted" aria-live="polite"></output>
+  </details>
+<p id="catalogStatus" class="muted" role="status" hidden></p>
+</section>
+</main>
+<footer class="wrap">Campus-Kompass</footer>
+</body>
+</html>

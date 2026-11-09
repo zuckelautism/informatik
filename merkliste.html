@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Merkliste · Campus-Kompass</title>
+ <meta name="description" content="Deine gemerkten Angebote, Geräte und Ausflüge aus dem Katalog.">
+ <link rel="stylesheet" href="kompass.css">
+ <script src="katalog.js" defer></script>
+</head>
+<body>
+<header class="wrap site-header"><h1><a href="index.html">Campus-Kompass</a></h1><p>Dein Katalog für Technik, Wohnen und Alltag im Studium.</p></header>
+<main class="wrap">
+<nav id="kompass" aria-label="Katalogbereiche" class="tools section-nav">
+  <a href="index.html">Laptops</a>
+  <a href="handys.html">Handys</a>
+  <a href="tablets.html">Tablets</a>
+  <a href="smart-gadgets.html">Smart-Gadgets</a>
+  <a href="wohnen.html">Wohnen</a>
+  <a href="autos.html">Autos</a>
+  <a href="fahrschulen.html">Fahrschulen</a>
+  <a href="studienstart.html">Studienstart</a>
+  <a href="vorteile.html">Vorteile</a>
+  <a href="aktivitaeten.html">Aktivitäten</a>
+  <a href="merkliste.html" aria-current="page">Merkliste</a>
+</nav>
+<section id="catalog" data-category="Merkliste" aria-labelledby="catalogTitle">
+<h2 id="catalogTitle">Merkliste</h2>
+<p>Deine gemerkten Angebote, Geräte und Ausflüge aus dem Katalog.</p>
+<div class="fields"><label>Suche<input id="catalogQuery" type="search" placeholder="Katalog durchsuchen …"></label></div>
+
+<div class="tools"><span id="catalogCount" class="muted" role="status"></span></div>
+<div id="catalogGrid" class="catalog-grid"></div>
+<button id="moreCatalog" type="button" class="btn ghost" hidden>Mehr Einträge anzeigen</button>
+
+
+
+<p id="catalogStatus" class="muted" role="status" hidden></p>
+</section>
+</main>
+<footer class="wrap">Campus-Kompass</footer>
+</body>
+</html>
