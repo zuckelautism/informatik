@@ -9,5 +9,5 @@ const campusFirebaseWebApp = {
 };
 
 // Erst aktivieren, wenn Google-Anmeldung, autorisierte Domain und Firestore-Regeln eingerichtet sind.
-const campusFirebaseEnabled = false;
+const campusFirebaseEnabled = true;
 const campusFirebaseConfig = campusFirebaseEnabled ? campusFirebaseWebApp : null;
