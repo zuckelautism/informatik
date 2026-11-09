@@ -28,5 +28,16 @@ service cloud.firestore {
       allow get, delete: if owner(uid);
       allow create, update: if owner(uid) && validProfile(request.resource.data);
     }
+    match /profiles/{uid}/messages/{messageId} {
+      allow read: if owner(uid);
+      allow create: if owner(uid)
+        && request.resource.data.keys().hasAll(['role','text','createdAt'])
+        && request.resource.data.keys().hasOnly(['role','text','createdAt'])
+        && request.resource.data.role == 'user'
+        && request.resource.data.text is string
+        && request.resource.data.text.size() > 0
+        && request.resource.data.text.size() <= 1500
+        && request.resource.data.createdAt == request.time;
+    }
   }
 }

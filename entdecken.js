@@ -1,4 +1,9 @@
 (() => {
+  const oldModel = new URLSearchParams(location.search).get("laptop");
+  if (oldModel || location.hash === "#technik") {
+    location.replace("laptops.html" + (oldModel ? "?laptop=" + encodeURIComponent(oldModel) : "") + "#technik");
+    return;
+  }
   const form = document.getElementById("campusSearch");
   const input = document.getElementById("campusSearchInput");
   const results = document.getElementById("campusSearchResults");
@@ -24,8 +29,8 @@
   const today = campusBerlinDate();
   const known = [...campusEntries, ...deals.map(laptop => ({
     category: "Laptops", title: laptop.brand + " " + laptop.name, note: [laptop.model, laptop.cpu, laptop.ram + " GB RAM"].join(" · "), checked: laptop.checked, source: laptop.history?.at(-1)?.source,
-    link: "?laptop=" + encodeURIComponent(laptop.model) + "#technik"
-  }))].filter(item => item.title && (item.link?.startsWith("?laptop=") || safeCampusLink(item.link) !== "#")
+    link: "laptops.html?laptop=" + encodeURIComponent(laptop.model) + "#technik"
+  }))].filter(item => item.title && (item.link?.startsWith("laptops.html?laptop=") || safeCampusLink(item.link) !== "#")
     && !campusOfferExpired(item, today));
   const index = known.map(item => ({
     item, title: new Set(terms(item.title)), words: new Set(terms([item.title, item.city, item.category, item.topic, item.note].join(" ")))
@@ -48,7 +53,7 @@
     container.replaceChildren(...matches.map(({item, reasons}) => {
       const li = document.createElement("li");
       const link = document.createElement("a");
-      link.href = item.link.startsWith("?laptop=") ? item.link : safeCampusLink(item.link);
+      link.href = item.link.startsWith("laptops.html?laptop=") ? item.link : safeCampusLink(item.link);
       link.textContent = item.title;
       const context = document.createElement("span");
       context.textContent = [item.category, item.city === "Überregional" ? "" : item.city].filter(Boolean).join(" · ");
@@ -193,10 +198,4 @@
     }
   });
 
-  const laptop = new URLSearchParams(location.search).get("laptop");
-  if (laptop && deals.some(item => item.model === laptop)) {
-    const laptopInput = document.getElementById("query");
-    laptopInput.value = laptop;
-    laptopInput.dispatchEvent(new Event("input", {bubbles:true}));
-  }
 })();

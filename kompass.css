@@ -368,3 +368,19 @@ input, select, .site-menu summary, .btn.ghost { border-color: var(--control-line
   .site-menu-grid { max-height: min(66dvh, 580px); }
   .site-menu-grid summary, .site-menu-group a { min-height: 40px; }
 }
+
+.campus-home { margin: 18px 0; }
+.campus-home h2 { margin: 4px 0; }
+.campus-mail { margin-top: 16px; }
+.campus-mail h2 { margin-top: 0; }
+.campus-mail label { display: block; }
+.campus-mail textarea {
+ display: block; width: 100%; resize: vertical; margin: 4px 0 8px; padding: 8px;
+ font: inherit; color: var(--ink); background: var(--panel);
+ border: 1px solid var(--control-line); border-radius: 6px;
+}
+#campusMailMessages { display: grid; gap: 6px; padding: 0; list-style: none; max-height: 300px; overflow: auto; }
+#campusMailMessages:empty, #campusMailStatus:empty { display: none; }
+#campusMailMessages li { padding: 8px 10px; border-radius: 6px; background: var(--bg); }
+#campusMailMessages li p { margin: 4px 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+#campusMailMessages time { margin-left: 8px; color: var(--muted); font-size: 12px; }
