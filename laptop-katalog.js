@@ -107,6 +107,9 @@
   const diff=latest.price-prev.price,percent=100*diff/prev.price;
   return `<div class="delta">${diff>0?"▲":"▼"} ${diff>0?"+":""}${euro(diff)} (${diff>0?"+":""}${percent.toFixed(1).replace(".",",")} %) seit ${esc(prev.date.split("-").reverse().join("."))} · ${esc(d.shop)}</div>`;
  }
+ const requestedLaptop=new URLSearchParams(location.search).get("laptop");
+ const byId=deals.find(d=>d.id===requestedLaptop);
+ let linkedIds=new Set(byId?[byId.id]:deals.filter(d=>d.model===requestedLaptop).map(d=>d.id));
  function draw(){
   let q=document.getElementById("query").value.toLocaleLowerCase("de"),sort=document.getElementById("sort").value;
   const activeBrand=get("brandFilter").value;
@@ -116,6 +119,8 @@
    &&(get("upgrade").value==="any"||d.upgrade===(get("upgrade").value==="yes"))
    &&(get("budgetMode").value==="any"||withinBudget(d))
    &&(!onlyFavorites||favorites.has(d.id)));
+  if(linkedIds.size)data=deals.filter(d=>linkedIds.has(d.id));
+  get("directLaptopHint").hidden=!linkedIds.size;
   get("profileNote").textContent=profiles[get("profile").value][3];
   get("wishlist").textContent="Wunschliste ("+favorites.size+")";
   drawComparison();
@@ -251,7 +256,8 @@
  document.getElementById("closeModal").addEventListener("click",()=>dialog.close());
  dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close()});
 
- function resetLaptopView(){laptopLimit=9;draw();}
+ function resetLaptopView(){linkedIds.clear();laptopLimit=9;draw();}
+ get("clearDirectLaptop").addEventListener("click",()=>{get("query").value="";resetLaptopView();get("query").focus();});
  get("brandFilter").addEventListener("change",resetLaptopView);
  get("query").addEventListener("input",resetLaptopView);
  get("sort").addEventListener("change",resetLaptopView);
@@ -267,10 +273,8 @@
  window.addEventListener("campus-account",event=>{
   finderUid=event.detail?.uid??"";
   saved={};storageWritable=true;onlyFavorites=false;laptopLimit=9;
-  get("wishlist").checked=false;
+  get("wishlist").setAttribute("aria-pressed","false");
   refreshFinder();
  });
- const requestedModel=new URLSearchParams(location.search).get("laptop");
- if(requestedModel&&deals.some(laptop=>laptop.model===requestedModel))get("query").value=requestedModel;
  draw();showCampusUpdate("Laptops");
 })(deals);

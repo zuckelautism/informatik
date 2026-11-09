@@ -4,6 +4,10 @@
   const button = document.getElementById("campusMailSend");
   const list = document.getElementById("campusMailMessages");
   const status = document.getElementById("campusMailStatus");
+  const count = document.getElementById("campusMailCount");
+  let pendingTimer;
+  const updateCount = () => { count.textContent = field.value.length + " / 1500 Zeichen"; };
+  field.addEventListener("input", () => { updateCount(); field.removeAttribute("aria-invalid"); });
   const format = new Intl.DateTimeFormat("de-DE", {
     dateStyle: "medium", timeStyle: "short", timeZone: "Europe/Berlin"
   });
@@ -12,7 +16,7 @@
   let send = null;
   const setEnabled = enabled => { field.disabled = button.disabled = !enabled; };
   const errorText = error => error.code === "permission-denied"
-    ? "Der Postkasten wartet auf die Freigabe in Firebase."
+    ? "Der Postkasten ist noch nicht freigeschaltet. Bitte wende dich an die Projektverwaltung."
     : "Der Postkasten ist gerade nicht erreichbar. Lade die Seite erneut.";
 
   function render(snapshot) {
@@ -43,7 +47,12 @@
     stop = () => {};
     send = null;
     setEnabled(false);
+    clearTimeout(pendingTimer);
+    form.removeAttribute("aria-busy");
+    field.readOnly = false;
     field.value = "";
+    field.removeAttribute("aria-invalid");
+    updateCount();
     list.replaceChildren();
     document.getElementById("campusMailEmpty").hidden = true;
     status.textContent = account ? "Postkasten wird geladen …" : "";
@@ -76,21 +85,40 @@
   form.addEventListener("submit", async event => {
     event.preventDefault();
     const text = field.value.trim();
-    if (!send || button.disabled || !text || text.length > 1500) return;
+    if (!send || button.disabled) return;
+    if (!text || text.length > 1500) {
+      field.setAttribute("aria-invalid", "true");
+      status.textContent = "Schreib eine Nachricht mit 1 bis 1500 Zeichen.";
+      field.focus();
+      return;
+    }
+    if (navigator.onLine === false) {
+      status.textContent = "Du bist offline. Deine Eingabe bleibt hier. Versuche es mit Verbindung erneut.";
+      return;
+    }
     const current = generation;
-    setEnabled(false);
+    button.disabled = true;
+    field.readOnly = true;
+    form.setAttribute("aria-busy", "true");
     status.textContent = "Nachricht wird gespeichert …";
+    const timer = setTimeout(() => {
+      if (generation === current) status.textContent = "Das Speichern dauert länger. Lass die Seite geöffnet. Die Nachricht wird nur einmal abgeschickt.";
+    }, 8000);
+    pendingTimer = timer;
     try {
       await send(text);
       if (generation !== current) return;
       field.value = "";
+      updateCount();
       status.textContent = "Nachricht im Postkasten gespeichert.";
     } catch (error) {
       if (generation === current) status.textContent = errorText(error);
     } finally {
-      if (generation === current && send) {
-        setEnabled(true);
-        field.focus();
+      clearTimeout(timer);
+      if (generation === current) {
+        form.removeAttribute("aria-busy");
+        field.readOnly = false;
+        setEnabled(Boolean(send));
       }
     }
   });

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de"><head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Dein Plan nach der Schule · Campus-Kompass</title>
+ <script src="theme.js?v=coastal1"></script>
+ <link rel="stylesheet" href="kompass.css?v=plan1">
+ 
+ 
+<script src="firebase-config.js?v=google1" defer></script>
+ <script src="mein-plan.js?v=plan1" defer></script>
+<script src="campus-shell.js?v=review1" defer></script>
+</head><body class="campus-locked">
+ <section class="campus-login" aria-labelledby="campusLoginTitle">
+  <div class="campus-login-card">
+    <p class="campus-login-brand">Campus-Kompass</p>
+    <h1 id="campusLoginTitle">Willkommen</h1>
+    <p>Entdecke Städte, finde Angebote für deinen Alltag und speichere dein persönliches Profil.</p>
+    <button class="btn" id="campusLoginButton" type="button" disabled>Mit Google anmelden</button>
+    <p id="campusLoginStatus" role="status">Anmeldung wird vorbereitet …</p>
+    <p class="campus-login-note">Google-Anmeldung öffnet die Oberfläche. Katalogdateien sind auf GitHub Pages öffentlich. Dein Firebase-Profil ist nur für dein Konto bestimmt.</p>
+    <noscript>Aktiviere JavaScript, um dich anzumelden.</noscript>
+  </div>
+ </section>
+<header class="wrap site-header"><div class="app-header-inner">
+  <div><h1><a href="index.html">Campus-Kompass</a></h1><p>Orientierung für Studium, Ausbildung und Alltag.</p></div>
+  <nav id="kompass" class="site-menu" aria-label="Hauptnavigation">
+  <details><summary>Menü</summary><div class="site-menu-grid"><a class="site-menu-home" href="index.html">Startseite</a>
+   <details class="site-menu-group" open><summary>Städte</summary>
+    <ul><li><a href="staedte.html">Alle Städte</a></li></ul>
+    <details class="site-menu-region"><summary>Baden-Württemberg</summary><ul><li><a href="stadt-heidelberg.html">Heidelberg</a></li><li><a href="stadt-heilbronn.html">Heilbronn</a></li><li><a href="stadt-neckarsulm.html">Neckarsulm</a></li><li><a href="stadt-tuebingen.html">Tübingen</a></li></ul></details>
+<details class="site-menu-region"><summary>Bayern</summary><ul><li><a href="stadt-ingolstadt.html">Ingolstadt</a></li><li><a href="stadt-muenchen.html">München</a></li></ul></details>
+<details class="site-menu-region"><summary>Berlin</summary><ul><li><a href="stadt-berlin.html">Berlin</a></li></ul></details>
+<details class="site-menu-region"><summary>Hamburg</summary><ul><li><a href="stadt-hamburg.html">Hamburg</a></li></ul></details>
+<details class="site-menu-region"><summary>Hessen</summary><ul><li><a href="stadt-frankfurt-am-main.html">Frankfurt am Main</a></li><li><a href="stadt-giessen.html">Gießen</a></li><li><a href="stadt-marburg.html">Marburg</a></li></ul></details>
+<details class="site-menu-region"><summary>Niedersachsen</summary><ul><li><a href="stadt-goettingen.html">Göttingen</a></li></ul></details>
+<details class="site-menu-region"><summary>Nordrhein-Westfalen</summary><ul><li><a href="stadt-aachen.html">Aachen</a></li><li><a href="stadt-koeln.html">Köln</a></li></ul></details>
+<details class="site-menu-region"><summary>Sachsen</summary><ul><li><a href="stadt-leipzig.html">Leipzig</a></li><li><a href="stadt-mittweida.html">Mittweida</a></li></ul></details>
+<details class="site-menu-region"><summary>Thüringen</summary><ul><li><a href="stadt-jena.html">Jena</a></li></ul></details>
+   </details>
+   <details class="site-menu-group" open><summary>Studium &amp; Beruf</summary><ul><li><a href="mein-plan.html" aria-current="page">Mein Plan</a></li><li><a href="ausbildung.html">Ausbildung finden</a></li><li><a href="studienplaetze.html">Studienplätze &amp; Studienwahl</a></li><li><a href="studienplaetze.html#arbeitsmarkt">Arbeitsmarkt</a></li><li><a href="studienstart.html">Studienstart</a></li></ul></details>
+   <details class="site-menu-group"><summary>Technik</summary><ul><li><a href="laptops.html">Laptops</a></li><li><a href="handys.html">Handys</a></li><li><a href="tablets.html">Tablets</a></li><li><a href="smart-gadgets.html">Smart-Gadgets</a></li></ul></details>
+   <details class="site-menu-group"><summary>Alltag &amp; Planung</summary><ul><li><a href="vorteile.html">Vorteile</a></li><li><a href="autos.html">Autos</a></li><li><a href="reiseideen.html">Reiseideen</a></li></ul></details>
+   <details class="site-menu-group"><summary>Ortsübergreifend</summary><ul><li><a href="wohnen.html">Wohnen</a></li><li><a href="fahrschulen.html">Fahrschulen</a></li><li><a href="aktivitaeten.html">Aktivitäten</a></li><li><a href="pendeln.html">ÖPNV &amp; Pendeln</a></li><li><a href="unterkuenfte.html">Unterkünfte</a></li></ul></details>
+   <details class="site-menu-group"><summary>Persönlich</summary><ul><li><a href="profil.html">Mein Profil</a></li><li><a href="merkliste.html">Merkliste</a></li></ul></details>
+  </div></details>
+ </nav>
+ </div></header>
+<main class="wrap">
+<section class="city-intro" aria-labelledby="planTitle">
+ <p class="eyebrow">Schritt für Schritt</p><h2 id="planTitle">Dein Plan nach der Schule</h2>
+ <p>Vier kurze Fragen. Danach bekommst du einen ersten Schritt und einen Plan bis zum Start. Du kannst „Weiß ich noch nicht“ wählen.</p>
+ </section>
+ <form id="planForm" class="finder plan-builder">
+  <p class="eyebrow" id="planProgress" role="status">Schritt 1 von 4</p>
+  <fieldset><legend tabindex="-1">Was willst du als Nächstes machen?</legend>
+   <label class="plan-choice"><input type="radio" name="route" value="offen" checked> <span>Weiß ich noch nicht</span></label>
+<label class="plan-choice"><input type="radio" name="route" value="ausbildung"> <span>Eine Ausbildung machen</span></label>
+<label class="plan-choice"><input type="radio" name="route" value="studium"> <span>Studieren</span></label>
+  </fieldset>
+  <fieldset hidden disabled><legend tabindex="-1">Was interessiert dich am ehesten?</legend>
+   <label class="plan-choice"><input type="radio" name="interest" value="offen" checked> <span>Weiß ich noch nicht</span></label>
+<label class="plan-choice"><input type="radio" name="interest" value="texte"> <span>Sprache, Kultur und Texte</span></label>
+<label class="plan-choice"><input type="radio" name="interest" value="technik"> <span>Technik und Informatik</span></label>
+<label class="plan-choice"><input type="radio" name="interest" value="menschen"> <span>Gesundheit und Soziales</span></label>
+<label class="plan-choice"><input type="radio" name="interest" value="natur"> <span>Natur und Umwelt</span></label>
+<label class="plan-choice"><input type="radio" name="interest" value="organisation"> <span>Wirtschaft und Organisation</span></label>
+  </fieldset>
+  <fieldset hidden disabled><legend tabindex="-1">Wie bald möchtest du anfangen?</legend>
+   <label class="plan-choice"><input type="radio" name="horizon" value="spaeter" checked> <span>Ich habe Zeit oder weiß es noch nicht</span></label>
+<label class="plan-choice"><input type="radio" name="horizon" value="bald"> <span>Möglichst bald</span></label>
+  </fieldset>
+  <fieldset hidden disabled><legend tabindex="-1">Wo kannst du dir den Start vorstellen?</legend>
+   <label for="planCity">Stadt (freiwillig)</label>
+   <select id="planCity"><option value="">Weiß ich noch nicht</option><optgroup label="Baden-Württemberg"><option value="heidelberg">Heidelberg</option><option value="heilbronn">Heilbronn</option><option value="neckarsulm">Neckarsulm</option><option value="tuebingen">Tübingen</option></optgroup><optgroup label="Bayern"><option value="ingolstadt">Ingolstadt</option><option value="muenchen">München</option></optgroup><optgroup label="Berlin"><option value="berlin">Berlin</option></optgroup><optgroup label="Hamburg"><option value="hamburg">Hamburg</option></optgroup><optgroup label="Hessen"><option value="frankfurt-am-main">Frankfurt am Main</option><option value="giessen">Gießen</option><option value="marburg">Marburg</option></optgroup><optgroup label="Niedersachsen"><option value="goettingen">Göttingen</option></optgroup><optgroup label="Nordrhein-Westfalen"><option value="aachen">Aachen</option><option value="koeln">Köln</option></optgroup><optgroup label="Sachsen"><option value="leipzig">Leipzig</option><option value="mittweida">Mittweida</option></optgroup><optgroup label="Thüringen"><option value="jena">Jena</option></optgroup></select>
+  </fieldset>
+  <div class="tools"><button type="button" id="planBack" class="btn ghost" hidden>Zurück</button><button type="submit" id="planForward" class="btn">Weiter</button></div>
+ </form>
+ <section class="finder plan-result" id="planResult" aria-labelledby="planSummary" hidden>
+  <h3 id="planSummary" tabindex="-1"></h3><p class="plan-next" id="planNextAction" role="status"></p>
+  <p id="planHorizonText"></p><p class="muted">Die Zieltermine sind deine Planungshilfe. Offizielle Bewerbungsfristen haben Vorrang.</p>
+  <ol id="planTimeline" class="plan-timeline"></ol>
+  <div class="tools"><button type="button" class="btn ghost" id="planEdit">Antworten ändern</button><button type="button" class="btn ghost" id="planPrint">Plan drucken</button><button type="button" class="btn ghost" id="planReset">Plan löschen</button></div>
+ </section>
+ <p class="muted">Der Plan und deine Häkchen bleiben diesem Konto zugeordnet in diesem Browser.</p><p id="planHint" role="status"></p>
+ <noscript>Aktiviere JavaScript, um deinen Plan zu erstellen.</noscript>
+</main>
+<footer class="wrap">Campus-Kompass</footer>
+</body></html>

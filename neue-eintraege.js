@@ -1,6 +1,87 @@
 // Nach Kategorien gruppierte Ergänzungen. Vorhandene IDs für Merklisten beibehalten.
 const campusErgaenzungen=[
 {
+    "id": "bildung|Hamburg|soziale-arbeit",
+    "city": "Hamburg",
+    "category": "Studium",
+    "title": "HAW Hamburg · Soziale Arbeit (B.A.)",
+    "topic": "Soziale Arbeit",
+    "field": "gesellschaft",
+    "note": "Sozialrecht, Beratung, Sozialpolitik und Praxisphasen verbinden Theorie und Arbeit mit Menschen.",
+    "link": "https://www.haw-hamburg.de/bachelor-soziale-arbeit"
+  },
+  {
+    "id": "bildung|Frankfurt am Main|erziehungswissenschaft",
+    "city": "Frankfurt am Main",
+    "category": "Studium",
+    "title": "Goethe-Universität Frankfurt · Erziehungswissenschaft (B.A.)",
+    "topic": "Erziehungswissenschaft",
+    "field": "gesellschaft",
+    "note": "Du untersuchst Lernen, Bildung und Erziehung in unterschiedlichen Lebensphasen.",
+    "link": "https://www.uni-frankfurt.de/de/studium/studiengaenge/erziehungswissenschaft-bachelor-hauptfach"
+  },
+  {
+    "id": "bildung|Köln|grundschullehramt",
+    "city": "Köln",
+    "category": "Studium",
+    "title": "Universität zu Köln · Bachelor Lehramt",
+    "topic": "Grundschullehramt",
+    "field": "gesellschaft",
+    "note": "Fächer, Didaktik und Bildungswissenschaften werden mit Praxisphasen verbunden.",
+    "link": "https://studsek.uni-koeln.de/bewerbung/1_fachsemester___grundstaendige_studiengaenge/grundstaendige_studiengaenge/bachelor_lehramt/index_ger.html"
+  },
+  {
+    "id": "bildung|Leipzig|rechtswissenschaft",
+    "city": "Leipzig",
+    "category": "Studium",
+    "title": "Universität Leipzig · Rechtswissenschaft (Staatsexamen)",
+    "topic": "Rechtswissenschaft",
+    "field": "gesellschaft",
+    "note": "Du lernst juristische Fallbearbeitung im Zivilrecht, Strafrecht und öffentlichen Recht.",
+    "link": "https://www.jura.uni-leipzig.de/studium/rechtswissenschaft-staatsexamen"
+  },
+  {
+    "id": "bildung|Aachen|elektrotechnik",
+    "city": "Aachen",
+    "category": "Studium",
+    "title": "FH Aachen · Elektrotechnik (B.Eng.)",
+    "topic": "Elektrotechnik",
+    "field": "technik",
+    "note": "Mathematik, Schaltungen und Systemtechnik bilden die Grundlagen für verschiedene technische Vertiefungen.",
+    "link": "https://www.fh-aachen.de/studium/studiengaenge/elektrotechnik-beng"
+  },
+  {
+    "id": "bildung|Leipzig|bauingenieurwesen",
+    "city": "Leipzig",
+    "category": "Studium",
+    "title": "HTWK Leipzig · Bauingenieurwesen (Bachelor)",
+    "topic": "Bauingenieurwesen",
+    "field": "technik",
+    "note": "Du beschäftigst dich mit Konstruktion, Statik, Baustoffen und Infrastruktur.",
+    "link": "https://www.htwk-leipzig.de/studieren/studiengaenge/bachelorstudiengaenge/bauingenieurwesen/"
+  },
+  {
+    "id": "bildung|Göttingen|agrarwissenschaften",
+    "city": "Göttingen",
+    "category": "Studium",
+    "title": "Universität Göttingen · Agrarwissenschaften (B.Sc.)",
+    "topic": "Agrarwissenschaften",
+    "field": "natur",
+    "note": "Natur- und Wirtschaftswissenschaften treffen auf Fragen zu Landwirtschaft und Ernährung.",
+    "link": "https://www.uni-goettingen.de/de/629908.html"
+  },
+  {
+    "id": "bildung|Gießen|umwelt-globaler-wandel",
+    "city": "Gießen",
+    "category": "Studium",
+    "title": "Justus-Liebig-Universität Gießen · Umwelt und globaler Wandel",
+    "topic": "Umwelt und globaler Wandel",
+    "field": "natur",
+    "note": "Der Studiengang befasst sich mit Umweltveränderungen und natürlichen Ressourcen aus mehreren Fachrichtungen.",
+    "link": "https://www.uni-giessen.de/de/studium/studienangebot/finder/studiengaenge/umweltmanagement"
+  },
+
+{
     "id": "bildung|Heidelberg|geschichte|Universität Heidelberg · Geschichte (B.A., 75 %)",
     "city": "Heidelberg",
     "category": "Studium",

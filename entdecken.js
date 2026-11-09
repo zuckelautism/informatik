@@ -29,7 +29,7 @@
   const today = campusBerlinDate();
   const known = [...campusEntries, ...deals.map(laptop => ({
     category: "Laptops", title: laptop.brand + " " + laptop.name, note: [laptop.model, laptop.cpu, laptop.ram + " GB RAM"].join(" · "), checked: laptop.checked, source: laptop.history?.at(-1)?.source,
-    link: "laptops.html?laptop=" + encodeURIComponent(laptop.model) + "#technik"
+    link: "laptops.html?laptop=" + encodeURIComponent(laptop.id) + "#technik"
   }))].filter(item => item.title && (item.link?.startsWith("laptops.html?laptop=") || safeCampusLink(item.link) !== "#")
     && !campusOfferExpired(item, today));
   const index = known.map(item => ({

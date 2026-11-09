@@ -1,12 +1,12 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Campus-Kompass · Technik, Wohnen &amp; Mobilität</title><meta name="description" content="Preisradar für 32-GB-Laptops im Wirtschaftsinformatik-Studium: Lenovo ThinkPad, Samsung Galaxy Book und mehr."><script src="theme.js?v=coastal1"></script>
- <link rel="stylesheet" href="kompass.css?v=motion1">
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Studium, Ausbildung und Alltag · Campus-Kompass</title><meta name="description" content="Finde deinen Weg nach der Schule. Vergleiche Ausbildungs- und Studienwege, entdecke Städte und plane deinen Einstieg."><script src="theme.js?v=coastal1"></script>
+ <link rel="stylesheet" href="kompass.css?v=plan1">
  <script src="pruefstand.js"></script>
  <script src="campus-basis.js?v=review1"></script><script src="firebase-config.js?v=google1" defer></script>
- <script src="neue-eintraege.js?v=review1" defer></script>
+ <script src="neue-eintraege.js?v=plan1" defer></script>
 <script src="katalog.js?v=review1" defer></script>
 <script src="laptop-daten.js?v=post1" defer></script>
-<script src="entdecken.js?v=post1" defer></script>
-<script src="postkasten.js?v=post1" defer></script>
+<script src="entdecken.js?v=plan1" defer></script>
+<script src="postkasten.js?v=plan1" defer></script>
 <script src="campus-shell.js?v=review1" defer></script>
 </head><body class="campus-locked">
  <section class="campus-login" aria-labelledby="campusLoginTitle">
@@ -23,7 +23,7 @@
 <header class="wrap site-header"><div class="app-header-inner">
   <div><h1><a href="index.html">Campus-Kompass</a></h1><p>Orientierung für Studium, Ausbildung und Alltag.</p></div>
   <nav id="kompass" class="site-menu" aria-label="Hauptnavigation">
-  <details><summary>Menü</summary><div class="site-menu-grid">
+  <details><summary>Menü</summary><div class="site-menu-grid"><a class="site-menu-home" href="index.html" aria-current="page">Startseite</a>
    <details class="site-menu-group"><summary>Städte</summary>
     <ul><li><a href="staedte.html">Alle Städte</a></li></ul>
     <details class="site-menu-region"><summary>Baden-Württemberg</summary><ul><li><a href="stadt-heidelberg.html">Heidelberg</a></li><li><a href="stadt-heilbronn.html">Heilbronn</a></li><li><a href="stadt-neckarsulm.html">Neckarsulm</a></li><li><a href="stadt-tuebingen.html">Tübingen</a></li></ul></details>
@@ -36,8 +36,8 @@
 <details class="site-menu-region"><summary>Sachsen</summary><ul><li><a href="stadt-leipzig.html">Leipzig</a></li><li><a href="stadt-mittweida.html">Mittweida</a></li></ul></details>
 <details class="site-menu-region"><summary>Thüringen</summary><ul><li><a href="stadt-jena.html">Jena</a></li></ul></details>
    </details>
-   <details class="site-menu-group"><summary>Studium</summary><ul><li><a href="studienplaetze.html">Studienplätze &amp; Studienwahl</a></li><li><a href="studienstart.html">Studienstart</a></li></ul></details>
-   <details class="site-menu-group" open><summary>Technik</summary><ul><li><a href="index.html" aria-current="page">Startseite</a></li><li><a href="laptops.html">Laptops</a></li><li><a href="handys.html">Handys</a></li><li><a href="tablets.html">Tablets</a></li><li><a href="smart-gadgets.html">Smart-Gadgets</a></li></ul></details>
+   <details class="site-menu-group"><summary>Studium &amp; Beruf</summary><ul><li><a href="mein-plan.html">Mein Plan</a></li><li><a href="ausbildung.html">Ausbildung finden</a></li><li><a href="studienplaetze.html">Studienplätze &amp; Studienwahl</a></li><li><a href="studienplaetze.html#arbeitsmarkt">Arbeitsmarkt</a></li><li><a href="studienstart.html">Studienstart</a></li></ul></details>
+   <details class="site-menu-group" open><summary>Technik</summary><ul><li><a href="laptops.html">Laptops</a></li><li><a href="handys.html">Handys</a></li><li><a href="tablets.html">Tablets</a></li><li><a href="smart-gadgets.html">Smart-Gadgets</a></li></ul></details>
    <details class="site-menu-group"><summary>Alltag &amp; Planung</summary><ul><li><a href="vorteile.html">Vorteile</a></li><li><a href="autos.html">Autos</a></li><li><a href="reiseideen.html">Reiseideen</a></li></ul></details>
    <details class="site-menu-group"><summary>Ortsübergreifend</summary><ul><li><a href="wohnen.html">Wohnen</a></li><li><a href="fahrschulen.html">Fahrschulen</a></li><li><a href="aktivitaeten.html">Aktivitäten</a></li><li><a href="pendeln.html">ÖPNV &amp; Pendeln</a></li><li><a href="unterkuenfte.html">Unterkünfte</a></li></ul></details>
    <details class="site-menu-group"><summary>Persönlich</summary><ul><li><a href="profil.html">Mein Profil</a></li><li><a href="merkliste.html">Merkliste</a></li></ul></details>
@@ -48,7 +48,7 @@
 <section class="campus-home" aria-labelledby="campusHomeTitle">
  <p class="eyebrow">Dein Überblick</p><h2 id="campusHomeTitle">Willkommen im Campus-Kompass</h2>
  <p>Finde passende Studienangebote, entdecke Städte und vergleiche Technik für deinen Alltag.</p>
- <div class="tools"><a class="btn" href="laptops.html">Laptop-Katalog öffnen</a><a class="btn ghost" href="staedte.html">Städte entdecken</a><a class="btn ghost" href="studienplaetze.html">Studienwahl</a></div>
+ <div class="campus-portal-actions"><a class="btn" href="mein-plan.html">Mach mir einen Plan</a><a class="btn ghost" href="ausbildung.html">Ausbildung finden</a><a class="btn ghost" href="studienplaetze.html#orientierung">Studienwahl starten</a><a class="btn ghost" href="staedte.html">Städte entdecken</a><a class="btn ghost" href="laptops.html">Laptop-Katalog</a></div>
  </section>
 <section class="discovery-panel finder" aria-labelledby="discoveryTitle">
  <h2 id="discoveryTitle">Dein Campus-Kompass</h2>
@@ -76,12 +76,13 @@
 
 <section class="finder campus-mail" aria-labelledby="campusMailTitle">
  <h2 id="campusMailTitle">Dein Postkasten</h2>
- <p class="muted">Hier kannst du Fragen hinterlassen und persönliche Nachrichten lesen. Antworten kommen zeitversetzt. Dein Postkasten ist für dich und die Projektverwaltung sichtbar.</p>
- <ul id="campusMailMessages" aria-label="Letzte 30 Nachrichten"></ul>
+ <p class="muted">Hier kannst du Fragen hinterlassen und persönliche Nachrichten lesen. Die Projektverwaltung liest Nachrichten manuell. Eine Antwort kann dauern und ist nicht garantiert. Nachrichten bleiben gespeichert, bis die Projektverwaltung sie löscht. Schreib ihr hier, wenn du etwas entfernen lassen möchtest.</p>
+ <ul id="campusMailMessages" role="log" tabindex="0" aria-label="Letzte 30 Nachrichten"></ul>
  <p class="muted" id="campusMailEmpty" hidden>Dein Postkasten ist noch leer.</p>
  <form id="campusMailForm">
   <label for="campusMailText">Deine Nachricht</label>
-  <textarea id="campusMailText" rows="3" maxlength="1500" required disabled></textarea>
+  <textarea id="campusMailText" rows="3" maxlength="1500" aria-describedby="campusMailCount" required disabled></textarea>
+  <small class="muted" id="campusMailCount">0 / 1500 Zeichen</small>
   <button id="campusMailSend" class="btn" type="submit" disabled>Nachricht hinterlassen</button>
  </form>
  <p id="campusMailStatus" role="status"></p>

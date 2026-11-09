@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="de"><head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Ausbildung finden · Campus-Kompass</title>
+ <script src="theme.js?v=coastal1"></script>
+ <link rel="stylesheet" href="kompass.css?v=plan1">
+ 
+ 
+<script src="firebase-config.js?v=google1" defer></script>
+ <script src="campus-shell.js?v=review1" defer></script>
+</head><body class="campus-locked">
+ <section class="campus-login" aria-labelledby="campusLoginTitle">
+  <div class="campus-login-card">
+    <p class="campus-login-brand">Campus-Kompass</p>
+    <h1 id="campusLoginTitle">Willkommen</h1>
+    <p>Entdecke Städte, finde Angebote für deinen Alltag und speichere dein persönliches Profil.</p>
+    <button class="btn" id="campusLoginButton" type="button" disabled>Mit Google anmelden</button>
+    <p id="campusLoginStatus" role="status">Anmeldung wird vorbereitet …</p>
+    <p class="campus-login-note">Google-Anmeldung öffnet die Oberfläche. Katalogdateien sind auf GitHub Pages öffentlich. Dein Firebase-Profil ist nur für dein Konto bestimmt.</p>
+    <noscript>Aktiviere JavaScript, um dich anzumelden.</noscript>
+  </div>
+ </section>
+<header class="wrap site-header"><div class="app-header-inner">
+  <div><h1><a href="index.html">Campus-Kompass</a></h1><p>Orientierung für Studium, Ausbildung und Alltag.</p></div>
+  <nav id="kompass" class="site-menu" aria-label="Hauptnavigation">
+  <details><summary>Menü</summary><div class="site-menu-grid"><a class="site-menu-home" href="index.html">Startseite</a>
+   <details class="site-menu-group" open><summary>Städte</summary>
+    <ul><li><a href="staedte.html">Alle Städte</a></li></ul>
+    <details class="site-menu-region"><summary>Baden-Württemberg</summary><ul><li><a href="stadt-heidelberg.html">Heidelberg</a></li><li><a href="stadt-heilbronn.html">Heilbronn</a></li><li><a href="stadt-neckarsulm.html">Neckarsulm</a></li><li><a href="stadt-tuebingen.html">Tübingen</a></li></ul></details>
+<details class="site-menu-region"><summary>Bayern</summary><ul><li><a href="stadt-ingolstadt.html">Ingolstadt</a></li><li><a href="stadt-muenchen.html">München</a></li></ul></details>
+<details class="site-menu-region"><summary>Berlin</summary><ul><li><a href="stadt-berlin.html">Berlin</a></li></ul></details>
+<details class="site-menu-region"><summary>Hamburg</summary><ul><li><a href="stadt-hamburg.html">Hamburg</a></li></ul></details>
+<details class="site-menu-region"><summary>Hessen</summary><ul><li><a href="stadt-frankfurt-am-main.html">Frankfurt am Main</a></li><li><a href="stadt-giessen.html">Gießen</a></li><li><a href="stadt-marburg.html">Marburg</a></li></ul></details>
+<details class="site-menu-region"><summary>Niedersachsen</summary><ul><li><a href="stadt-goettingen.html">Göttingen</a></li></ul></details>
+<details class="site-menu-region"><summary>Nordrhein-Westfalen</summary><ul><li><a href="stadt-aachen.html">Aachen</a></li><li><a href="stadt-koeln.html">Köln</a></li></ul></details>
+<details class="site-menu-region"><summary>Sachsen</summary><ul><li><a href="stadt-leipzig.html">Leipzig</a></li><li><a href="stadt-mittweida.html">Mittweida</a></li></ul></details>
+<details class="site-menu-region"><summary>Thüringen</summary><ul><li><a href="stadt-jena.html">Jena</a></li></ul></details>
+   </details>
+   <details class="site-menu-group" open><summary>Studium &amp; Beruf</summary><ul><li><a href="mein-plan.html">Mein Plan</a></li><li><a href="ausbildung.html" aria-current="page">Ausbildung finden</a></li><li><a href="studienplaetze.html">Studienplätze &amp; Studienwahl</a></li><li><a href="studienplaetze.html#arbeitsmarkt">Arbeitsmarkt</a></li><li><a href="studienstart.html">Studienstart</a></li></ul></details>
+   <details class="site-menu-group"><summary>Technik</summary><ul><li><a href="laptops.html">Laptops</a></li><li><a href="handys.html">Handys</a></li><li><a href="tablets.html">Tablets</a></li><li><a href="smart-gadgets.html">Smart-Gadgets</a></li></ul></details>
+   <details class="site-menu-group"><summary>Alltag &amp; Planung</summary><ul><li><a href="vorteile.html">Vorteile</a></li><li><a href="autos.html">Autos</a></li><li><a href="reiseideen.html">Reiseideen</a></li></ul></details>
+   <details class="site-menu-group"><summary>Ortsübergreifend</summary><ul><li><a href="wohnen.html">Wohnen</a></li><li><a href="fahrschulen.html">Fahrschulen</a></li><li><a href="aktivitaeten.html">Aktivitäten</a></li><li><a href="pendeln.html">ÖPNV &amp; Pendeln</a></li><li><a href="unterkuenfte.html">Unterkünfte</a></li></ul></details>
+   <details class="site-menu-group"><summary>Persönlich</summary><ul><li><a href="profil.html">Mein Profil</a></li><li><a href="merkliste.html">Merkliste</a></li></ul></details>
+  </div></details>
+ </nav>
+ </div></header>
+<main class="wrap">
+<section class="city-intro" aria-labelledby="trainingTitle">
+ <p class="eyebrow">Ausbildung &amp; Berufseinstieg</p><h2 id="trainingTitle">Ausbildung finden</h2>
+ <p>Finde Berufe, die du ausprobieren kannst, und suche nach Ausbildungsstellen in deiner Region.</p>
+ <div class="tools"><a class="btn" href="https://www.arbeitsagentur.de/bildung/ausbildung/ausbildungsplatz-finden">Ausbildungsplatz bei der Bundesagentur suchen</a><a class="btn ghost" href="mein-plan.html">Meinen Plan erstellen</a><a href="#berufe">Zu den Berufsprofilen</a></div>
+ </section>
+ <section class="finder" aria-labelledby="trainingTypes"><h3 id="trainingTypes">Welche Ausbildungsform passt?</h3>
+ <dl><dt><strong>Dual</strong></dt><dd>Du lernst im Betrieb und in der Berufsschule. Bewirb dich beim Betrieb. Im Vertrag steht die Vergütung.</dd>
+ <dt><strong>Schulisch</strong></dt><dd>Du lernst vor allem an einer Berufsfach- oder Fachschule und sammelst Praxis. Bewerbung, Kosten und Vergütung hängen vom Beruf und der Schule ab.</dd>
+ <dt><strong>Praxisintegriert</strong></dt><dd>Schule und Praxis sind über die Ausbildungszeit verbunden. Prüfe bei Schule und Praxisstelle die Regeln für dein Bundesland.</dd></dl>
+ <a href="https://web.arbeitsagentur.de/bildung/ausbildung/ausbildungswege">Offizieller Vergleich der Ausbildungswege</a>
+ </section>
+ <section class="finder" aria-labelledby="trainingSteps"><h3 id="trainingSteps">Von der ersten Idee bis zum Vertrag</h3>
+ <ol>
+ <li><strong>Heute:</strong> Notiere zwei Aufgaben, die dir Spaß machen. Wähle zwei Berufe zum Ausprobieren. <a href="https://www.arbeitsagentur.de/bildung/welche-ausbildung-welches-studium-passt">Check-U starten</a></li>
+ <li><strong>Diese Woche:</strong> Suche nach Beruf und Ort oder PLZ. Wenn du keine Treffer findest, vergrößere den Umkreis oder suche bei Berufsschulen. <a href="https://www.arbeitsagentur.de/jobsuche/">Offizielle Jobsuche öffnen</a> · <a href="staedte.html">Stadtseiten ansehen</a></li>
+ <li><strong>Vor der Bewerbung:</strong> Frage nach einem Praktikum und prüfe, welche Unterlagen und Fristen der Anbieter nennt. <a href="https://web.arbeitsagentur.de/bildung/bewerbung/bewerbungsprozess-ausbildung">Bewerbung vorbereiten</a></li>
+ <li><strong>Bei einer Zusage:</strong> Vergleiche Vergütung, Probezeit, Arbeitszeit, Berufsschule und Fahrtkosten. Lass dir Unklarheiten erklären, bevor du unterschreibst. <a href="https://web.arbeitsagentur.de/bildung/ausbildung/ausbildungsvertrag">Ausbildungsvertrag verstehen</a></li>
+ <li><strong>Wenn es nicht klappt:</strong> Besprich andere Berufe, einen größeren Suchradius oder eine Einstiegsqualifizierung mit der Berufsberatung. <a href="https://www.arbeitsagentur.de/bildung/ausbildung/ausbildungsplatz-finden">Alternativen finden</a></li>
+ </ol></section>
+ <section class="finder" aria-labelledby="families"><h3 id="families">Für Eltern und Bezugspersonen</h3>
+ <p>Frag zuerst, welche Aufgaben deinem Kind Spaß machen und wobei es sich Hilfe wünscht. Es entscheidet selbst. Biete an, gemeinsam eine Stelle zu suchen, zum Beratungstermin mitzukommen oder ein Gespräch zu üben.</p>
+ <p>Schreibt die erwarteten Ausgaben für Fahrt, Wohnen und Ausstattung auf. Prüft gemeinsam, welche Vergütung oder Unterstützung für den konkreten Weg infrage kommt.</p>
+ <ul><li><a href="https://web.arbeitsagentur.de/bildung/eltern/fahrplan-fuer-die-berufswahl-wann-koennen-eltern-helfen">Berufswahl-Fahrplan für Eltern</a></li><li><a href="https://www.arbeitsagentur.de/bildung/ausbildung/was-du-in-der-ausbildung-verdienst">Ausbildungsvergütung einordnen</a> · <a href="https://web.arbeitsagentur.de/bildung/ausbildung/typische-kosten-in-der-ausbildung">Typische Kosten</a></li><li><a href="https://www.arbeitsagentur.de/bildung/ausbildung/finanzierung-ausbildung">Finanzierungsmöglichkeiten</a> · <a href="https://web.arbeitsagentur.de/bildung/ausbildung/berufsausbildungsbeihilfe-bab">Berufsausbildungsbeihilfe prüfen</a></li></ul>
+ </section>
+ <section id="berufe" aria-labelledby="trainingProfiles"><h3 id="trainingProfiles">Zehn Berufe zum Entdecken</h3>
+ <p>Das sind Berufsprofile. Ob eine Stelle frei ist und welche Voraussetzungen gelten, prüfst du in der Stellensuche oder bei Schule und Betrieb.</p>
+ <div class="catalog-grid"><article class="catalog-card"><p class="eyebrow">Dual</p><h4>Anlagenmechanik für Sanitär, Heizung und Klima</h4><p>Montiere und warte Heizungs-, Sanitär- und Lüftungstechnik.</p><a href="https://web.arbeitsagentur.de/berufenet/?dkz=15164">Beruf bei offizieller Quelle ansehen</a></article><article class="catalog-card"><p class="eyebrow">Dual</p><h4>Elektronik für Energie- und Gebäudetechnik</h4><p>Installiere und prüfe elektrische Anlagen in Gebäuden.</p><a href="https://www.bibb.de/de/65925.php">Beruf im BIBB-Verzeichnis nachschlagen</a></article><article class="catalog-card"><p class="eyebrow">Dual</p><h4>Fachinformatik</h4><p>Je nach Fachrichtung entwickelst du Software oder betreust IT-Systeme.</p><a href="https://www.bibb.de/de/65925.php">Beruf im BIBB-Verzeichnis nachschlagen</a></article><article class="catalog-card"><p class="eyebrow">Dual</p><h4>Tischlerei</h4><p>Plane und fertige Möbel oder Bauteile aus Holz.</p><a href="https://www.bibb.de/de/65925.php">Beruf im BIBB-Verzeichnis nachschlagen</a></article><article class="catalog-card"><p class="eyebrow">Dual</p><h4>Kaufleute für Büromanagement</h4><p>Organisiere Büroabläufe, Termine, Bestellungen und Kommunikation.</p><a href="https://www.bibb.de/de/65925.php">Beruf im BIBB-Verzeichnis nachschlagen</a></article><article class="catalog-card"><p class="eyebrow">Dual</p><h4>Kaufleute im Einzelhandel</h4><p>Berate Kundschaft und lerne Warenwirtschaft sowie Verkauf.</p><a href="https://web.arbeitsagentur.de/berufenet/beruf/steckbrief/6580">Beruf bei offizieller Quelle ansehen</a></article><article class="catalog-card"><p class="eyebrow">Dual</p><h4>Mediengestaltung Digital und Print</h4><p>Gestalte Medienprodukte und bereite sie für die Veröffentlichung vor.</p><a href="https://www.bibb.de/de/65925.php">Beruf im BIBB-Verzeichnis nachschlagen</a></article><article class="catalog-card"><p class="eyebrow">Pflegeschule und Praxis</p><h4>Pflegefachperson</h4><p>Betreue und pflege Menschen in unterschiedlichen Einrichtungen.</p><a href="https://www.pflegeausbildung.net/">Beruf bei offizieller Quelle ansehen</a></article><article class="catalog-card"><p class="eyebrow">Fachschule oder praxisintegriert</p><h4>Erzieherin oder Erzieher</h4><p>Begleite Kinder und Jugendliche. Zugang und Form richten sich nach dem Bundesland.</p><a href="https://www.arbeitsagentur.de/bildung/ausbildung/ausbildungsplatz-finden">Berufsweg und Angebote prüfen</a></article><article class="catalog-card"><p class="eyebrow">Schulisch mit Praxis</p><h4>Physiotherapie</h4><p>Übe mit Menschen Bewegungsabläufe und unterstütze ihre Rehabilitation.</p><a href="https://www.arbeitsagentur.de/bildung/ausbildung/ausbildungsplatz-finden">Berufsweg und Angebote prüfen</a></article></div>
+ </section>
+</main>
+<footer class="wrap">Campus-Kompass</footer>
+</body></html>
