@@ -4,7 +4,7 @@
  <meta name="viewport" content="width=device-width,initial-scale=1">
  <title>Mein Profil · Campus-Kompass</title>
  <script src="theme.js?v=coastal1"></script>
- <link rel="stylesheet" href="kompass.css?v=coastal1">
+ <link rel="stylesheet" href="kompass.css?v=menu1">
  <script src="pruefstand.js" defer></script>
  <script src="campus-basis.js?v=qa1" defer></script>
  <script src="neue-eintraege.js?v=coastal1" defer></script>
@@ -14,25 +14,45 @@
 </head><body>
 <header class="wrap site-header"><div class="app-header-inner">
   <div><h1><a href="index.html">Campus-Kompass</a></h1><p>Orientierung für Studium, Ausbildung und Alltag.</p></div>
-  <nav class="app-links" aria-label="Hauptbereiche"><a href="index.html">Start</a><a href="staedte.html">Städte</a><a class="profile-link" href="profil.html" aria-current="page">Mein Profil</a></nav>
+  <nav id="kompass" class="site-menu" aria-label="Hauptnavigation">
+  <details>
+   <summary>Menü</summary>
+   <div class="site-menu-grid">
+    <section class="site-menu-group"><h2>Städte</h2><ul>
+      <li><a href="staedte.html">Alle Städte</a></li>
+      <li><a href="stadt-neckarsulm.html">Neckarsulm</a></li>
+      <li><a href="stadt-heilbronn.html">Heilbronn</a></li>
+      <li><a href="stadt-muenchen.html">München</a></li>
+      <li><a href="stadt-ingolstadt.html">Ingolstadt</a></li>
+    </ul></section>
+    <section class="site-menu-group"><h2>Technik</h2><ul>
+      <li><a href="index.html">Start · Laptops</a></li>
+      <li><a href="handys.html">Handys</a></li>
+      <li><a href="tablets.html">Tablets</a></li>
+      <li><a href="smart-gadgets.html">Smart-Gadgets</a></li>
+    </ul></section>
+    <section class="site-menu-group"><h2>Alltag &amp; Planung</h2><ul>
+      <li><a href="studienstart.html">Studienstart</a></li>
+      <li><a href="vorteile.html">Vorteile</a></li>
+      <li><a href="autos.html">Autos</a></li>
+      <li><a href="reiseideen.html">Reiseideen</a></li>
+    </ul></section>
+    <section class="site-menu-group"><h2>Ortsübergreifend</h2><ul>
+      <li><a href="wohnen.html">Wohnen</a></li>
+      <li><a href="fahrschulen.html">Fahrschulen</a></li>
+      <li><a href="aktivitaeten.html">Aktivitäten</a></li>
+      <li><a href="pendeln.html">ÖPNV &amp; Pendeln</a></li>
+      <li><a href="unterkuenfte.html">Unterkünfte</a></li>
+    </ul></section>
+    <section class="site-menu-group"><h2>Persönlich</h2><ul>
+      <li><a href="profil.html" aria-current="page">Mein Profil</a></li>
+      <li><a href="merkliste.html">Merkliste</a></li>
+    </ul></section>
+   </div>
+  </details>
+ </nav>
  </div></header>
 <main class="wrap">
-<nav id="kompass" aria-label="Katalogbereiche" class="tools section-nav">
-  <a href="index.html">Laptops</a>
-  <a href="handys.html">Handys</a>
-  <a href="tablets.html">Tablets</a>
-  <a href="smart-gadgets.html">Smart-Gadgets</a>
-  <a href="wohnen.html">Wohnen</a>
-  <a href="autos.html">Autos</a>
-  <a href="fahrschulen.html">Fahrschulen</a>
-  <a href="studienstart.html">Studienstart</a>
-  <a href="vorteile.html">Vorteile</a>
-  <a href="aktivitaeten.html">Aktivitäten</a>
-  <a href="pendeln.html">ÖPNV &amp; Pendeln</a>
-  <a href="reiseideen.html">Reiseideen</a>
-  <a href="unterkuenfte.html">Unterkünfte</a>
-  <a href="merkliste.html">Merkliste</a>
-</nav>
 <section class="profile-intro" aria-labelledby="profileTitle">
  <div class="eyebrow">Dein Campus-Kompass</div>
  <h2 id="profileTitle">Dein Weg, deine Vorschläge</h2>
