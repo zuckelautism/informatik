@@ -1,6 +1,407 @@
 // Nach Kategorien gruppierte Ergänzungen. Vorhandene IDs für Merklisten beibehalten.
 const campusErgaenzungen=[
 {
+    "id": "dresden-erweiterung|Handys|Nothing Phone (3a) Pro",
+    "category": "Handys",
+    "city": "Überregional",
+    "title": "Nothing Phone (3a) Pro",
+    "link": "https://de.nothing.tech/products/phone-3a-pro",
+    "note": "Android-Smartphone mit Nothing OS. Größe und Hersteller-Support mit anderen Modellen vergleichen.",
+    "ecosystems": [
+      "android"
+    ],
+    "deviceType": "Smartphone"
+  },
+  {
+    "id": "dresden-erweiterung|Handys|CMF Phone 2 Pro",
+    "category": "Handys",
+    "city": "Überregional",
+    "title": "CMF Phone 2 Pro",
+    "link": "https://de.nothing.tech/products/cmf-phone-2-pro",
+    "note": "Android-Modell von CMF. Zubehör und Anschlussoptionen auf der Herstellerseite prüfen.",
+    "ecosystems": [
+      "android"
+    ],
+    "deviceType": "Smartphone"
+  },
+  {
+    "id": "dresden-erweiterung|Handys|Fairphone (Gen. 6)",
+    "category": "Handys",
+    "city": "Überregional",
+    "title": "Fairphone (Gen. 6)",
+    "link": "https://www.fairphone.com/the-fairphone-gen-6",
+    "note": "Für die Auswahl nach Reparierbarkeit. Ersatzteile und Softwareunterstützung beim Hersteller prüfen.",
+    "ecosystems": [
+      "android"
+    ],
+    "deviceType": "Smartphone"
+  },
+  {
+    "id": "dresden-erweiterung|Tablets|reMarkable Paper Pure",
+    "category": "Tablets",
+    "city": "Überregional",
+    "title": "reMarkable Paper Pure",
+    "link": "https://remarkable.com/products/remarkable-paper/pure",
+    "note": "E-Paper-Schreibtablet für Notizen und PDFs. Stift, Dateiformate und Zubehör prüfen.",
+    "deviceType": "E-Paper-Tablet",
+    "ecosystems": [
+      "apple",
+      "android"
+    ]
+  },
+  {
+    "id": "dresden-erweiterung|Tablets|reMarkable Paper Pro",
+    "category": "Tablets",
+    "city": "Überregional",
+    "title": "reMarkable Paper Pro",
+    "link": "https://remarkable.com/products/remarkable-paper/pro",
+    "note": "E-Paper-Tablet mit Farbdarstellung für Notizen und Markierungen.",
+    "deviceType": "E-Paper-Tablet",
+    "ecosystems": [
+      "apple",
+      "android"
+    ]
+  },
+  {
+    "id": "dresden-erweiterung|Tablets|reMarkable Paper Pro Move",
+    "category": "Tablets",
+    "city": "Überregional",
+    "title": "reMarkable Paper Pro Move",
+    "link": "https://remarkable.com/products/remarkable-paper/pro-move",
+    "note": "Kompakteres E-Paper-Tablet zum Mitschreiben unterwegs.",
+    "deviceType": "E-Paper-Tablet",
+    "ecosystems": [
+      "apple",
+      "android"
+    ]
+  },
+  {
+    "id": "dresden-erweiterung|Smart-Gadgets|Garmin vívosmart 5",
+    "category": "Smart-Gadgets",
+    "city": "Überregional",
+    "title": "Garmin vívosmart 5",
+    "link": "https://www.garmin.com/de-DE/p/782585/pn/010-02645-10/",
+    "note": "Fitnessarmband. Kopplung und benötigte Funktionen vor dem Kauf prüfen.",
+    "ecosystems": [
+      "apple",
+      "android"
+    ],
+    "deviceType": "Fitness-Tracker"
+  },
+  {
+    "id": "dresden-erweiterung|Smart-Gadgets|Garmin Lily 2",
+    "category": "Smart-Gadgets",
+    "city": "Überregional",
+    "title": "Garmin Lily 2",
+    "link": "https://www.garmin.com/de-DE/p/950277/pn/010-02839-00/",
+    "note": "Kompakte Uhr für Alltag und Aktivitäten.",
+    "ecosystems": [
+      "apple",
+      "android"
+    ],
+    "deviceType": "Smartwatch"
+  },
+  {
+    "id": "dresden-erweiterung|Smart-Gadgets|Garmin Instinct 3 Solar (45 mm)",
+    "category": "Smart-Gadgets",
+    "city": "Überregional",
+    "title": "Garmin Instinct 3 Solar (45 mm)",
+    "link": "https://www.garmin.com/de-DE/p/1315317/pn/010-02934-00/",
+    "note": "Outdoor-Uhr mit Solarladung. Varianten und Funktionen beim Hersteller vergleichen.",
+    "ecosystems": [
+      "apple",
+      "android"
+    ],
+    "deviceType": "Sportuhr"
+  },
+  {
+    "id": "dresden-erweiterung|Wohnen|Studentenwerk Dresden · Wohnheimkatalog",
+    "category": "Wohnen",
+    "city": "Dresden",
+    "title": "Studentenwerk Dresden · Wohnheimkatalog",
+    "link": "https://www.studentenwerk-dresden.de/wohnen/wohnheimkatalog/",
+    "note": "Nach Wohnheimen und Lage filtern. Konditionen und Verfügbarkeit beim Betreiber prüfen."
+  },
+  {
+    "id": "dresden-erweiterung|Wohnen|Studentenwerk Dresden · Wohnheimantrag",
+    "category": "Wohnen",
+    "city": "Dresden",
+    "title": "Studentenwerk Dresden · Wohnheimantrag",
+    "link": "https://www.studentenwerk-dresden.de/wohnen/antrag.html",
+    "note": "Offizieller Antragsweg für ein Wohnheimzimmer. Voraussetzungen und Nachweise vorab lesen."
+  },
+  {
+    "id": "dresden-erweiterung|Wohnen|Studentenwerk Dresden · Untermietbörse",
+    "category": "Wohnen",
+    "city": "Dresden",
+    "title": "Studentenwerk Dresden · Untermietbörse",
+    "link": "https://www.studentenwerk-dresden.de/wohnen/untermietboerse-angebote.html",
+    "note": "Betreiberübersicht für zeitlich begrenzte Wohnheim-Untermiete. Angaben direkt vor Ort prüfen."
+  },
+  {
+    "id": "dresden-erweiterung|Fahrschulen|Stephan’s Fahrschule Dresden",
+    "category": "Fahrschulen",
+    "city": "Dresden",
+    "title": "Stephan’s Fahrschule Dresden",
+    "link": "https://www.stephansfahrschule-dresden.de/",
+    "note": "Anbieterinformationen zu Führerscheinklassen und Unterricht."
+  },
+  {
+    "id": "dresden-erweiterung|Fahrschulen|Fahrschule Uwe Keipert",
+    "category": "Fahrschulen",
+    "city": "Dresden",
+    "title": "Fahrschule Uwe Keipert",
+    "link": "https://fahrschule-dresden-keipert.de/",
+    "note": "Direkt beim Anbieter nach Unterricht, Klassen und vollständigen Ausbildungskosten fragen."
+  },
+  {
+    "id": "dresden-erweiterung|Studienstart|TU Dresden · Unterstützung für Erstsemester",
+    "category": "Studienstart",
+    "city": "Dresden",
+    "title": "TU Dresden · Unterstützung für Erstsemester",
+    "link": "https://tu-dresden.de/studium/im-studium/beratung-und-service/zentrale-studienberatung/passt/erstsemester?set_language=de",
+    "note": "Orientierung und Anlaufstellen vor dem Semesterstart."
+  },
+  {
+    "id": "dresden-erweiterung|Studienstart|SLUB Dresden · Angebote für Erstsemester",
+    "category": "Studienstart",
+    "city": "Dresden",
+    "title": "SLUB Dresden · Angebote für Erstsemester",
+    "link": "https://www.slub-dresden.de/besuchen/angebote-fuer-erstsemester",
+    "note": "Bibliothek kennenlernen und Hilfen für Recherche und Einstieg finden."
+  },
+  {
+    "id": "dresden-erweiterung|Studienstart|Dresdner Hochschulsportzentrum · Buchungshinweise",
+    "category": "Studienstart",
+    "city": "Dresden",
+    "title": "Dresdner Hochschulsportzentrum · Buchungshinweise",
+    "link": "https://tu-dresden.de/dhsz/kontakt-service/hinweise-zur-buchung",
+    "note": "Teilnahmebedingungen und Kursbuchung für den Hochschulsport prüfen."
+  },
+  {
+    "id": "dresden-erweiterung|Aktivitäten|Gemäldegalerie Alte Meister",
+    "category": "Aktivitäten",
+    "city": "Dresden",
+    "title": "Gemäldegalerie Alte Meister",
+    "link": "https://gemaeldegalerie.skd.museum/",
+    "note": "Gemäldesammlung im Zwinger. Vor dem Besuch Öffnungszeiten und Eintritt prüfen.",
+    "activity": "Kultur"
+  },
+  {
+    "id": "dresden-erweiterung|Aktivitäten|Verkehrsmuseum Dresden",
+    "category": "Aktivitäten",
+    "city": "Dresden",
+    "title": "Verkehrsmuseum Dresden",
+    "link": "https://www.verkehrsmuseum-dresden.de/",
+    "note": "Ausstellungen rund um Verkehr und Mobilität. Programm und Besuchsinfos direkt beim Museum.",
+    "activity": "Kultur"
+  },
+  {
+    "id": "dresden-erweiterung|Aktivitäten|Deutsches Hygiene-Museum Dresden",
+    "category": "Aktivitäten",
+    "city": "Dresden",
+    "title": "Deutsches Hygiene-Museum Dresden",
+    "link": "https://www.dhmd.de/besuch/zeiten-preise",
+    "note": "Ausstellungen zu Mensch und Gesellschaft. Aktuelle Besuchsbedingungen beim Museum prüfen.",
+    "activity": "Kultur"
+  },
+  {
+    "id": "dresden-erweiterung|ÖPNV & Pendeln|DVB mobil · Fahrplan und Tickets",
+    "category": "ÖPNV & Pendeln",
+    "city": "Dresden",
+    "title": "DVB mobil · Fahrplan und Tickets",
+    "link": "https://www.dvb.de/de-de/die-dvb/dvb-apps/dvb-mobil",
+    "note": "Verbindungen zur Hochschule und Rückfahrt im Fahrplan prüfen."
+  },
+  {
+    "id": "dresden-erweiterung|ÖPNV & Pendeln|DVB · Dresdner Elbfähren",
+    "category": "ÖPNV & Pendeln",
+    "city": "Dresden",
+    "title": "DVB · Dresdner Elbfähren",
+    "link": "https://www.dvb.de/de-de/entdecken/elbfaehren",
+    "note": "Fährstandorte, Betriebszeiten und Tarif vor der Fahrt prüfen."
+  },
+  {
+    "id": "dresden-erweiterung|ÖPNV & Pendeln|DVB · MOBI",
+    "category": "ÖPNV & Pendeln",
+    "city": "Dresden",
+    "title": "DVB · MOBI",
+    "link": "https://www.dvb.de/de-de/die-dvb/mobi/",
+    "note": "Anlaufstelle für Sharing und verknüpfte Mobilitätsangebote in Dresden."
+  },
+  {
+    "id": "dresden-erweiterung|Reiseideen|Von Dresden nach Pillnitz",
+    "category": "Reiseideen",
+    "city": "Dresden",
+    "title": "Von Dresden nach Pillnitz",
+    "link": "https://www.schlosspillnitz.de/gaesteservice/anreise/",
+    "note": "Tagesausflug zum Schlosspark. Eintritt und Anfahrt separat prüfen.",
+    "segment": "Tagesausflug",
+    "plan": [
+      "Vormittags die passende Verbindung nach Pillnitz prüfen und anreisen.",
+      "Zeit für Schloss und Park einplanen. Eintritt vor Ort beim Betreiber prüfen.",
+      "Nach einer Proviantpause die Rückfahrt nach Dresden antreten."
+    ],
+    "tripCap": 30
+  },
+  {
+    "id": "dresden-erweiterung|Reiseideen|Radebeul und Lößnitzgrundbahn",
+    "category": "Reiseideen",
+    "city": "Dresden",
+    "title": "Radebeul und Lößnitzgrundbahn",
+    "link": "https://www.loessnitzgrundbahn.de/fahrplan-tarif/",
+    "note": "Tagesausflug mit historischer Bahn. Sondertarif und Anschlüsse vorher prüfen.",
+    "segment": "Tagesausflug",
+    "plan": [
+      "Von Dresden nach Radebeul fahren und den Umstieg einplanen.",
+      "Eine Teilstrecke mit der Lößnitzgrundbahn und eine Pause einplanen.",
+      "Rückfahrt vorab festlegen. Falls der Sondertarif nicht ins Budget passt, bei Radebeul bleiben."
+    ],
+    "tripCap": 40
+  },
+  {
+    "id": "dresden-erweiterung|Reiseideen|Festung Königstein ab Dresden",
+    "category": "Reiseideen",
+    "city": "Dresden",
+    "title": "Festung Königstein ab Dresden",
+    "link": "https://www.festung-koenigstein.de/de/anfahrt-parken.html",
+    "note": "Tagesausflug in die Sächsische Schweiz. Fahrplan und Eintritt vorab beim Betreiber prüfen.",
+    "segment": "Tagesausflug",
+    "plan": [
+      "Vom Dresdner Hauptbahnhof die Verbindung nach Königstein prüfen.",
+      "Den Weg vom Bahnhof zur Festung und Zeit für den Rundgang einplanen.",
+      "Mit Proviantkosten rechnen und vor Abfahrt die letzte passende Rückfahrt prüfen."
+    ],
+    "tripCap": 45
+  },
+  {
+    "id": "dresden-erweiterung|Unterkünfte|DJH Dresden · Jugendgästehaus",
+    "category": "Unterkünfte",
+    "city": "Dresden",
+    "title": "DJH Dresden · Jugendgästehaus",
+    "link": "https://www.jugendherberge.de/jugendherbergen/dresden-jugendgaestehaus/",
+    "note": "Jugendherberge. Voraussetzungen, freie Plätze und Gesamtpreis beim Betreiber prüfen.",
+    "segment": "Hostel"
+  },
+  {
+    "id": "dresden-erweiterung|Unterkünfte|a&o Dresden Hauptbahnhof",
+    "category": "Unterkünfte",
+    "city": "Dresden",
+    "title": "a&o Dresden Hauptbahnhof",
+    "link": "https://www.aohostels.com/de/dresden/dresden-hauptbahnhof/",
+    "note": "Hostel nahe Hauptbahnhof. Zimmerart und Gesamtpreis für den Termin prüfen.",
+    "segment": "Hostel"
+  },
+  {
+    "id": "dresden-erweiterung|Unterkünfte|Campingplatz Wostra",
+    "category": "Unterkünfte",
+    "city": "Dresden",
+    "title": "Campingplatz Wostra",
+    "link": "https://www.visit-dresden-elbland.de/de/camping/campingplatz-wostra/",
+    "note": "Camping in Dresden. Die örtliche Tourismusseite nennt den Platz und verweist für Buchung und Saison auf den Betreiber.",
+    "segment": "Campingplatz"
+  },
+  {
+    "id": "dresden-erweiterung|Ausbildung|TU Dresden · Fachinformatik",
+    "category": "Ausbildung",
+    "city": "Dresden",
+    "title": "TU Dresden · Fachinformatik",
+    "link": "https://tu-dresden.de/tu-dresden/arbeiten-an-der-tud/berufsausbildung/berufsuebersicht/fachinformatiker-in?set_language=de",
+    "note": "Offizielles Berufsprofil. Fachrichtung, Ausschreibung und Frist beim Arbeitgeber prüfen."
+  },
+  {
+    "id": "dresden-erweiterung|Ausbildung|Universitätsklinikum Dresden · Pflegefachperson",
+    "category": "Ausbildung",
+    "city": "Dresden",
+    "title": "Universitätsklinikum Dresden · Pflegefachperson",
+    "link": "https://karriere.ukdd.de/content/4-3-1-Pflegefachmann/?locale=de_DE",
+    "note": "Offizielle Ausbildungsseite mit Informationen zu Beruf und Bewerbung."
+  },
+  {
+    "id": "dresden-erweiterung|Ausbildung|TU Dresden · Ausbildungsberufe im Überblick",
+    "category": "Ausbildung",
+    "city": "Dresden",
+    "title": "TU Dresden · Ausbildungsberufe im Überblick",
+    "link": "https://tu-dresden.de/tu-dresden/arbeiten-an-der-tud/berufsausbildung/berufsuebersicht?set_language=de",
+    "note": "Ausbildungsberufe außerhalb der IT vergleichen. Offene Stellen separat prüfen."
+  },
+  {
+    "id": "dresden-erweiterung|Studium|TU Dresden · Medienforschung (B.A.)",
+    "category": "Studium",
+    "city": "Dresden",
+    "title": "TU Dresden · Medienforschung (B.A.)",
+    "link": "https://tu-dresden.de/gsw/phil/ifk/studium/studiengaenge/bachelor/ba_medienforschung",
+    "note": "Kommunikationswissenschaftliche Studieninhalte, Methoden und Bewerbungsinfos bei der Hochschule.",
+    "topic": "Medienforschung",
+    "field": "gesellschaft"
+  },
+  {
+    "id": "dresden-erweiterung|Autos|Honda Jazz e:HEV",
+    "category": "Autos",
+    "city": "Überregional",
+    "title": "Honda Jazz e:HEV",
+    "link": "https://www.honda.de/cars/new/jazz-hybrid/overview.html",
+    "note": "Vollhybrid-Kleinwagen. Alltagsverbrauch und Platzangebot mit anderen Modellen vergleichen.",
+    "segment": "Neuwagen"
+  },
+  {
+    "id": "dresden-erweiterung|Autos|Renault Clio Full Hybrid E-Tech",
+    "category": "Autos",
+    "city": "Überregional",
+    "title": "Renault Clio Full Hybrid E-Tech",
+    "link": "https://www.renault.de/hybridfahrzeuge/clio/preise-versionen.html",
+    "note": "Kleinwagen mit Vollhybrid-Antrieb. Ausstattungsvarianten und Konditionen direkt beim Anbieter prüfen.",
+    "segment": "Neuwagen"
+  },
+  {
+    "id": "dresden-erweiterung|Autos|Renault Captur Full Hybrid E-Tech",
+    "category": "Autos",
+    "city": "Überregional",
+    "title": "Renault Captur Full Hybrid E-Tech",
+    "link": "https://www.renault.de/hybridfahrzeuge/captur.html",
+    "note": "Kompaktes SUV. Ausstattung, laufende Kosten und Versicherung für die konkrete Variante vergleichen.",
+    "segment": "Neuwagen"
+  },
+  {
+    "id": "dresden-erweiterung|Vorteile|SKD Dresden · Ermäßigungsnachweise",
+    "category": "Vorteile",
+    "city": "Dresden",
+    "title": "SKD Dresden · Ermäßigungsnachweise",
+    "link": "https://www.skd.museum/fileadmin/userfiles/Marketing/Dokumente/Verguenstigungen.pdf",
+    "note": "Die Staatlichen Kunstsammlungen erklären die Voraussetzungen und Nachweise für Ermäßigungen. Geltung für das gewählte Museum prüfen.",
+    "topic": "Freizeit",
+    "kind": "Ermäßigung prüfen"
+  },
+  {
+    "id": "dresden-erweiterung|Vorteile|Deutsches Hygiene-Museum · Ermäßigter Eintritt",
+    "category": "Vorteile",
+    "city": "Dresden",
+    "title": "Deutsches Hygiene-Museum · Ermäßigter Eintritt",
+    "link": "https://www.dhmd.de/besuch/zeiten-preise",
+    "note": "Ermäßigungsberechtigung, Nachweis und Geltungsbereich vor dem Besuch beim Museum prüfen.",
+    "topic": "Freizeit",
+    "kind": "Ermäßigung prüfen"
+  },
+  {
+    "id": "dresden-erweiterung|Vorteile|Apple Music · Studierendenabo",
+    "category": "Vorteile",
+    "city": "Überregional",
+    "title": "Apple Music · Studierendenabo",
+    "link": "https://www.apple.com/de/apple-music/",
+    "note": "Das Studierendenabo und seine Voraussetzungen direkt bei Apple prüfen. Preis und Bedingungen können sich ändern.",
+    "topic": "Freizeit",
+    "kind": "Ermäßigung prüfen"
+  },
+  {
+    "id": "dresden-erweiterung|Fahrschulen|FahrschulSTAR Dresden",
+    "category": "Fahrschulen",
+    "city": "Dresden",
+    "title": "FahrschulSTAR Dresden",
+    "link": "https://fahrschulstar.de/",
+    "note": "Kurse und Führerscheinklassen beim Dresdner Anbieter prüfen."
+  },
+
+{
     "id": "bildung|Hamburg|soziale-arbeit",
     "city": "Hamburg",
     "category": "Studium",
