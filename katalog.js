@@ -199,7 +199,8 @@ const campusEntries=(()=>{
   }
   const [income,rent,mobility,fixed]=fields.map(field=>Math.round(Number(field.value)*100));
   const costs=rent+mobility+fixed;
-  output.textContent="Erfasste Fixkosten: "+euro(costs/100)+" · Übrig: "+euro((income-costs)/100)+" pro Monat";
+  const complete=fields.every(field=>field.value!=="");
+  output.textContent="Erfasste Fixkosten: "+euro(costs/100)+(complete?" · Übrig: ":" · Vorläufig nach erfassten Kosten: ")+euro((income-costs)/100)+" pro Monat"+(complete?"":" · Ergänze die fehlenden Kosten oder trage 0 ein.");
  }
  get("monthlyFields")?.addEventListener("input",event=>{
   const id=event.target.id;

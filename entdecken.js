@@ -49,7 +49,18 @@
     try { localStorage.setItem(settingsKey(), JSON.stringify(settings)); } catch {}
   }
 
+  const favoritesKey = () => campusAccountStorageKey("campus-compass-v1", uid);
+  const favorites = () => uid ? readCampusStorage(favoritesKey()) ?? {} : {};
+  function syncFavoriteButtons() {
+    const saved = favorites().marked;
+    document.querySelectorAll("[data-discovery-mark]").forEach(button => {
+      button.setAttribute("aria-pressed", String(Array.isArray(saved) && saved.includes(button.dataset.discoveryMark)));
+    });
+  }
+  watchCampusStorage(favoritesKey, syncFavoriteButtons);
+
   function renderCards(container, matches) {
+    const saved = favorites().marked;
     container.replaceChildren(...matches.map(({item, reasons}) => {
       const li = document.createElement("li");
       const link = document.createElement("a");
@@ -71,6 +82,29 @@
         const why = document.createElement("span");
         why.textContent = "Warum hier: " + reasons.join(" · ");
         li.append(why);
+      }
+      if (item.id && item.category !== "Laptops") {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "btn ghost";
+        button.dataset.discoveryMark = item.id;
+        button.textContent = "Merken";
+        button.setAttribute("aria-label", "Merken: " + item.title);
+        button.setAttribute("aria-pressed", String(Array.isArray(saved) && saved.includes(item.id)));
+        button.onclick = () => {
+          if (!uid) return;
+          const current = favorites();
+          const marked = new Set(Array.isArray(current.marked) ? current.marked : []);
+          if (marked.has(item.id)) marked.delete(item.id);
+          else marked.add(item.id);
+          try {
+            localStorage.setItem(favoritesKey(), JSON.stringify({...current, marked:[...marked]}));
+            syncFavoriteButtons();
+          } catch {
+            status.textContent = "Der Eintrag konnte im Browser nicht gespeichert werden.";
+          }
+        };
+        li.append(button);
       }
       return li;
     }));

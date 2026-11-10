@@ -476,3 +476,18 @@ input, select, .site-menu summary, .btn.ghost { border-color: var(--control-line
 .plan-preview h3, .plan-preview p { margin: 0 0 6px; }
 .plan-choice:has(input:focus-visible) { outline: 3px solid var(--accent); outline-offset: 2px; }
 .plan-choice, .plan-builder .btn, .campus-home .btn { min-height: 44px; }
+
+.plan-builder:not([hidden]) { display: grid; gap: 12px; max-width: 100%; }
+.plan-meter progress { width: min(100%, 26rem); accent-color: var(--accent); }
+.plan-preview { margin: 0; align-self: start; }
+.plan-result .btn, .plan-builder select, .site-menu summary, .site-menu-group a { min-height: 44px; }
+.site-menu-group a { display: flex; align-items: center; }
+@media (max-width: 739px) {
+  .plan-builder:not(.plan-review) .plan-controls { grid-row: 3; }
+}
+@media (min-width: 740px) {
+  .plan-builder:not(.plan-review) { grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); gap: 16px; }
+  .plan-builder:not(.plan-review) .plan-meter { grid-column: 1 / -1; }
+  .plan-builder:not(.plan-review) .plan-preview { grid-column: 2; grid-row: 2 / span 2; }
+  .plan-builder:not(.plan-review) .plan-controls { grid-column: 1; }
+}

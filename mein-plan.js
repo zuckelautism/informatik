@@ -30,7 +30,8 @@
     offen: ["deine Interessen", "studienplaetze.html#orientierung", "Teste mit Check-U, welche Aufgaben zu dir passen.", advice],
     texte: ["Sprache, Kultur und Menschen", "studienplaetze.html?bereich=geisteswissenschaften#orientierung", "Lies einen kurzen Text und erkläre einer Person, was du daran spannend findest.", "studienplaetze.html?bereich=geisteswissenschaften#orientierung"],
     technik: ["Technik und Informatik", "studienplaetze.html?bereich=technik#orientierung", "Probiere ein kleines Programmier-, Reparatur- oder Bauprojekt aus.", school],
-    menschen: ["Gesundheit und Soziales", "studienplaetze.html?bereich=gesellschaft#orientierung", "Frag bei einer sozialen Einrichtung nach einem Einblick oder Praktikum.", training],
+    menschen: ["Gesundheit und Psychologie", "studienplaetze.html?bereich=gesundheit#orientierung", "Frag bei einer sozialen Einrichtung nach einem Einblick oder Praktikum.", training],
+    soziales: ["Soziales und Bildung", "studienplaetze.html?bereich=gesellschaft#orientierung", "Überlege, wem du bei einer Aufgabe helfen möchtest und wie du dabei vorgehen würdest.", school],
     natur: ["Natur und Umwelt", "studienplaetze.html?bereich=natur#orientierung", "Vergleiche zwei Aufgaben, etwa Laborarbeit und Arbeit im Freien.", school],
     organisation: ["Wirtschaft und Organisation", "studienplaetze.html?bereich=gesellschaft#orientierung", "Plane ein kleines Projekt mit Aufgaben, Kosten und Zeitbedarf.", school]
   };
@@ -81,6 +82,8 @@
     indicator.textContent = step === steps.length ? "Vorschau vor dem Speichern" : "Schritt " + (step + 1) + " von " + steps.length;
     previous.hidden = step === 0;
     forward.textContent = step === steps.length ? "Meinen Plan speichern" : step === steps.length - 1 ? "Zur Vorschau" : "Weiter";
+    form.classList.toggle("plan-review",step===steps.length);
+    document.getElementById("planMeter").value = Math.min(step + 1,steps.length);
     refreshPreview();
   }
   function focusStep() { (steps[step]?.querySelector("legend") ?? preview).focus(); }
