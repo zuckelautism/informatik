@@ -18,7 +18,7 @@
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "").match(/[a-z0-9]{2,}/g) ?? [];
   const stopWords = new Set(["in","im","fur","und","am","an","der","die","das","dem","den","von","bei","mit","nach","zu"]);
   const aliases = new Map([["koeln","koln"],["muenchen","munchen"],["tuebingen","tubingen"],["goettingen","gottingen"]]);
-  const queryTerms = query => terms(query).map(word => aliases.get(word) ?? word).filter(word => !stopWords.has(word));
+  const queryTerms = query => terms(query).map(word => /^(wohnheim|studierendenwohn|studentenwohn)/.test(word) ? "wohnen" : aliases.get(word) ?? word).filter(word => !stopWords.has(word));
   const matchesWord = (words, word) => words.has(word) || (word.length >= 4 && [...words].some(candidate => candidate.startsWith(word)));
   const interests = {
     "informatik": "informatik programmierung software", "daten-ki": "daten data ki statistik",
@@ -33,7 +33,7 @@
   }))].filter(item => item.title && (item.link?.startsWith("laptops.html?laptop=") || safeCampusLink(item.link) !== "#")
     && !campusOfferExpired(item, today));
   const index = known.map(item => ({
-    item, title: new Set(terms(item.title)), words: new Set(terms([item.title, item.city, item.category, item.topic, item.note].join(" ")))
+    item, title: new Set(terms(item.title)), words: new Set(queryTerms([item.title, item.city, item.category, item.topic, item.note].join(" ")))
   }));
   let uid = "", history = [], profile = {}, settings = {}, revision = 0;
   const storageKey = () => "campus-search-history-v1:" + uid;
@@ -77,13 +77,13 @@
   }
 
   function renderPersonal() {
-    const searchSignals = new Set(history.flatMap(queryTerms));
+    const queries = history.map(queryTerms).filter(query => query.length);
     const city = settings.city || profile.city;
     const profileSignals = new Set((Array.isArray(profile.interests) ? profile.interests : []).flatMap(id => terms(interests[id])));
     const ranked = index.map(entry => {
       const {item, title, words} = entry;
       const reasons = [];
-      const searchMatches = [...searchSignals].filter(word => matchesWord(words, word));
+      const searchMatches = [...new Set(queries.filter(query => query.every(word => matchesWord(words, word))).flat())];
       let score = searchMatches.reduce((total, word) => total + (title.has(word) ? 7 : 3), 0);
       if (searchMatches.length) reasons.push("Suchverlauf (" + searchMatches.slice(0, 3).join(", ") + ")");
       const profileMatches = [...profileSignals].filter(word => matchesWord(words, word));

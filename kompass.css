@@ -464,3 +464,15 @@ input, select, .site-menu summary, .btn.ghost { border-color: var(--control-line
  body:has(.plan-result:not([hidden])) footer { display: none; }
  .plan-timeline li { break-inside: avoid; }
 }
+
+.campus-home { padding: clamp(20px,5vw,56px); border-radius: 18px; background: linear-gradient(140deg,#182237,#30486b); color: #fff; }
+.campus-home h2 { max-width: 20ch; font-size: clamp(2rem,6vw,3.5rem); line-height: 1.05; }
+.campus-home .eyebrow { color: #d5e1f2; }
+.campus-home .btn { background: #f0f6ff; color: #182237; }
+.campus-home .btn.ghost { background: transparent; border-color: #b8c7de; color: #fff; }
+.campus-home .portal-links a { color: #fff; }
+.campus-home :focus-visible { outline-color: #fff; }
+.plan-preview { margin: 16px 0; padding: 16px; border-left: 3px solid var(--accent); background: var(--bg); overflow-wrap: anywhere; }
+.plan-preview h3, .plan-preview p { margin: 0 0 6px; }
+.plan-choice:has(input:focus-visible) { outline: 3px solid var(--accent); outline-offset: 2px; }
+.plan-choice, .plan-builder .btn, .campus-home .btn { min-height: 44px; }

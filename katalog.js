@@ -235,7 +235,21 @@ const campusEntries=(()=>{
  };
  watchCampusStorage(compassKey,refreshCompass);
  window.addEventListener("campus-account",event=>{
-  uid=event.detail?.uid??"";
+  const nextUid=event.detail?.uid??"";
+  if(uid && uid!==nextUid){
+   for(const id of ["catalogCity","catalogQuery","benefitTopic","benefitStatus","ecosystem","activityType","lodgingType","cityCategory","employeeModel","employeeCondition","publicPrice","staffPrice"]){
+    const field=get(id);
+    if(field?.tagName==="SELECT")field.selectedIndex=0;
+    else if(field)field.value="";
+   }
+   get("catalogForm")?.reset();
+   markedOnly=savedPage;
+   visibleCount=12;
+   get("catalogSaved")?.setAttribute("aria-pressed",markedOnly);
+   if(get("catalogStatus")){get("catalogStatus").textContent="";get("catalogStatus").hidden=true;}
+   if(get("employeeFields"))drawEmployee();
+  }
+  uid=nextUid;
   compass={};storageWritable=true;
   refreshCompass();
  });

@@ -12,6 +12,16 @@
   const edit = document.getElementById("planEdit");
   const reset = document.getElementById("planReset");
   const hint = document.getElementById("planHint");
+  const preview = document.getElementById("planPreviewTitle");
+  const cityField = document.getElementById("planCity");
+  const strengths = {
+    offen: "",
+    reden: "Erkläre jemandem, was du herausgefunden hast, und bitte um eine Rückfrage.",
+    bauen: "Halte fest, was du ausprobiert hast, etwa als Skizze oder kleines Beispiel.",
+    ordnen: "Schreib zwei Vor- und Nachteile auf und markiere, was dir wichtiger ist."
+  };
+  const admission = "https://www.hochschulkompass.de/studium/bewerbung-zulassung.html";
+  const applications = "https://web.arbeitsagentur.de/bildung/bewerbung/bewerbungsprozess-ausbildung";
   const locale = new Intl.DateTimeFormat("de-DE", {dateStyle:"medium"});
   const advice = "https://www.arbeitsagentur.de/bildung/welche-ausbildung-welches-studium-passt";
   const training = "ausbildung.html";
@@ -31,6 +41,33 @@
   };
   let step = 0, uid = "", state = null;
   const key = () => "campus-career-plan-v1:" + uid;
+  const draftKey = () => key() + ":entwurf";
+  const answers = () => Object.fromEntries(["route","interest","strength","horizon"].map(name =>
+    [name,form.querySelector("[name=" + name + "]:checked")?.value]).concat([["city",cityField.value]]));
+  const valid = choice => choice && Object.hasOwn(routes,choice.route) &&
+    Object.hasOwn(interestOptions,choice.interest) && ["bald","spaeter"].includes(choice.horizon);
+  const saveDraft = () => {
+    if (!uid) return;
+    try { localStorage.setItem(draftKey(),JSON.stringify({...answers(),step})); } catch {}
+  };
+  const clearDraft = () => {
+    if (!uid) return;
+    try { localStorage.removeItem(draftKey()); } catch {}
+  };
+  function restore(choice) {
+    for (const radio of form.querySelectorAll("input[type=radio]")) {
+      radio.checked = (choice[radio.name] ?? "offen") === radio.value;
+    }
+    cityField.value = choice.city || "";
+  }
+  function refreshPreview() {
+    const choice = answers();
+    if (!valid(choice)) return;
+    const [,title,detail] = milestones(choice)[0];
+    document.getElementById("planPreviewProfile").textContent =
+      [routes[choice.route][0],interestOptions[choice.interest][0],cityField.value && cityField.selectedOptions[0]?.textContent].filter(Boolean).join(" · ");
+    document.getElementById("planPreviewAction").textContent = title + " · " + detail;
+  }
   const store = () => {
     if (!uid) return;
     try { localStorage.setItem(key(), JSON.stringify(state)); hint.textContent = "Plan in diesem Browser für dein Konto gespeichert."; }
@@ -41,28 +78,34 @@
     form.hidden = false;
     result.hidden = true;
     steps.forEach((field, i) => { field.hidden = i !== step; field.disabled = i !== step; });
-    indicator.textContent = "Schritt " + (step + 1) + " von " + steps.length;
+    indicator.textContent = step === steps.length ? "Vorschau vor dem Speichern" : "Schritt " + (step + 1) + " von " + steps.length;
     previous.hidden = step === 0;
-    forward.textContent = step === steps.length - 1 ? "Meinen Plan erstellen" : "Weiter";
+    forward.textContent = step === steps.length ? "Meinen Plan speichern" : step === steps.length - 1 ? "Zur Vorschau" : "Weiter";
+    refreshPreview();
   }
-  function focusStep() { steps[step].querySelector("legend").focus(); }
+  function focusStep() { (steps[step]?.querySelector("legend") ?? preview).focus(); }
 
-  function milestones() {
-    const [focus, focusLink, trial, trialLink] = interestOptions[state.interest];
-    const [,compare, compareText, compareLink, apply, backup, backupLink] = routes[state.route];
+  function milestones(choice = state) {
+    const [focus, focusLink, trial, trialLink] = interestOptions[choice.interest];
+    const [,compare, compareText, compareLink, apply, backup, backupLink] = routes[choice.route];
     const selectedCity = document.getElementById("planCity").selectedOptions[0];
     const city = selectedCity?.value ? selectedCity.textContent : "deiner Region";
     const area = selectedCity?.value ? "stadt-" + selectedCity.value + ".html" : "staedte.html";
+    const note = strengths[choice.strength] || "";
+    const deadlineLink = choice.route === "studium" ? admission : choice.route === "ausbildung" ? applications : advice;
     return [
-      ["Heute", "Mach einen kleinen Test", trial + " Plane dafür 20 Minuten ein.", trialLink],
-      ["In den nächsten Tagen", compare, compareText + " Schwerpunkt: " + focus + ".", state.route === "studium" || (state.route === "offen" && state.interest !== "offen") ? focusLink : compareLink],
-      ["Vor deiner Entscheidung", "Erlebe den Alltag einmal vor Ort", "Frag nach einem Praktikum, einer Hospitation oder einer Schnupperveranstaltung. Notiere, was dir gefallen hat und was offen ist.", state.route === "ausbildung" ? training : school],
-      ["Vor der ersten Frist", "Bereite deine Bewerbung vor", apply + " Trage die tatsächlichen Fristen in deinen Kalender ein.", state.route === "ausbildung" ? training : compareLink],
+      choice.horizon === "bald"
+        ? ["Heute", "Prüfe den frühesten Bewerbungstermin", "Öffne die Hinweise für deinen Weg und notiere eine echte Frist. " + note, deadlineLink]
+        : ["Heute", "Mach einen kleinen Test", trial + " Plane dafür 20 Minuten ein. " + note, choice.route === "ausbildung" ? training : trialLink],
+      ["In den nächsten Tagen", compare, compareText + " Schwerpunkt: " + focus + ".", choice.route === "studium" || (choice.route === "offen" && choice.interest !== "offen") ? focusLink : compareLink],
+      ["Vor deiner Entscheidung", "Erlebe den Alltag einmal vor Ort", "Frag nach einem Praktikum, einer Hospitation oder einer Schnupperveranstaltung. Notiere, was dir gefallen hat und was offen ist.", choice.route === "ausbildung" ? training : school],
+      ["Vor der ersten Frist", "Bereite deine Bewerbung vor", apply + " Trage die tatsächlichen Fristen in deinen Kalender ein.", deadlineLink],
       ["Wenn ein Angebot infrage kommt", "Rechne Alltag und Anfahrt durch", "Prüfe in " + city + " die Strecke, Wohnmöglichkeiten und monatliche Kosten. Vergleiche sie mit deinem Budget, bevor du zusagst.", area],
-      ["Bei Zusage oder Absage", "Klär den Start und halte Plan B bereit", "Bei Zusage: bestätige den Termin, prüfe Unterlagen und plane die erste Woche. " + backup, backupLink]
+      ["Bei Zusage oder Absage", "Klär den Start und halte Plan B bereit", "Bei Zusage: bestätige den Termin, prüfe Unterlagen und plane die erste Woche. " + backup, choice.route === "ausbildung" ? "https://web.arbeitsagentur.de/bildung/ausbildung/kein-ausbildungsplatz-gefunden" : backupLink]
     ];
   }
   function renderNext(items) {
+    document.getElementById("planCompletion").textContent = items.filter((_, index) => state.done.includes(index)).length + " von " + items.length + " Schritten erledigt";
     const next = items.find((_, index) => !state.done.includes(index));
     nextAction.textContent = next ? "Dein nächster Schritt: " + next[1] : "Alles abgehakt. Prüfe jetzt deinen Starttermin.";
     nextDetail.textContent = next?.[2] ?? "";
@@ -97,7 +140,7 @@
       copy.textContent = description;
       const link = document.createElement("a");
       link.href = url;
-      link.textContent = "Hilfe zu diesem Schritt";
+      link.textContent = "Hilfe: " + title;
       checkbox.addEventListener("change", () => {
         state.done = checkbox.checked ? [...state.done,index] : state.done.filter(i => i !== index);
         store();
@@ -114,23 +157,25 @@
     }));
   }
 
-  previous.addEventListener("click", () => { step--; showStep(); focusStep(); });
+  previous.addEventListener("click", () => { step--; saveDraft(); showStep(); focusStep(); });
+  form.addEventListener("change", () => { saveDraft(); refreshPreview(); });
   form.addEventListener("submit", event => {
     event.preventDefault();
-    if (step < steps.length - 1) { step++; showStep(); focusStep(); return; }
-    const value = name => form.querySelector("[name=" + name + "]:checked")?.value;
-    const route = value("route"), interest = value("interest"), horizon = value("horizon");
-    if (!Object.hasOwn(routes,route) || !Object.hasOwn(interestOptions,interest) || !["bald","spaeter"].includes(horizon)) return;
-    const city = document.getElementById("planCity").value;
-    const same = state && state.route === route && state.interest === interest && state.horizon === horizon && state.city === city;
-    if (!same) state = {route,interest,horizon,city,createdAt:new Date().toISOString(),done:[]};
+    if (step < steps.length) { step++; saveDraft(); showStep(); focusStep(); return; }
+    const choice = answers();
+    if (!valid(choice)) return;
+    const same = state && state.route === choice.route && state.interest === choice.interest && state.horizon === choice.horizon;
+    state = {...choice,createdAt:same ? state.createdAt : new Date().toISOString(),
+      done:same ? state.done.filter(index => index !== 4 || state.city === choice.city) : []};
+    clearDraft();
     store();
     renderPlan();
     document.getElementById("planSummary").focus();
   });
-  edit.addEventListener("click", () => { step = 0; showStep(); focusStep(); });
+  edit.addEventListener("click", () => { step = 0; saveDraft(); showStep(); focusStep(); });
   reset.addEventListener("click", () => {
     if (uid) { try { localStorage.removeItem(key()); } catch {} }
+    clearDraft();
     state = null;
     hint.textContent = "Gespeicherter Plan entfernt.";
     form.reset();
@@ -148,12 +193,16 @@
     showStep();
     if (!uid) return;
     const saved = readCampusStorage(key());
-    if (!saved || !Object.hasOwn(routes,saved.route) || !Object.hasOwn(interestOptions,saved.interest)
-       || !["bald","spaeter"].includes(saved.horizon) || !Number.isFinite(Date.parse(saved.createdAt)) || !Array.isArray(saved.done)) return;
-    state = saved;
-    for (const radio of form.querySelectorAll("input[type=radio]")) radio.checked = state[radio.name] === radio.value;
-    document.getElementById("planCity").value = state.city;
-    renderPlan();
+    if (valid(saved) && Number.isFinite(Date.parse(saved.createdAt)) && Array.isArray(saved.done)) state = saved;
+    const draft = readCampusStorage(draftKey());
+    if (valid(draft)) {
+      restore(draft);
+      step = Number.isInteger(draft.step) ? Math.max(0,Math.min(steps.length,draft.step)) : 0;
+      showStep();
+    } else if (state) {
+      restore(state);
+      renderPlan();
+    }
   });
   showStep();
 })();

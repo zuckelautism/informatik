@@ -24,6 +24,15 @@
   const result=difference===0?"Genau im Zielbudget.":euros.format(Math.abs(difference)/100)+(difference>0?" übrig.":" über dem Budget.");
   output.textContent="Dein Plan: "+euros.format(total/100)+" pro Person. "+result;
  }
+ let uid="";
+ window.addEventListener("campus-account",event=>{
+  const nextUid=event.detail?.uid??"";
+  if(uid && uid!==nextUid){
+   panel.querySelectorAll("input").forEach(input=>{input.value=input.defaultValue;});
+   draw();
+  }
+  uid=nextUid;
+ });
  panel.addEventListener("input",draw);
  get("catalogGrid").addEventListener("click",event=>{
   const button=event.target.closest("[data-trip-cap]");

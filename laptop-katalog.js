@@ -271,7 +271,13 @@
  const refreshFinder=()=>{applyFinder(readFinder(),true);draw();};
  watchCampusStorage(storageKey,refreshFinder);
  window.addEventListener("campus-account",event=>{
-  finderUid=event.detail?.uid??"";
+  const nextUid=event.detail?.uid??"";
+  if(finderUid && finderUid!==nextUid){
+   get("query").value="";
+   get("brandFilter").selectedIndex=0;
+   get("sort").selectedIndex=0;
+  }
+  finderUid=nextUid;
   saved={};storageWritable=true;onlyFavorites=false;laptopLimit=9;
   get("wishlist").setAttribute("aria-pressed","false");
   refreshFinder();

@@ -4,12 +4,12 @@
  <meta name="viewport" content="width=device-width,initial-scale=1">
  <title>Dein Plan nach der Schule · Campus-Kompass</title>
  <script src="theme.js?v=coastal1"></script>
- <link rel="stylesheet" href="kompass.css?v=plan1">
+ <link rel="stylesheet" href="kompass.css?v=wegentwurf1">
  
  
 <script src="firebase-config.js?v=google1" defer></script>
  <script src="campus-basis.js?v=review1" defer></script>
-<script src="mein-plan.js?v=plan2" defer></script>
+<script src="mein-plan.js?v=wegentwurf1" defer></script>
 <script src="campus-shell.js?v=review1" defer></script>
 </head><body class="campus-locked">
  <section class="campus-login" aria-labelledby="campusLoginTitle">
@@ -50,10 +50,10 @@
 <main class="wrap">
 <section class="city-intro" aria-labelledby="planTitle">
  <p class="eyebrow">Schritt für Schritt</p><h2 id="planTitle">Dein Plan nach der Schule</h2>
- <p>Vier kurze Fragen. Danach bekommst du einen ersten Schritt und einen Plan bis zum Start. Du kannst „Weiß ich noch nicht“ wählen.</p>
+ <p>Stell deinen Weg zusammen. Jede Auswahl ist freiwillig. Du siehst vor dem Speichern, was du als Erstes tun kannst.</p>
  </section>
  <form id="planForm" class="finder plan-builder">
-  <p class="eyebrow" id="planProgress" role="status">Schritt 1 von 4</p>
+  <p class="eyebrow" id="planProgress" role="status">Schritt 1 von 5</p>
   <fieldset><legend tabindex="-1">Was willst du als Nächstes machen?</legend>
    <label class="plan-choice"><input type="radio" name="route" value="offen" checked> <span>Weiß ich noch nicht</span></label>
 <label class="plan-choice"><input type="radio" name="route" value="ausbildung"> <span>Eine Ausbildung machen</span></label>
@@ -67,6 +67,12 @@
 <label class="plan-choice"><input type="radio" name="interest" value="natur"> <span>Natur und Umwelt</span></label>
 <label class="plan-choice"><input type="radio" name="interest" value="organisation"> <span>Wirtschaft und Organisation</span></label>
   </fieldset>
+  <fieldset hidden disabled><legend tabindex="-1">Was fällt dir leicht?</legend>
+   <label class="plan-choice"><input type="radio" name="strength" value="offen" checked> <span>Weiß ich noch nicht</span></label>
+   <label class="plan-choice"><input type="radio" name="strength" value="reden"> <span>Erklären und zuhören</span></label>
+   <label class="plan-choice"><input type="radio" name="strength" value="bauen"> <span>Ausprobieren und bauen</span></label>
+   <label class="plan-choice"><input type="radio" name="strength" value="ordnen"> <span>Vergleichen und organisieren</span></label>
+  </fieldset>
   <fieldset hidden disabled><legend tabindex="-1">Wie bald möchtest du anfangen?</legend>
    <label class="plan-choice"><input type="radio" name="horizon" value="spaeter" checked> <span>Ich habe Zeit oder weiß es noch nicht</span></label>
 <label class="plan-choice"><input type="radio" name="horizon" value="bald"> <span>Möglichst bald</span></label>
@@ -75,11 +81,15 @@
    <label for="planCity">Stadt (freiwillig)</label>
    <select id="planCity"><option value="">Weiß ich noch nicht</option><optgroup label="Baden-Württemberg"><option value="heidelberg">Heidelberg</option><option value="heilbronn">Heilbronn</option><option value="neckarsulm">Neckarsulm</option><option value="tuebingen">Tübingen</option></optgroup><optgroup label="Bayern"><option value="ingolstadt">Ingolstadt</option><option value="muenchen">München</option></optgroup><optgroup label="Berlin"><option value="berlin">Berlin</option></optgroup><optgroup label="Hamburg"><option value="hamburg">Hamburg</option></optgroup><optgroup label="Hessen"><option value="frankfurt-am-main">Frankfurt am Main</option><option value="giessen">Gießen</option><option value="marburg">Marburg</option></optgroup><optgroup label="Niedersachsen"><option value="goettingen">Göttingen</option></optgroup><optgroup label="Nordrhein-Westfalen"><option value="aachen">Aachen</option><option value="koeln">Köln</option></optgroup><optgroup label="Sachsen"><option value="leipzig">Leipzig</option><option value="mittweida">Mittweida</option></optgroup><optgroup label="Thüringen"><option value="jena">Jena</option></optgroup></select>
   </fieldset>
+  <section class="plan-preview" aria-labelledby="planPreviewTitle">
+   <h3 id="planPreviewTitle" tabindex="-1">Deine Vorschau</h3>
+   <p id="planPreviewProfile"></p><p id="planPreviewAction"></p>
+  </section>
   <div class="tools"><button type="button" id="planBack" class="btn ghost" hidden>Zurück</button><button type="submit" id="planForward" class="btn">Weiter</button></div>
  </form>
  <section class="finder plan-result" id="planResult" aria-labelledby="planSummary" hidden>
   <h3 id="planSummary" tabindex="-1"></h3><div class="plan-next"><p id="planNextAction" role="status"></p><p id="planNextDetail"></p><a id="planNextLink" class="btn" href="#">Diesen Schritt starten</a></div>
-  <p id="planHorizonText"></p><p class="muted">Die Zieltermine sind deine Planungshilfe. Offizielle Bewerbungsfristen haben Vorrang.</p>
+  <p id="planCompletion" class="eyebrow"></p><p id="planHorizonText"></p><p class="muted">Die Zieltermine sind deine Planungshilfe. Offizielle Bewerbungsfristen haben Vorrang.</p>
   <ol id="planTimeline" class="plan-timeline"></ol>
   <div class="tools"><button type="button" class="btn ghost" id="planEdit">Antworten ändern</button><button type="button" class="btn ghost" id="planPrint">Plan drucken</button><button type="button" class="btn ghost" id="planReset">Plan löschen</button></div>
  </section>
