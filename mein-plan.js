@@ -66,7 +66,11 @@
     if (!valid(choice)) return;
     const [,title,detail] = milestones(choice)[0];
     document.getElementById("planPreviewProfile").textContent =
-      [routes[choice.route][0],interestOptions[choice.interest][0],cityField.value && cityField.selectedOptions[0]?.textContent].filter(Boolean).join(" · ");
+      [routes[choice.route][0], interestOptions[choice.interest][0],
+       form.querySelector("[name=strength]:checked")?.closest("label")?.textContent.trim(),
+       choice.horizon === "bald" ? "Start möglichst bald" : "Starttermin offen",
+       cityField.value && cityField.selectedOptions[0]?.textContent,
+       "Erste Aufgabe: " + title].filter(Boolean).join(" · ");
     document.getElementById("planPreviewAction").textContent = title + " · " + detail;
   }
   const store = () => {
