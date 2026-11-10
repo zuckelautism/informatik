@@ -80,12 +80,19 @@ const campusEntries=(()=>{
  }
  const normalized=value=>value.toLocaleLowerCase("de").normalize("NFD").replace(/\p{Diacritic}/gu,"");
  function cardPhoto(item){
-  const photo=item.personal?null:catalogPhotos.get(item.title);
+  const existing=catalogPhotos.get(item.title);
+  const photo=item.personal?null:
+   (typeof campusMotivFotos!=="undefined"?campusMotivFotos[item.id]:null)
+   ?? (existing && !(typeof campusFotoLinksOhneBeleg!=="undefined"&&campusFotoLinksOhneBeleg.has(existing.url))?existing:null)
+   ?? (typeof campusStadtFotos!=="undefined"&&item.category!=="Reiseideen"?campusStadtFotos[item.city]:null);
+  const licenseUrl=photo?.license?.match(/^CC BY(?:-SA)? (3\.0|4\.0)$/i)
+   ? "https://creativecommons.org/licenses/"+(photo.license.includes("-SA")?"by-sa":"by")+"/"+photo.license.split(" ").at(-1)+"/"
+   : null;
   const fallback=`<div class="photo-fallback"${photo?" hidden":""}>${campusSymbol(item.category)}<small>Symbolgrafik · Foto offen</small></div>`;
   if(!photo)return fallback;
   return `<figure${photo.place?' class="place"':""}>
-   <img src="${esc(photo.url)}" alt="${esc(item.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
-   <figcaption><a href="${esc(photo.source)}" target="_blank" rel="noopener noreferrer">Foto · ${esc(photo.credit)}</a></figcaption>
+   <img src="${esc(photo.url)}" alt="${esc(photo.alt??item.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+   <figcaption><a href="${esc(photo.source)}" target="_blank" rel="noopener noreferrer">Foto · ${esc(photo.credit)}</a>${licenseUrl?` · <a href="${esc(licenseUrl)}" target="_blank" rel="noopener noreferrer">Lizenz</a>`:""}</figcaption>
   </figure>${fallback}`;
  }
  function drawCompass(){

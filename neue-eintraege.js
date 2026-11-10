@@ -3989,3 +3989,560 @@ const campusNeueFotos={
     "place": true
   }
 };
+
+// Geprüfte Motiv- und Ortsbilder. Ortsbilder sind ausschließlich Kontext.
+const campusMotivFotos = {
+  "dresden-erweiterung|Tablets|reMarkable Paper Pure": {
+    "url": "https://cdn.sanity.io/images/xpujt61d/production/bd9315fb99b651d857b4bc8fab29666fab97618b-1479x2547.png?rect=0,0,1479,1525&w=475&fm=webp&q=85&dpr=1",
+    "source": "https://remarkable.com/de-DE/products/remarkable-paper/pure",
+    "credit": "Modellreihe · remarkable.com",
+    "alt": "reMarkable Paper Pure",
+    "place": false
+  },
+  "dresden-erweiterung|Tablets|reMarkable Paper Pro": {
+    "url": "https://cdn.sanity.io/images/xpujt61d/production/0deca8af1b6aceb0ed5081a209e2ba959882a2c2-5760x3784.png?w=475&fm=webp&q=85&dpr=1",
+    "source": "https://remarkable.com/de-DE/products/remarkable-paper/pro",
+    "credit": "Modellreihe · remarkable.com",
+    "alt": "reMarkable Paper Pro",
+    "place": false
+  },
+  "dresden-erweiterung|Tablets|reMarkable Paper Pro Move": {
+    "url": "https://cdn.sanity.io/images/xpujt61d/production/31b6f0bf8753b8802bbf4cf094b85713cc549456-5760x3840.jpg?w=475&fm=webp&q=85&dpr=1",
+    "source": "https://remarkable.com/de-DE/products/remarkable-paper/pro-move",
+    "credit": "Modellreihe · remarkable.com",
+    "alt": "reMarkable Paper Pro Move",
+    "place": false
+  },
+  "dresden-erweiterung|ÖPNV & Pendeln|DVB · Dresdner Elbfähren": {
+    "url": "https://www.dvb.de/-/media/images/inhaltsbilder/ausfluege/titelbild_faehre_caroline_704x283.jpg?la=de-DE&h=283&mw=704&w=704&hash=62164259C0BC65770E23AD9283044E51",
+    "source": "https://www.dvb.de/de-de/entdecken/elbfaehren",
+    "credit": "Anbieterbild · dvb.de",
+    "alt": "Bild aus der Anbieterquelle für DVB · Dresdner Elbfähren",
+    "place": true
+  },
+  "dresden-erweiterung|Unterkünfte|Campingplatz Wostra": {
+    "url": "https://www.visit-dresden-elbland.de/.netlify/images?url=https%3A%2F%2Fimg.oastatic.com%2Fimg2%2F76049360%2F1920x1080c%2Fvariant.webp&w=960&h=540&fit=cover",
+    "source": "https://www.visit-dresden-elbland.de/de/camping/campingplatz-wostra/",
+    "credit": "Motiv aus Anbieterquelle · visit-dresden-elbland.de",
+    "alt": "Campingplatz Wostra",
+    "place": true
+  },
+  "dresden-erweiterung|Autos|Honda Jazz e:HEV": {
+    "url": "https://www.honda.de/content/dam/central/cars/generic/flyout/27ym_flyout/27ym_jazz/advance_eu/27YM_Jazz_ADVANCE_EU_side_stu_R_565M_001.png/jcr:content/renditions/c1_r.png",
+    "source": "https://www.honda.de/cars/new/jazz-hybrid/overview.html",
+    "credit": "Modellreihe · honda.de",
+    "alt": "Honda Jazz e:HEV",
+    "place": false
+  },
+  "dresden-erweiterung|Autos|Renault Captur Full Hybrid E-Tech": {
+    "url": "https://cdn.group.renault.com/ren/master/renault-new-cars/product-plans/captur-hjb-ph2/overview/editorial/captur-hjb-overview-037-mobile.jpg.ximg.small.webp/61504bc66c.webp",
+    "source": "https://www.renault.de/hybridfahrzeuge/captur.html",
+    "credit": "Modellreihe · renault.de",
+    "alt": "Renault Captur Full Hybrid E-Tech",
+    "place": false
+  },
+  "dresden-erweiterung|Fahrschulen|FahrschulSTAR Dresden": {
+    "url": "https://fahrschulstar.de/wp-content/uploads/2024/12/HeaderFS.jpg",
+    "source": "https://fahrschulstar.de/",
+    "credit": "Anbieterbild · fahrschulstar.de",
+    "alt": "Bild aus der Anbieterquelle für FahrschulSTAR Dresden",
+    "place": true
+  },
+  "bildung|Köln|Wirtschaftsinformatik (B.Sc.)": {
+    "url": "https://grails-prod.rrz.uni-koeln.de/sop-adm/fileUpload/download/16a30be1-dcc3-4ac8-b2c4-4db2edc0babd",
+    "source": "https://studieninteressierte.uni-koeln.de/studienangebot/index_ger.html?app=true&id=155",
+    "credit": "Anbieterbild · studieninteressierte.uni-koeln.de",
+    "alt": "Bild aus der Anbieterquelle für Wirtschaftsinformatik (B.Sc.) · Universität zu Köln",
+    "place": true
+  },
+  "bildung|Mittweida|Angewandte Informatik (B.Sc.)": {
+    "url": "https://www.hs-mittweida.de/processed/fileadmin/_processed_/5/5/csm_HSMW_Haus_1_acbc805061.w991h661m1q75.jpg?sig=aecccc9b0a614e383a6a2e7d9f42bb5c4f870cbd",
+    "source": "https://www.hs-mittweida.de/studieren/studienangebote/angewandte-informatik-bachelor/",
+    "credit": "Anbieterbild · hs-mittweida.de",
+    "alt": "Bild aus der Anbieterquelle für Angewandte Informatik (B.Sc.) · Hochschule Mittweida",
+    "place": true
+  },
+  "wohnen|Tübingen|studierendenwerk": {
+    "url": "https://www.my-stuwe.de/wp-content/uploads/Wohnheim-Tuebingen-Fichtenweg-121416222426-02-1030x687.jpg",
+    "source": "https://www.my-stuwe.de/wohnen/wohnheime-tuebingen/",
+    "credit": "Anbieterbild · my-stuwe.de",
+    "alt": "Bild aus der Anbieterquelle für Studierendenwohnen in Tübingen",
+    "place": true
+  },
+  "wohnen|Gießen|studierendenwerk": {
+    "url": "https://www.stwgi.de/assets/components/phpthumbof/cache/Studentenwerk-Giessen-Wohnheim-Einzug-Umzug-Kisten-3.f1d296fdaa259437a243e98f78903a23.jpg",
+    "source": "https://www.stwgi.de/wohnen/",
+    "credit": "Anbieterbild · stwgi.de",
+    "alt": "Bild aus der Anbieterquelle für Studierendenwohnen in Gießen",
+    "place": true
+  },
+  "wohnen|Mittweida|studierendenwerk": {
+    "url": "https://www.studentenwerk-freiberg.de/wp-content/uploads/2025/06/WohnanlageAmSchwanenteich8_Haus2-1.png",
+    "source": "https://www.studentenwerk-freiberg.de/wohnen/in-mittweida-wohnen/wohnanlagen-mw/",
+    "credit": "Anbieterbild · studentenwerk-freiberg.de",
+    "alt": "Bild aus der Anbieterquelle für Studierendenwohnen in Mittweida",
+    "place": true
+  },
+  "wohnen|Jena|studierendenwerk": {
+    "url": "https://www.stw-thueringen.de/assets/components/phpthumbof/cache/A-Weber-Pl.2_vorn.e5ba46eb6b5d080441a4219ae3fcffaf.jpg",
+    "source": "https://www.stw-thueringen.de/wohnen/wohnheime.html",
+    "credit": "Anbieterbild · stw-thueringen.de",
+    "alt": "Bild aus der Anbieterquelle für Studierendenwohnen in Jena",
+    "place": true
+  },
+  "reise-ausbau|Smart-Gadgets|Apple TV 4K": {
+    "url": "https://www.apple.com/v/apple-tv-4k/an/images/meta/apple-tv-4k__033vsvrb1ua6_og.png?202610121032",
+    "source": "https://www.apple.com/de/apple-tv-4k/",
+    "credit": "Modellreihe · apple.com",
+    "alt": "Apple TV 4K",
+    "place": false
+  },
+  "reise-ausbau|Fahrschulen|Rausch · Intensivkurs": {
+    "url": "https://www.fahrschule-rausch.de/typo3conf/ext/alm_bs_theme/Resources/Public/Images/Fahrschule-Rausch/fahrschule-rausch.jpg",
+    "source": "https://www.fahrschule-rausch.de/",
+    "credit": "Anbieterbild · fahrschule-rausch.de",
+    "alt": "Bild aus der Anbieterquelle für Rausch · Intensivkurs",
+    "place": true
+  },
+  "reise-ausbau|Vorteile|Deutsches Museum · Eintritt und Ermäßigung": {
+    "url": "https://www.deutsches-museum.de/assets/_processed_/9/1/csm_CD_L_7790_163_e1bcbeb8f7.jpg",
+    "source": "https://www.deutsches-museum.de/museumsinsel/besuch",
+    "credit": "Anbieterbild · deutsches-museum.de",
+    "alt": "Bild aus der Anbieterquelle für Deutsches Museum · Eintritt und Ermäßigung",
+    "place": true
+  },
+  "unterkunft|Heilbronn|Winzercafé Neipperg · Ferienwohnungen": {
+    "url": "https://mein.toubiz.de/api/v1/media/429e9852-6e76-11ee-a89d-395bb2b36eb2/view?hash=c43cb6&fm=jpg&w=1024&width=1024&h=683&height=683",
+    "source": "https://www.heilbronnerland.de/poi/ferienwohnungen-winzercafe-neipperg",
+    "credit": "Motiv aus Anbieterquelle · heilbronnerland.de",
+    "alt": "Winzercafé Neipperg · Ferienwohnungen",
+    "place": true
+  },
+  "unterkunft|München|Campingplatz München-Thalkirchen": {
+    "url": "https://campingplatz-thalkirchen.de/wp-content/uploads/2022/10/Campingplatz_Gastronomie-1024x640.jpg",
+    "source": "https://campingplatz-thalkirchen.de/?lang=en",
+    "credit": "Motiv aus Anbieterquelle · campingplatz-thalkirchen.de",
+    "alt": "Campingplatz München-Thalkirchen",
+    "place": true
+  },
+  "unterkunft|Ingolstadt|B&B HOTEL Ingolstadt-Hbf": {
+    "url": "https://res.cloudinary.com/hzekpb1cg/image/upload/c_fill,h_1000,w_1600,f_auto/s3/public/prod/s3fs-public/bb-hotel-generic_double-room_4.b19a22ac-52041_0.jpg",
+    "source": "https://www.hotel-bb.com/de/hotel/ingolstadt-hbf",
+    "credit": "Motiv aus Anbieterquelle · hotel-bb.com",
+    "alt": "B&B HOTEL Ingolstadt-Hbf",
+    "place": true
+  },
+  "2026-11|Handys|Galaxy S25": {
+    "url": "https://image-stgus.samsung.com/SamsungUS/support/solutions/mobile/phones/galaxy-s/s25/MOB_PH_GS_S25_Comparison-of-the-Galaxy-PA-models.jpg",
+    "source": "https://www.samsung.com/us/support/answer/ANS10004600/",
+    "credit": "Modellreihe · samsung.com",
+    "alt": "Galaxy S25",
+    "place": false
+  },
+  "2026-11|Handys|Galaxy S25+": {
+    "url": "https://image-stgus.samsung.com/SamsungUS/support/solutions/mobile/phones/galaxy-s/s25/MOB_PH_GS_S25_Comparison-of-the-Galaxy-PA-models.jpg",
+    "source": "https://www.samsung.com/us/support/answer/ANS10004600/",
+    "credit": "Modellreihe · samsung.com",
+    "alt": "Galaxy S25+",
+    "place": false
+  },
+  "2026-11|Smart-Gadgets|Apple Watch Series 9": {
+    "url": "https://ipcdn-web.apple.com/assets/v2/web/949c5fdd-0075-42cf-b75e-7f264c84b212",
+    "source": "https://support.apple.com/de-de/guide/watch/apd2054d0d5b/watchos",
+    "credit": "Modellreihe · support.apple.com",
+    "alt": "Apple Watch Series 9",
+    "place": false
+  },
+  "2026-11|Smart-Gadgets|Galaxy Fit3": {
+    "url": "https://image-stgus.samsung.com/SamsungUS/support/solutions/mobile/wearables/WRBLS_GF3_Features.jpg",
+    "source": "https://www.samsung.com/us/support/answer/ANS10004550/",
+    "credit": "Modellreihe · samsung.com",
+    "alt": "Galaxy Fit3",
+    "place": false
+  },
+  "2026-11|Wohnen|Studierendenwerk · Wohnanlagen": {
+    "url": "https://www.studierendenwerk-muenchen-oberbayern.de/fileadmin/_processed_/4/e/csm_2015122_Studentenwohnheim_Domagkpark_GEWOFAG_Lukas_Barth_cff9cf6b99.jpg",
+    "source": "https://www.studierendenwerk-muenchen-oberbayern.de/wohnheime/wohnanlagen/",
+    "credit": "Anbieterbild · studierendenwerk-muenchen-oberbayern.de",
+    "alt": "Bild aus der Anbieterquelle für Studierendenwerk · Wohnanlagen",
+    "place": true
+  },
+  "2026-11|Aktivitäten|Kilianskirche": {
+    "url": "https://www.heilbronn.de/fileadmin/_processed_/b/1/csm_Kilianskirche_Innenstadt_Panorama_2015_am_P2204-2249-16_Header_u_1e062da972.jpg",
+    "source": "https://www.heilbronn.de/tourismus/kultur/sehenswertes.html",
+    "credit": "Motiv aus Anbieterquelle · heilbronn.de",
+    "alt": "Kilianskirche",
+    "place": true
+  },
+  "2026-11|Aktivitäten|Schloss Nymphenburg": {
+    "url": "https://www.muenchen.de/sites/default/files/styles/3_2_w1008/public/2023-01/20221217_schlosspark-nymphenburg-schnee-anettegoettlicher.jpeg.webp",
+    "source": "https://www.muenchen.de/sehenswuerdigkeiten/burgen-und-schloesser/schloss-nymphenburg",
+    "credit": "Motiv aus Anbieterquelle · muenchen.de",
+    "alt": "Schloss Nymphenburg",
+    "place": true
+  },
+  "2026-11|Aktivitäten|Tierpark Hellabrunn": {
+    "url": "https://www.muenchen.de/sites/default/files/styles/facebook/public/2022-06/tierpark-hellabrunn-giraffen.jpg?h=84071268",
+    "source": "https://www.muenchen.de/sehenswuerdigkeiten/tierpark-hellabrunn/besucherservice",
+    "credit": "Motiv aus Anbieterquelle · muenchen.de",
+    "alt": "Tierpark Hellabrunn",
+    "place": true
+  },
+  "2026-11|Aktivitäten|Viktualienmarkt": {
+    "url": "https://www.muenchen.de/sites/default/files/styles/facebook/public/2023-08/viktualienmarkt-neu.jpg?h=06ac0d8c",
+    "source": "https://www.muenchen.de/sehenswuerdigkeiten/top-sehenswuerdigkeiten/viktualienmarkt",
+    "credit": "Motiv aus Anbieterquelle · muenchen.de",
+    "alt": "Viktualienmarkt",
+    "place": true
+  },
+  "2026-11|Aktivitäten|Bücherei im Herzogskasten": {
+    "url": "https://www.ingolstadt.de/media/custom/465_1689_1_k.JPG?1507727038",
+    "source": "https://www.ingolstadt.de/Kultur/Bildung-Wissenschaft/Stadtb%C3%BCcherei/B%C3%BCcherei-im-Herzogskasten/",
+    "credit": "Motiv aus Anbieterquelle · ingolstadt.de",
+    "alt": "Bücherei im Herzogskasten",
+    "place": true
+  },
+  "2026-11|Fahrschulen|Fahrschule Rausch · Schwabing-West": {
+    "url": "https://www.fahrschule-rausch.de/typo3conf/ext/alm_bs_theme/Resources/Public/Images/Fahrschule-Rausch/fahrschule-rausch.jpg",
+    "source": "https://www.fahrschule-rausch.de/standorte",
+    "credit": "Anbieterbild · fahrschule-rausch.de",
+    "alt": "Bild aus der Anbieterquelle für Fahrschule Rausch · Schwabing-West",
+    "place": true
+  },
+  "2026-11|Fahrschulen|Fahrschule Rausch · Neuhausen": {
+    "url": "https://www.fahrschule-rausch.de/typo3conf/ext/alm_bs_theme/Resources/Public/Images/Fahrschule-Rausch/fahrschule-rausch.jpg",
+    "source": "https://www.fahrschule-rausch.de/standorte",
+    "credit": "Anbieterbild · fahrschule-rausch.de",
+    "alt": "Bild aus der Anbieterquelle für Fahrschule Rausch · Neuhausen",
+    "place": true
+  },
+  "2026-11|Fahrschulen|Fahrschule Tavini": {
+    "url": "https://fahrschule-tavini.de/wp-content/uploads/2026/07/1-819x1024.png",
+    "source": "https://fahrschule-tavini.de/",
+    "credit": "Anbieterbild · fahrschule-tavini.de",
+    "alt": "Bild aus der Anbieterquelle für Fahrschule Tavini",
+    "place": true
+  },
+  "2026-11|Fahrschulen|Fahrschule Schwägerl · B197": {
+    "url": "https://static.wixstatic.com/media/1cfe30_b74d75b2cdff4ff1abc2bc357e1aacbc~mv2.jpg/v1/fill/w_963,h_205,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1cfe30_b74d75b2cdff4ff1abc2bc357e1aacbc~mv2.jpg",
+    "source": "https://www.fahrschule-schwaegerl.de/klasseb197",
+    "credit": "Anbieterbild · fahrschule-schwaegerl.de",
+    "alt": "Bild aus der Anbieterquelle für Fahrschule Schwägerl · B197",
+    "place": true
+  },
+  "https://pre-fahrschule.de/|PRE Fahrschule": {
+    "url": "https://pre-fahrschule.de/assets/optimized/fahrschulfotos_6.webp",
+    "source": "https://pre-fahrschule.de/",
+    "credit": "Anbieterbild · pre-fahrschule.de",
+    "alt": "Bild aus der Anbieterquelle für PRE Fahrschule",
+    "place": true
+  },
+  "https://eppicdrive.de/|EppicDrive": {
+    "url": "https://eppicdrive.de/optimized_images/zenna-studio_EppicDrive_25.01.26-01.jpg",
+    "source": "https://eppicdrive.de/",
+    "credit": "Anbieterbild · eppicdrive.de",
+    "alt": "Bild aus der Anbieterquelle für EppicDrive",
+    "place": true
+  },
+  "https://www.fs-langer.de/|Fahrschule Langer": {
+    "url": "https://www.fs-langer.de/uploads/template/fahrschule-langer-social-graph3.png",
+    "source": "https://www.fs-langer.de/",
+    "credit": "Anbieterbild · fs-langer.de",
+    "alt": "Bild aus der Anbieterquelle für Fahrschule Langer",
+    "place": true
+  },
+  "Fahrschulen|https://petersfahrschule.de/|Peters Fahrschule": {
+    "url": "https://petersfahrschule.de/uploads/2026/03/bmw-118d-2026.webp",
+    "source": "https://petersfahrschule.de/",
+    "credit": "Anbieterbild · petersfahrschule.de",
+    "alt": "Bild aus der Anbieterquelle für Peters Fahrschule",
+    "place": true
+  },
+  "Fahrschulen|https://089-fahrschule.de/|089 Fahrschule": {
+    "url": "https://089-fahrschule.de/assets/images/DJI_20250907102519_0461_D-galerie-370.jpg",
+    "source": "https://089-fahrschule.de/",
+    "credit": "Anbieterbild · 089-fahrschule.de",
+    "alt": "Bild aus der Anbieterquelle für 089 Fahrschule",
+    "place": true
+  },
+  "Fahrschulen|https://fahrschulemuc.de/|Fahrschule MUC": {
+    "url": "https://fahrschulemuc.de/wp-content/uploads/2025/01/Autos-MUC-Urban-Driving-Fahrschule-Muenchen.png",
+    "source": "https://fahrschulemuc.de/",
+    "credit": "Anbieterbild · fahrschulemuc.de",
+    "alt": "Bild aus der Anbieterquelle für Fahrschule MUC",
+    "place": true
+  },
+  "Fahrschulen|https://fahrschule-drivex.com/|Fahrschule DriveX": {
+    "url": "https://cdn.prod.website-files.com/5e9454ee176f31e0dfca0ef9/60f95730994bfc9269c5cd15_B196%20F%C3%BChrerschein%20M%C3%BCnchen%20Fahrschule%20DriveX.jpg",
+    "source": "https://fahrschule-drivex.com/",
+    "credit": "Anbieterbild · fahrschule-drivex.com",
+    "alt": "Bild aus der Anbieterquelle für Fahrschule DriveX",
+    "place": true
+  },
+  "Fahrschulen|https://www.fahrschule-rausch.de/standorte/maxvorstadt|Fahrschule Rausch · Maxvorstadt": {
+    "url": "https://www.fahrschule-rausch.de/typo3conf/ext/alm_bs_theme/Resources/Public/Images/Fahrschule-Rausch/fahrschule-rausch.jpg",
+    "source": "https://www.fahrschule-rausch.de/standorte/maxvorstadt",
+    "credit": "Anbieterbild · fahrschule-rausch.de",
+    "alt": "Bild aus der Anbieterquelle für Fahrschule Rausch · Maxvorstadt",
+    "place": true
+  },
+  "Fahrschulen|https://www.fahrschule-rausch.de/standorte|Fahrschule Rausch · Schwabing-Freimann": {
+    "url": "https://www.fahrschule-rausch.de/typo3conf/ext/alm_bs_theme/Resources/Public/Images/Fahrschule-Rausch/fahrschule-rausch.jpg",
+    "source": "https://www.fahrschule-rausch.de/standorte",
+    "credit": "Anbieterbild · fahrschule-rausch.de",
+    "alt": "Bild aus der Anbieterquelle für Fahrschule Rausch · Schwabing-Freimann",
+    "place": true
+  },
+  "Fahrschulen|https://www.muenchen.de/service/branchenbuch/F/105.html|München.de · Fahrschulverzeichnis": {
+    "url": "https://images.portal.muenchen.de/000/000/000/163/versions/fahrschule-koermer-muenchen-de_300x140_5cc2b7fd0d3e3.png",
+    "source": "https://www.muenchen.de/service/branchenbuch/F/105.html",
+    "credit": "Anbieterbild · muenchen.de",
+    "alt": "Bild aus der Anbieterquelle für München.de · Fahrschulverzeichnis",
+    "place": true
+  },
+  "Fahrschulen|https://sos-fahrschule.de/|S.O.S. Fahrschule": {
+    "url": "https://sos-fahrschule.de/wp-content/uploads/2024/08/Titelbild-SOS-Fahrschule-o6ssa83xhavq0p7jl5mghwkhex2oank7saseosgd3s-1.jpg",
+    "source": "https://sos-fahrschule.de/",
+    "credit": "Anbieterbild · sos-fahrschule.de",
+    "alt": "Bild aus der Anbieterquelle für S.O.S. Fahrschule",
+    "place": true
+  },
+  "Fahrschulen|https://www.fs-langer.de/fahrschule/filialen|Langer · Etting": {
+    "url": "https://www.fs-langer.de/uploads/template/fahrschule-langer-social-graph3.png",
+    "source": "https://www.fs-langer.de/fahrschule/filialen",
+    "credit": "Anbieterbild · fs-langer.de",
+    "alt": "Bild aus der Anbieterquelle für Langer · Etting",
+    "place": true
+  },
+  "Fahrschulen|https://www.fs-langer.de/fahrschule/filialen|Langer · Gaimersheim (Umkreis)": {
+    "url": "https://www.fs-langer.de/uploads/template/fahrschule-langer-social-graph3.png",
+    "source": "https://www.fs-langer.de/fahrschule/filialen",
+    "credit": "Anbieterbild · fs-langer.de",
+    "alt": "Bild aus der Anbieterquelle für Langer · Gaimersheim (Umkreis)",
+    "place": true
+  },
+  "Fahrschulen|https://www.fs-langer.de/fahrschule/filialen|Langer · Großmehring (Umkreis)": {
+    "url": "https://www.fs-langer.de/uploads/template/fahrschule-langer-social-graph3.png",
+    "source": "https://www.fs-langer.de/fahrschule/filialen",
+    "credit": "Anbieterbild · fs-langer.de",
+    "alt": "Bild aus der Anbieterquelle für Langer · Großmehring (Umkreis)",
+    "place": true
+  },
+  "Fahrschulen|https://www.fs-langer.de/fahrschule/filialen|Langer · Kösching (Umkreis)": {
+    "url": "https://www.fs-langer.de/uploads/template/fahrschule-langer-social-graph3.png",
+    "source": "https://www.fs-langer.de/fahrschule/filialen",
+    "credit": "Anbieterbild · fs-langer.de",
+    "alt": "Bild aus der Anbieterquelle für Langer · Kösching (Umkreis)",
+    "place": true
+  },
+  "Smart-Gadgets|Galaxy Ring": {
+    "url": "https://placehold.co/330x960/png",
+    "source": "https://www.samsung.com/de/rings/all-rings/",
+    "credit": "Modellreihe · samsung.com",
+    "alt": "Galaxy Ring",
+    "place": false
+  },
+  "Smart-Gadgets|HomePod mini 2": {
+    "url": "https://www.apple.com/v/homepod-mini/k/images/overview/highlights/hero__jhtn7mk3j52e_large.jpg",
+    "source": "https://www.apple.com/de/homepod-mini/",
+    "credit": "Modellreihe · apple.com",
+    "alt": "HomePod mini 2",
+    "place": false
+  },
+  "Smart-Gadgets|Philips Hue Bridge": {
+    "url": "https://www.assets.signify.com/is/image/Signify/8718696511800-929001180601-Carousel-AlternativeProduct-APP-02?wid=500&qlt=82",
+    "source": "https://www.philips-hue.com/de-de/p/hue-hue-bridge/8719514342620",
+    "credit": "Modellreihe · philips-hue.com",
+    "alt": "Philips Hue Bridge",
+    "place": false
+  },
+  "Aktivitäten|Neckarsulm|Neckarweg nach Bad Wimpfen": {
+    "url": "https://mein.toubiz.de/api/v1/media/5960a6e3-c484-4f73-a6c1-d1d9c11aed66/view?hash=fc357f&fm=jpg&w=1024&width=1024&h=683&height=683",
+    "source": "https://www.heilbronnerland.de/tour/neckarweg-etappe-bad-wimpfen-neckarsulm",
+    "credit": "Motiv aus Anbieterquelle · heilbronnerland.de",
+    "alt": "Neckarweg nach Bad Wimpfen",
+    "place": true
+  },
+  "Aktivitäten|Heilbronn|Wertwiesenpark": {
+    "url": "https://www.heilbronn.de/fileadmin/_processed_/a/a/csm_Headerbild_Wertwiesenpark_rs_1595b7a899.jpg",
+    "source": "https://www.heilbronn.de/umwelt-mobilitaet/gruenes-heilbronn/parks/wertwiesenpark.html",
+    "credit": "Motiv aus Anbieterquelle · heilbronn.de",
+    "alt": "Wertwiesenpark",
+    "place": true
+  },
+  "Aktivitäten|Heilbronn|Botanischer Obstgarten": {
+    "url": "https://www.heilbronn.de/fileadmin/_processed_/8/7/csm_Headerbild_Botanischer-Obstgarten_rs_f9bf562d38.jpg",
+    "source": "https://www.heilbronn.de/umwelt-mobilitaet/gruenes-heilbronn/parks/botanischer-obstgarten.html",
+    "credit": "Motiv aus Anbieterquelle · heilbronn.de",
+    "alt": "Botanischer Obstgarten",
+    "place": true
+  },
+  "Aktivitäten|Heilbronn|Neckarbogen · Parks und Grünflächen": {
+    "url": "https://www.heilbronn.de/fileadmin/_processed_/a/3/csm_Header_Parks_und_Gruenflaechen_5e333b1ee5.jpg",
+    "source": "https://www.heilbronn.de/bauen-wohnen/stadtquartier-neckarbogen/parks-und-gruenflaechen.html",
+    "credit": "Motiv aus Anbieterquelle · heilbronn.de",
+    "alt": "Neckarbogen · Parks und Grünflächen",
+    "place": true
+  },
+  "Aktivitäten|München|Englischer Garten": {
+    "url": "https://www.muenchen.de/sites/default/files/styles/3_2_w320/public/2026-05/egarten-olyberg_3_von_4.jpg.webp",
+    "source": "https://www.muenchen.de/en/sights/attractions/english-garden",
+    "credit": "Motiv aus Anbieterquelle · muenchen.de",
+    "alt": "Englischer Garten",
+    "place": true
+  },
+  "Aktivitäten|München|Olympiapark": {
+    "url": "https://www.muenchen.de/sites/default/files/styles/facebook/public/2026-10/69_olympiapark_2021-09_c_fabianstoffers_s_6385.jpeg?h=9b7be91d",
+    "source": "https://www.muenchen.de/en/sights/attractions/olympic-park",
+    "credit": "Motiv aus Anbieterquelle · muenchen.de",
+    "alt": "Olympiapark",
+    "place": true
+  },
+  "Aktivitäten|München|BMW Welt und BMW Museum": {
+    "url": "https://bmw.scene7.com/is/image/BMW/Workshops%20BMW%20Welt%20und%20Museum?fmt=webp-alpha&wid=2560&fit=wrap%2C+0",
+    "source": "https://www.bmw-welt.com/de/index.html",
+    "credit": "Motiv aus Anbieterquelle · bmw-welt.com",
+    "alt": "BMW Welt und BMW Museum",
+    "place": true
+  },
+  "Aktivitäten|München|Pinakothek der Moderne": {
+    "url": "https://www.pinakothek-der-moderne.de/wp-content/uploads/2019/04/ASF_1231_Foto-Anna-Seibel-scaled-2000x1000.jpg",
+    "source": "https://www.pinakothek-der-moderne.de/besuch-planen/",
+    "credit": "Motiv aus Anbieterquelle · pinakothek-der-moderne.de",
+    "alt": "Pinakothek der Moderne",
+    "place": true
+  },
+  "Aktivitäten|Ingolstadt|Bayerisches Armeemuseum": {
+    "url": "https://www.armeemuseum.de/images/gebauede/Innenhof_Schloss_Reisinger.jpg",
+    "source": "https://www.armeemuseum.de/de/besuch.html",
+    "credit": "Motiv aus Anbieterquelle · armeemuseum.de",
+    "alt": "Bayerisches Armeemuseum",
+    "place": true
+  },
+  "dresden-erweiterung|Handys|CMF Phone 2 Pro": {
+    "url": "https://checkout-au.nothing.tech/cdn/shop/files/Support_Guide_-_Bulbasaur.jpg?v=1745899683&width=640",
+    "source": "https://de.nothing.tech/products/cmf-phone-2-pro",
+    "credit": "Hersteller · Nothing",
+    "alt": "CMF Phone 2 Pro",
+    "place": false
+  },
+  "dresden-erweiterung|Smart-Gadgets|Garmin vívosmart 5": {
+    "url": "https://res.garmin.com/en/products/010-02645-10/v/cf-lg-9c10bfb1-25dc-4a9b-92bd-a468fe89a28f.jpg",
+    "source": "https://www.garmin.com/de-DE/p/782585/pn/010-02645-10/",
+    "credit": "Hersteller · Garmin",
+    "alt": "Garmin vívosmart 5",
+    "place": false
+  },
+  "dresden-erweiterung|Smart-Gadgets|Garmin Lily 2": {
+    "url": "https://res.garmin.com/de_DE/products/010-02839-00/v/cf-lg.jpg",
+    "source": "https://www.garmin.com/de-DE/p/950277/pn/010-02839-00/",
+    "credit": "Hersteller · Garmin",
+    "alt": "Garmin Lily 2",
+    "place": false
+  },
+  "dresden-erweiterung|Smart-Gadgets|Garmin Instinct 3 Solar (45 mm)": {
+    "url": "https://res.garmin.com/en_GB/products/010-02934-00/v/cf-lg.jpg",
+    "source": "https://www.garmin.com/de-DE/p/1315317/pn/010-02934-00/",
+    "credit": "Hersteller · Garmin",
+    "alt": "Garmin Instinct 3 Solar (45 mm)",
+    "place": false
+  },
+  "reise-ausbau|Smart-Gadgets|Garmin Forerunner 165": {
+    "url": "https://res.garmin.com/de_DE/products/010-02863-21/v/cf-lg.jpg",
+    "source": "https://www.garmin.com/de-DE/p/1055469/",
+    "credit": "Hersteller · Garmin",
+    "alt": "Garmin Forerunner 165",
+    "place": false
+  },
+  "dresden-erweiterung|Reiseideen|Von Dresden nach Pillnitz": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Dresden-Pillnitz%2C_Schloss%2C_das_Wasserpalais%2C_Elbseite.jpg/500px-Dresden-Pillnitz%2C_Schloss%2C_das_Wasserpalais%2C_Elbseite.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Dresden-Pillnitz,_Schloss,_das_Wasserpalais,_Elbseite.jpg",
+    "credit": "Ausflugsziel · Dguendel · CC BY 3.0",
+    "alt": "Wasserpalais von Schloss Pillnitz",
+    "place": true,
+    "license": "CC BY 3.0"
+  }
+};
+const campusStadtFotos = {
+  "Dresden": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/DD-Schloss-gp.jpg/330px-DD-Schloss-gp.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:DD-Schloss-gp.jpg",
+    "credit": "Stadtansicht · User:Kolossos · CC BY-SA 3.0",
+    "alt": "Stadtansicht von Dresden",
+    "place": true,
+    "license": "CC BY-SA 3.0"
+  },
+  "Heilbronn": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Heilbronn_Innenstadt_u_Wartberg_20050918.jpg/330px-Heilbronn_Innenstadt_u_Wartberg_20050918.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Heilbronn_Innenstadt_u_Wartberg_20050918.jpg",
+    "credit": "Stadtansicht · K. Jähne · CC BY-SA 3.0",
+    "alt": "Stadtansicht von Heilbronn",
+    "place": true,
+    "license": "CC BY-SA 3.0"
+  },
+  "München": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Frauenkirche_and_Neues_Rathaus_Munich_March_2013.JPG/330px-Frauenkirche_and_Neues_Rathaus_Munich_March_2013.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Frauenkirche_and_Neues_Rathaus_Munich_March_2013.JPG",
+    "credit": "Stadtansicht · Martin Falbisoner · CC BY-SA 3.0",
+    "alt": "Stadtansicht von München",
+    "place": true,
+    "license": "CC BY-SA 3.0"
+  },
+  "Neckarsulm": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Neckarsulm_Rathaus01.JPG/330px-Neckarsulm_Rathaus01.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Neckarsulm_Rathaus01.JPG",
+    "credit": "Stadtansicht · Joachim Köhler · CC BY-SA 3.0",
+    "alt": "Stadtansicht von Neckarsulm",
+    "place": true,
+    "license": "CC BY-SA 3.0"
+  },
+  "Heidelberg": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/K%C3%B6nigstuhl%2C_Heidelberg%2C_U-17.jpg/330px-K%C3%B6nigstuhl%2C_Heidelberg%2C_U-17.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:K%C3%B6nigstuhl,_Heidelberg,_U-17.jpg",
+    "credit": "Stadtansicht · Jörg Braukmann · CC BY-SA 4.0",
+    "alt": "Stadtansicht von Heidelberg",
+    "place": true,
+    "license": "CC BY-SA 4.0"
+  },
+  "Hamburg": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Hamburg%2C_Landungsbr%C3%BCcken_--_2016_--_3131-7.jpg/330px-Hamburg%2C_Landungsbr%C3%BCcken_--_2016_--_3131-7.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Hamburg,_Landungsbr%C3%BCcken_--_2016_--_3131-7.jpg",
+    "credit": "Stadtansicht · Dietmar Rabich · CC BY-SA 4.0",
+    "alt": "Stadtansicht von Hamburg",
+    "place": true,
+    "license": "CC BY-SA 4.0"
+  },
+  "Köln": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Kranh%C3%A4user_Cologne%2C_April_2018_-01.jpg/330px-Kranh%C3%A4user_Cologne%2C_April_2018_-01.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Kranh%C3%A4user_Cologne,_April_2018_-01.jpg",
+    "credit": "Stadtansicht · Martin Falbisoner · CC BY-SA 4.0",
+    "alt": "Stadtansicht von Köln",
+    "place": true,
+    "license": "CC BY-SA 4.0"
+  },
+  "Ingolstadt": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Kreuztor_Ingoldstadt.jpg/500px-Kreuztor_Ingoldstadt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Kreuztor_Ingoldstadt.jpg",
+    "credit": "Stadtansicht · No machine-readable author provided.  Haui  assumed (based on copyright claims). · CC BY 2.5",
+    "alt": "Kreuztor in Ingolstadt",
+    "place": true,
+    "license": "CC BY 2.5"
+  },
+  "Berlin": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Fernsehturm%2C_Alexanderplatz%2C_Berlin.jpg/500px-Fernsehturm%2C_Alexanderplatz%2C_Berlin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Fernsehturm,_Alexanderplatz,_Berlin.jpg",
+    "credit": "Stadtansicht · Chris Alban Hansen · CC BY-SA 2.0",
+    "alt": "Fernsehturm am Alexanderplatz in Berlin",
+    "place": true,
+    "license": "CC BY-SA 2.0"
+  },
+  "Leipzig": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/MJK65010-25_Altes_Rathaus_%28Leipzig%29.jpg/500px-MJK65010-25_Altes_Rathaus_%28Leipzig%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:MJK65010-25_Altes_Rathaus_(Leipzig).jpg",
+    "credit": "Stadtansicht · Martin Kraft · CC BY-SA 3.0",
+    "alt": "Altes Rathaus in Leipzig",
+    "place": true,
+    "license": "CC BY-SA 3.0"
+  }
+};
+const campusFotoLinksOhneBeleg = new Set(["https://photos.bringfido.com/lodging/9/4/7/1722749/1722749_54614707.jpg?density=2x&size=full"]);
