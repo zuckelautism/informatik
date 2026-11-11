@@ -1,6 +1,138 @@
 // Nach Kategorien gruppierte Ergänzungen. Vorhandene IDs für Merklisten beibehalten.
 const campusErgaenzungen=[
 {
+    "id": "2026-11-11|Handys|Nothing Phone (4a)",
+    "category": "Handys",
+    "city": "Überregional",
+    "title": "Nothing Phone (4a)",
+    "link": "https://nothing.tech/products/phone-4a",
+    "note": "Android-Smartphone. Prüfe Ausstattung, Region und verfügbare Varianten beim Hersteller.",
+    "deviceType": "Smartphone",
+    "ecosystems": [
+      "android"
+    ]
+  },
+  {
+    "id": "2026-11-11|Tablets|Lenovo Legion Tab Gen 3",
+    "category": "Tablets",
+    "city": "Überregional",
+    "title": "Lenovo Legion Tab Gen 3",
+    "link": "https://www.lenovo.com/de/de/p/tablets/android-tablets/legion-tab-series/lenovo-legion-tab-gen-3/len103g0002",
+    "note": "Kompaktes Android-Tablet. Zubehör und Speichervarianten beim Hersteller abgleichen.",
+    "deviceType": "Tablet",
+    "ecosystems": [
+      "android"
+    ]
+  },
+  {
+    "id": "2026-11-11|Smart-Gadgets|Garmin Venu X1",
+    "category": "Smart-Gadgets",
+    "city": "Überregional",
+    "title": "Garmin Venu X1",
+    "link": "https://www.garmin.com/de-DE/p/1510465/pn/010-02980-02/",
+    "note": "Sportuhr für Training und Alltag. Kompatibilität und Funktionen beim Hersteller prüfen.",
+    "deviceType": "Sportuhr",
+    "ecosystems": [
+      "apple",
+      "android"
+    ]
+  },
+  {
+    "id": "2026-11-11|Wohnen|Studentenwerk Dresden · Wohnheim Wundtstraße 1",
+    "category": "Wohnen",
+    "city": "Dresden",
+    "title": "Studentenwerk Dresden · Wohnheim Wundtstraße 1",
+    "link": "https://www.studentenwerk-dresden.de/wohnen/wohnheimkatalog/details-wundtstrasse-1.html",
+    "note": "Wohnheim am Campus. Zimmerarten, Voraussetzungen und Bewerbung beim Betreiber prüfen."
+  },
+  {
+    "id": "2026-11-11|Autos|Škoda Elroq",
+    "category": "Autos",
+    "city": "Überregional",
+    "title": "Škoda Elroq",
+    "link": "https://www.skoda-auto.de/promotions/promotion-detail/elroq",
+    "note": "Kompakter Elektro-SUV. Varianten und Ladebedarf beim Hersteller vergleichen.",
+    "segment": "Neuwagen"
+  },
+  {
+    "id": "2026-11-11|Fahrschulen|Die Fahrschule Dresden",
+    "category": "Fahrschulen",
+    "city": "Dresden",
+    "title": "Die Fahrschule Dresden",
+    "link": "https://www.die-fahrschule.info/",
+    "note": "Führerscheinklassen, Anfahrt und Gesamtkosten direkt beim Anbieter prüfen."
+  },
+  {
+    "id": "2026-11-11|Studienstart|TU Dresden · ServiceCenterStudium",
+    "category": "Studienstart",
+    "city": "Dresden",
+    "title": "TU Dresden · ServiceCenterStudium",
+    "link": "https://tu-dresden.de/studium/im-studium/beratung-und-service/servicecenterstudium",
+    "note": "Anlaufstelle für Fragen zu Bewerbung, Einschreibung und Studienorganisation."
+  },
+  {
+    "id": "2026-11-11|Vorteile|Studentenwerk Dresden · BAföG und Studienstarthilfe",
+    "category": "Vorteile",
+    "city": "Dresden",
+    "title": "Studentenwerk Dresden · BAföG und Studienstarthilfe",
+    "link": "https://www.studentenwerk-dresden.de/finanzierung/bafoeg.html",
+    "note": "Offizielle Informationen zu Voraussetzungen und Antrag. Anspruch individuell prüfen.",
+    "topic": "Studium & Software",
+    "kind": "Förderung prüfen"
+  },
+  {
+    "id": "2026-11-11|Aktivitäten|Historisches Grünes Gewölbe",
+    "category": "Aktivitäten",
+    "city": "Dresden",
+    "title": "Historisches Grünes Gewölbe",
+    "link": "https://shop.skd.museum/historisches-gruenes-gewoelbe-green-vault-timeticket.html",
+    "note": "Historische Schatzkammer im Dresdner Residenzschloss. Zeitfenster und Besuchshinweise prüfen.",
+    "activity": "Kultur"
+  },
+  {
+    "id": "2026-11-11|ÖPNV & Pendeln|DVB · Dresdner Bergbahnen",
+    "category": "ÖPNV & Pendeln",
+    "city": "Dresden",
+    "title": "DVB · Dresdner Bergbahnen",
+    "link": "https://www.dvb.de/de-de/entdecken/bergbahnen",
+    "note": "Standseilbahn und Schwebebahn. Fahrplan und Sondertarif vor der Fahrt prüfen."
+  },
+  {
+    "id": "2026-11-11|Reiseideen|Schloss Moritzburg ab Dresden",
+    "category": "Reiseideen",
+    "city": "Dresden",
+    "title": "Schloss Moritzburg ab Dresden",
+    "link": "https://www.schloss-moritzburg.de/de/gaesteservice/anreise/",
+    "note": "Tagesausflug zum Wasserschloss. Bus, Eintritt und Rückfahrt einzeln prüfen.",
+    "segment": "Tagesausflug",
+    "tripCap": 40,
+    "plan": [
+      "Vormittags die Busverbindung aus Dresden nach Moritzburg prüfen.",
+      "Schlossbesuch oder Spaziergang am Schlossteich einplanen und Öffnung vorab prüfen.",
+      "Mit Proviant planen und die passende Rückfahrt vor der Abfahrt speichern."
+    ]
+  },
+  {
+    "id": "2026-11-11|Unterkünfte|DJH Dresden-Radebeul",
+    "category": "Unterkünfte",
+    "city": "Dresden",
+    "title": "DJH Dresden-Radebeul",
+    "link": "https://www.jugendherberge.de/jugendherbergen/dresden-radebeul",
+    "note": "Jugendherberge im Dresdner Umland in Radebeul. Buchung, Anfahrt und Gesamtpreis beim Betreiber prüfen.",
+    "segment": "Hostel"
+  },
+  {
+    "id": "2026-11-11|Studium|TU Dresden · Verkehrswirtschaft (B.Sc.)",
+    "category": "Studium",
+    "city": "Dresden",
+    "title": "TU Dresden · Verkehrswirtschaft (B.Sc.)",
+    "link": "https://tu-dresden.de/bu/verkehr/studium/vor-dem-studium/studienangebot/vwi",
+    "note": "Bachelorstudium zu Wirtschaft und Verkehrssystemen. Studienaufbau und Zugang bei der Hochschule prüfen.",
+    "topic": "Verkehrswirtschaft",
+    "field": "gesellschaft"
+  },
+
+{
     "id": "dresden-erweiterung|Handys|Nothing Phone (3a) Pro",
     "category": "Handys",
     "city": "Überregional",
@@ -4546,3 +4678,18 @@ const campusStadtFotos = {
   }
 };
 const campusFotoLinksOhneBeleg = new Set(["https://photos.bringfido.com/lodging/9/4/7/1722749/1722749_54614707.jpg?density=2x&size=full"]);
+
+Object.assign(campusNeueFotos, {
+  "Lenovo Legion Tab Gen 3": {
+    "url": "https://p2-ofp.static.pub/fes/cms/2025/02/11/q2yd0df2qoqx8utvonvf73ldtis1le074880.jpg",
+    "source": "https://www.lenovo.com/au/en/p/tablets/legion-tab-series/lenovo-legion-tab-gen-3/len103g0002",
+    "credit": "Modellreihe · Lenovo",
+    "place": false
+  },
+  "Škoda Elroq": {
+    "url": "https://cdn.skoda-auto.com/images/sites/enmaster-v2/0dd793a4-0aac-41aa-9c70-745e40089b3b/25ae155e261b9f31c0487ba02ce32920",
+    "source": "https://www.skoda-auto.de/promotions/promotion-detail/elroq",
+    "credit": "Modellreihe · Škoda",
+    "place": false
+  }
+});
