@@ -1,6 +1,644 @@
 // Nach Kategorien gruppierte Ergänzungen. Vorhandene IDs für Merklisten beibehalten.
 const campusErgaenzungen=[
 {
+    "id": "stadt-pruefung|Berlin|Ausbildung|BVG · Ausbildungsberufe",
+    "city": "Berlin",
+    "category": "Ausbildung",
+    "title": "BVG · Ausbildungsberufe",
+    "note": "Vergleiche IT, Technik, kaufmännische Berufe und Fahrbetrieb. Prüfe die Anforderungen in der jeweiligen Ausschreibung.",
+    "link": "https://www.bvg.de/de/karriere/schueler/ausbildung"
+  },
+  {
+    "id": "stadt-pruefung|Berlin|Duales Studium|Land Berlin · Verwaltungsinformatik",
+    "city": "Berlin",
+    "category": "Duales Studium",
+    "title": "Land Berlin · Verwaltungsinformatik",
+    "note": "Prüfe Studienaufbau, Voraussetzungen und Bewerbungsweg beim Land Berlin.",
+    "link": "https://www.berlin.de/landesverwaltungsamt/zentraler-rekrutierungsservice/duale-studiengaenge/kampagnen/landingpage.1147337.php"
+  },
+  {
+    "id": "stadt-pruefung|Berlin|ÖPNV & Pendeln|BVG · Verbindungen und Störungen",
+    "city": "Berlin",
+    "category": "ÖPNV & Pendeln",
+    "title": "BVG · Verbindungen und Störungen",
+    "note": "Plane den Weg zu Hochschule oder Betrieb zur typischen Ankunftszeit. Prüfe Umstiege und Aufzugsmeldungen.",
+    "link": "https://www.bvg.de/de/verbindungen"
+  },
+  {
+    "id": "stadt-pruefung|Berlin|Wohnen|Studierendenwerk Berlin · Wohnheimbewerbung",
+    "city": "Berlin",
+    "category": "Wohnen",
+    "title": "Studierendenwerk Berlin · Wohnheimbewerbung",
+    "note": "Prüfe die Voraussetzungen und Unterlagen für die Bewerbung beim Betreiber.",
+    "link": "https://www.stw.berlin/wohnen/wohnheimbewerbung/"
+  },
+  {
+    "id": "stadt-pruefung|Berlin|Aktivitäten|Berlin · Museen mit freiem Eintritt",
+    "city": "Berlin",
+    "category": "Aktivitäten",
+    "title": "Berlin · Museen mit freiem Eintritt",
+    "note": "Wähle ein Museum und kontrolliere, wann der freie Eintritt gilt.",
+    "link": "https://www.berlin.de/museum/eintritt-frei/",
+    "activity": "Kultur"
+  },
+  {
+    "id": "stadt-pruefung|Dresden|Duales Studium|DHSN Dresden · Wirtschaftsinformatik",
+    "city": "Dresden",
+    "category": "Duales Studium",
+    "title": "DHSN Dresden · Wirtschaftsinformatik",
+    "note": "Vergleiche die Module und prüfe, wie du einen Praxispartner findest.",
+    "link": "https://www.dhsn.de/studienangebot/detail/wirtschaftsinformatik-dresden"
+  },
+  {
+    "id": "stadt-pruefung|Dresden|ÖPNV & Pendeln|TU Dresden · Infos zum Semesterticket",
+    "city": "Dresden",
+    "category": "ÖPNV & Pendeln",
+    "title": "TU Dresden · Infos zum Semesterticket",
+    "note": "Prüfe Gültigkeit, Abruf und Regeln für deine Hochschule und dein Semester.",
+    "link": "https://www.stura.tu-dresden.de/semesterticket"
+  },
+  {
+    "id": "stadt-pruefung|Aachen|Ausbildung|HWK Aachen · Lehrstellenvermittlung",
+    "city": "Aachen",
+    "category": "Ausbildung",
+    "title": "HWK Aachen · Lehrstellenvermittlung",
+    "note": "Suche Ausbildungsbetriebe im Handwerk. Prüfe Ort, Voraussetzungen und Bewerbung bei der konkreten Stelle.",
+    "link": "https://www.hwk-aachen.de/lehrstellenvermittlung"
+  },
+  {
+    "id": "stadt-pruefung|Aachen|ÖPNV & Pendeln|ASEAG · Deutschlandsemesterticket",
+    "city": "Aachen",
+    "category": "ÖPNV & Pendeln",
+    "title": "ASEAG · Deutschlandsemesterticket",
+    "note": "Prüfe den Ablauf für deine Hochschule und vergleiche die Fahrtzeiten zur Unterkunft.",
+    "link": "https://www.aseag.de/tickets/ticket/deutschlandticket-semester"
+  },
+  {
+    "id": "stadt-pruefung|Aachen|Aktivitäten|Stadt Aachen · Museen",
+    "city": "Aachen",
+    "category": "Aktivitäten",
+    "title": "Stadt Aachen · Museen",
+    "note": "Wähle ein Haus aus und prüfe Eintritt, Öffnungszeiten und Anreise dort.",
+    "link": "https://www.aachen.de/in-aachen-leben/kultur/museen/",
+    "activity": "Kultur"
+  },
+  {
+    "id": "stadt-pruefung|Frankfurt am Main|Ausbildung|Fraport · Ausbildungsstellen",
+    "city": "Frankfurt am Main",
+    "category": "Ausbildung",
+    "title": "Fraport · Ausbildungsstellen",
+    "note": "Filtere im Arbeitgeberportal nach Ausbildungsberuf und prüfe Voraussetzungen, Standort und Frist der Stelle.",
+    "link": "https://www.jobs.fraport.de/go/Ausbildung/5379201/"
+  },
+  {
+    "id": "stadt-pruefung|Frankfurt am Main|ÖPNV & Pendeln|RMV · Fahrpläne Frankfurt",
+    "city": "Frankfurt am Main",
+    "category": "ÖPNV & Pendeln",
+    "title": "RMV · Fahrpläne Frankfurt",
+    "note": "Prüfe Linien und Fahrzeiten für eine Werktagsverbindung zur Hochschule oder zum Betrieb.",
+    "link": "https://www.rmv.de/c/de/start/frankfurt/mobilitaet-vor-ort/fahrplan-liniennetz/fahrplaene-fuer-frankfurt"
+  },
+  {
+    "id": "stadt-pruefung|Frankfurt am Main|Aktivitäten|Museumsufer Frankfurt · Günstige Museumsbesuche",
+    "city": "Frankfurt am Main",
+    "category": "Aktivitäten",
+    "title": "Museumsufer Frankfurt · Günstige Museumsbesuche",
+    "note": "Vergleiche kostenfreie Termine und Ermäßigungen. Prüfe die Regeln für das jeweilige Haus.",
+    "link": "https://www.museumsufer.de/de/eintritt-und-tickets/kostenfreie-eintritte/tipps-fuer-den-kleinen-geldbeutel/",
+    "activity": "Kultur"
+  },
+  {
+    "id": "stadt-pruefung|Göttingen|Ausbildung|Universitätsmedizin Göttingen · Bildungsakademie",
+    "city": "Göttingen",
+    "category": "Ausbildung",
+    "title": "Universitätsmedizin Göttingen · Bildungsakademie",
+    "note": "Erkunde Gesundheitsberufe und öffne das Berufsprofil für Zugang und Bewerbung.",
+    "link": "https://www.umg.eu/einrichtungen/zentrale-einrichtungen-der-krankenversorgung/bildungsakademie/"
+  },
+  {
+    "id": "stadt-pruefung|Göttingen|ÖPNV & Pendeln|GöVB · Fahrplaninformationen",
+    "city": "Göttingen",
+    "category": "ÖPNV & Pendeln",
+    "title": "GöVB · Fahrplaninformationen",
+    "note": "Prüfe deinen Arbeits- oder Campusweg mit dem Stadtbus, einschließlich Rückfahrt am Abend.",
+    "link": "https://www.goevb.de/fahrplaene/fahrplaninformationen"
+  },
+  {
+    "id": "stadt-pruefung|Hamburg|Ausbildung|Handelskammer Hamburg · Ausbildungsorientierung",
+    "city": "Hamburg",
+    "category": "Ausbildung",
+    "title": "Handelskammer Hamburg · Ausbildungsorientierung",
+    "note": "Wähle ein Berufsfeld und nutze die Hinweise der Kammer zur Suche nach einem Betrieb.",
+    "link": "https://www.handelskammer-hamburg.de/aus-und-weiterbildung/berufsorientierung/meine-ausbildung-6775168"
+  },
+  {
+    "id": "stadt-pruefung|Hamburg|Wohnen|Studierendenwerk Hamburg · Infos zur Wohnheimbewerbung",
+    "city": "Hamburg",
+    "category": "Wohnen",
+    "title": "Studierendenwerk Hamburg · Infos zur Wohnheimbewerbung",
+    "note": "Prüfe Zugangsbedingungen, Bewerbungsweg und Ablauf beim Studierendenwerk.",
+    "link": "https://www.stwhh.de/wohnen/bewerbungsinformationen"
+  },
+  {
+    "id": "stadt-pruefung|Hamburg|ÖPNV & Pendeln|hvv · Mobilität für Studierende",
+    "city": "Hamburg",
+    "category": "ÖPNV & Pendeln",
+    "title": "hvv · Mobilität für Studierende",
+    "note": "Schau nach, wie du das Ticket an deiner Hochschule erhältst und welche Regeln gelten.",
+    "link": "https://www.hvv.de/de/studierende"
+  },
+  {
+    "id": "stadt-pruefung|Hamburg|Aktivitäten|Hamburg · Kostenlose Museen und Ausstellungen",
+    "city": "Hamburg",
+    "category": "Aktivitäten",
+    "title": "Hamburg · Kostenlose Museen und Ausstellungen",
+    "note": "Suche ein Angebot aus und bestätige Öffnungszeiten sowie Eintritt direkt beim Haus.",
+    "link": "https://www.hamburg.de/freizeit/kostenlose-museen-ausstellungen-333638",
+    "activity": "Kultur"
+  },
+  {
+    "id": "stadt-pruefung|Heidelberg|Ausbildung|Stadt Heidelberg · Ausbildung bei der Stadt",
+    "city": "Heidelberg",
+    "category": "Ausbildung",
+    "title": "Stadt Heidelberg · Ausbildung bei der Stadt",
+    "note": "Prüfe Berufsfelder, Zugangsvoraussetzungen und die aktuellen Ausschreibungen der Stadt.",
+    "link": "https://www.heidelberg.de/hd/HD/Leben/Auszubildende.html"
+  },
+  {
+    "id": "stadt-pruefung|Heidelberg|ÖPNV & Pendeln|VRN · Deutschlandsemesterticket",
+    "city": "Heidelberg",
+    "category": "ÖPNV & Pendeln",
+    "title": "VRN · Deutschlandsemesterticket",
+    "note": "Prüfe, ob deine Hochschule teilnimmt und wie du das Ticket erhältst.",
+    "link": "https://www.vrn.de/tickets/ticketuebersicht/deutschlandticket/deutschland-semesterticket/index.html"
+  },
+  {
+    "id": "stadt-pruefung|Jena|Ausbildung|Stadtwerke Jena · Ausbildung und Praktikum",
+    "city": "Jena",
+    "category": "Ausbildung",
+    "title": "Stadtwerke Jena · Ausbildung und Praktikum",
+    "note": "Vergleiche Ausbildungsprofile und nutze Praktika zur Orientierung. Details stehen bei der jeweiligen Stelle.",
+    "link": "https://www.stadtwerke-jena.de/karriere/ausbildung-und-praktikum.html"
+  },
+  {
+    "id": "stadt-pruefung|Jena|Wohnen|Studierendenwerk Thüringen · Wohnanlage Moritz-Seebeck-Straße",
+    "city": "Jena",
+    "category": "Wohnen",
+    "title": "Studierendenwerk Thüringen · Wohnanlage Moritz-Seebeck-Straße",
+    "note": "Prüfe Zimmerarten, Lage und Bewerbungsweg direkt beim Betreiber.",
+    "link": "https://www.stw-thueringen.de/wohnen/jena/moritz-seebeck-strasse-15.html"
+  },
+  {
+    "id": "stadt-pruefung|Jena|ÖPNV & Pendeln|Jenaer Nahverkehr · Fahrpläne",
+    "city": "Jena",
+    "category": "ÖPNV & Pendeln",
+    "title": "Jenaer Nahverkehr · Fahrpläne",
+    "note": "Schau nach den Bus- und Straßenbahnverbindungen zwischen Unterkunft und Ziel.",
+    "link": "https://www.stadtwerke-jena.de/nahverkehr/privatkunden/fahrplaene"
+  },
+  {
+    "id": "stadt-pruefung|Jena|Aktivitäten|Visit Jena · Museen",
+    "city": "Jena",
+    "category": "Aktivitäten",
+    "title": "Visit Jena · Museen",
+    "note": "Wähle ein Haus und prüfe Eintritt und Öffnungszeiten beim jeweiligen Betreiber.",
+    "link": "https://www.visit-jena.de/kultur/museen/",
+    "activity": "Kultur"
+  },
+  {
+    "id": "stadt-pruefung|Ingolstadt|Studium|KU Ingolstadt · Betriebswirtschaftslehre B.Sc.",
+    "city": "Ingolstadt",
+    "category": "Studium",
+    "title": "KU Ingolstadt · Betriebswirtschaftslehre B.Sc.",
+    "note": "Vergleiche die Module, den Studienort und die Zulassung direkt an der KU.",
+    "link": "https://www.ku.de/studienangebot/bwl-bsc"
+  },
+  {
+    "id": "stadt-pruefung|Ingolstadt|Ausbildung|Stadt Ingolstadt · Ausbildung und Studium",
+    "city": "Ingolstadt",
+    "category": "Ausbildung",
+    "title": "Stadt Ingolstadt · Ausbildung und Studium",
+    "note": "Vergleiche kommunale Berufe und duale Angebote. Öffne das jeweilige Profil für Zugang und Bewerbungsweg.",
+    "link": "https://www.ingolstadt.de/Karriere/Ausbildung-und-Studium/"
+  },
+  {
+    "id": "stadt-pruefung|Leipzig|Duales Studium|DHSN Leipzig · Informatik",
+    "city": "Leipzig",
+    "category": "Duales Studium",
+    "title": "DHSN Leipzig · Informatik",
+    "note": "Prüfe Zulassung, Studienaufbau und Praxispartner an der Dualen Hochschule Sachsen.",
+    "link": "https://www.dhsn.de/studienangebot/detail/informatik"
+  },
+  {
+    "id": "stadt-pruefung|Leipzig|Ausbildung|Leipziger Gruppe · Ausbildung",
+    "city": "Leipzig",
+    "category": "Ausbildung",
+    "title": "Leipziger Gruppe · Ausbildung",
+    "note": "Vergleiche Ausbildungsberufe und prüfe die Anforderungen in der Ausschreibung.",
+    "link": "https://www.l.de/karriere/ausbildung/"
+  },
+  {
+    "id": "stadt-pruefung|Leipzig|Wohnen|Studentenwerk Leipzig · Wohnheimbewerbung",
+    "city": "Leipzig",
+    "category": "Wohnen",
+    "title": "Studentenwerk Leipzig · Wohnheimbewerbung",
+    "note": "Prüfe Voraussetzungen, Bewerbungsablauf und die gewünschten Wohnanlagen beim Betreiber.",
+    "link": "https://www.studentenwerk-leipzig.de/wohnen/wohnheim-bewerbung/"
+  },
+  {
+    "id": "stadt-pruefung|Leipzig|ÖPNV & Pendeln|Studentenwerk Leipzig · Semesterticket",
+    "city": "Leipzig",
+    "category": "ÖPNV & Pendeln",
+    "title": "Studentenwerk Leipzig · Semesterticket",
+    "note": "Prüfe Teilnahme, Gültigkeit und Ausgabe für deine Hochschule.",
+    "link": "https://www.studentenwerk-leipzig.de/mobilitaet/semesterticket/"
+  },
+  {
+    "id": "stadt-pruefung|Leipzig|Aktivitäten|Stadtgeschichtliches Museum Leipzig",
+    "city": "Leipzig",
+    "category": "Aktivitäten",
+    "title": "Stadtgeschichtliches Museum Leipzig",
+    "note": "Wähle ein Haus wie das Alte Rathaus und prüfe dort Öffnungszeiten und Eintritt.",
+    "link": "https://www.stadtgeschichtliches-museum-leipzig.de/",
+    "activity": "Kultur"
+  },
+  {
+    "id": "stadt-pruefung|Gießen|Ausbildung|Stadtwerke Gießen · Ausbildung",
+    "city": "Gießen",
+    "category": "Ausbildung",
+    "title": "Stadtwerke Gießen · Ausbildung",
+    "note": "Vergleiche technische und kaufmännische Berufe und prüfe die konkrete Ausschreibung.",
+    "link": "https://www.stadtwerke-giessen.de/de/unternehmen/karriere/ausbildung"
+  },
+  {
+    "id": "stadt-pruefung|Gießen|ÖPNV & Pendeln|Stadtwerke Gießen · Busfahrpläne",
+    "city": "Gießen",
+    "category": "ÖPNV & Pendeln",
+    "title": "Stadtwerke Gießen · Busfahrpläne",
+    "note": "Prüfe die Linien und vergleiche Fahrzeiten zu Hochschule, Betrieb und Wohnheim.",
+    "link": "https://www.stadtwerke-giessen.de/de/nahverkehr-e-mobilitaet/nahverkehr/fahrplaene"
+  },
+  {
+    "id": "stadt-pruefung|Gießen|ÖPNV & Pendeln|AStA JLU · Deutschlandsemesterticket",
+    "city": "Gießen",
+    "category": "ÖPNV & Pendeln",
+    "title": "AStA JLU · Deutschlandsemesterticket",
+    "note": "Prüfe den Abruf und die Bedingungen für die JLU direkt beim AStA.",
+    "link": "https://www.asta-giessen.de/service/semesterticket/deutschlandticket/"
+  },
+  {
+    "id": "stadt-pruefung|Mittweida|Ausbildung|Stadt Mittweida · Ausbildungsangebote",
+    "city": "Mittweida",
+    "category": "Ausbildung",
+    "title": "Stadt Mittweida · Ausbildungsangebote",
+    "note": "Prüfe die Berufsfelder und weiterführenden Links der Stadt.",
+    "link": "https://www.mittweida.de/buergerservice/kinder-und-bildung/ausbildung/"
+  },
+  {
+    "id": "stadt-pruefung|Tübingen|Aktivitäten|Stadt Tübingen · Museen",
+    "city": "Tübingen",
+    "category": "Aktivitäten",
+    "title": "Stadt Tübingen · Museen",
+    "note": "Suche ein Haus aus und prüfe Eintritt, Öffnungszeiten und Anreise.",
+    "link": "https://www.tuebingen.de/museen",
+    "activity": "Kultur"
+  },
+  {
+    "id": "stadt-pruefung|Tübingen|ÖPNV & Pendeln|TüBus · Tickets für Stadt und Region",
+    "city": "Tübingen",
+    "category": "ÖPNV & Pendeln",
+    "title": "TüBus · Tickets für Stadt und Region",
+    "note": "Vergleiche die Ticketarten und prüfe, welches Angebot zu deiner Strecke passt.",
+    "link": "https://www.tuebus.de/tickets.html"
+  },
+  {
+    "id": "stadt-pruefung|Köln|Studium|TH Köln · Soziale Arbeit B.A.",
+    "city": "Köln",
+    "category": "Studium",
+    "title": "TH Köln · Soziale Arbeit B.A.",
+    "note": "Vergleiche Praxisanteile, Module und Zugang mit anderen Studiengängen.",
+    "link": "https://www.th-koeln.de/studium/soziale-arbeit-bachelor_259.php"
+  },
+  {
+    "id": "stadt-pruefung|Köln|Studienstart|TH Köln · Schnupperangebote",
+    "city": "Köln",
+    "category": "Studienstart",
+    "title": "TH Köln · Schnupperangebote",
+    "note": "Wähle ein Format zum Ausprobieren und prüfe, ob du dich vorher anmelden musst.",
+    "link": "https://www.th-koeln.de/studium/schnupperangebote_123763.php"
+  },
+  {
+    "id": "stadt-pruefung|Köln|Ausbildung|Stadt Köln · Ausbildungsangebot",
+    "city": "Köln",
+    "category": "Ausbildung",
+    "title": "Stadt Köln · Ausbildungsangebot",
+    "note": "Wähle ein Berufsprofil und prüfe Schulabschluss, Aufgaben und Bewerbung.",
+    "link": "https://www.stadt-koeln.de/politik-und-verwaltung/ausbildung-karriere-bei-der-stadt/ausbildung/ausbildungsangebot"
+  },
+  {
+    "id": "stadt-pruefung|Köln|Duales Studium|Stadt Köln · Duale Studienangebote",
+    "city": "Köln",
+    "category": "Duales Studium",
+    "title": "Stadt Köln · Duale Studienangebote",
+    "note": "Vergleiche die kommunalen Studienangebote nach Praxisort, Abschluss und Zugang.",
+    "link": "https://www.stadt-koeln.de/politik-und-verwaltung/ausbildung-karriere-bei-der-stadt/ausbildung/studienangebot?cnw_autotranslate=de"
+  },
+  {
+    "id": "stadt-pruefung|Köln|Wohnen|Kölner Studierendenwerk · Wohnheimbewerbung",
+    "city": "Köln",
+    "category": "Wohnen",
+    "title": "Kölner Studierendenwerk · Wohnheimbewerbung",
+    "note": "Prüfe die Unterlagen und öffne die Bewerbung des Betreibers.",
+    "link": "https://www.kstw.de/wohnen/bewerbung/"
+  },
+  {
+    "id": "stadt-pruefung|Köln|ÖPNV & Pendeln|KVB · Deutschlandsemesterticket",
+    "city": "Köln",
+    "category": "ÖPNV & Pendeln",
+    "title": "KVB · Deutschlandsemesterticket",
+    "note": "Prüfe die Regeln und den Abruf an deiner Hochschule.",
+    "link": "https://www.kvb.koeln/abos-und-tickets/alle-abos/deutschlandsemesterticket.html"
+  },
+  {
+    "id": "stadt-pruefung|Köln|Aktivitäten|Köln · Flora und Botanischer Garten",
+    "city": "Köln",
+    "category": "Aktivitäten",
+    "title": "Köln · Flora und Botanischer Garten",
+    "note": "Prüfe Öffnungszeiten und plane die Anfahrt zur Flora.",
+    "link": "https://www.stadt-koeln.de/leben-in-koeln/freizeit-natur-sport/parks/flora-und-botanischer-garten",
+    "activity": "Draußen"
+  },
+  {
+    "id": "stadt-pruefung|Leipzig|Studienstart|Uni Leipzig · Schnupperangebote für Geschichte, Kunst und Regionalwissenschaften",
+    "city": "Leipzig",
+    "category": "Studienstart",
+    "title": "Uni Leipzig · Schnupperangebote für Geschichte, Kunst und Regionalwissenschaften",
+    "note": "Prüfe beim Anbieter, welche Veranstaltungen zugänglich sind und wann sie stattfinden.",
+    "link": "https://www.gkr.uni-leipzig.de/studium/vor-dem-studium/tag-der-offenen-tuer"
+  },
+  {
+    "id": "stadt-pruefung|Leipzig|Ausbildung|HWK Leipzig · Lehrstellen und Praktika",
+    "city": "Leipzig",
+    "category": "Ausbildung",
+    "title": "HWK Leipzig · Lehrstellen und Praktika",
+    "note": "Suche nach Beruf und Arbeitsort. Ein Praktikum kann beim Vergleich zweier Berufe helfen.",
+    "link": "https://www.hwk-leipzig.de/artikel/freie-lehrstellen-und-praktikumsplaetze-im-handwerk-3%2C1077%2C596.html"
+  },
+  {
+    "id": "stadt-pruefung|Marburg|Studium|Uni Marburg · Germanistik B.A.",
+    "city": "Marburg",
+    "category": "Studium",
+    "title": "Uni Marburg · Germanistik B.A.",
+    "note": "Vergleiche Inhalte, Fächerkombination und Zugang mit Kunstgeschichte.",
+    "link": "https://www.uni-marburg.de/de/studium/vor-dem-studium/studienangebot/bachelor/hauptfach/germanistik"
+  },
+  {
+    "id": "stadt-pruefung|Marburg|Studienstart|Uni Marburg · Schnupperstudium",
+    "city": "Marburg",
+    "category": "Studienstart",
+    "title": "Uni Marburg · Schnupperstudium",
+    "note": "Suche ein Fach zum Ausprobieren und prüfe Termine und Anmeldung.",
+    "link": "https://www.uni-marburg.de/de/studium/vor-dem-studium/studienfach-finden/angebote-zur-studienorientierung/angebote-fuer-schuelerinnen-und-schueler/schnupperstudium"
+  },
+  {
+    "id": "stadt-pruefung|Marburg|Ausbildung|Stadt Marburg · Ausbildung und duales Studium",
+    "city": "Marburg",
+    "category": "Ausbildung",
+    "title": "Stadt Marburg · Ausbildung und duales Studium",
+    "note": "Öffne ein Berufsprofil und prüfe Schulabschluss, Bewerbungsfrist und Aufgaben beim Arbeitgeber.",
+    "link": "https://www.marburg.de/aktuelles/jobs-und-karriere/ausbildung-und-duales-studium/"
+  },
+  {
+    "id": "stadt-pruefung|Marburg|Duales Studium|Landkreis Marburg-Biedenkopf · Ausbildung und Studium",
+    "city": "Marburg",
+    "category": "Duales Studium",
+    "title": "Landkreis Marburg-Biedenkopf · Ausbildung und Studium",
+    "note": "Vergleiche duale Verwaltungswege. Prüfe Einsatzort, Hochschulort und Zugang bei der konkreten Ausschreibung.",
+    "link": "https://www.karriere-marburg-biedenkopf.de/ausbildung-studium-praktikum-und-mehr/"
+  },
+  {
+    "id": "stadt-pruefung|Marburg|Wohnen|Studierendenwerk Marburg · Wohnheimbewerbung",
+    "city": "Marburg",
+    "category": "Wohnen",
+    "title": "Studierendenwerk Marburg · Wohnheimbewerbung",
+    "note": "Prüfe Voraussetzungen und fülle bei Bedarf den Antrag beim Betreiber aus.",
+    "link": "https://studierendenwerk-marburg.de/wohnen/onlinebewerbung/"
+  },
+  {
+    "id": "stadt-pruefung|Marburg|ÖPNV & Pendeln|Stadtbus Marburg · Verbindungen",
+    "city": "Marburg",
+    "category": "ÖPNV & Pendeln",
+    "title": "Stadtbus Marburg · Verbindungen",
+    "note": "Plane eine Fahrt zur Hochschule oder zum Betrieb und prüfe die Rückfahrt.",
+    "link": "https://www.stadtbus-marburg.de/verbindungen"
+  },
+  {
+    "id": "stadt-pruefung|Marburg|Aktivitäten|Uni Marburg · Kunstmuseum",
+    "city": "Marburg",
+    "category": "Aktivitäten",
+    "title": "Uni Marburg · Kunstmuseum",
+    "note": "Prüfe Ausstellungen und Besuchsbedingungen auf der Museumsseite.",
+    "link": "https://www.uni-marburg.de/de/museum/ausstellungen/informationen",
+    "activity": "Kultur"
+  },
+  {
+    "id": "stadt-pruefung|Mittweida|Studium|Hochschule Mittweida · Medienmanagement B.A.",
+    "city": "Mittweida",
+    "category": "Studium",
+    "title": "Hochschule Mittweida · Medienmanagement B.A.",
+    "note": "Vergleiche die Inhalte und Bewerbungsvoraussetzungen mit Angewandter Informatik.",
+    "link": "https://www.hs-mittweida.de/studieren/studienangebote/medienmanagement-bachelor/"
+  },
+  {
+    "id": "stadt-pruefung|Mittweida|Duales Studium|Hochschule Mittweida · Wirtschaftsingenieurwesen dual",
+    "city": "Mittweida",
+    "category": "Duales Studium",
+    "title": "Hochschule Mittweida · Wirtschaftsingenieurwesen dual",
+    "note": "Prüfe Studienaufbau, Voraussetzungen und Rolle des Praxisbetriebs.",
+    "link": "https://www.hs-mittweida.de/studieren/studienangebote/wirtschaftsingenieurwesen-duales-studium/"
+  },
+  {
+    "id": "stadt-pruefung|Mittweida|Wohnen|Studentenwerk Freiberg · Fragen zu Wohnheim und Bewerbung",
+    "city": "Mittweida",
+    "category": "Wohnen",
+    "title": "Studentenwerk Freiberg · Fragen zu Wohnheim und Bewerbung",
+    "note": "Informiere dich über Vergabe und Vertrag. Das Studentenwerk verlinkt sein Mietportal.",
+    "link": "https://www.studentenwerk-freiberg.de/wohnen/faq/"
+  },
+  {
+    "id": "stadt-pruefung|Mittweida|ÖPNV & Pendeln|VMS · Haltestellenplan Mittweida Busbahnhof",
+    "city": "Mittweida",
+    "category": "ÖPNV & Pendeln",
+    "title": "VMS · Haltestellenplan Mittweida Busbahnhof",
+    "note": "Prüfe den Umstieg am Busbahnhof und plane die Verbindung zum Campus im Fahrplan.",
+    "link": "https://www.vms.de/haltestellenplaene/mittweida-busbahnhof/"
+  },
+  {
+    "id": "stadt-pruefung|Mittweida|ÖPNV & Pendeln|City-Bahn · Linienfahrpläne mit C14",
+    "city": "Mittweida",
+    "category": "ÖPNV & Pendeln",
+    "title": "City-Bahn · Linienfahrpläne mit C14",
+    "note": "Vergleiche die Fahrzeiten zwischen Mittweida und Chemnitz und prüfe Änderungen für deinen Reisetag.",
+    "link": "https://www.city-bahn.de/linien-fahrplaene/linienfahrplaene/"
+  },
+  {
+    "id": "stadt-pruefung|Mittweida|Aktivitäten|Stadt Mittweida · Museum Alte Pfarrhäuser",
+    "city": "Mittweida",
+    "category": "Aktivitäten",
+    "title": "Stadt Mittweida · Museum Alte Pfarrhäuser",
+    "note": "Prüfe Ausstellungen, Öffnungszeiten und Besuchsbedingungen bei der Stadt.",
+    "link": "https://www.mittweida.de/tourismus-kultur/kunst-kultur/museum-alte-pfarrhaeuser/",
+    "activity": "Kultur"
+  },
+  {
+    "id": "stadt-pruefung|München|Studium|LMU · Geschichte B.A. Hauptfach",
+    "city": "München",
+    "category": "Studium",
+    "title": "LMU · Geschichte B.A. Hauptfach",
+    "note": "Vergleiche Epochen, Methoden und Nebenfachmöglichkeiten. Prüfe Zugang und Bewerbung an der LMU.",
+    "link": "https://www.lmu.de/de/studium/studienangebot/alle-studienfaecher-und-studiengaenge/geschichte-bachelor-hauptfach-2905.html"
+  },
+  {
+    "id": "stadt-pruefung|München|Studienstart|LMU · Schnupperangebote und Orientierung",
+    "city": "München",
+    "category": "Studienstart",
+    "title": "LMU · Schnupperangebote und Orientierung",
+    "note": "Wähle ein Format und prüfe Termine und Anmeldung.",
+    "link": "https://www.lmu.de/de/studium/beratung-und-orientierung/lmu-erleben/"
+  },
+  {
+    "id": "stadt-pruefung|München|Ausbildung|Stadt München · Ausbildung und duales Studium",
+    "city": "München",
+    "category": "Ausbildung",
+    "title": "Stadt München · Ausbildung und duales Studium",
+    "note": "Vergleiche kommunale Berufswege nach Aufgaben, Voraussetzungen und Bewerbung.",
+    "link": "https://stadt.muenchen.de/rathaus/karriere/ausbildung.html"
+  },
+  {
+    "id": "stadt-pruefung|München|Ausbildung|HWK München · Praktikums- und Lehrstellenbörse",
+    "city": "München",
+    "category": "Ausbildung",
+    "title": "HWK München · Praktikums- und Lehrstellenbörse",
+    "note": "Grenze die Suche auf München und deinen Pendelradius ein. Prüfe Verfügbarkeit beim Betrieb.",
+    "link": "https://www.hwk-muenchen.de/artikel/praktikums-und-lehrstellenboerse-74%2C4413%2C3783.html"
+  },
+  {
+    "id": "stadt-pruefung|Neckarsulm|Ausbildung|Stadt Neckarsulm · Verwaltungsfachangestellte",
+    "city": "Neckarsulm",
+    "category": "Ausbildung",
+    "title": "Stadt Neckarsulm · Verwaltungsfachangestellte",
+    "note": "Prüfe Inhalte, Zugang und Ausschreibungen bei der Stadt.",
+    "link": "https://karriereportal.neckarsulm.de/ausbildung-und-studium/ausbildung-verwaltungsfachangestellter-kommunalverwaltung/"
+  },
+  {
+    "id": "stadt-pruefung|Neckarsulm|Wohnen|Stadt Neckarsulm · Wohnberechtigungsschein",
+    "city": "Neckarsulm",
+    "category": "Wohnen",
+    "title": "Stadt Neckarsulm · Wohnberechtigungsschein",
+    "note": "Prüfe, ob geförderter Wohnraum für dich infrage kommt, und welche Unterlagen die Stadt benötigt.",
+    "link": "https://www.neckarsulm.de/startseite/unsere%2Bstadt/wohnberechtigungsschein%2Bund%2Bgefoerderter%2Bwohnraum.html"
+  },
+  {
+    "id": "stadt-pruefung|Neckarsulm|ÖPNV & Pendeln|HNV · Verbindungsauskunft",
+    "city": "Neckarsulm",
+    "category": "ÖPNV & Pendeln",
+    "title": "HNV · Verbindungsauskunft",
+    "note": "Prüfe Hin- und Rückfahrt zwischen deinem Wohnort und Betrieb zu typischen Arbeitszeiten.",
+    "link": "https://www.mein-hnv.de/verbindungen"
+  },
+  {
+    "id": "stadt-pruefung|Heilbronn|Studienstart|Hochschule Heilbronn · Studieren probieren",
+    "city": "Heilbronn",
+    "category": "Studienstart",
+    "title": "Hochschule Heilbronn · Studieren probieren",
+    "note": "Wähle ein Fach und prüfe, welche Schnupperangebote am passenden Campus stattfinden.",
+    "link": "https://www.hs-heilbronn.de/de/studieren-probieren"
+  },
+  {
+    "id": "stadt-pruefung|Göttingen|Aktivitäten|Forum Wissen · Besuch planen",
+    "city": "Göttingen",
+    "category": "Aktivitäten",
+    "title": "Forum Wissen · Besuch planen",
+    "note": "Prüfe Öffnungszeiten, Eintritt und Anfahrt beim Museum der Universität.",
+    "link": "https://www.forum-wissen.de/besuch/",
+    "activity": "Kultur"
+  },
+  {
+    "id": "stadt-pruefung|Heidelberg|Aktivitäten|Kurpfälzisches Museum · Besuch planen",
+    "city": "Heidelberg",
+    "category": "Aktivitäten",
+    "title": "Kurpfälzisches Museum · Besuch planen",
+    "note": "Prüfe Eintritt, Öffnungszeiten und Anreise direkt beim Museum.",
+    "link": "https://www.museum-heidelberg.de/Museum-Heidelberg%2CLds/startseite/besuch/",
+    "activity": "Kultur"
+  },
+  {
+    "id": "stadt-pruefung|Gießen|Aktivitäten|Mathematikum · Besuch planen",
+    "city": "Gießen",
+    "category": "Aktivitäten",
+    "title": "Mathematikum · Besuch planen",
+    "note": "Prüfe Öffnungszeiten, Eintritt und mögliche Ermäßigungen beim Betreiber.",
+    "link": "https://www.mathematikum.de/besucherinfos/aktuelle-besuchsinfos",
+    "activity": "Technik"
+  },
+  {
+    "id": "stadt-pruefung|Tübingen|Ausbildung|Bundesagentur für Arbeit · Ausbildungssuche Tübingen",
+    "city": "Tübingen",
+    "category": "Ausbildung",
+    "title": "Bundesagentur für Arbeit · Ausbildungssuche Tübingen",
+    "note": "Grenze die Suche nach Beruf und Umkreis ein. Prüfe Schulabschluss und Frist in der Ausschreibung.",
+    "link": "https://www.arbeitsagentur.de/jobsuche/suche?suchbereich=ausbildung&wo=T%C3%BCbingen"
+  },
+  {
+    "id": "stadt-pruefung|Tübingen|Studium|Uni Tübingen · Geschichtswissenschaft B.A.",
+    "city": "Tübingen",
+    "category": "Studium",
+    "title": "Uni Tübingen · Geschichtswissenschaft B.A.",
+    "note": "Vergleiche Studienaufbau, Epochen und Fächerkombinationen mit Sprachwissenschaft.",
+    "link": "https://uni-tuebingen.de/studium/studienangebot/verzeichnis-der-studiengaenge/detail/course/geschichtswissenschaft-bachelor-hauptfach/"
+  },
+  {
+    "id": "stadt-pruefung|Tübingen|Studienstart|Uni Tübingen · Schnupperstudium",
+    "city": "Tübingen",
+    "category": "Studienstart",
+    "title": "Uni Tübingen · Schnupperstudium",
+    "note": "Suche eine Lehrveranstaltung und prüfe, ob du dich vorab anmelden musst.",
+    "link": "https://uni-tuebingen.de/studium/studieninteresse/angebote-fuer-studieninteressierte/schnupperstudium/"
+  },
+  {
+    "id": "stadt-pruefung|Tübingen|Ausbildung|Stadtwerke Tübingen · Ausbildungsberufe",
+    "city": "Tübingen",
+    "category": "Ausbildung",
+    "title": "Stadtwerke Tübingen · Ausbildungsberufe",
+    "note": "Vergleiche die Berufsprofile und prüfe Schulabschluss, Einsatzort und Bewerbung.",
+    "link": "https://www.swtue.de/unternehmen/karriere/ausbildung-und-studium/ausbildung.html"
+  },
+  {
+    "id": "stadt-pruefung|Tübingen|Duales Studium|Stadtwerke Tübingen · Duales Studium",
+    "city": "Tübingen",
+    "category": "Duales Studium",
+    "title": "Stadtwerke Tübingen · Duales Studium",
+    "note": "Vergleiche die Angebote mit Praxis in Tübingen. Prüfe den Hochschulort je Studiengang.",
+    "link": "https://www.swtue.de/unternehmen/karriere/ausbildung-und-studium/duales-studium.html"
+  },
+  {
+    "id": "stadt-pruefung|Tübingen|Wohnen|Studierendenwerk Tübingen-Hohenheim · Onlinebewerbung",
+    "city": "Tübingen",
+    "category": "Wohnen",
+    "title": "Studierendenwerk Tübingen-Hohenheim · Onlinebewerbung",
+    "note": "Prüfe Voraussetzungen, Unterlagen und Bewerbungsablauf beim Betreiber.",
+    "link": "https://www.my-stuwe.de/wohnen/online-bewerbung/"
+  },
+  {
+    "id": "stadt-pruefung|Tübingen|ÖPNV & Pendeln|naldo · Fahrplanauskunft",
+    "city": "Tübingen",
+    "category": "ÖPNV & Pendeln",
+    "title": "naldo · Fahrplanauskunft",
+    "note": "Plane Hin- und Rückweg zum Betrieb oder Campus für einen typischen Werktag.",
+    "link": "https://www.naldo.de/fahrplan"
+  },
+
+{
     "id": "2026-11-11|Handys|Nothing Phone (4a)",
     "category": "Handys",
     "city": "Überregional",
@@ -1076,7 +1714,7 @@ const campusErgaenzungen=[
     "category": "Studium",
     "title": "Wirtschaftsinformatik · Hochschule Heilbronn",
     "segment": "HHN · in der Region, Studienort prüfen",
-    "note": "Hochschuloption im Raum Heilbronn. Studienort, Module und Zugangsvoraussetzungen vor der Bewerbung prüfen.",
+    "note": "Option für die Region Neckarsulm. Das Studium findet am Bildungscampus Heilbronn statt. Prüfe Module und Zugangsvoraussetzungen bei der Hochschule.",
     "link": "https://www.hs-heilbronn.de/de/wirtschaftsinformatik"
   },
   {
@@ -1665,9 +2303,9 @@ const campusErgaenzungen=[
     "id": "reise-ausbau|ÖPNV & Pendeln|Heilbronn · HNV-Fahrpreise 2026",
     "category": "ÖPNV & Pendeln",
     "city": "Heilbronn",
-    "title": "Heilbronn · HNV-Fahrpreise 2026",
-    "note": "Dokumentierten Preisstand und Gültigkeit für die geplante Fahrt prüfen.",
-    "link": "https://www.h3nv.de/fileadmin/pdf/fahrplanwechsel/fahrplan2026/fahrpreise_01-2026_vorabinfo.pdf"
+    "title": "Heilbronn · HNV Einzel- und Tageskarten",
+    "note": "Vergleiche die Einzel- und Tageskarten und prüfe die passende Preisstufe für deine Strecke.",
+    "link": "https://www.mein-hnv.de/abos-und-tickets/einzel-tageskarten/"
   },
   {
     "id": "reise-ausbau|ÖPNV & Pendeln|MVV-App",
