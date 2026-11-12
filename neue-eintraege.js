@@ -1,5 +1,40 @@
 // Nach Kategorien gruppierte Ergänzungen. Vorhandene IDs für Merklisten beibehalten.
 const campusErgaenzungen=[
+{
+  "id": "stadt-weg|Mittweida|Ausbildung|Klinik Mittweida · Pflegefachfrau oder Pflegefachmann",
+  "city": "Mittweida",
+  "category": "Ausbildung",
+  "title": "Klinik Mittweida · Pflegefachfrau oder Pflegefachmann",
+  "note": "Mit mittlerem Schulabschluss oder Hauptschulabschluss plus einer mindestens zweijährigen abgeschlossenen Berufsausbildung kannst du den Zugang prüfen. Die praktischen Einsätze finden überwiegend im Klinikum Mittweida statt. Frage nach dem nächsten verfügbaren Platz.",
+  "link": "https://www.lmkgmbh.de/karriere/ausbildung/pflegefachfrau-bzw-pflegefachmann",
+  "offerType": "Ausbildungsprofil"
+},
+{
+  "id": "stadt-weg|Mittweida|Studienstart|Hochschule Mittweida · Studieninformationstag",
+  "city": "Mittweida",
+  "category": "Studienstart",
+  "title": "Hochschule Mittweida · Studieninformationstag",
+  "note": "Prüfe das Programm und welche Studiengänge du vor Ort kennenlernen kannst.",
+  "link": "https://www.hs-mittweida.de/studieninformationstag/"
+},
+{
+  "id": "stadt-weg|Mittweida|Aktivitäten|Stadt Mittweida · Zschopautal",
+  "city": "Mittweida",
+  "category": "Aktivitäten",
+  "title": "Stadt Mittweida · Zschopautal",
+  "note": "Plane einen Ausflug mit den Streckenhinweisen der Stadt.",
+  "link": "https://www.mittweida.de/tourismus-kultur/mittweida-erleben/zschopautal/",
+  "activity": "Draußen"
+},
+{
+  "id": "stadt-weg|München|Ausbildung|Bayerisches Landesamt für Steuern · Fachinformatik Anwendungsentwicklung 2027",
+  "city": "München",
+  "category": "Ausbildung",
+  "title": "Bayerisches Landesamt für Steuern · Fachinformatik Anwendungsentwicklung 2027",
+  "note": "Das Landesamt nennt den Ausbildungsort München und den 30. November 2026 als Bewerbungsschluss. Prüfe Notenvoraussetzungen und das verlinkte Bewerbungsportal.",
+  "link": "https://www.lfst.bayern.de/ausbildung-karriere/ausbildung/fachinformatiker-in-anwendungsentwicklung",
+  "offerType": "Ausschreibung"
+},
   {
     "id": "stadt-weg|Marburg|Wohnen|Privatzimmerbörse",
     "city": "Marburg",

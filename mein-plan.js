@@ -45,6 +45,8 @@
     studium: ["Studium", "Vergleiche zwei Studienangebote", "Prüfe Zugang, Module, Bewerbungsfrist und mögliche Kosten. Nimm ein Schnupperangebot wahr.", school, "Reiche deine Bewerbung oder Einschreibung über das offizielle Hochschulportal ein.", "Wenn es nicht klappt, prüfe alternative Hochschulen, ein anderes Startsemester oder ein Praktikum zur Orientierung.", school]
   };
   let step = 0, uid = "", state = null;
+  let lastStepChange = -Infinity;
+  const stepIsSettling = () => performance.now() - lastStepChange < 300;
   const key = () => "campus-career-plan-v1:" + uid;
   const draftKey = () => key() + ":entwurf";
   const answers = () => Object.fromEntries(["route","interest","strength","horizon"].map(name =>
@@ -178,15 +180,16 @@
     }));
   }
 
-  previous.addEventListener("click", event => {
+  previous.addEventListener("click", () => {
     if (!step) return;
+    lastStepChange = performance.now();
     step--;
     saveDraft();
     showStep();
     focusStep();
   });
   form.addEventListener("click", event => {
-    if (event.detail <= 1) return;
+    if (event.detail <= 1 && !stepIsSettling()) return;
     event.preventDefault();
     event.stopPropagation();
   }, true);
@@ -196,7 +199,15 @@
   form.addEventListener("change", () => { saveDraft(); refreshPreview(); });
   form.addEventListener("submit", event => {
     event.preventDefault();
-    if (step < steps.length) { step++; saveDraft(); showStep(); focusStep(); return; }
+    if (stepIsSettling() || form.hidden) return;
+    if (step < steps.length) {
+      lastStepChange = performance.now();
+      step++;
+      saveDraft();
+      showStep();
+      focusStep();
+      return;
+    }
     const choice = answers();
     if (!valid(choice)) return;
     const same = state && state.route === choice.route && state.interest === choice.interest && state.horizon === choice.horizon;
@@ -222,6 +233,7 @@
   window.addEventListener("campus-account", event => {
     uid = event.detail?.uid ?? "";
     state = null;
+    lastStepChange = -Infinity;
     for (const id of ["planSummary", "planHorizonText", "planCompletion"]) {
       document.getElementById(id).textContent = "";
     }
