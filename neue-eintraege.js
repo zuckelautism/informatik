@@ -1,5 +1,32 @@
 // Nach Kategorien gruppierte Ergänzungen. Vorhandene IDs für Merklisten beibehalten.
 const campusErgaenzungen=[
+  {
+    "id": "stadt-weg|Tübingen|Ausbildung|UKT Elektronik 2027",
+    "city": "Tübingen",
+    "category": "Ausbildung",
+    "title": "Universitätsklinikum Tübingen · Elektronik für Energie- und Gebäudetechnik 2027",
+    "note": "Das Klinikum nennt einen guten Realschulabschluss oder einen sehr guten Hauptschulabschluss, den 1. September 2027 als Start und den 31. Dezember 2026 als Bewerbungsschluss. Prüfe den aktuellen Status im Jobportal.",
+    "link": "https://jobs.medizin.uni-tuebingen.de/Job/7922/Ausbildung-Elektronikerin---Elektroniker",
+    "offerType": "Ausschreibung"
+  },
+  {
+    "id": "stadt-weg|Tübingen|Aktivitäten|Museum Alte Kulturen",
+    "city": "Tübingen",
+    "category": "Aktivitäten",
+    "title": "Schloss Hohentübingen · Museum Alte Kulturen",
+    "note": "Prüfe Öffnungszeiten und Anfahrt zum Museum der Universität.",
+    "link": "https://www.unimuseum.uni-tuebingen.de/de/schloss-hohentuebingen/museum-alte-kulturen",
+    "activity": "Kultur"
+  },
+  {
+    "id": "stadt-weg|Neckarsulm|Ausbildung|Audi Mechatronik 2027",
+    "city": "Neckarsulm",
+    "category": "Ausbildung",
+    "title": "Audi Neckarsulm · Mechatronikerin oder Mechatroniker 2027",
+    "note": "Audi nennt mindestens Hauptschulabschluss und den 10. September 2027 als Start. Prüfe im Bewerbungsformular, ob dieses Angebot noch offen ist.",
+    "link": "https://audi.bewerbernavigator.de/boi/bew2?sid=18490",
+    "offerType": "Ausschreibung"
+  },
 {
   "id": "stadt-weg|Mittweida|Ausbildung|Klinik Mittweida · Pflegefachfrau oder Pflegefachmann",
   "city": "Mittweida",
@@ -218,8 +245,8 @@ const campusErgaenzungen=[
   "city": "Neckarsulm",
   "category": "Studienstart",
   "title": "Hochschule Heilbronn · Vorlesungen am Bildungscampus ausprobieren",
-  "note": "Die Schnuppervorlesung findet in Heilbronn statt. Wähle auf der Programmseite den Bildungscampus Heilbronn, prüfe den nächsten veröffentlichten Termin und plane die Fahrt von Neckarsulm.",
-  "link": "https://www.hs-heilbronn.de/de/studieren-probieren"
+  "note": "Der Schnuppertag findet in Heilbronn statt. Wähle Bildungscampus Heilbronn, frage über das Hochschulangebot einen Termin an und plane dann die Fahrt von Neckarsulm.",
+  "link": "https://www.hs-heilbronn.de/de/student-for-a-day"
 },
 {
   "id": "stadt-weg|Neckarsulm|Ausbildung|Audi Neckarsulm · Stellenportal zur Ausbildungsrunde 2027",
@@ -789,7 +816,8 @@ const campusErgaenzungen=[
     "city": "Neckarsulm",
     "category": "Ausbildung",
     "title": "Stadt Neckarsulm · Verwaltungsfachangestellte",
-    "note": "Prüfe Inhalte, Zugang und Ausschreibungen bei der Stadt.",
+    "note": "Das städtische Profil nennt mindestens die mittlere Reife mit guten Noten, besonders in Deutsch. Die Praxis ist im Rathaus Neckarsulm, die Berufsschule in Heilbronn. Prüfe offene Plätze im Karriereportal.",
+    "offerType": "Ausbildungsprofil",
     "link": "https://karriereportal.neckarsulm.de/ausbildung-und-studium/ausbildung-verwaltungsfachangestellter-kommunalverwaltung/"
   },
   {
@@ -898,7 +926,7 @@ const campusErgaenzungen=[
     "category": "ÖPNV & Pendeln",
     "title": "naldo · Fahrplanauskunft",
     "note": "Plane Hin- und Rückweg zum Betrieb oder Campus für einen typischen Werktag.",
-    "link": "https://www.naldo.de/fahrplan"
+    "link": "https://www.naldo.de/fahrplan/app/"
   },
 
 {
@@ -1950,7 +1978,8 @@ const campusErgaenzungen=[
     "category": "Ausbildung",
     "title": "Audi Neckarsulm · Ausbildungsberufe",
     "segment": "Audi · Standort Neckarsulm",
-    "note": "Ausbildungsberufe und Bewerbungsfristen beim Standort prüfen. Die Übersicht zeigt auch, welche Stellen für deinen Jahrgang ausgeschrieben sind.",
+    "note": "Vergleiche die Berufsprofile und Voraussetzungen am Standort. Wechsle für den aktuellen Status in die jeweilige Ausschreibung im Audi-Stellenportal.",
+    "offerType": "Ausbildungsübersicht",
     "link": "https://www.audi.com/de/deine-ausbildung-in-neckarsulm-17491"
   },
   {
