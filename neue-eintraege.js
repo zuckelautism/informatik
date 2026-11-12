@@ -1,5 +1,225 @@
 // Nach Kategorien gruppierte Ergänzungen. Vorhandene IDs für Merklisten beibehalten.
 const campusErgaenzungen=[
+  {
+    "id": "stadt-weg|Marburg|Wohnen|Privatzimmerbörse",
+    "city": "Marburg",
+    "category": "Wohnen",
+    "title": "Studierendenwerk Marburg · Privatzimmerbörse",
+    "note": "Prüfe private Zimmerangebote parallel zur Wohnheimbewerbung und vergleiche den Weg zum Campus.",
+    "link": "https://studierendenwerk-marburg.de/wohnen/privatzimmerboerse/"
+  },
+{
+  "id": "stadt-weg|Köln|Wohnen|Universität zu Köln · Wohnen für Hilfe",
+  "city": "Köln",
+  "category": "Wohnen",
+  "title": "Universität zu Köln · Wohnen für Hilfe",
+  "note": "Prüfe, ob eine Wohnpartnerschaft mit Hilfe im Alltag für dich infrage kommt.",
+  "link": "https://www.hf.uni-koeln.de/33274"
+},
+{
+  "id": "stadt-weg|Leipzig|Aktivitäten|Stadtgeschichtliches Museum · Haus Böttchergäßchen",
+  "city": "Leipzig",
+  "category": "Aktivitäten",
+  "title": "Stadtgeschichtliches Museum · Haus Böttchergäßchen",
+  "note": "Prüfe die aktuellen Sonderausstellungen und Besuchszeiten.",
+  "link": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/unsere-haeuser/haus-boettchergaesschen/",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Leipzig|Ausbildung|Leipziger Verkehrsbetriebe · Fachkraft im Fahrbetrieb 2027",
+  "city": "Leipzig",
+  "category": "Ausbildung",
+  "title": "Leipziger Verkehrsbetriebe · Fachkraft im Fahrbetrieb 2027",
+  "note": "Die Ausschreibung nennt den Zugang unabhängig vom Schulabschluss. Prüfe im Stellenangebot, ob die Bewerbung weiterhin möglich ist.",
+  "link": "https://www.l.de/karriere/stellenangebote/angebot/1669179-ausbildung-zur-fachkraft-im-fahrbetrieb-fuer-bus-oder-strassenbahn-m-w-d-2027/?no_cache=1",
+  "offerType": "Ausschreibung"
+},
+{
+  "id": "stadt-weg|Köln|Ausbildung|Stadt Köln · Verwaltungsfachangestellte 2027",
+  "city": "Köln",
+  "category": "Ausbildung",
+  "title": "Stadt Köln · Verwaltungsfachangestellte 2027",
+  "note": "Die Stadt nennt die Fachoberschulreife als Zugang und den 13. Dezember 2026 als Bewerbungsfrist. Prüfe den aktuellen Status im Stellenportal.",
+  "link": "https://karriere.stadt-koeln.de/job/stadtweit-Ausbildung-zumzur-Verwaltungsfachangestellten-%28mwd%29/1414231133/",
+  "offerType": "Ausschreibung"
+},
+{
+  "id": "stadt-weg|Köln|ÖPNV & Pendeln|KVB · Fahrplanauskunft",
+  "city": "Köln",
+  "category": "ÖPNV & Pendeln",
+  "title": "KVB · Fahrplanauskunft",
+  "note": "Prüfe die Fahrt zur TH Köln, Campus Südstadt, Ubierring 48. Wähle im Fahrplan deine Ankunftszeit und berücksichtige den Fußweg.",
+  "link": "https://www.kvb.koeln/fahrtinfo/fahrplanauskunft/index.html"
+},
+{
+  "id": "stadt-weg|Köln|Ausbildung|Stadt Köln · Fachangestellte für Medien- und Informationsdienste",
+  "city": "Köln",
+  "category": "Ausbildung",
+  "title": "Stadt Köln · Fachangestellte für Medien- und Informationsdienste",
+  "note": "Für die Ausbildung im Historischen Archiv mit Rheinischem Bildarchiv ist die Fachoberschulreife ein möglicher Zugang. Das Profil beschreibt Archiv und Bildagentur und verweist für freie Plätze auf die Stadt.",
+  "link": "https://www.stadt-koeln.de/leben-in-koeln/kultur/historisches-archiv-mit-rheinischem-bildarchiv/ausbildung-im-historischen-archiv-mit-rheinischem-bildarchiv",
+  "offerType": "Ausbildungsprofil"
+},
+{
+  "id": "stadt-weg|Köln|Aktivitäten|Museum Ludwig · Besuch planen",
+  "city": "Köln",
+  "category": "Aktivitäten",
+  "title": "Museum Ludwig · Besuch planen",
+  "note": "Schlechtwetterziel am Dom. Prüfe Öffnungszeiten und Eintritt vor dem Besuch.",
+  "link": "https://www.museum-ludwig.de/de/besuch/informationen/tickets-oeffnungszeiten",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Leipzig|Studium|Universität Leipzig · Geschichte B.A.",
+  "city": "Leipzig",
+  "category": "Studium",
+  "title": "Universität Leipzig · Geschichte B.A.",
+  "note": "Prüfe Studieninhalte, Zugang und Bewerbung im Studienprofil der Universität.",
+  "link": "https://www.leipzig-studieren.de/studienangebot/studiengang/course/show/geschichte-b-a",
+  "topic": "Geschichte"
+},
+{
+  "id": "stadt-weg|Leipzig|ÖPNV & Pendeln|MDV · Fahrplanauskunft Leipzig",
+  "city": "Leipzig",
+  "category": "ÖPNV & Pendeln",
+  "title": "MDV · Fahrplanauskunft Leipzig",
+  "note": "Prüfe die Ankunft am Campus Augustusplatz. Vergleiche Fußwege und Umstiege für zwei mögliche Wohnadressen.",
+  "link": "https://www.mdv.de/fahrplanauskunft/verbindung-suchen"
+},
+{
+  "id": "stadt-weg|Leipzig|Wohnen|Studentenwerk Leipzig · RaumTeiler",
+  "city": "Leipzig",
+  "category": "Wohnen",
+  "title": "Studentenwerk Leipzig · RaumTeiler",
+  "note": "Als eingeschriebene Person findest du hier eine Alternative zur Wohnheimbewerbung und Hinweise zur privaten Wohnungssuche.",
+  "link": "https://www.studentenwerk-leipzig.de/wohnen/wohnraumsuchende/"
+},
+{
+  "id": "stadt-weg|Marburg|ÖPNV & Pendeln|AStA Marburg · Semesterticket",
+  "city": "Marburg",
+  "category": "ÖPNV & Pendeln",
+  "title": "AStA Marburg · Semesterticket",
+  "note": "Prüfe Aktivierung, Geltungsbereich und die Chipkarte für Studierende ohne geeignetes Smartphone.",
+  "link": "https://asta-marburg.de/infos/semesterticket/"
+},
+{
+  "id": "stadt-weg|Marburg|Aktivitäten|Landgrafenschloss · Museum für Kulturgeschichte",
+  "city": "Marburg",
+  "category": "Aktivitäten",
+  "title": "Landgrafenschloss · Schlossbesuch",
+  "note": "Prüfe Schlossrundgänge und Sonderausstellungen bei der Universität. Die kulturgeschichtliche Sammlung im Wilhelmsbau ist laut Universität wegen Sanierung geschlossen.",
+  "link": "https://www.uni-marburg.de/de/museum/landgrafenschloss",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Marburg|Ausbildung|Stadt Marburg · Verwaltungsfachangestellte",
+  "city": "Marburg",
+  "category": "Ausbildung",
+  "title": "Stadt Marburg · Verwaltungsfachangestellte",
+  "note": "Das Profil nennt einen guten mittleren Bildungsabschluss und erläutert den Wechsel zwischen Stadtverwaltung, Berufsschule und Verwaltungsseminar.",
+  "link": "https://www.marburg.de/downloads/datei/YjI1ZWQ4ODc2NmE4OGQ2Y2U4M2cyRzR4Sk5RNmFSZit5T1pobzVOdEErTEZYMHhqN0Q0ZE1oT3hoeVJzQ1Vqd1JJQVd5YUVBT1RMbmZNTVNRcmZqNDl2ZDFzQ2RNeW5PK2lvTFJ2NjIzN29NeStYWTV3ZGc3SngyRUlJc3hHTS8wVjdBOEU2ZHpWUHN2SXY0",
+  "offerType": "Ausbildungsprofil"
+},
+{
+  "id": "stadt-weg|Mittweida|Wohnen|Studentenwerk Freiberg · Mietportal für Mittweida",
+  "city": "Mittweida",
+  "category": "Wohnen",
+  "title": "Studentenwerk Freiberg · Mietportal für Mittweida",
+  "note": "Wähle Mittweida im Mietportal. Laut Wohn-FAQ brauchst du die Immatrikulationsbescheinigung spätestens beim Vertragsabschluss.",
+  "link": "https://mietportal.studentenwerk-freiberg.de/ipack4/index.html"
+},
+{
+  "id": "stadt-weg|Mittweida|Wohnen|Studentenwerk Freiberg · Privatzimmer in Mittweida",
+  "city": "Mittweida",
+  "category": "Wohnen",
+  "title": "Studentenwerk Freiberg · Privatzimmer in Mittweida",
+  "note": "Prüfe die private Zimmervermittlung als Alternative zum Wohnheim.",
+  "link": "https://www.studentenwerk-freiberg.de/wohnen/in-mittweida-wohnen/privatzimmervermittlung/"
+},
+{
+  "id": "stadt-weg|Mittweida|Studienstart|Hochschule Mittweida · Orientierung zum Studienstart",
+  "city": "Mittweida",
+  "category": "Studienstart",
+  "title": "Hochschule Mittweida · Orientierung zum Studienstart",
+  "note": "Prüfe Zugang, Bewerbungsweg und Alltag anhand der Fragen zum Studienstart.",
+  "link": "https://www.hs-mittweida.de/studieren/tipps-fuer-deinen-studienstart/"
+},
+{
+  "id": "stadt-weg|Mittweida|Ausbildung|Landkreis Mittelsachsen · Verwaltungsfachangestellte",
+  "city": "Mittweida",
+  "category": "Ausbildung",
+  "title": "Landkreis Mittelsachsen · Verwaltungsfachangestellte",
+  "note": "Das Ausbildungsprofil erklärt Aufgaben, Ablauf und Zugang beim Landkreis. Den tatsächlichen Einsatzort und freie Plätze prüfst du in der jeweiligen Ausschreibung.",
+  "link": "https://www.landkreis-mittelsachsen.de/fileadmin/Redakteure/Arbeitgeber/handout-verwaltungsfachangestellte-2024.pdf",
+  "offerType": "Ausbildungsprofil"
+},
+{
+  "id": "stadt-weg|Mittweida|ÖPNV & Pendeln|Hochschule Mittweida · FAQ zum Semesterticket",
+  "city": "Mittweida",
+  "category": "ÖPNV & Pendeln",
+  "title": "Hochschule Mittweida · FAQ zum Semesterticket",
+  "note": "Die Hochschul-FAQ nennt für Mittweida kein Semesterticket. Wenn du pendelst, prüfe die dort verlinkten Tarifoptionen und ihre Bedingungen.",
+  "link": "https://blog.hs-mittweida.de/faq/"
+},
+{
+  "id": "stadt-weg|München|Duales Studium|Stadt München · Wirtschaftsinformatik kommunal B.Sc.",
+  "city": "München",
+  "category": "Duales Studium",
+  "title": "Stadt München · Wirtschaftsinformatik kommunal B.Sc.",
+  "note": "Prüfe Studienaufbau, Zugang und Praxisphasen im Studienprofil. Den Bewerbungsstatus für deinen Jahrgang findest du in der aktuellen Ausschreibung.",
+  "link": "https://stadt.muenchen.de/infos/studium-wirtschaftsinformatik-kommunal.html"
+},
+{
+  "id": "stadt-weg|München|Ausbildung|Stadt München · Verwaltungsfachangestellte",
+  "city": "München",
+  "category": "Ausbildung",
+  "title": "Stadt München · Fachinformatik Systemintegration",
+  "note": "Das Berufsprofil nennt den qualifizierenden Mittelschulabschluss oder einen höheren Abschluss. Die Stadt erklärt, wie du dich bewirbst. Prüfe offene Plätze im Stellenportal.",
+  "link": "https://stadt.muenchen.de/infos/ausbildung-fachinformatiker-stemintegration.html",
+  "offerType": "Ausbildungsprofil"
+},
+{
+  "id": "stadt-weg|Neckarsulm|Studienstart|Hochschule Heilbronn · Vorlesungen am Bildungscampus ausprobieren",
+  "city": "Neckarsulm",
+  "category": "Studienstart",
+  "title": "Hochschule Heilbronn · Vorlesungen am Bildungscampus ausprobieren",
+  "note": "Die Schnuppervorlesung findet in Heilbronn statt. Wähle auf der Programmseite den Bildungscampus Heilbronn, prüfe den nächsten veröffentlichten Termin und plane die Fahrt von Neckarsulm.",
+  "link": "https://www.hs-heilbronn.de/de/studieren-probieren"
+},
+{
+  "id": "stadt-weg|Neckarsulm|Ausbildung|Audi Neckarsulm · Stellenportal zur Ausbildungsrunde 2027",
+  "city": "Neckarsulm",
+  "category": "Ausbildung",
+  "title": "Audi Neckarsulm · Stellenportal zur Ausbildungsrunde 2027",
+  "note": "Am 12.11.2026 listete das Audi-Portal Ausbildungsangebote mit Start im September 2027. Der Status gilt pro Beruf. Prüfe im einzelnen Angebot, ob die Bewerbung noch möglich ist.",
+  "link": "https://audi.bewerbernavigator.de/boi/angebote?rubric=Ausbildung+Neckarsulm",
+  "offerType": "Stellensuche"
+},
+{
+  "id": "stadt-weg|Tübingen|ÖPNV & Pendeln|naldo · Tickets für Studierende",
+  "city": "Tübingen",
+  "category": "ÖPNV & Pendeln",
+  "title": "naldo · Tickets für Studierende",
+  "note": "Vergleiche Semesterticket, Anschluss-Semesterticket und D-Ticket JugendBW. Prüfe im Tarif, welche Hochschule und Strecke abgedeckt sind.",
+  "link": "https://www.naldo.de/tickets/studierende/"
+},
+{
+  "id": "stadt-weg|Tübingen|Wohnen|Studierendenwerk · Privatzimmervermittlung",
+  "city": "Tübingen",
+  "category": "Wohnen",
+  "title": "Studierendenwerk · Privatzimmervermittlung",
+  "note": "Suche parallel zur Wohnheimbewerbung nach privaten Zimmerangeboten und prüfe die Bedingungen der Vermittlung.",
+  "link": "https://www.my-stuwe.de/wohnen/privatzimmervermittlung/"
+},
+{
+  "id": "stadt-weg|Tübingen|Aktivitäten|Stadtmuseum Tübingen · Besuch im Kornhaus",
+  "city": "Tübingen",
+  "category": "Aktivitäten",
+  "title": "Stadtmuseum Tübingen · Besuch im Kornhaus",
+  "note": "Prüfe Besuchszeiten, Anfahrt und Führungen direkt beim Stadtmuseum.",
+  "link": "https://www.stadtmuseum-tuebingen.de/dein-besuch/",
+  "activity": "Kultur"
+},
 {
     "id": "stadt-pruefung|Berlin|Ausbildung|BVG · Ausbildungsberufe",
     "city": "Berlin",
@@ -231,6 +451,7 @@ const campusErgaenzungen=[
   },
   {
     "id": "stadt-pruefung|Leipzig|Ausbildung|Leipziger Gruppe · Ausbildung",
+    "offerType": "Ausbildungsübersicht",
     "city": "Leipzig",
     "category": "Ausbildung",
     "title": "Leipziger Gruppe · Ausbildung",
@@ -288,6 +509,7 @@ const campusErgaenzungen=[
   },
   {
     "id": "stadt-pruefung|Mittweida|Ausbildung|Stadt Mittweida · Ausbildungsangebote",
+    "offerType": "Ausbildungsübersicht",
     "city": "Mittweida",
     "category": "Ausbildung",
     "title": "Stadt Mittweida · Ausbildungsangebote",
@@ -329,6 +551,7 @@ const campusErgaenzungen=[
   },
   {
     "id": "stadt-pruefung|Köln|Ausbildung|Stadt Köln · Ausbildungsangebot",
+    "offerType": "Ausbildungsübersicht",
     "city": "Köln",
     "category": "Ausbildung",
     "title": "Stadt Köln · Ausbildungsangebot",
@@ -372,12 +595,13 @@ const campusErgaenzungen=[
     "id": "stadt-pruefung|Leipzig|Studienstart|Uni Leipzig · Schnupperangebote für Geschichte, Kunst und Regionalwissenschaften",
     "city": "Leipzig",
     "category": "Studienstart",
-    "title": "Uni Leipzig · Schnupperangebote für Geschichte, Kunst und Regionalwissenschaften",
-    "note": "Prüfe beim Anbieter, welche Veranstaltungen zugänglich sind und wann sie stattfinden.",
-    "link": "https://www.gkr.uni-leipzig.de/studium/vor-dem-studium/tag-der-offenen-tuer"
+    "title": "HTWK Leipzig · Schnupperangebote und Museologie",
+    "note": "Die HTWK Leipzig bietet Einblicke in Studiengänge, darunter Museologie. Öffne das passende Format und prüfe den nächsten Termin sowie die Anmeldung.",
+    "link": "https://www.htwk-leipzig.de/studieren/vor-dem-studium/schnuppertage"
   },
   {
     "id": "stadt-pruefung|Leipzig|Ausbildung|HWK Leipzig · Lehrstellen und Praktika",
+    "offerType": "Stellensuche",
     "city": "Leipzig",
     "category": "Ausbildung",
     "title": "HWK Leipzig · Lehrstellen und Praktika",
@@ -402,6 +626,7 @@ const campusErgaenzungen=[
   },
   {
     "id": "stadt-pruefung|Marburg|Ausbildung|Stadt Marburg · Ausbildung und duales Studium",
+    "offerType": "Ausbildungsübersicht",
     "city": "Marburg",
     "category": "Ausbildung",
     "title": "Stadt Marburg · Ausbildung und duales Studium",
@@ -508,6 +733,7 @@ const campusErgaenzungen=[
   },
   {
     "id": "stadt-pruefung|München|Ausbildung|Stadt München · Ausbildung und duales Studium",
+    "offerType": "Ausbildungsübersicht",
     "city": "München",
     "category": "Ausbildung",
     "title": "Stadt München · Ausbildung und duales Studium",
@@ -516,6 +742,7 @@ const campusErgaenzungen=[
   },
   {
     "id": "stadt-pruefung|München|Ausbildung|HWK München · Praktikums- und Lehrstellenbörse",
+    "offerType": "Stellensuche",
     "city": "München",
     "category": "Ausbildung",
     "title": "HWK München · Praktikums- und Lehrstellenbörse",
@@ -583,6 +810,7 @@ const campusErgaenzungen=[
   },
   {
     "id": "stadt-pruefung|Tübingen|Ausbildung|Bundesagentur für Arbeit · Ausbildungssuche Tübingen",
+    "offerType": "Stellensuche",
     "city": "Tübingen",
     "category": "Ausbildung",
     "title": "Bundesagentur für Arbeit · Ausbildungssuche Tübingen",
@@ -1209,7 +1437,7 @@ const campusErgaenzungen=[
     "topic": "Rechtswissenschaft",
     "field": "gesellschaft",
     "note": "Du lernst juristische Fallbearbeitung im Zivilrecht, Strafrecht und öffentlichen Recht.",
-    "link": "https://www.jura.uni-leipzig.de/studium/rechtswissenschaft-staatsexamen"
+    "link": "https://www.uni-leipzig.de/en/studying/prospective-students/courses-of-study/degree-programme?cHash=51ce884cdf02a27f0487ac612cf35f2c&tx_t3study%5Baction%5D=show&tx_t3study%5Bcontroller%5D=Course&tx_t3study%5Bcourse%5D=124"
   },
   {
     "id": "bildung|Aachen|elektrotechnik",

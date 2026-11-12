@@ -4,12 +4,12 @@
  <meta name="viewport" content="width=device-width,initial-scale=1">
  <title>Dein Plan nach der Schule · Campus-Kompass</title>
  <script src="theme.js?v=coastal1"></script>
- <link rel="stylesheet" href="kompass.css?v=wegentwurf2">
+ <link rel="stylesheet" href="kompass.css?v=stadtweg1">
  
  
 <script src="firebase-config.js?v=google1" defer></script>
  <script src="campus-basis.js?v=review1" defer></script>
-<script src="mein-plan.js?v=wegentwurf3" defer></script>
+<script src="mein-plan.js?v=stadtweg1" defer></script>
 <script src="campus-shell.js?v=review1" defer></script>
 </head><body class="campus-locked">
  <section class="campus-login" aria-labelledby="campusLoginTitle">
@@ -49,8 +49,8 @@
  </div></header>
 <main class="wrap">
 <section class="city-intro" aria-labelledby="planTitle">
- <p class="eyebrow">Schritt für Schritt</p><h2 id="planTitle">Dein Plan nach der Schule</h2>
- <p>Stell deinen Weg zusammen. Jede Auswahl ist freiwillig. Du siehst vor dem Speichern, was du als Erstes tun kannst.</p>
+ <h2 id="planTitle">Dein Wegplan</h2>
+ <p>Stell deinen Weg nach der Schule zusammen. Du kannst jede Entscheidung offenlassen.</p>
  </section>
  <form id="planForm" class="finder plan-builder">
   <div class="plan-meter"><p class="eyebrow" id="planProgress" role="status">Schritt 1 von 5</p><progress id="planMeter" max="5" value="1" aria-label="Fortschritt bei der Auswahl"></progress></div>
@@ -84,7 +84,18 @@
   </fieldset>
   <section class="plan-preview" aria-labelledby="planPreviewTitle">
    <h3 id="planPreviewTitle" tabindex="-1">Deine Vorschau</h3>
-   <p id="planPreviewProfile" aria-live="polite"></p><p id="planPreviewAction"></p>
+   <dl id="planPreviewProfile" class="plan-profile">
+    <div><dt>Startpunkt</dt><dd></dd></div>
+    <div><dt>Interesse</dt><dd></dd></div>
+    <div><dt>Stärke</dt><dd></dd></div>
+    <div><dt>Zeitrahmen</dt><dd></dd></div>
+    <div><dt>Stadt</dt><dd></dd></div>
+   </dl>
+   <h4>Heute</h4><p id="planPreviewAction"></p>
+   <div id="planPreviewRoute" hidden>
+    <h4>Deine Etappen</h4><ol id="planPreviewStages"></ol>
+    <h4>Plan B</h4><p id="planPreviewBackup"></p>
+   </div>
   </section>
   <div class="tools plan-controls"><button type="button" id="planBack" class="btn ghost" hidden>Zurück</button><button type="submit" id="planForward" class="btn">Weiter</button></div>
  </form>

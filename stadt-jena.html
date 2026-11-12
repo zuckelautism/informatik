@@ -4,11 +4,11 @@
  <meta name="viewport" content="width=device-width,initial-scale=1">
  <title>Jena · Campus-Kompass</title>
  <script src="theme.js?v=coastal1"></script>
- <link rel="stylesheet" href="kompass.css?v=plan1">
+ <link rel="stylesheet" href="kompass.css?v=stadtweg1">
  <script src="pruefstand.js" defer></script>
  <script src="campus-basis.js?v=review1" defer></script>
- <script src="neue-eintraege.js?v=bilder1" defer></script>
- <script src="katalog.js?v=bilder1" defer></script>
+ <script src="neue-eintraege.js?v=stadtweg1" defer></script>
+ <script src="katalog.js?v=stadtweg1" defer></script>
  
 <script src="firebase-config.js?v=google1" defer></script>
  <script src="campus-shell.js?v=review1" defer></script>
@@ -51,6 +51,14 @@
 <main class="wrap">
 <section id="catalog" data-category="Stadt" data-city="Jena" aria-labelledby="cityTitle">
  <div class="city-intro"><div class="eyebrow">Thüringen</div><h2 id="cityTitle">Jena</h2><p>Studienangebote und lokale Anlaufstellen rund um Jena.</p></div>
+<section class="city-start" aria-labelledby="cityStartTitle">
+ <h3 id="cityStartTitle">Heute in Jena · Plane deinen Weg zum Campus</h3>
+ <ol>
+  <li><a href="https://www.stw-thueringen.de/wohnen/wohnheime.html">Zur Wohnheimbewerbung</a>. Prüfe die Voraussetzungen und notiere eine Wohnheimadresse.</li>
+  <li><a href="https://www.stadtwerke-jena.de/nahverkehr/privatkunden/fahrplaene">Fahrt zum Campus suchen</a>. Gib die Wohnadresse als Start und Universität Jena, Campus Ernst-Abbe-Platz als Beispielziel ein. Wähle einen Werktag mit deiner üblichen Ankunftszeit. Notiere die gesamte Dauer mit Fußwegen und Umstiegen.</li>
+  <li><a href="https://www.vmt-thueringen.de/tickets/">Ticketbedingungen prüfen</a>. Prüfe, welcher Tarif für deine Hochschule oder Ausbildung und die gesamte Strecke gilt.</li>
+ </ol>
+</section>
  <div class="fields">
   <label>Bereich<select id="cityCategory"><option value="all">Alle Bereiche</option><option>Studium</option><option>Duales Studium</option><option>Ausbildung</option><option>Wohnen</option><option>Fahrschulen</option><option>Aktivitäten</option><option>ÖPNV &amp; Pendeln</option><option>Unterkünfte</option><option>Reiseideen</option><option>Studienstart</option></select></label>
   <label>Suche<input id="catalogQuery" type="search" placeholder="Studiengang, Betrieb, Wohnung …"></label>

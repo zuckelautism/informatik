@@ -474,6 +474,18 @@ input, select, .site-menu summary, .btn.ghost { border-color: var(--control-line
 .campus-home :focus-visible { outline-color: #fff; }
 .plan-preview { margin: 16px 0; padding: 16px; border-left: 3px solid var(--accent); background: var(--bg); overflow-wrap: anywhere; }
 .plan-preview h3, .plan-preview p { margin: 0 0 6px; }
+.plan-profile { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr)); gap: 8px; margin: 12px 0; }
+.plan-profile > div { padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; }
+.plan-profile dt { color: var(--muted); font-size: .8rem; }
+.plan-profile dd { margin: 2px 0 0; font-weight: 650; }
+.plan-preview h4 { margin: 12px 0 4px; }
+.plan-preview ol { margin: 4px 0 0; padding-inline-start: 1.5rem; }
+.plan-builder .plan-choice { padding: 10px 12px; border-radius: 10px; }
+.city-start { margin: 0 0 18px; padding: clamp(12px, 2.5vw, 22px); border: 1px solid var(--line); border-radius: 12px; }
+.city-start h3 { margin: 0 0 8px; }
+.city-start ol { margin: 0; padding-inline-start: 1.4rem; }
+.city-start li + li { margin-block-start: 6px; }
+.city-empty { grid-column: 1 / -1; }
 .plan-choice:has(input:focus-visible) { outline: 3px solid var(--accent); outline-offset: 2px; }
 .plan-choice, .plan-builder .btn, .campus-home .btn { min-height: 44px; }
 

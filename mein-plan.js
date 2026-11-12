@@ -13,6 +13,10 @@
   const reset = document.getElementById("planReset");
   const hint = document.getElementById("planHint");
   const preview = document.getElementById("planPreviewTitle");
+  const previewProfile = document.getElementById("planPreviewProfile");
+  const previewAction = document.getElementById("planPreviewAction");
+  const previewStages = document.getElementById("planPreviewStages");
+  const previewBackup = document.getElementById("planPreviewBackup");
   const cityField = document.getElementById("planCity");
   const strengths = {
     offen: "",
@@ -64,14 +68,23 @@
   function refreshPreview() {
     const choice = answers();
     if (!valid(choice)) return;
-    const [,title,detail] = milestones(choice)[0];
-    document.getElementById("planPreviewProfile").textContent =
-      [routes[choice.route][0], interestOptions[choice.interest][0],
-       form.querySelector("[name=strength]:checked")?.closest("label")?.textContent.trim(),
-       choice.horizon === "bald" ? "Start möglichst bald" : "Starttermin offen",
-       cityField.value && cityField.selectedOptions[0]?.textContent,
-       "Erste Aufgabe: " + title].filter(Boolean).join(" · ");
-    document.getElementById("planPreviewAction").textContent = title + " · " + detail;
+    const items = milestones(choice);
+    const [, title, detail] = items[0];
+    const values = [
+      routes[choice.route][0],
+      choice.interest === "offen" ? "Noch offen" : interestOptions[choice.interest][0],
+      choice.strength === "offen" ? "Noch offen" : form.querySelector("[name=strength]:checked")?.closest("label")?.textContent.trim(),
+      choice.horizon === "bald" ? "Möglichst bald" : "Noch offen",
+      cityField.value ? cityField.selectedOptions[0]?.textContent : "Noch offen"
+    ];
+    previewProfile.querySelectorAll("dd").forEach((field, index) => { field.textContent = values[index] ?? "Noch offen"; });
+    previewAction.textContent = title + " · " + detail;
+    previewStages.replaceChildren(...items.slice(1, -1).map(([, heading]) => {
+      const item = document.createElement("li");
+      item.textContent = heading;
+      return item;
+    }));
+    previewBackup.textContent = routes[choice.route][5];
   }
   const store = () => {
     if (!uid) return;
@@ -87,6 +100,7 @@
     previous.hidden = step === 0;
     forward.textContent = step === steps.length ? "Meinen Plan speichern" : step === steps.length - 1 ? "Zur Vorschau" : "Weiter";
     form.classList.toggle("plan-review",step===steps.length);
+    document.getElementById("planPreviewRoute").hidden = step !== steps.length;
     document.getElementById("planMeter").value = Math.min(step + 1,steps.length);
     refreshPreview();
   }
@@ -164,7 +178,21 @@
     }));
   }
 
-  previous.addEventListener("click", () => { step--; saveDraft(); showStep(); focusStep(); });
+  previous.addEventListener("click", event => {
+    if (!step) return;
+    step--;
+    saveDraft();
+    showStep();
+    focusStep();
+  });
+  form.addEventListener("click", event => {
+    if (event.detail <= 1) return;
+    event.preventDefault();
+    event.stopPropagation();
+  }, true);
+  form.addEventListener("keydown", event => {
+    if (event.repeat && (event.key === "Enter" || event.key === " ")) event.preventDefault();
+  });
   form.addEventListener("change", () => { saveDraft(); refreshPreview(); });
   form.addEventListener("submit", event => {
     event.preventDefault();
@@ -194,6 +222,14 @@
   window.addEventListener("campus-account", event => {
     uid = event.detail?.uid ?? "";
     state = null;
+    for (const id of ["planSummary", "planHorizonText", "planCompletion"]) {
+      document.getElementById(id).textContent = "";
+    }
+    timeline.replaceChildren();
+    nextAction.textContent = "";
+    nextDetail.textContent = "";
+    nextLink.removeAttribute("href");
+    nextLink.hidden = true;
     hint.textContent = "";
     form.reset();
     step = 0;

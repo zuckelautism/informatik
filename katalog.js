@@ -81,18 +81,20 @@ const campusEntries=(()=>{
  const normalized=value=>value.toLocaleLowerCase("de").normalize("NFD").replace(/\p{Diacritic}/gu,"");
  function cardPhoto(item){
   const existing=catalogPhotos.get(item.title);
-  const photo=item.personal?null:
+  const specificPhoto=item.personal?null:
    (typeof campusMotivFotos!=="undefined"?campusMotivFotos[item.id]:null)
-   ?? (existing && !(typeof campusFotoLinksOhneBeleg!=="undefined"&&campusFotoLinksOhneBeleg.has(existing.url))?existing:null)
-   ?? (typeof campusStadtFotos!=="undefined"&&item.category!=="Reiseideen"?campusStadtFotos[item.city]:null);
+   ?? (existing && !(typeof campusFotoLinksOhneBeleg!=="undefined"&&campusFotoLinksOhneBeleg.has(existing.url))?existing:null);
+  const cityPhoto=!item.personal&&!specificPhoto&&typeof campusStadtFotos!=="undefined"&&item.category!=="Reiseideen"
+   ? campusStadtFotos[item.city]:null;
+  const photo=specificPhoto??cityPhoto;
   const licenseUrl=photo?.license?.match(/^CC BY(?:-SA)? (3\.0|4\.0)$/i)
    ? "https://creativecommons.org/licenses/"+(photo.license.includes("-SA")?"by-sa":"by")+"/"+photo.license.split(" ").at(-1)+"/"
    : null;
   const fallback=`<div class="photo-fallback"${photo?" hidden":""}>${campusSymbol(item.category)}<small>Symbolgrafik · Foto offen</small></div>`;
   if(!photo)return fallback;
   return `<figure${photo.place?' class="place"':""}>
-   <img src="${esc(photo.url)}" alt="${esc(photo.alt??item.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
-   <figcaption><a href="${esc(photo.source)}" target="_blank" rel="noopener noreferrer">Foto · ${esc(photo.credit)}</a>${licenseUrl?` · <a href="${esc(licenseUrl)}" target="_blank" rel="noopener noreferrer">Lizenz</a>`:""}</figcaption>
+   <img src="${esc(photo.url)}" alt="${esc(photo.alt??(cityPhoto?"Stadtansicht von "+item.city:item.title))}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+   <figcaption><a href="${esc(photo.source)}" target="_blank" rel="noopener noreferrer">${cityPhoto?"Stadtansicht":"Foto"} · ${esc(photo.credit)}</a>${licenseUrl?` · <a href="${esc(licenseUrl)}" target="_blank" rel="noopener noreferrer">Lizenz</a>`:""}</figcaption>
   </figure>${fallback}`;
  }
  function drawCompass(){
@@ -118,7 +120,7 @@ const campusEntries=(()=>{
   grid.innerHTML=shown.slice(0,visibleCount).map(item=>`<article class="catalog-card">
    ${cardPhoto(item)}
    <div class="eyebrow">${esc(item.category)} · ${esc(item.topic||item.segment||item.deviceType||item.city)}${item.activity?" · "+esc(item.activity):""}</div>
-   <h3>${esc(item.title)}</h3><p>${esc(item.note)}</p>
+   <h3>${esc(item.title)}</h3>${item.offerType?`<p class="benefit-meta">${esc(item.offerType)}</p>`:""}<p>${esc(item.note)}</p>
    ${item.plan&&item.tripCap!=null?`<p class="benefit-meta">Ab ${esc(item.city)} · Zielbudget ${euro(item.tripCap)} pro Person</p>
    <details class="trip-plan" data-trip-id="${esc(item.id)}"${openPlans.has(item.id)?" open":""}><summary>Tagesplan</summary><ol>${item.plan.map(step=>`<li>${esc(step)}</li>`).join("")}</ol></details>`:""}
    ${item.category==="Unterkünfte"?`<p class="benefit-meta">${esc(item.city)} · ${esc(item.segment||"Eigener Eintrag")}</p>`:""}
@@ -132,7 +134,17 @@ const campusEntries=(()=>{
     ${item.staff&&type==="Autos"?`<button type="button" class="btn ghost" data-item="${esc(item.id)}" data-do="staff">Mitarbeiterpreis vergleichen</button>`:""}
     <button type="button" class="btn ghost" data-item="${esc(item.id)}" data-do="mark" aria-pressed="${marked.has(item.id)}">Merken</button>
     ${item.personal?`<button type="button" class="btn ghost" data-item="${esc(item.id)}" data-do="remove">Entfernen</button>`:""}
-   </div></article>`).join("")||'<p class="muted">Keine Einträge für diese Auswahl.</p>';
+   </div></article>`).join("")||(fixedCity
+    ? '<div class="city-empty"><p>Für diese Auswahl gibt es keine Einträge. Zeig wieder alle Angebote dieser Stadt an.</p><button type="button" class="btn ghost" id="cityResetFilters">Alle Stadtangebote anzeigen</button></div>'
+    : '<p class="muted">Keine Einträge für diese Auswahl.</p>');
+  get("cityResetFilters")?.addEventListener("click",()=>{
+   get("cityCategory").value="all";
+   get("catalogQuery").value="";
+   markedOnly=false;
+   get("catalogSaved").setAttribute("aria-pressed","false");
+   resetCatalogView();
+   get("cityCategory").focus();
+  });
  }
  function resetCatalogView(){visibleCount=12;drawCompass();}
  for(const id of ["catalogCity","catalogQuery","benefitTopic","benefitStatus","ecosystem","activityType","lodgingType","cityCategory"])get(id)?.addEventListener("input",resetCatalogView);
