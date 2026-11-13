@@ -474,6 +474,7 @@ input, select, .site-menu summary, .btn.ghost { border-color: var(--control-line
 .campus-home :focus-visible { outline-color: #fff; }
 .plan-preview { margin: 16px 0; padding: 16px; border-left: 3px solid var(--accent); background: var(--bg); overflow-wrap: anywhere; }
 .plan-preview h3, .plan-preview p { margin: 0 0 6px; }
+.plan-preview .plan-preview-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .plan-profile { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr)); gap: 8px; margin: 12px 0; }
 .plan-profile > div { padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; }
 .plan-profile dt { color: var(--muted); font-size: .8rem; }

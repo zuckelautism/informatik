@@ -1,11 +1,465 @@
 // Nach Kategorien gruppierte Ergänzungen. Vorhandene IDs für Merklisten beibehalten.
 const campusErgaenzungen=[
+{
+  "id": "stadt-weg|Ingolstadt|Ausbildung|Audi Ingolstadt · Kraftfahrzeugmechatronikerin oder Kraftfahrzeugmechatroniker 2027",
+  "city": "Ingolstadt",
+  "category": "Ausbildung",
+  "title": "Audi Ingolstadt · Kraftfahrzeugmechatronikerin oder Kraftfahrzeugmechatroniker 2027",
+  "note": "Audi nennt für den Beruf mindestens einen qualifizierenden Mittelschulabschluss. Die Ausschreibung nennt den 1. September 2027 als Start. Prüfe den aktuellen Bewerbungsstatus.",
+  "link": "https://audi.bewerbernavigator.de/boi/bew2?project=audi&rubric=Ausbildung+Ingolstadt&screenflow=0&sid=18337",
+  "offerType": "Ausschreibung"
+},
+{
+  "id": "stadt-weg|Ingolstadt|Studienstart|TH Ingolstadt · Schnupperwochen",
+  "city": "Ingolstadt",
+  "category": "Studienstart",
+  "title": "TH Ingolstadt · Schnupperwochen",
+  "note": "Wähle eine Vorlesung und prüfe den nächsten angebotenen Termin und die Anmeldung.",
+  "link": "https://www.thi.de/studium/beratungsangebote-an-der-thi/beratung-fuer-studieninteressierte/veranstaltungen-fuer-studieninteressierte/schnupperwochen/"
+},
+{
+  "id": "stadt-weg|Ingolstadt|Wohnen|TH Ingolstadt · Marketplace",
+  "city": "Ingolstadt",
+  "category": "Wohnen",
+  "title": "TH Ingolstadt · Marketplace",
+  "note": "Prüfe Wohnangebote parallel zur Wohnheimbewerbung und frage die aktuelle Verfügbarkeit beim Anbieter an.",
+  "link": "https://www.thi.de/service/marketplace/"
+},
+{
+  "id": "stadt-weg|Jena|Ausbildung|Stadtwerke Jena · Fachinformatikerin oder Fachinformatiker für Systemintegration",
+  "city": "Jena",
+  "category": "Ausbildung",
+  "title": "Stadtwerke Jena · Fachinformatikerin oder Fachinformatiker für Systemintegration",
+  "note": "Das Berufsprofil erklärt den Einstieg in die Systemintegration. Prüfe Zugang, Arbeitsort und Ausbildungsablauf.",
+  "link": "https://www.stadtwerke-jena.de/karriere/ausbildung-und-praktikum/alle-ausbildungsberufe/fachinformatiker--m-w-d--fuer-systemintegration.html",
+  "offerType": "Ausbildungsprofil"
+},
+{
+  "id": "stadt-weg|Jena|Ausbildung|Stadtwerke Jena · Fachinformatikerin oder Fachinformatiker für Systemintegration 2027",
+  "city": "Jena",
+  "category": "Ausbildung",
+  "title": "Stadtwerke Jena · Fachinformatikerin oder Fachinformatiker für Systemintegration 2027",
+  "note": "Die Ausschreibung nennt Realschulabschluss oder Abitur, den Ausbildungsort Jena und den 9. August 2027 als Beginn. Prüfe den Bewerbungsstatus beim Arbeitgeber.",
+  "link": "https://stadtwerke-jena-gruppe.dvinci.de/de/jobs/41719/ausbildung-als-fachinformatiker-mwd-fur-systemintegration",
+  "offerType": "Ausschreibung"
+},
+{
+  "id": "stadt-weg|Jena|Wohnen|Universität Jena · Eine Wohnung finden",
+  "city": "Jena",
+  "category": "Wohnen",
+  "title": "Universität Jena · Eine Wohnung finden",
+  "note": "Prüfe die Wohnalternativen und privaten Suchmöglichkeiten parallel zum Wohnheim.",
+  "link": "https://www.uni-jena.de/59378/eine-wohnung-finden-in-jena"
+},
+{
+  "id": "stadt-weg|Jena|Studienstart|Universität Jena · Schnupperstudium",
+  "city": "Jena",
+  "category": "Studienstart",
+  "title": "Universität Jena · Schnupperstudium",
+  "note": "Wähle eine Lehrveranstaltung und prüfe die Teilnahmehinweise der Universität.",
+  "link": "https://www.uni-jena.de/400/schnupperstudium"
+},
+{
+  "id": "stadt-weg|Jena|Aktivitäten|Jenaer Museen · Besuch planen",
+  "city": "Jena",
+  "category": "Aktivitäten",
+  "title": "Jenaer Museen · Besuch planen",
+  "note": "Prüfe Öffnungszeiten und Eintritt bei den Museen.",
+  "link": "https://www.museen-jena.de/de/wir_ueber_uns/oeffnungszeiten/681720",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Jena|Aktivitäten|Schillers Gartenhaus · Besuch planen",
+  "city": "Jena",
+  "category": "Aktivitäten",
+  "title": "Schillers Gartenhaus · Besuch planen",
+  "note": "Prüfe die Öffnungszeiten und Anfahrt direkt bei der Universität.",
+  "link": "https://www.gartenhaus.uni-jena.de/82/besuch",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Heilbronn|Aktivitäten|experimenta · Besuch planen",
+  "city": "Heilbronn",
+  "category": "Aktivitäten",
+  "title": "experimenta · Besuch planen",
+  "note": "Prüfe Öffnungszeiten und Eintritt direkt bei der experimenta.",
+  "link": "https://www.experimenta.science/besuchen/oeffnungszeiten-eintrittspreise/",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Frankfurt am Main|Ausbildung|Stadt Frankfurt · Kraftfahrzeugmechatronikerin oder Kraftfahrzeugmechatroniker 2027",
+  "city": "Frankfurt am Main",
+  "category": "Ausbildung",
+  "title": "Stadt Frankfurt · Kraftfahrzeugmechatronikerin oder Kraftfahrzeugmechatroniker 2027",
+  "note": "Die Stadt nennt mindestens Realschulabschluss, Start am 1. September 2027 und Bewerbungsschluss am 16. November 2026. Prüfe den Status der Ausschreibung.",
+  "link": "https://stadtfrankfurtjobs.de/Ausbildung-Kraftfahrzeugmechatroniker-in-wmd-Fachrichtung--de-j10974.html",
+  "offerType": "Ausschreibung"
+},
+{
+  "id": "stadt-weg|Gießen|Ausbildung|Stadtwerke Gießen · Fachinformatikerin oder Fachinformatiker für Systemintegration 2027",
+  "city": "Gießen",
+  "category": "Ausbildung",
+  "title": "Stadtwerke Gießen · Fachinformatikerin oder Fachinformatiker für Systemintegration 2027",
+  "note": "Die Stadtwerke nennen mindestens einen guten Realschulabschluss und den 1. August 2027 als Beginn. Prüfe den Status der Ausschreibung und die Unterlagen.",
+  "link": "https://stadtwerkegiessenag.softgarden.io/job/66729393/Ausbildung-zum-zur-Fachinformatiker-in-f%C3%BCr-Systemintegration-m-w-d-ab-1.-August-2027?jobDbPVId=286806752&l=de",
+  "offerType": "Ausschreibung"
+},
+{
+  "id": "stadt-weg|Hamburg|Ausbildung|Stadt Hamburg · Verwaltungsfachangestellte",
+  "city": "Hamburg",
+  "category": "Ausbildung",
+  "title": "Stadt Hamburg · Verwaltungsfachangestellte",
+  "note": "Das Profil nennt den mittleren Schulabschluss und Notenvorgaben. Prüfe die Voraussetzungen und die Bewerbungsseite der Stadt.",
+  "link": "https://www.karriere.hamburg/einstiegsmoeglichkeiten/ausbildung/verwaltung",
+  "offerType": "Ausbildungsprofil"
+},
+{
+  "id": "stadt-weg|Hamburg|Ausbildung|vhh.mobility · Fachinformatikerin oder Fachinformatiker für Systemintegration 2027",
+  "city": "Hamburg",
+  "category": "Ausbildung",
+  "title": "vhh.mobility · Fachinformatikerin oder Fachinformatiker für Systemintegration 2027",
+  "note": "Die Anzeige nennt Hamburg-Bergedorf, den 1. August 2027 und einen sehr guten Realschulabschluss oder Abitur. Prüfe den Bewerbungsstatus beim Arbeitgeber.",
+  "link": "https://vhh-mobility.de/jobs/8491/",
+  "offerType": "Ausschreibung"
+},
+{
+  "id": "stadt-weg|Hamburg|Studienstart|Universität Hamburg · Schnupperstudium Uni live!",
+  "city": "Hamburg",
+  "category": "Studienstart",
+  "title": "Universität Hamburg · Schnupperstudium Uni live!",
+  "note": "Wähle eine Lehrveranstaltung und prüfe die Teilnahmehinweise.",
+  "link": "https://www.uni-hamburg.de/schule-und-uni/schnupperangebote/sp-uni-live.html"
+},
+{
+  "id": "stadt-weg|Hamburg|Wohnen|Universität Hamburg · WG und privater Wohnungsmarkt",
+  "city": "Hamburg",
+  "category": "Wohnen",
+  "title": "Universität Hamburg · WG und privater Wohnungsmarkt",
+  "note": "Prüfe die städtischen und privaten Wohnangebote parallel zum Wohnheim.",
+  "link": "https://www.uni-hamburg.de/studium/campus-leben/wohnen.html#104"
+},
+{
+  "id": "stadt-weg|Hamburg|Aktivitäten|Hamburger Kunsthalle · Besuch planen",
+  "city": "Hamburg",
+  "category": "Aktivitäten",
+  "title": "Hamburger Kunsthalle · Besuch planen",
+  "note": "Prüfe Anfahrt, Öffnungszeiten und Eintritt beim Museum.",
+  "link": "https://www.hamburger-kunsthalle.org/de/besuchen",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Hamburg|Aktivitäten|Museum für Kunst und Gewerbe Hamburg · Besuch planen",
+  "city": "Hamburg",
+  "category": "Aktivitäten",
+  "title": "Museum für Kunst und Gewerbe Hamburg · Besuch planen",
+  "note": "Prüfe Ausstellungen und Besuchszeiten beim Museum.",
+  "link": "https://www.mkg-hamburg.de/besuch",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Heidelberg|Ausbildung|St. Josefskrankenhaus Heidelberg · Pflegefachfrau oder Pflegefachmann",
+  "city": "Heidelberg",
+  "category": "Ausbildung",
+  "title": "St. Josefskrankenhaus Heidelberg · Pflegefachfrau oder Pflegefachmann",
+  "note": "Das Profil erklärt die Zugangsmöglichkeiten mit Realschulabschluss oder Hauptschulabschluss und ergänzendem Abschluss. Prüfe das verlangte Praktikum und die Bewerbungsunterlagen.",
+  "link": "https://www.st.josefskrankenhaus.de/pflegeausbildung/bewerbungsschritte",
+  "offerType": "Ausbildungsprofil"
+},
+{
+  "id": "stadt-weg|Heidelberg|Wohnen|Studierendenwerk Heidelberg · Privater Wohnungsmarkt",
+  "city": "Heidelberg",
+  "category": "Wohnen",
+  "title": "Studierendenwerk Heidelberg · Privater Wohnungsmarkt",
+  "note": "Suche private Zimmer oder Wohngemeinschaften als Alternative zur Wohnheimbewerbung.",
+  "link": "https://www.stw.uni-heidelberg.de/wohnen/privater-wohnungsmarkt/"
+},
+{
+  "id": "stadt-weg|Heidelberg|Studienstart|Universität Heidelberg · Schnuppervorlesungen 2026",
+  "city": "Heidelberg",
+  "category": "Studienstart",
+  "title": "Universität Heidelberg · Schnuppervorlesungen 2026",
+  "note": "Die Universität veröffentlicht Vorlesungen für November und Dezember 2026, auch für Geschichte. Prüfe vor dem Besuch den jeweiligen Termin und die Teilnahmehinweise.",
+  "link": "https://www.uni-heidelberg.de/de/studium/service-beratung/studienentscheidung-treffen/schnuppervorlesungen-im-november-und-dezember-2026"
+},
+{
+  "id": "stadt-weg|Heidelberg|Aktivitäten|Schloss Heidelberg · Besuch planen",
+  "city": "Heidelberg",
+  "category": "Aktivitäten",
+  "title": "Schloss Heidelberg · Besuch planen",
+  "note": "Prüfe Öffnungszeiten und Zugang bei den Staatlichen Schlössern und Gärten.",
+  "link": "https://www.schloss-heidelberg.de/besuchsinformation/oeffnungszeiten/",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Heilbronn|Ausbildung|Stadt Heilbronn · Verwaltungsfachangestellte",
+  "city": "Heilbronn",
+  "category": "Ausbildung",
+  "title": "Stadt Heilbronn · Verwaltungsfachangestellte",
+  "note": "Die Stadt nennt die mittlere Reife oder einen gleichwertigen Abschluss und erläutert den Ausbildungsablauf. Prüfe, ob im Bewerbungsportal ein Platz ausgeschrieben ist.",
+  "link": "https://www.heilbronn.de/rathaus/karriere/ausbildungsangebote-1/offene-ausbildungsstellen/verwaltungsfachangestellter-m/w/d.html",
+  "offerType": "Ausbildungsprofil"
+},
+{
+  "id": "stadt-weg|Heilbronn|Studienstart|Hochschule Heilbronn · Student for a Day am Bildungscampus",
+  "city": "Heilbronn",
+  "category": "Studienstart",
+  "title": "Hochschule Heilbronn · Student for a Day am Bildungscampus",
+  "note": "Wähle den Bildungscampus und frage einen Termin für einen Studiengang an.",
+  "link": "https://www.hs-heilbronn.de/de/student-for-a-day"
+},
+{
+  "id": "stadt-weg|Heilbronn|ÖPNV & Pendeln|HNV · Teilnehmende Schulen und Hochschulen beim Semesterticket",
+  "city": "Heilbronn",
+  "category": "ÖPNV & Pendeln",
+  "title": "HNV · Teilnehmende Schulen und Hochschulen beim Semesterticket",
+  "note": "Prüfe die aktuelle Partnerliste des HNV. Wenn deine Hochschule fehlt, vergleiche D-Ticket JugendBW und reguläre Tarife.",
+  "link": "https://www.mein-hnv.de/abos-und-tickets/abonnements-monatskarten/semester-ticket"
+},
+{
+  "id": "stadt-weg|Aachen|Ausbildung|regio iT · Fachinformatik 2027",
+  "city": "Aachen",
+  "category": "Ausbildung",
+  "title": "regio iT · Fachinformatik 2027",
+  "note": "Die Ausschreibung nennt mittlere Reife, gute naturwissenschaftliche Noten und Ausbildungsbeginn im August 2027. Prüfe den Bewerbungsstatus beim Arbeitgeber.",
+  "link": "https://karriere.regioit.de/jobposting/e7ea482c5afa28902451ab0d27eba194331773bb",
+  "offerType": "Ausschreibung"
+},
+{
+  "id": "stadt-weg|Frankfurt am Main|Ausbildung|Stadt Frankfurt · Kraftfahrzeugmechatronik",
+  "city": "Frankfurt am Main",
+  "category": "Ausbildung",
+  "title": "Stadt Frankfurt · Kraftfahrzeugmechatronik",
+  "note": "Das städtische Ausbildungsprofil beschreibt Aufgaben, Zugang und Bewerbung. Freie Plätze findest du in den Stellenangeboten der Stadt.",
+  "link": "https://frankfurt.de/karriere/schueler_innen/ausbildung/kfz",
+  "offerType": "Ausbildungsprofil"
+},
+{
+  "id": "stadt-weg|Frankfurt am Main|Wohnen|Studierendenwerk Frankfurt · Weitere Wohnangebote",
+  "city": "Frankfurt am Main",
+  "category": "Wohnen",
+  "title": "Studierendenwerk Frankfurt · Weitere Wohnangebote",
+  "note": "Vergleiche Wohngemeinschaften und private Anbieter mit der Wohnheimbewerbung.",
+  "link": "https://www.swffm.de/wohnen/andere-anbieter"
+},
+{
+  "id": "stadt-weg|Frankfurt am Main|Studienstart|Goethe-Universität · Schnuppertage",
+  "city": "Frankfurt am Main",
+  "category": "Studienstart",
+  "title": "Goethe-Universität · Schnuppertage",
+  "note": "Die Schnuppertage richten sich an die gymnasiale Oberstufe. Prüfe Termine und wie deine Schule die Anmeldung organisiert.",
+  "link": "https://www.uni-frankfurt.de/de/studium/studienorientierung/schuelerangebote/uebergreifende-angebote/schnuppertage"
+},
+{
+  "id": "stadt-weg|Frankfurt am Main|Aktivitäten|Senckenberg Naturmuseum · Besuch planen",
+  "city": "Frankfurt am Main",
+  "category": "Aktivitäten",
+  "title": "Senckenberg Naturmuseum · Besuch planen",
+  "note": "Prüfe Eintritt, Öffnungszeiten und Anfahrt direkt beim Museum.",
+  "link": "https://museumfrankfurt.senckenberg.de/de/besuch/",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Frankfurt am Main|Aktivitäten|Historisches Museum Frankfurt · Besuch planen",
+  "city": "Frankfurt am Main",
+  "category": "Aktivitäten",
+  "title": "Historisches Museum Frankfurt · Besuch planen",
+  "note": "Prüfe Ausstellungen und Besuchszeiten beim Museum.",
+  "link": "https://historisches-museum-frankfurt.de/de/besuch-planen",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Frankfurt am Main|ÖPNV & Pendeln|RMV · Schülerticket Hessen für Auszubildende",
+  "city": "Frankfurt am Main",
+  "category": "ÖPNV & Pendeln",
+  "title": "RMV · Schülerticket Hessen für Auszubildende",
+  "note": "Prüfe Voraussetzungen, Geltungsbereich und Nachweis für deinen Ausbildungsweg.",
+  "link": "https://www.rmv.de/c/de/tickets/sortiment/tickets-im-ueberblick/schuelerticket-hessen-fuer-schuelerinnen-schueler-und-azubis"
+},
+{
+  "id": "stadt-weg|Gießen|Ausbildung|Stadtwerke Gießen · Fachinformatikerin oder Fachinformatiker für Systemintegration",
+  "city": "Gießen",
+  "category": "Ausbildung",
+  "title": "Stadtwerke Gießen · Fachinformatikerin oder Fachinformatiker für Systemintegration",
+  "note": "Das Berufsprofil nennt einen guten Realschulabschluss. Prüfe die Ausbildungsinhalte und die verlinkten offenen Stellen.",
+  "link": "https://www.stadtwerke-giessen.de/de/unternehmen/karriere/ausbildung/fachinformatiker/in-fuer-systemintegration",
+  "offerType": "Ausbildungsprofil"
+},
+{
+  "id": "stadt-weg|Gießen|Studienstart|JLU Gießen · Fachbereiche ausprobieren",
+  "city": "Gießen",
+  "category": "Studienstart",
+  "title": "JLU Gießen · Fachbereiche ausprobieren",
+  "note": "Wähle einen Fachbereich und prüfe die Angebote zur Studienorientierung.",
+  "link": "https://www.uni-giessen.de/de/studium/studienorientierung/studieninteressierte/fachbereiche"
+},
+{
+  "id": "stadt-weg|Gießen|Wohnen|Studierendenwerk Gießen · Wohnbörse",
+  "city": "Gießen",
+  "category": "Wohnen",
+  "title": "Studierendenwerk Gießen · Wohnbörse",
+  "note": "Suche als Alternative zum Wohnheim nach einem privaten Zimmer oder einer WG.",
+  "link": "https://www.stwgi.de/wohnboerse"
+},
+{
+  "id": "stadt-weg|Gießen|Aktivitäten|Museum für Gießen · Besuch im Alten Schloss",
+  "city": "Gießen",
+  "category": "Aktivitäten",
+  "title": "Museum für Gießen · Besuch im Alten Schloss",
+  "note": "Prüfe Besuchszeiten und aktuelle Ausstellungen bei der Stadt.",
+  "link": "https://www.giessen.de/Erleben/Kultur/Museen-Ausstellungen/Oberhessisches-Museum/Besuch-im-Museum/",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Göttingen|Ausbildung|Universitätsmedizin Göttingen · Pflegefachassistenz",
+  "city": "Göttingen",
+  "category": "Ausbildung",
+  "title": "Universitätsmedizin Göttingen · Pflegefachassistenz",
+  "note": "Das Profil nennt mindestens Hauptschulabschluss und Deutschkenntnisse auf Niveau B2. Prüfe den Ablauf der Ausbildung und den aktuellen Bewerbungsweg.",
+  "link": "https://www.umg.eu/karriere/ausbildung-duales-studium/pflegefachassistenz/",
+  "offerType": "Ausbildungsprofil"
+},
+{
+  "id": "stadt-weg|Göttingen|Studienstart|Universität Göttingen · Schnupperstudium",
+  "city": "Göttingen",
+  "category": "Studienstart",
+  "title": "Universität Göttingen · Schnupperstudium",
+  "note": "Wähle eine Lehrveranstaltung und prüfe, ob du sie besuchen kannst.",
+  "link": "https://www2.uni-goettingen.de/de/108374.html"
+},
+{
+  "id": "stadt-weg|Göttingen|Wohnen|Studierendenwerk Göttingen · Privater Wohnungsmarkt",
+  "city": "Göttingen",
+  "category": "Wohnen",
+  "title": "Studierendenwerk Göttingen · Privater Wohnungsmarkt",
+  "note": "Prüfe private Zimmer oder Wohnungen als Alternative zum Wohnheim.",
+  "link": "https://www.studierendenwerk-goettingen.de/studentisches-wohnen/privater-wohnungsmarkt"
+},
+{
+  "id": "stadt-weg|Göttingen|Aktivitäten|Städtisches Museum Göttingen · Besuch planen",
+  "city": "Göttingen",
+  "category": "Aktivitäten",
+  "title": "Städtisches Museum Göttingen · Besuch planen",
+  "note": "Prüfe Ausstellungen und Öffnungszeiten direkt beim Museum.",
+  "link": "https://museum.goettingen.de/portal/seiten/fuer-ihren-besuch-900001129-25480.html",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Aachen|Ausbildung|FH Aachen · Fachinformatikerin oder Fachinformatiker für Systemintegration",
+  "city": "Aachen",
+  "category": "Ausbildung",
+  "title": "FH Aachen · Fachinformatikerin oder Fachinformatiker für Systemintegration",
+  "note": "Das Ausbildungsprofil nennt mindestens Fachoberschulreife. Praxis an der FH Aachen und Berufsschule in Aachen. Prüfe den Bewerbungsweg und aktuelle Ausschreibungen.",
+  "link": "https://www.fh-aachen.de/fh-aachen/arbeiten/berufsausbildung-an-der-fh-aachen/ausbildung-fachinformatikerin-systemintegration",
+  "offerType": "Ausbildungsprofil"
+},
+{
+  "id": "stadt-weg|Aachen|Studienstart|FH Aachen · Studium kennenlernen und ausprobieren",
+  "city": "Aachen",
+  "category": "Studienstart",
+  "title": "FH Aachen · Studium kennenlernen und ausprobieren",
+  "note": "Wähle ein Orientierungsangebot und prüfe bei der FH Aachen, wie du teilnehmen kannst.",
+  "link": "https://www.fh-aachen.de/fh-aachen/fh-kennenlernen/informieren-und-ausprobieren"
+},
+{
+  "id": "stadt-weg|Aachen|Wohnen|Studierendenwerk Aachen · WohnDuo",
+  "city": "Aachen",
+  "category": "Wohnen",
+  "title": "Studierendenwerk Aachen · WohnDuo",
+  "note": "Prüfe eine Wohnpartnerschaft als Alternative zum Wohnheim und lies nach, wie die Vermittlung funktioniert.",
+  "link": "https://www.studierendenwerk-aachen.de/de/wohnen/wohnduo.html"
+},
+{
+  "id": "stadt-weg|Aachen|Aktivitäten|Ludwig Forum Aachen · Besuch planen",
+  "city": "Aachen",
+  "category": "Aktivitäten",
+  "title": "Ludwig Forum Aachen · Besuch planen",
+  "note": "Prüfe Ausstellungen, Anreise und Öffnungszeiten vor dem Besuch.",
+  "link": "https://ludwigforum.de/besuchen/",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Aachen|Aktivitäten|Centre Charlemagne · Stadtmuseum Aachen",
+  "city": "Aachen",
+  "category": "Aktivitäten",
+  "title": "Centre Charlemagne · Stadtmuseum Aachen",
+  "note": "Prüfe Öffnungszeiten und Eintritt beim Stadtmuseum.",
+  "link": "https://centre-charlemagne.eu/besuch/offnungszeiten-und-eintrittspreise/",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Berlin|Ausbildung|BVG · Fachkraft im Fahrbetrieb",
+  "city": "Berlin",
+  "category": "Ausbildung",
+  "title": "BVG · Fachkraft im Fahrbetrieb",
+  "note": "Das Berufsprofil nennt den mittleren Schulabschluss. Prüfe Aufgaben und Ausbildungsablauf bei der BVG. Freie Plätze stehen in der Jobsuche.",
+  "link": "https://www.bvg.de/de/karriere/schueler/ausbildung/ausbildung-fachkraft-fahrbetrieb",
+  "offerType": "Ausbildungsprofil"
+},
+{
+  "id": "stadt-weg|Berlin|Ausbildung|BVG · Fachkraft im Fahrbetrieb 2027",
+  "city": "Berlin",
+  "category": "Ausbildung",
+  "title": "BVG · Fachkraft im Fahrbetrieb 2027",
+  "note": "Die BVG nennt Ausbildungsstart im September 2027 und einen mittleren Schulabschluss bis zum 31. August 2027. Prüfe den Status im Stellenangebot.",
+  "link": "https://www.bvg.de/de/karriere/jobsuche/ausbildung-fachkraft-im-fahrbetrieb-fuer-3-jahre-ab-september-2027-w-m-d",
+  "offerType": "Ausschreibung"
+},
+{
+  "id": "stadt-weg|Berlin|Wohnen|Universität der Künste Berlin · Zimmer und Wohnalternativen",
+  "city": "Berlin",
+  "category": "Wohnen",
+  "title": "Universität der Künste Berlin · Zimmer und Wohnalternativen",
+  "note": "Prüfe parallel zur Wohnheimbewerbung die Hinweise für private Zimmer und Wohngemeinschaften.",
+  "link": "https://www.udk-berlin.de/service/studienberatung-und-psychologische-beratung/wohnen/"
+},
+{
+  "id": "stadt-weg|Berlin|Studienstart|FU Berlin · Offener Hörsaal",
+  "city": "Berlin",
+  "category": "Studienstart",
+  "title": "FU Berlin · Offener Hörsaal",
+  "note": "Prüfe, welche Vorlesungen Schülerinnen, Schülern und Studieninteressierten offenstehen.",
+  "link": "https://www.fu-berlin.de/sites/zfs/angebote/offener-hs/index.html"
+},
+{
+  "id": "stadt-weg|Berlin|Aktivitäten|Futurium · Besuch planen",
+  "city": "Berlin",
+  "category": "Aktivitäten",
+  "title": "Futurium · Besuch planen",
+  "note": "Prüfe Öffnungszeiten, Anfahrt und Veranstaltungen beim Futurium.",
+  "link": "https://futurium.de/de/besuch",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Berlin|Aktivitäten|Deutsches Technikmuseum · Besuch planen",
+  "city": "Berlin",
+  "category": "Aktivitäten",
+  "title": "Deutsches Technikmuseum · Besuch planen",
+  "note": "Prüfe den Eintritt, die Öffnungszeiten und die Anfahrt direkt beim Museum.",
+  "link": "https://technikmuseum.berlin/besuch/infos/",
+  "activity": "Kultur"
+},
+{
+  "id": "stadt-weg|Dresden|Studienstart|TU Dresden · UNI TESTEN",
+  "city": "Dresden",
+  "category": "Studienstart",
+  "title": "TU Dresden · UNI TESTEN",
+  "note": "Wähle einen Studiengang oder eine Lehrveranstaltung und prüfe die Teilnahmebedingungen.",
+  "link": "https://tu-dresden.de/studium/vor-dem-studium/uni-testen?set_language=de"
+},
+{
+  "id": "stadt-weg|Dresden|ÖPNV & Pendeln|DVB · Tickets für Schülerinnen, Schüler und Auszubildende",
+  "city": "Dresden",
+  "category": "ÖPNV & Pendeln",
+  "title": "DVB · Tickets für Schülerinnen, Schüler und Auszubildende",
+  "note": "Prüfe, welche Ausbildung anerkannt wird und welche Nachweise dein Ticket erfordert.",
+  "link": "https://www.dvb.de/de-de/tickets/schueler-studenten/"
+},
   {
     "id": "stadt-weg|Tübingen|Ausbildung|UKT Elektronik 2027",
     "city": "Tübingen",
     "category": "Ausbildung",
     "title": "Universitätsklinikum Tübingen · Elektronik für Energie- und Gebäudetechnik 2027",
-    "note": "Das Klinikum nennt einen guten Realschulabschluss oder einen sehr guten Hauptschulabschluss, den 1. September 2027 als Start und den 31. Dezember 2026 als Bewerbungsschluss. Prüfe den aktuellen Status im Jobportal.",
+    "note": "Das Klinikum bildet Elektronikerinnen und Elektroniker aus. Es nennt einen guten Realschulabschluss oder einen sehr guten Hauptschulabschluss, den 1. September 2027 als Start und den 31. Dezember 2026 als Bewerbungsschluss. Prüfe den aktuellen Status im Jobportal.",
     "link": "https://jobs.medizin.uni-tuebingen.de/Job/7922/Ausbildung-Elektronikerin---Elektroniker",
     "offerType": "Ausschreibung"
   },
@@ -118,8 +572,8 @@ const campusErgaenzungen=[
   "city": "Köln",
   "category": "Ausbildung",
   "title": "Stadt Köln · Fachangestellte für Medien- und Informationsdienste",
-  "note": "Für die Ausbildung im Historischen Archiv mit Rheinischem Bildarchiv ist die Fachoberschulreife ein möglicher Zugang. Das Profil beschreibt Archiv und Bildagentur und verweist für freie Plätze auf die Stadt.",
-  "link": "https://www.stadt-koeln.de/leben-in-koeln/kultur/historisches-archiv-mit-rheinischem-bildarchiv/ausbildung-im-historischen-archiv-mit-rheinischem-bildarchiv",
+  "note": "Die städtische Übersicht führt FaMI in Archiv und Bildagentur bei Fachoberschulreife auf. Freie Ausbildungsplätze veröffentlicht die Stadt separat.",
+  "link": "https://www.stadt-koeln.de/politik-und-verwaltung/ausbildung-karriere-bei-der-stadt/ausbildung/ausbildungs-studiengaenge-nach-schulabschluss",
   "offerType": "Ausbildungsprofil"
 },
 {
@@ -137,7 +591,7 @@ const campusErgaenzungen=[
   "category": "Studium",
   "title": "Universität Leipzig · Geschichte B.A.",
   "note": "Prüfe Studieninhalte, Zugang und Bewerbung im Studienprofil der Universität.",
-  "link": "https://www.leipzig-studieren.de/studienangebot/studiengang/course/show/geschichte-b-a",
+  "link": "https://www.uni-leipzig.de/en/studying/prospective-students/courses-of-study/degree-programme?cHash=d60fd2269379eadc559c1d0fe5cea396&tx_t3study%5Baction%5D=show&tx_t3study%5Bcontroller%5D=Course&tx_t3study%5Bcourse%5D=31",
   "topic": "Geschichte"
 },
 {
@@ -236,7 +690,7 @@ const campusErgaenzungen=[
   "city": "München",
   "category": "Ausbildung",
   "title": "Stadt München · Fachinformatik Systemintegration",
-  "note": "Das Berufsprofil nennt den qualifizierenden Mittelschulabschluss oder einen höheren Abschluss. Die Stadt erklärt, wie du dich bewirbst. Prüfe offene Plätze im Stellenportal.",
+  "note": "Für Fachinformatikerinnen und Fachinformatiker nennt das Berufsprofil den qualifizierenden Mittelschulabschluss oder einen höheren Abschluss. Die Stadt erklärt, wie du dich bewirbst. Prüfe offene Plätze im Stellenportal.",
   "link": "https://stadt.muenchen.de/infos/ausbildung-fachinformatiker-stemintegration.html",
   "offerType": "Ausbildungsprofil"
 },
@@ -262,7 +716,7 @@ const campusErgaenzungen=[
   "city": "Tübingen",
   "category": "ÖPNV & Pendeln",
   "title": "naldo · Tickets für Studierende",
-  "note": "Vergleiche Semesterticket, Anschluss-Semesterticket und D-Ticket JugendBW. Prüfe im Tarif, welche Hochschule und Strecke abgedeckt sind.",
+  "note": "Die Universität Tübingen nimmt am naldo-Semesterticket teil. Vergleiche Geltungsbereich, Nachweis und Tarif mit Anschluss-Semesterticket und D-Ticket JugendBW.",
   "link": "https://www.naldo.de/tickets/studierende/"
 },
 {
@@ -450,9 +904,9 @@ const campusErgaenzungen=[
     "id": "stadt-pruefung|Heidelberg|ÖPNV & Pendeln|VRN · Deutschlandsemesterticket",
     "city": "Heidelberg",
     "category": "ÖPNV & Pendeln",
-    "title": "VRN · Deutschlandsemesterticket",
-    "note": "Prüfe, ob deine Hochschule teilnimmt und wie du das Ticket erhältst.",
-    "link": "https://www.vrn.de/tickets/ticketuebersicht/deutschlandticket/deutschland-semesterticket/index.html"
+    "title": "Universität Heidelberg · Ticketmöglichkeiten",
+    "note": "Der Studierendenrat erklärt, dass die Universität Heidelberg kein Semesterticket anbietet. Prüfe stattdessen die Bedingungen von D-Ticket JugendBW und regulärem Deutschlandticket.",
+    "link": "https://stura.uni-heidelberg.de/angebote/semesterticket/"
   },
   {
     "id": "stadt-pruefung|Jena|Ausbildung|Stadtwerke Jena · Ausbildung und Praktikum",
@@ -540,9 +994,9 @@ const campusErgaenzungen=[
     "id": "stadt-pruefung|Leipzig|Aktivitäten|Stadtgeschichtliches Museum Leipzig",
     "city": "Leipzig",
     "category": "Aktivitäten",
-    "title": "Stadtgeschichtliches Museum Leipzig",
-    "note": "Wähle ein Haus wie das Alte Rathaus und prüfe dort Öffnungszeiten und Eintritt.",
-    "link": "https://www.stadtgeschichtliches-museum-leipzig.de/",
+    "title": "Stadtgeschichtliches Museum Leipzig · Altes Rathaus",
+    "note": "Prüfe die aktuellen Ausstellungen, Besuchszeiten und den Eintritt für das Alte Rathaus.",
+    "link": "https://www.stadtgeschichtliches-museum-leipzig.de/besuch/unsere-haeuser/altes-rathaus/",
     "activity": "Kultur"
   },
   {
@@ -1375,8 +1829,9 @@ const campusErgaenzungen=[
     "category": "Ausbildung",
     "city": "Dresden",
     "title": "Universitätsklinikum Dresden · Pflegefachperson",
+    "offerType": "Ausbildungsprofil",
     "link": "https://karriere.ukdd.de/content/4-3-1-Pflegefachmann/?locale=de_DE",
-    "note": "Offizielle Ausbildungsseite mit Informationen zu Beruf und Bewerbung."
+    "note": "Das UKD nennt den mittleren Schulabschluss oder den Hauptschulabschluss plus eine abgeschlossene zweijährige Berufsausbildung. Die praktischen Einsätze finden am Universitätsklinikum statt."
   },
   {
     "id": "dresden-erweiterung|Ausbildung|TU Dresden · Ausbildungsberufe im Überblick",
@@ -1500,7 +1955,7 @@ const campusErgaenzungen=[
     "topic": "Rechtswissenschaft",
     "field": "gesellschaft",
     "note": "Du lernst juristische Fallbearbeitung im Zivilrecht, Strafrecht und öffentlichen Recht.",
-    "link": "https://www.uni-leipzig.de/en/studying/prospective-students/courses-of-study/degree-programme?cHash=51ce884cdf02a27f0487ac612cf35f2c&tx_t3study%5Baction%5D=show&tx_t3study%5Bcontroller%5D=Course&tx_t3study%5Bcourse%5D=124"
+    "link": "https://www.jura.uni-leipzig.de/studium/rechtswissenschaft-staatsexamen"
   },
   {
     "id": "bildung|Aachen|elektrotechnik",
@@ -1997,7 +2452,7 @@ const campusErgaenzungen=[
     "category": "Duales Studium",
     "title": "Schwarz Gruppe · Wirtschaftsinformatik",
     "segment": "Schwarz Gruppe · Neckarsulm",
-    "note": "Anbieterquelle für das duale Studium in Neckarsulm. Jahrgang, Bewerbungsfrist und Verfügbarkeit direkt prüfen.",
+    "note": "Die Ausschreibung nennt Praxis im Raum Heilbronn und Neckarsulm sowie Theorie an der DHBW Heilbronn. Prüfe Zugang, Bewerbungsfrist und Verfügbarkeit im Stellenangebot.",
     "link": "https://jobs.schwarz/jobsearch/hr/duales-studium-wirtschaftsinformatik-2027-neckarsulm-m-w-d-GT5120"
   },
   {

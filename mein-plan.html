@@ -9,7 +9,7 @@
  
 <script src="firebase-config.js?v=google1" defer></script>
  <script src="campus-basis.js?v=review1" defer></script>
-<script src="mein-plan.js?v=stadtweg1" defer></script>
+<script src="mein-plan.js?v=stadtweg2" defer></script>
 <script src="campus-shell.js?v=review1" defer></script>
 </head><body class="campus-locked">
  <section class="campus-login" aria-labelledby="campusLoginTitle">
@@ -53,7 +53,7 @@
  <p>Stell deinen Weg nach der Schule zusammen. Du kannst jede Entscheidung offenlassen.</p>
  </section>
  <form id="planForm" class="finder plan-builder">
-  <div class="plan-meter"><p class="eyebrow" id="planProgress" role="status">Schritt 1 von 5</p><progress id="planMeter" max="5" value="1" aria-label="Fortschritt bei der Auswahl"></progress></div>
+  <div class="plan-meter"><p class="eyebrow" id="planProgress" role="status">Startpunkt · Schritt 1 von 5</p><progress id="planMeter" max="5" value="1" aria-label="Fortschritt bei der Auswahl"></progress></div>
   <fieldset><legend tabindex="-1">Was willst du als Nächstes machen?</legend>
    <label class="plan-choice"><input type="radio" name="route" value="offen" checked> <span>Weiß ich noch nicht</span></label>
 <label class="plan-choice"><input type="radio" name="route" value="ausbildung"> <span>Eine Ausbildung machen</span></label>
@@ -84,6 +84,7 @@
   </fieldset>
   <section class="plan-preview" aria-labelledby="planPreviewTitle">
    <h3 id="planPreviewTitle" tabindex="-1">Deine Vorschau</h3>
+   <p id="planPreviewStatus" class="plan-preview-status" role="status"></p>
    <dl id="planPreviewProfile" class="plan-profile">
     <div><dt>Startpunkt</dt><dd></dd></div>
     <div><dt>Interesse</dt><dd></dd></div>

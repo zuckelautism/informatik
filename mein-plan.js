@@ -17,6 +17,8 @@
   const previewAction = document.getElementById("planPreviewAction");
   const previewStages = document.getElementById("planPreviewStages");
   const previewBackup = document.getElementById("planPreviewBackup");
+  const previewStatus = document.getElementById("planPreviewStatus");
+  const stepNames = ["Startpunkt", "Interesse", "Stärke", "Zeitrahmen", "Stadt"];
   const cityField = document.getElementById("planCity");
   const strengths = {
     offen: "",
@@ -46,6 +48,7 @@
   };
   let step = 0, uid = "", state = null;
   let lastStepChange = -Infinity;
+  let navigationPointer = null;
   const stepIsSettling = () => performance.now() - lastStepChange < 300;
   const key = () => "campus-career-plan-v1:" + uid;
   const draftKey = () => key() + ":entwurf";
@@ -98,7 +101,7 @@
     form.hidden = false;
     result.hidden = true;
     steps.forEach((field, i) => { field.hidden = i !== step; field.disabled = i !== step; });
-    indicator.textContent = step === steps.length ? "Vorschau vor dem Speichern" : "Schritt " + (step + 1) + " von " + steps.length;
+    indicator.textContent = step === steps.length ? "Vorschau vor dem Speichern" : stepNames[step] + " · Schritt " + (step + 1) + " von " + steps.length;
     previous.hidden = step === 0;
     forward.textContent = step === steps.length ? "Meinen Plan speichern" : step === steps.length - 1 ? "Zur Vorschau" : "Weiter";
     form.classList.toggle("plan-review",step===steps.length);
@@ -189,14 +192,25 @@
     focusStep();
   });
   form.addEventListener("click", event => {
-    if (event.detail <= 1 && !stepIsSettling()) return;
-    event.preventDefault();
-    event.stopPropagation();
+    const pointer = event.detail > 0 ? { x: event.clientX, y: event.clientY } : null;
+    const samePosition = pointer && navigationPointer &&
+      Math.hypot(pointer.x - navigationPointer.x, pointer.y - navigationPointer.y) < 16;
+    if (event.detail > 1 || (samePosition && stepIsSettling())) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    if (event.target.closest("#planForward, #planBack")) navigationPointer = pointer;
   }, true);
   form.addEventListener("keydown", event => {
     if (event.repeat && (event.key === "Enter" || event.key === " ")) event.preventDefault();
   });
-  form.addEventListener("change", () => { saveDraft(); refreshPreview(); });
+  form.addEventListener("change", () => {
+    saveDraft();
+    refreshPreview();
+    const value = previewProfile.querySelectorAll("dd")[step]?.textContent;
+    if (value) previewStatus.textContent = stepNames[step] + " in der Vorschau: " + value;
+  });
   form.addEventListener("submit", event => {
     event.preventDefault();
     if (stepIsSettling() || form.hidden) return;
@@ -234,6 +248,8 @@
     uid = event.detail?.uid ?? "";
     state = null;
     lastStepChange = -Infinity;
+    navigationPointer = null;
+    previewStatus.textContent = "";
     for (const id of ["planSummary", "planHorizonText", "planCompletion"]) {
       document.getElementById(id).textContent = "";
     }
