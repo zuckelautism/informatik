@@ -1,6 +1,14 @@
 // Nach Kategorien gruppierte Ergänzungen. Vorhandene IDs für Merklisten beibehalten.
 const campusErgaenzungen=[
 {
+  "id": "2026-11-20|ÖPNV & Pendeln|VRR · Semesterticket Wintersemester 2026/27",
+  "category": "ÖPNV & Pendeln",
+  "city": "Überregional",
+  "title": "VRR · Deutschlandsemesterticket 2026/27",
+  "link": "https://www.vrr.de/tickets-tarife/deutschlandticket/semesterticket/",
+  "note": "Der VRR nennt 32,41 € pro Monat im Wintersemester 2026/27 und 34,06 € im Sommersemester 2027. Nur über teilnehmende Hochschulen erhältlich, nicht frei verkäuflich. Teilnahme und konkreten Semesterpreis bei deiner Hochschule prüfen."
+},
+{
     "id": "2026-11-11|Handys|Nothing Phone (4a)",
     "category": "Handys",
     "city": "Überregional",
