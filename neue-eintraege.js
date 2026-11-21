@@ -1,12 +1,22 @@
 // Nach Kategorien gruppierte Ergänzungen. Vorhandene IDs für Merklisten beibehalten.
 const campusErgaenzungen=[
 {
+  "id": "2026-11-21|Vorteile|Apple Store Black Friday Event 2026",
+  "category": "Vorteile",
+  "city": "Überregional",
+  "title": "Apple Store Black Friday Event · 27.–30.11.2026",
+  "link": "https://www.apple.com/de/shop/gifts/black-friday-event",
+  "note": "Apple kündigt für qualifizierte Käufe je nach Produkt eine Gift Card bis 240 € an. Aktionszeitraum 27.–30.11.2026. Teilnahme, qualifizierte Produkte und vollständige Bedingungen vor dem Kauf prüfen.",
+  "topic": "Technik",
+  "kind": "Befristete Aktion"
+},
+{
   "id": "2026-11-20|ÖPNV & Pendeln|VRR · Semesterticket Wintersemester 2026/27",
   "category": "ÖPNV & Pendeln",
   "city": "Überregional",
   "title": "VRR · Deutschlandsemesterticket 2026/27",
   "link": "https://www.vrr.de/tickets-tarife/deutschlandticket/semesterticket/",
-  "note": "Der VRR nennt 32,41 € pro Monat im Wintersemester 2026/27 und 34,06 € im Sommersemester 2027. Nur über teilnehmende Hochschulen erhältlich, nicht frei verkäuflich. Teilnahme und konkreten Semesterpreis bei deiner Hochschule prüfen."
+  "note": "Der VRR nennt 32,41 € pro Monat im Wintersemester 2026/27 und 34,06 € im Sommersemester 2027. Die DB bestätigt, dass die Deutschlandticket-Preisanpassung zum 01.01.2027 diese beiden Semester nicht betrifft. Nur über teilnehmende Hochschulen erhältlich. Teilnahme und Semesterbeitrag dort prüfen."
 },
 {
     "id": "2026-11-11|Handys|Nothing Phone (4a)",
