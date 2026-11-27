@@ -6,7 +6,7 @@ const campusErgaenzungen=[
   "city": "Überregional",
   "title": "Apple Store Black Friday Event · 27.–30.11.2026",
   "link": "https://www.apple.com/de/shop/gifts/black-friday-event",
-  "note": "Apple nennt den Aktionszeitraum 27.–30.11.2026 und eine Gift Card bis 240 € je nach qualifiziertem Produkt. Aktion startet am 27.11. Teilnahme, qualifizierte Produkte und vollständige Bedingungen prüfen.",
+  "note": "Apple nennt den Aktionszeitraum 27.–30.11.2026 und eine Gift Card bis 240 € je nach qualifiziertem Produkt. Aktion läuft vom 27.–30.11.2026. Gift-Card-Höhe und qualifizierte Produkte unterscheiden sich; Bedingungen vor Kauf prüfen.",
   "topic": "Technik",
   "kind": "Befristete Aktion"
 },
