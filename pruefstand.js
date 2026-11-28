@@ -1,5 +1,5 @@
 const campusPruefstand = {
-  "letzterLauf": "2026-11-27T10:04:00Z",
+  "letzterLauf": "2026-11-28T13:08:00Z",
   "kategorien": {
     "Laptops": "1 DIY-Konfiguration anhand der technischen Daten ergänzt. Kein datierter Endpreis und kein bestätigtes neues Modellfoto.",
     "Handys": "1 neuer Eintrag aus der Originalquelle. Kein neues eintragsspezifisches Foto bestätigt.",
